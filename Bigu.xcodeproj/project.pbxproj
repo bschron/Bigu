@@ -78,6 +78,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86A78EE91ACD86C9009BBF58 /* Billing */ = {
+			isa = PBXGroup;
+			children = (
+				86AE45BA1AB9B8FD000A2231 /* Bill.swift */,
+				86A78EE31ACD7EEB009BBF58 /* BillingProtocol.swift */,
+				86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */,
+			);
+			name = Billing;
+			sourceTree = "<group>";
+		};
+		86A78EEA1ACD86DB009BBF58 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */,
+			);
+			name = Persistence;
+			sourceTree = "<group>";
+		};
+		86A78EEB1ACD86FB009BBF58 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				86A92DCA1AB86A5800B38445 /* User.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
 		86A92D901AB863E900B38445 = {
 			isa = PBXGroup;
 			children = (
@@ -159,11 +185,9 @@
 		86A92DC81AB869C500B38445 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				86A92DCA1AB86A5800B38445 /* User.swift */,
-				86AE45BA1AB9B8FD000A2231 /* Bill.swift */,
-				86A78EE31ACD7EEB009BBF58 /* BillingProtocol.swift */,
-				86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */,
-				8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */,
+				86A78EEB1ACD86FB009BBF58 /* User */,
+				86A78EE91ACD86C9009BBF58 /* Billing */,
+				86A78EEA1ACD86DB009BBF58 /* Persistence */,
 			);
 			name = Models;
 			sourceTree = "<group>";
