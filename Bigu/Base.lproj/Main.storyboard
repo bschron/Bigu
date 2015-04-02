@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Users-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="UsersViewController" customModule="Bigu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cPC-Am-DPN">
+                                <rect key="frame" x="0.0" y="120" width="600" height="431"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="a7y-L6-JoK">
+                                <rect key="frame" x="-4" y="20" width="608" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="fJ9-DH-hjp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cPC-Am-DPN" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="100" id="0TR-Zo-wyb"/>
+                            <constraint firstItem="a7y-L6-JoK" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="Aq5-Le-kFL"/>
+                            <constraint firstItem="cPC-Am-DPN" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="Hpv-0y-mZT"/>
+                            <constraint firstAttribute="trailing" secondItem="cPC-Am-DPN" secondAttribute="trailing" id="eyr-hH-fGf"/>
+                            <constraint firstItem="cPC-Am-DPN" firstAttribute="top" secondItem="a7y-L6-JoK" secondAttribute="bottom" id="gyj-He-OzG"/>
+                            <constraint firstItem="a7y-L6-JoK" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="jHQ-lD-rrl"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="cPC-Am-DPN" secondAttribute="bottom" id="lZS-0f-swI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a7y-L6-JoK" secondAttribute="trailing" constant="-20" id="oBh-gA-yUA"/>
+                            <constraint firstItem="a7y-L6-JoK" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="wnp-8l-Se6"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Users" image="user" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="upperTableView" destination="a7y-L6-JoK" id="y7l-cg-Tfa"/>
+                        <outlet property="usersTableView" destination="cPC-Am-DPN" id="qOL-QI-s6l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="-323"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="user" width="43" height="50"/>
+    </resources>
+</document>
