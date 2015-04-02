@@ -10,21 +10,25 @@ import Foundation
 
 class Bill {
     // MARK: - Properties
-    /* the current pocket balance */
-    var balance: Double = 0
+    private var _balance: Double = 0
+    var balance: Double {
+        get {
+            return _balance
+        }
+    }
     
     // MARK: - Methods
     func debitValue(value: Double) -> Double {
-        self.balance += value
+        self._balance += value
         return self.balance
     }
     
     func creditValue(value: Double) {
-        self.balance -= value
+        self._balance -= value
     }
     
     func cleanBalance() -> Double {
-        self.balance = 0
+        self._balance = 0
         return self.balance
     }
 }
