@@ -8,36 +8,84 @@
 
 import Foundation
 
-class User: Bill {
+class User: BillingProtocol{
     // MARK: -Properties
-    /* the user's first name */
-    var name: String = ""
-    /* the user's surname (optional) */
-    var surName: String?
-    /* the user's full name
-    Concept of Computed Properties, a read-only porperties that will return the computed value;
-    */
+    private var _name: String?
+    var name: String {
+        get {
+            return _name != nil ? _name! : ""
+        }
+        set {
+            if newValue == "" {
+                _name = nil
+            }
+            else {
+                _name = newValue
+            }
+        }
+    }
+    private var _surName: String?
+    var surName: String? {
+        get {
+            return _surName
+        }
+        set {
+            if newValue == "" {
+                _surName = nil
+            }
+            else {
+                _surName = newValue
+            }
+        }
+    }
     var fullName: String {
         get {
             return name + " " + (surName != nil ? surName! : "")
         }
     }
-    /* the user's nickname (optional) */
-    var nickName: String?
-    
-    // MARK: -Methods
-    
-    /* the method for creating a empty stance of User */
-    override init()
-    {
-        super.init()
+    private var _nickName: String?
+    var nickName: String? {
+        get {
+            return _nickName
+        }
+        set {
+            if newValue == "" {
+                _nickName = nil
+            }
+            else {
+                _nickName = newValue
+            }
+        }
     }
     
-    /* the main init method */
-    convenience init(name: String, surName: String?, nickName: String?) {
-        self.init()
+    
+    // MARK: -Methods
+    init(name: String, surName: String?, nickName: String?, handler: BillingHandlerDelegate) {
         self.name = name
         self.surName = surName
         self.nickName = nickName
+        self.handler = handler
+    }
+    
+    // MARK: -Protocols
+    // MARK: BillingProtocol
+    private var _bill: Float?
+    var bill: Float {
+        get {
+            return _bill != nil ? _bill! : 0
+        }
+    }
+    var handler: BillingHandlerDelegate?
+    func creditValue(value: Float) {
+        _bill = (_bill != nil ? _bill! : 0) + value
+    }
+    func debitValue(value: Float) {
+        _bill = (_bill != nil ? _bill! : 0) + value
+        if _bill == 0 {
+            _bill = nil
+        }
+    }
+    func resetBalance() {
+        _bill = nil
     }
 }

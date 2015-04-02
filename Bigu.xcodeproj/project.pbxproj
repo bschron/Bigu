@@ -11,6 +11,8 @@
 		8624B86B1ACD71F600A60985 /* DataPersistenceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */; };
 		8662E4241AC9910D0087B69B /* DefaultTaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662E4231AC9910D0087B69B /* DefaultTaxCell.swift */; };
 		8662E4261ACACB180087B69B /* PickerTaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662E4251ACACB180087B69B /* PickerTaxCell.swift */; };
+		86A78EE41ACD7EEB009BBF58 /* BillingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A78EE31ACD7EEB009BBF58 /* BillingProtocol.swift */; };
+		86A78EE81ACD8231009BBF58 /* BillingHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */; };
 		86A92D9F1AB863E900B38445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A92D9E1AB863E900B38445 /* AppDelegate.swift */; };
 		86A92DA61AB863E900B38445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA41AB863E900B38445 /* Main.storyboard */; };
 		86A92DA81AB863E900B38445 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA71AB863E900B38445 /* Images.xcassets */; };
@@ -39,6 +41,8 @@
 		8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersistenceDelegate.swift; sourceTree = "<group>"; };
 		8662E4231AC9910D0087B69B /* DefaultTaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTaxCell.swift; sourceTree = "<group>"; };
 		8662E4251ACACB180087B69B /* PickerTaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerTaxCell.swift; sourceTree = "<group>"; };
+		86A78EE31ACD7EEB009BBF58 /* BillingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingProtocol.swift; sourceTree = "<group>"; };
+		86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingHandlerDelegate.swift; sourceTree = "<group>"; };
 		86A92D991AB863E900B38445 /* Bigu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bigu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A92D9D1AB863E900B38445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A92D9E1AB863E900B38445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 			children = (
 				86A92DCA1AB86A5800B38445 /* User.swift */,
 				86AE45BA1AB9B8FD000A2231 /* Bill.swift */,
+				86A78EE31ACD7EEB009BBF58 /* BillingProtocol.swift */,
+				86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */,
 				8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */,
 			);
 			name = Models;
@@ -274,12 +280,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				86A92DCB1AB86A5800B38445 /* User.swift in Sources */,
+				86A78EE81ACD8231009BBF58 /* BillingHandlerDelegate.swift in Sources */,
 				8662E4261ACACB180087B69B /* PickerTaxCell.swift in Sources */,
 				8662E4241AC9910D0087B69B /* DefaultTaxCell.swift in Sources */,
 				86AE45BB1AB9B8FE000A2231 /* Bill.swift in Sources */,
 				86D999281ACAD429001E48CD /* TaxCell.swift in Sources */,
 				86D9992C1ACC29C3001E48CD /* TaxHandlingDelegate.swift in Sources */,
 				86A92DC21AB8687A00B38445 /* UsersViewController.swift in Sources */,
+				86A78EE41ACD7EEB009BBF58 /* BillingProtocol.swift in Sources */,
 				8624B86B1ACD71F600A60985 /* DataPersistenceDelegate.swift in Sources */,
 				86A92D9F1AB863E900B38445 /* AppDelegate.swift in Sources */,
 			);
