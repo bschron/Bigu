@@ -23,6 +23,8 @@
 		86A92DCB1AB86A5800B38445 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A92DCA1AB86A5800B38445 /* User.swift */; };
 		86D999281ACAD429001E48CD /* TaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D999271ACAD429001E48CD /* TaxCell.swift */; };
 		86D9992C1ACC29C3001E48CD /* TaxHandlingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9992B1ACC29C3001E48CD /* TaxHandlingDelegate.swift */; };
+		86F441CA1ACEA574006B5246 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F441C91ACEA574006B5246 /* UserCell.xib */; };
+		86F441CE1ACEA9DA006B5246 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F441CD1ACEA9DA006B5246 /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		86A92DCA1AB86A5800B38445 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		86D999271ACAD429001E48CD /* TaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxCell.swift; sourceTree = "<group>"; };
 		86D9992B1ACC29C3001E48CD /* TaxHandlingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxHandlingDelegate.swift; sourceTree = "<group>"; };
+		86F441C91ACEA574006B5246 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		86F441CD1ACEA9DA006B5246 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,7 @@
 			children = (
 				86A92DC11AB8687A00B38445 /* UsersViewController.swift */,
 				86A92DC31AB868AA00B38445 /* TaxCell */,
+				86F441C81ACEA540006B5246 /* UserCell */,
 			);
 			name = UsersViewController;
 			sourceTree = "<group>";
@@ -196,6 +201,15 @@
 				86A92DC01AB8684B00B38445 /* UsersViewController */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		86F441C81ACEA540006B5246 /* UserCell */ = {
+			isa = PBXGroup;
+			children = (
+				86F441C91ACEA574006B5246 /* UserCell.xib */,
+				86F441CD1ACEA9DA006B5246 /* UserCell.swift */,
+			);
+			name = UserCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +294,7 @@
 			files = (
 				860466651ABC6CFE00C39BDB /* PickerTaxCell.xib in Resources */,
 				86A92DA61AB863E900B38445 /* Main.storyboard in Resources */,
+				86F441CA1ACEA574006B5246 /* UserCell.xib in Resources */,
 				86A92DC51AB868E200B38445 /* TaxCell.xib in Resources */,
 				86A92DAB1AB863E900B38445 /* LaunchScreen.xib in Resources */,
 				86A92DA81AB863E900B38445 /* Images.xcassets in Resources */,
@@ -309,6 +324,7 @@
 				86A92DC21AB8687A00B38445 /* UsersViewController.swift in Sources */,
 				86A78EE41ACD7EEB009BBF58 /* BillingProtocol.swift in Sources */,
 				8624B86B1ACD71F600A60985 /* DataPersistenceDelegate.swift in Sources */,
+				86F441CE1ACEA9DA006B5246 /* UserCell.swift in Sources */,
 				86A92D9F1AB863E900B38445 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,10 +23,13 @@ class UsersViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view.
         
         /* register tax cells nibs*/
-        let DefaultTaxCellNib = UINib(nibName: "TaxCell", bundle: nil)
-        let PickerTaxCellNib = UINib(nibName: "PickerTaxCell", bundle: nil)
-        upperTableView.registerNib(DefaultTaxCellNib, forCellReuseIdentifier: TaxCell.TaxCellState.Default.rawValue)
-        upperTableView.registerNib(PickerTaxCellNib, forCellReuseIdentifier: TaxCell.TaxCellState.TaxPicker.rawValue)
+        let defaultTaxCellNib = UINib(nibName: "TaxCell", bundle: nil)
+        let pickerTaxCellNib = UINib(nibName: "PickerTaxCell", bundle: nil)
+        upperTableView.registerNib(defaultTaxCellNib, forCellReuseIdentifier: TaxCell.TaxCellState.Default.rawValue)
+        upperTableView.registerNib(pickerTaxCellNib, forCellReuseIdentifier: TaxCell.TaxCellState.TaxPicker.rawValue)
+        /* register user cells nibs */
+        let userCellNib = UINib(nibName: "UserCell", bundle: nil)
+        usersTableView.registerNib(userCellNib, forCellReuseIdentifier: UserCell.userCellReuseId)
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,21 +52,30 @@ class UsersViewController: UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var number: Int = 0
         
-        if tableView == self.upperTableView {
-            number =  1
+        if tableView === upperTableView {
+            number = 1
         }
-        else {
-            number =  0
+        else if tableView == self.usersTableView {
+            number = User.usersTable.count
         }
-        
-        return 1
+        return number
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = upperTableView.dequeueReusableCellWithIdentifier(TaxCell.currentState.rawValue, forIndexPath: indexPath) as TaxCell
-        // configure cell
-        cell.tableView = self.upperTableView
-        
-        return cell
+        if tableView === self.upperTableView {
+            let cell = upperTableView.dequeueReusableCellWithIdentifier(TaxCell.currentState.rawValue, forIndexPath: indexPath) as TaxCell
+            // configure cell
+            cell.tableView = self.upperTableView
+            
+            return cell
+        }
+        else if tableView === self.usersTableView {
+            let cell = usersTableView.dequeueReusableCellWithIdentifier(UserCell.userCellReuseId, forIndexPath: indexPath) as UserCell
+            let users = User.usersTable
+            cell.user = users[indexPath.row]
+            
+            return cell
+        }
+        return UITableViewCell()
     }
 }

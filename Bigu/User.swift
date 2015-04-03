@@ -137,6 +137,9 @@ class User: BillingProtocol, DataPersistenceDelegate {
         
         return storedValue.usersTable
     }
+    class var usersTable: Array<User> {
+        return storedUsersTable(nil, clear: false)
+    }
     class private var usersKey: String {
         return "UsersKey"
     }
