@@ -154,14 +154,16 @@ class User: BillingProtocol, DataPersistenceDelegate {
     }
     class func initFromPersistence() {
         let randomUser = User()
-        let array = randomUser.load() as [[String: AnyObject]]
+        let array = randomUser.load() as? [[String: AnyObject]]
         User.storedUsersTable(nil, clear: true)
-        for cur in array {
-            let name = cur[User.nameKey] as String
-            let surName = cur[User.surNameKey] as String
-            let nickName = cur[User.nickNameKey] as String
-            let bill = cur[User.nickNameKey] as String
-            let newUser = User(name: name, surName: surName, nickName: nickName, handler: nil)
+        if array != nil {
+            for cur in array! {
+                let name = cur[User.nameKey] as String
+                let surName = cur[User.surNameKey] as String
+                let nickName = cur[User.nickNameKey] as String
+                let bill = cur[User.nickNameKey] as String
+                let newUser = User(name: name, surName: surName, nickName: nickName, handler: nil)
+            }
         }
     }
 }
