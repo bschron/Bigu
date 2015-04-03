@@ -134,4 +134,16 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
             }
         }
     }
+    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        var result: Bool!
+        
+        if tableView === upperTableView {
+            result = false
+        }
+        else {
+            result = true
+        }
+        
+        return result
+    }
 }
