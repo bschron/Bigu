@@ -21,7 +21,6 @@
 		86A92DC21AB8687A00B38445 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A92DC11AB8687A00B38445 /* UsersViewController.swift */; };
 		86A92DC51AB868E200B38445 /* TaxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DC41AB868E200B38445 /* TaxCell.xib */; };
 		86A92DCB1AB86A5800B38445 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A92DCA1AB86A5800B38445 /* User.swift */; };
-		86AE45BB1AB9B8FE000A2231 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE45BA1AB9B8FD000A2231 /* Bill.swift */; };
 		86D999281ACAD429001E48CD /* TaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D999271ACAD429001E48CD /* TaxCell.swift */; };
 		86D9992C1ACC29C3001E48CD /* TaxHandlingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9992B1ACC29C3001E48CD /* TaxHandlingDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -55,7 +54,6 @@
 		86A92DC11AB8687A00B38445 /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		86A92DC41AB868E200B38445 /* TaxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaxCell.xib; sourceTree = "<group>"; };
 		86A92DCA1AB86A5800B38445 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		86AE45BA1AB9B8FD000A2231 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		86D999271ACAD429001E48CD /* TaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxCell.swift; sourceTree = "<group>"; };
 		86D9992B1ACC29C3001E48CD /* TaxHandlingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxHandlingDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +79,6 @@
 		86A78EE91ACD86C9009BBF58 /* Billing */ = {
 			isa = PBXGroup;
 			children = (
-				86AE45BA1AB9B8FD000A2231 /* Bill.swift */,
 				86A78EE31ACD7EEB009BBF58 /* BillingProtocol.swift */,
 				86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */,
 			);
@@ -307,7 +304,6 @@
 				86A78EE81ACD8231009BBF58 /* BillingHandlerDelegate.swift in Sources */,
 				8662E4261ACACB180087B69B /* PickerTaxCell.swift in Sources */,
 				8662E4241AC9910D0087B69B /* DefaultTaxCell.swift in Sources */,
-				86AE45BB1AB9B8FE000A2231 /* Bill.swift in Sources */,
 				86D999281ACAD429001E48CD /* TaxCell.swift in Sources */,
 				86D9992C1ACC29C3001E48CD /* TaxHandlingDelegate.swift in Sources */,
 				86A92DC21AB8687A00B38445 /* UsersViewController.swift in Sources */,
