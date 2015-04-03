@@ -18,14 +18,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cPC-Am-DPN">
-                                <rect key="frame" x="0.0" y="120" width="600" height="431"/>
+                                <rect key="frame" x="0.0" y="164" width="600" height="387"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="9pv-A4-QxB" id="woN-mV-dLL"/>
                                 </connections>
                             </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="a7y-L6-JoK">
-                                <rect key="frame" x="-4" y="20" width="608" height="100"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jS0-il-icK">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="users" id="pCx-db-ft3"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="a7y-L6-JoK">
+                                <rect key="frame" x="0.0" y="64" width="600" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="9pv-A4-QxB" id="fJ9-DH-hjp"/>
@@ -34,15 +40,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cPC-Am-DPN" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="100" id="0TR-Zo-wyb"/>
-                            <constraint firstItem="a7y-L6-JoK" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="Aq5-Le-kFL"/>
-                            <constraint firstItem="cPC-Am-DPN" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="Hpv-0y-mZT"/>
-                            <constraint firstAttribute="trailing" secondItem="cPC-Am-DPN" secondAttribute="trailing" id="eyr-hH-fGf"/>
-                            <constraint firstItem="cPC-Am-DPN" firstAttribute="top" secondItem="a7y-L6-JoK" secondAttribute="bottom" id="gyj-He-OzG"/>
-                            <constraint firstItem="a7y-L6-JoK" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="jHQ-lD-rrl"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="cPC-Am-DPN" secondAttribute="bottom" id="lZS-0f-swI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="a7y-L6-JoK" secondAttribute="trailing" constant="-20" id="oBh-gA-yUA"/>
-                            <constraint firstItem="a7y-L6-JoK" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="wnp-8l-Se6"/>
+                            <constraint firstAttribute="trailing" secondItem="a7y-L6-JoK" secondAttribute="trailing" id="2a8-Y4-M2g"/>
+                            <constraint firstItem="cPC-Am-DPN" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="7px-s8-nWA"/>
+                            <constraint firstAttribute="trailing" secondItem="cPC-Am-DPN" secondAttribute="trailing" id="8M5-RX-41A"/>
+                            <constraint firstItem="a7y-L6-JoK" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="BqV-dX-jZC"/>
+                            <constraint firstItem="jS0-il-icK" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="CJJ-WT-Fpt"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="cPC-Am-DPN" secondAttribute="bottom" id="L76-IN-94U"/>
+                            <constraint firstItem="cPC-Am-DPN" firstAttribute="top" secondItem="a7y-L6-JoK" secondAttribute="bottom" id="TqR-5r-uhx"/>
+                            <constraint firstItem="cPC-Am-DPN" firstAttribute="top" secondItem="a7y-L6-JoK" secondAttribute="bottom" id="Xnw-0y-xeJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jS0-il-icK" secondAttribute="trailing" constant="-16" id="ja6-88-4i6"/>
+                            <constraint firstItem="a7y-L6-JoK" firstAttribute="top" secondItem="jS0-il-icK" secondAttribute="bottom" id="jgX-De-EBU"/>
+                            <constraint firstItem="cPC-Am-DPN" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="144" id="pal-4j-580"/>
+                            <constraint firstItem="jS0-il-icK" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="xaW-zb-Dhb"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Users" image="user" id="acW-dT-cKf"/>
