@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User: BillingProtocol{
+class User: BillingProtocol, DataPersistenceDelegate {
     // MARK: -Properties
     private var _name: String?
     var name: String {
@@ -27,7 +27,7 @@ class User: BillingProtocol{
     private var _surName: String?
     var surName: String? {
         get {
-            return _surName
+            return _surName != nil ? _surName! : ""
         }
         set {
             if newValue == "" {
@@ -46,7 +46,7 @@ class User: BillingProtocol{
     private var _nickName: String?
     var nickName: String? {
         get {
-            return _nickName
+            return _nickName != nil ? _nickName! : ""
         }
         set {
             if newValue == "" {
@@ -60,11 +60,13 @@ class User: BillingProtocol{
     
     
     // MARK: -Methods
-    init(name: String, surName: String?, nickName: String?, handler: BillingHandlerDelegate) {
+    init() {}
+    init(name: String, surName: String?, nickName: String?, handler: BillingHandlerDelegate?) {
         self.name = name
         self.surName = surName
         self.nickName = nickName
         self.handler = handler
+        User.storedUsersTable(self, clear: false)
     }
     
     // MARK: -Protocols
@@ -87,5 +89,79 @@ class User: BillingProtocol{
     }
     func resetBalance() {
         _bill = nil
+    }
+    // MARK: DataPersistenceDelegate
+    var object: AnyObject? {
+        get {
+            return User.storedUsersTable(nil, clear: false)
+        }
+        set {}
+    }
+    func save() -> Bool {
+        let users = User.storedUsersTable(nil, clear: false)
+        var data: [[String: AnyObject]] = userArrayToDictionaryArray(users)
+        let array = data as NSArray
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(array, forKey: User.usersKey)
+        let result = defaults.synchronize()
+        
+        return result
+    }
+    func load() -> AnyObject? {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let storedArray = defaults.objectForKey(User.usersKey) as? [[String: AnyObject]]
+        return storedArray
+    }
+    private func userArrayToDictionaryArray(users: Array<User>) -> [[String: AnyObject]] {
+        var output: [[String: AnyObject]] = []
+        for cur in users {
+            let dictionary: [String: AnyObject] = [User.nameKey: self.name, User.surNameKey: self.surName!, User.nickNameKey: self.nickName!, User.billKey: self.bill]
+            output += [dictionary]
+        }
+        return output
+    }
+    
+    // MARK: -Class Properties and Methods
+    class private func storedUsersTable(newUser: User?, clear: Bool) -> Array<User> {
+        struct storedValue {
+            static var usersTable: Array<User> = []
+        }
+        
+        if newUser != nil {
+            storedValue.usersTable += [newUser!]
+        }
+        
+        if clear {
+            storedValue.usersTable = []
+        }
+        
+        return storedValue.usersTable
+    }
+    class private var usersKey: String {
+        return "UsersKey"
+    }
+    class private var nameKey: String {
+        return "UserNameKey"
+    }
+    class private var surNameKey: String {
+        return "UserSurNameKey"
+    }
+    class private var nickNameKey: String {
+        return "UserNickNameKey"
+    }
+    class private var billKey: String {
+        return "UserBillKey"
+    }
+    class func initFromPersistence() {
+        let randomUser = User()
+        let array = randomUser.load() as [[String: AnyObject]]
+        User.storedUsersTable(nil, clear: true)
+        for cur in array {
+            let name = cur[User.nameKey] as String
+            let surName = cur[User.surNameKey] as String
+            let nickName = cur[User.nickNameKey] as String
+            let bill = cur[User.nickNameKey] as String
+            let newUser = User(name: name, surName: surName, nickName: nickName, handler: nil)
+        }
     }
 }

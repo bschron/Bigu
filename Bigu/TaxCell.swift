@@ -93,7 +93,7 @@ class TaxCell: UITableViewCell, TaxHandlingDelegate, DataPersistenceDelegate {
     func load() -> AnyObject? {
         let defaults = NSUserDefaults.standardUserDefaults()
         let storedDictionary = defaults.objectForKey(self.dataKey) as? NSDictionary
-        let floatingPointValue = storedDictionary?[self.taxKey] as? Float?
+        let floatingPointValue = storedDictionary?[self.taxKey] as? Float
         return floatingPointValue != nil ? floatingPointValue! : nil
     }
 
@@ -102,7 +102,7 @@ class TaxCell: UITableViewCell, TaxHandlingDelegate, DataPersistenceDelegate {
         struct storedState {
             static var currentState: TaxCellState?
         }
-        
+
         if let state = newState {
             storedState.currentState = state
         }
