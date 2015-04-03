@@ -66,7 +66,7 @@ class User: BillingProtocol, DataPersistenceDelegate {
         self.surName = surName
         self.nickName = nickName
         self.handler = handler
-        User.storedUsersTable(self, clear: false)
+        UserList.sharedUserList.insertUser(self)
     }
     
     // MARK: -Protocols
@@ -93,12 +93,12 @@ class User: BillingProtocol, DataPersistenceDelegate {
     // MARK: DataPersistenceDelegate
     var object: AnyObject? {
         get {
-            return User.storedUsersTable(nil, clear: false)
+            return User.usersList.list
         }
         set {}
     }
     func save() -> Bool {
-        let users = User.storedUsersTable(nil, clear: false)
+        let users = UserList.sharedUserList.list
         var data = userArrayToDictionaryArray(users) as [[NSString: NSObject]]
         let array = data as NSArray
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -122,23 +122,8 @@ class User: BillingProtocol, DataPersistenceDelegate {
     }
     
     // MARK: -Class Properties and Methods
-    class private func storedUsersTable(newUser: User?, clear: Bool) -> Array<User> {
-        struct storedValue {
-            static var usersTable: Array<User> = []
-        }
-        
-        if newUser != nil {
-            storedValue.usersTable += [newUser!]
-        }
-        
-        if clear {
-            storedValue.usersTable = []
-        }
-        
-        return storedValue.usersTable
-    }
-    class var usersTable: Array<User> {
-        return storedUsersTable(nil, clear: false)
+    class var usersList: UserList {
+        return UserList.sharedUserList
     }
     class private var usersKey: String {
         return "UsersKey"
@@ -156,7 +141,7 @@ class User: BillingProtocol, DataPersistenceDelegate {
         return "UserBillKey"
     }
     class func initFromPersistence() {
-        User.storedUsersTable(nil, clear: true)
+        UserList.sharedUserList.clearList()
         let randomUser = User()
         let array = randomUser.load() as? [[String: AnyObject]]
         if array != nil {
@@ -173,16 +158,6 @@ class User: BillingProtocol, DataPersistenceDelegate {
         User().save()
     }
     class func removeUserAtRow (row: Int) {
-        var users = User.storedUsersTable(nil, clear: false)
-        if row < users.count {
-            User.storedUsersTable(nil, clear: true)
-            var i = 0
-            for cur in users {
-                if i != row {
-                    User.storedUsersTable(cur, clear: false)
-                }
-                i++
-            }
-        }
+        UserList.sharedUserList.removeUserAtIndex(row)
     }
 }

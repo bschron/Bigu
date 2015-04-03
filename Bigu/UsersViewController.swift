@@ -78,7 +78,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
             number = 1
         }
         else if tableView == self.usersTableView {
-            number = User.usersTable.count
+            number = UserList.sharedUserList.list.count
         }
         return number
     }
@@ -93,8 +93,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         else if tableView === self.usersTableView {
             let cell = usersTableView.dequeueReusableCellWithIdentifier(UserCell.userCellReuseId, forIndexPath: indexPath) as UserCell
-            let users = User.usersTable
-            cell.user = users[indexPath.row]
+            cell.user = UserList.sharedUserList.list[indexPath.row]
             
             return cell
         }
