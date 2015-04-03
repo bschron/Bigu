@@ -99,7 +99,7 @@ class User: BillingProtocol, DataPersistenceDelegate {
     }
     func save() -> Bool {
         let users = User.storedUsersTable(nil, clear: false)
-        var data: [[String: AnyObject]] = userArrayToDictionaryArray(users)
+        var data = userArrayToDictionaryArray(users) as [[NSString: NSObject]]
         let array = data as NSArray
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(array, forKey: User.usersKey)
@@ -109,13 +109,13 @@ class User: BillingProtocol, DataPersistenceDelegate {
     }
     func load() -> AnyObject? {
         let defaults = NSUserDefaults.standardUserDefaults()
-        let storedArray = defaults.objectForKey(User.usersKey) as? [[String: AnyObject]]
+        let storedArray = defaults.objectForKey(User.usersKey) as? [[NSString: NSObject]]
         return storedArray
     }
-    private func userArrayToDictionaryArray(users: Array<User>) -> [[String: AnyObject]] {
-        var output: [[String: AnyObject]] = []
+    private func userArrayToDictionaryArray(users: Array<User>) -> [[NSString: NSObject]] {
+        var output: [[NSString: NSObject]] = []
         for cur in users {
-            let dictionary: [String: AnyObject] = [User.nameKey: self.name, User.surNameKey: self.surName!, User.nickNameKey: self.nickName!, User.billKey: self.bill]
+            let dictionary: [NSString: NSObject] = [User.nameKey: cur.name, User.surNameKey: cur.surName!, User.nickNameKey: cur.nickName!, User.billKey: cur.bill]
             output += [dictionary]
         }
         return output
@@ -156,9 +156,9 @@ class User: BillingProtocol, DataPersistenceDelegate {
         return "UserBillKey"
     }
     class func initFromPersistence() {
+        User.storedUsersTable(nil, clear: true)
         let randomUser = User()
         let array = randomUser.load() as? [[String: AnyObject]]
-        User.storedUsersTable(nil, clear: true)
         if array != nil {
             for cur in array! {
                 let name = cur[User.nameKey] as String
@@ -166,6 +166,22 @@ class User: BillingProtocol, DataPersistenceDelegate {
                 let nickName = cur[User.nickNameKey] as String
                 let bill = cur[User.nickNameKey] as String
                 let newUser = User(name: name, surName: surName, nickName: nickName, handler: nil)
+            }
+        }
+    }
+    class func saveToPersistence() {
+        User().save()
+    }
+    class func removeUserAtRow (row: Int) {
+        var users = User.storedUsersTable(nil, clear: false)
+        if row < users.count {
+            User.storedUsersTable(nil, clear: true)
+            var i = 0
+            for cur in users {
+                if i != row {
+                    User.storedUsersTable(cur, clear: false)
+                }
+                i++
             }
         }
     }

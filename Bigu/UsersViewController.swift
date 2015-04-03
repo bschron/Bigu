@@ -8,15 +8,15 @@
 
 import UIKit
 
-class UsersViewController: UIViewController, UITableViewDataSource {
+class UsersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    // MARK: - Variables
+    // MARK: - Proprierties
     
     //MARK: Outlets
     @IBOutlet weak var upperTableView: UITableView!
     @IBOutlet weak var usersTableView: UITableView!
     
-    // MARK: - Functions
+    // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,7 +29,17 @@ class UsersViewController: UIViewController, UITableViewDataSource {
         upperTableView.registerNib(pickerTaxCellNib, forCellReuseIdentifier: TaxCell.TaxCellState.TaxPicker.rawValue)
         /* register user cells nibs */
         let userCellNib = UINib(nibName: "UserCell", bundle: nil)
-        usersTableView.registerNib(userCellNib, forCellReuseIdentifier: UserCell.userCellReuseId)
+        self.usersTableView.registerNib(userCellNib, forCellReuseIdentifier: UserCell.userCellReuseId)
+        
+        /* load users from persistence */
+        User.initFromPersistence()
+        
+        // persistence call
+        let app = UIApplication.sharedApplication()
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "applicationWillResignActive:",
+            name: UIApplicationWillResignActiveNotification,
+            object: app)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +47,17 @@ class UsersViewController: UIViewController, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Actions
+    @IBAction func addUserButtonPressed(sender: AnyObject) {
+        let newUser = User(name: "Bruno", surName: "Chroniaris", nickName: "Bshcron", handler: nil)
+        self.usersTableView.reloadData()
+    }
+    
+    func applicationWillResignActive(notification:NSNotification) {
+        User.saveToPersistence()
+    }
 
+    
     /*
     // MARK: - Navigation
 
@@ -48,7 +68,9 @@ class UsersViewController: UIViewController, UITableViewDataSource {
     }
     */
     
-    // MARK: - TableViewDataSource
+    // MARK: -Protocols
+    
+    // MARK: TableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var number: Int = 0
         
@@ -77,5 +99,40 @@ class UsersViewController: UIViewController, UITableViewDataSource {
             return cell
         }
         return UITableViewCell()
+    }
+    
+    // MARK: TableViewDelegate
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        var height: CGFloat!
+        
+        if tableView === self.usersTableView {
+            height = CGFloat(60)
+        }
+        else if tableView === self.upperTableView {
+            height = CGFloat(100)
+        }
+        
+        return height
+    }
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        var result: Bool!
+        
+        if tableView === self.usersTableView {
+            result = true
+        }
+        else {
+            result = false
+        }
+        
+        return result
+    }
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if tableView === self.usersTableView {
+            if editingStyle == .Delete {
+                User.removeUserAtRow(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            }
+        }
     }
 }
