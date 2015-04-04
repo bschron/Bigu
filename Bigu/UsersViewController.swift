@@ -49,8 +49,9 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     // MARK: Actions
     @IBAction func addUserButtonPressed(sender: AnyObject) {
-        let newUser = User(name: "Bruno", surName: "Chroniaris", nickName: "Bshcron", handler: nil)
+        NewUserPopUp.addPopUpToView(self.view)
         self.usersTableView.reloadData()
+        self.usersTableView.reloadInputViews()
     }
     
     func applicationWillResignActive(notification:NSNotification) {
