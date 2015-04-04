@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UsersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class UsersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UserHandlingDelegate {
 
     // MARK: - Proprierties
     
@@ -49,9 +49,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     // MARK: Actions
     @IBAction func addUserButtonPressed(sender: AnyObject) {
-        NewUserPopUp.addPopUpToView(self.view)
-        self.usersTableView.reloadData()
-        self.usersTableView.reloadInputViews()
+        NewUserPopUp.addPopUpToView(self.view, usersHandler: self)
     }
     
     func applicationWillResignActive(notification:NSNotification) {
@@ -146,5 +144,10 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         
         return result
+    }
+    
+    // MARK: UserHandlingDelegate
+    func reloadUsersData() {
+        self.usersTableView.reloadData()
     }
 }

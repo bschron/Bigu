@@ -12,6 +12,7 @@ class NewUserPopUp: UIView {
 
     // MARK: - Properties
     var view: UIView!
+    var usersHandler: UserHandlingDelegate?
     
     @IBOutlet weak private var box: UIView!
     @IBOutlet weak var title: UILabel!
@@ -78,6 +79,10 @@ class NewUserPopUp: UIView {
         if nameTextField.text != "" {
             User(name: nameTextField.text, surName: surnameTextField.text, nickName: nicknameTextField.text, handler: nil)
             self.terminate()
+            
+            if let handler = usersHandler {
+                handler.reloadUsersData()
+            }
         }
         else {
             self.title.text = "Name Required"
@@ -86,11 +91,18 @@ class NewUserPopUp: UIView {
     @IBAction func cancelButtonPressed(sender: AnyObject) {
         self.terminate()
     }
+    @IBAction func closeKeyboard(sender: AnyObject) {
+        sender.resignFirstResponder()
+    }
+    @IBAction func tappedOutside(sender: AnyObject) {
+        self.terminate()
+    }
     
     // MARK: - Class Methods
-    class func addPopUpToView (aView: UIView) {
+    class func addPopUpToView (aView: UIView, usersHandler handler: UserHandlingDelegate?) {
         let frame = aView.frame
         let pop = NewUserPopUp(frame: frame)
+        pop.usersHandler = handler
         aView.addSubview(pop)
     }
 }
