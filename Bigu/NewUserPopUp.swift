@@ -74,6 +74,10 @@ class NewUserPopUp: UIView {
         self.removeFromSuperview()
     }
     
+    func transitionToSize(size: CGSize) {
+        self.frame.size = size
+    }
+    
     // MARK: Actions
     @IBAction func addButtonPressed(sender: AnyObject) {
         if nameTextField.text != "" {
@@ -99,10 +103,11 @@ class NewUserPopUp: UIView {
     }
     
     // MARK: - Class Methods
-    class func addPopUpToView (aView: UIView, usersHandler handler: UserHandlingDelegate?) {
+    class func addPopUpToView (aView: UIView, usersHandler handler: UserHandlingDelegate?) -> UIView {
         let frame = aView.frame
         let pop = NewUserPopUp(frame: frame)
         pop.usersHandler = handler
         aView.addSubview(pop)
+        return pop
     }
 }

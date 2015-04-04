@@ -11,6 +11,7 @@ import UIKit
 class UsersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UserHandlingDelegate {
 
     // MARK: - Proprierties
+    private weak var popUp: UIView?
     
     //MARK: Outlets
     @IBOutlet weak var upperTableView: UITableView!
@@ -49,13 +50,18 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     // MARK: Actions
     @IBAction func addUserButtonPressed(sender: AnyObject) {
-        NewUserPopUp.addPopUpToView(self.view, usersHandler: self)
+        self.popUp = NewUserPopUp.addPopUpToView(self.view, usersHandler: self)
     }
     
     func applicationWillResignActive(notification:NSNotification) {
         User.saveToPersistence()
     }
-
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        if let pop = self.popUp {
+            pop.frame.size = size
+        }
+    }
     
     /*
     // MARK: - Navigation
