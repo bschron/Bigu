@@ -109,30 +109,30 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHR-TC-sk2">
-                            <rect key="frame" x="0.0" y="224" width="120" height="20"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="0.0" y="224" width="119.5" height="20"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QoN-op-jXH">
-                            <rect key="frame" x="120" y="224" width="120" height="20"/>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="120.5" y="224" width="119.5" height="20"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nv1-rL-sYI">
-                            <rect key="frame" x="68" y="224" width="52" height="50"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="67.5" y="224" width="52" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="nv1-rL-sYI" secondAttribute="height" multiplier="26:25" id="DPa-xd-4oE"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qlK-rE-0Af">
-                            <rect key="frame" x="120" y="224" width="52" height="50"/>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="120.5" y="224" width="52" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="qlK-rE-0Af" secondAttribute="height" multiplier="26:25" id="HZn-AB-VfU"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIs-sc-w32">
-                            <rect key="frame" x="0.0" y="224" width="120" height="50"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="0.0" y="224" width="119.5" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="KFe-Dt-DOg"/>
                                 <constraint firstAttribute="height" constant="50" id="ZHU-GK-gUh"/>
@@ -150,10 +150,11 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R38-6g-PUw">
-                            <rect key="frame" x="120" y="224" width="120" height="50"/>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <rect key="frame" x="120.5" y="224" width="119.5" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <state key="normal" title="Cancel">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="-1" eventType="touchUpInside" id="NRA-3H-Bc0"/>
@@ -208,7 +209,7 @@
                         <constraint firstItem="yIs-sc-w32" firstAttribute="height" secondItem="nv1-rL-sYI" secondAttribute="height" id="ga2-d5-dEo"/>
                         <constraint firstAttribute="trailing" secondItem="Mct-4F-kVN" secondAttribute="trailing" constant="8" id="iI3-Vb-Twr"/>
                         <constraint firstItem="Cb4-Pf-r55" firstAttribute="width" secondItem="Mct-4F-kVN" secondAttribute="width" id="iO6-b6-GTy"/>
-                        <constraint firstItem="R38-6g-PUw" firstAttribute="leading" secondItem="yIs-sc-w32" secondAttribute="trailing" id="jXy-Sy-hBT"/>
+                        <constraint firstItem="R38-6g-PUw" firstAttribute="leading" secondItem="yIs-sc-w32" secondAttribute="trailing" constant="1" id="jXy-Sy-hBT"/>
                         <constraint firstItem="Cb4-Pf-r55" firstAttribute="width" secondItem="94c-f1-GLr" secondAttribute="width" id="okQ-k0-npj"/>
                         <constraint firstItem="VHR-TC-sk2" firstAttribute="width" secondItem="yIs-sc-w32" secondAttribute="width" id="smQ-ib-goN"/>
                         <constraint firstAttribute="bottom" secondItem="R38-6g-PUw" secondAttribute="bottom" id="tHQ-8i-Qpp"/>
