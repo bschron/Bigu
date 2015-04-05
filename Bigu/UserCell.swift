@@ -37,6 +37,11 @@ class UserCell: UITableViewCell {
     func handleSwipes(sender: UISwipeGestureRecognizer){
         if sender.direction == .Right{
             let view = self.superview?.superview?.superview
+            if view == nil {
+                return
+            }
+            let newView = UserDetailView(frame: view!.frame)
+            view!.addSubview(newView)
         }
     }
     
