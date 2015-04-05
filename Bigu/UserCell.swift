@@ -20,16 +20,34 @@ class UserCell: UITableViewCell {
             self.updateUserInfo()
         }
     }
+    var swipeGesture: UISwipeGestureRecognizer!
     
     //MARK: Outlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var fullnameLabel: UILabel!
     
     // MARK: - Methods
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        swipeGesture = UISwipeGestureRecognizer(target: self, action: "handleSwipes:")
+    }
+    
+    func handleSwipes(sender: UISwipeGestureRecognizer){
+        if sender.direction == .Right{
+            let view = self.superview?.superview?.superview
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         updateUserInfo()
+            
+        self.swipeGesture.direction = .Right
+        self.swipeGesture.numberOfTouchesRequired = 1
+        self.addGestureRecognizer(self.swipeGesture)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
