@@ -12,6 +12,7 @@ class NewUserPopUp: UIView {
 
     // MARK: - Properties
     var view: UIView!
+    var blurView: UIVisualEffectView?
     var usersHandler: UserHandlingDelegate?
     
     @IBOutlet weak private var box: UIView!
@@ -36,6 +37,7 @@ class NewUserPopUp: UIView {
         view = loadViewFromNib()
         
         // use bounds not frame or it'll be offset
+        view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0)
         view.frame = bounds
         
         // Make the view stretch with containing view
@@ -71,11 +73,15 @@ class NewUserPopUp: UIView {
     }
     
     private func terminate() {
+        blurView?.removeFromSuperview()
         self.removeFromSuperview()
     }
     
     func transitionToSize(size: CGSize) {
         self.frame.size = size
+        if self.blurView != nil {
+            self.blurView!.frame.size = size
+        }
     }
     
     // MARK: Actions
@@ -104,10 +110,20 @@ class NewUserPopUp: UIView {
     
     // MARK: - Class Methods
     class func addPopUpToView (aView: UIView, usersHandler handler: UserHandlingDelegate?) -> UIView {
+
         let frame = aView.frame
         let pop = NewUserPopUp(frame: frame)
         pop.usersHandler = handler
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = frame
+        blurView.center = aView.center
+        aView.addSubview(blurView)
+        
         aView.addSubview(pop)
+        
+        pop.blurView = blurView
         return pop
     }
 }
