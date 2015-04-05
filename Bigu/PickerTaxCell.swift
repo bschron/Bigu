@@ -70,6 +70,7 @@ class PickerTaxCell: TaxCell, UIPickerViewDataSource, UIPickerViewDelegate {
         
         return stringValue
     }
+    
     // MARK: Picker Data Source
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 2
