@@ -21,6 +21,7 @@ class UserCell: UITableViewCell {
         }
     }
     var swipeGesture: UISwipeGestureRecognizer!
+    var viewController: UIViewController!
     
     //MARK: Outlets
     @IBOutlet weak var nameLabel: UILabel!
@@ -36,12 +37,7 @@ class UserCell: UITableViewCell {
     
     func handleSwipes(sender: UISwipeGestureRecognizer){
         if sender.direction == .Right{
-            let view = self.superview?.superview?.superview
-            if view == nil {
-                return
-            }
-            let newView = UserDetailView(frame: view!.frame)
-            view!.addSubview(newView)
+            viewController.performSegueWithIdentifier(UsersViewController.userDetailSegueIdentifier, sender: self)
         }
     }
     

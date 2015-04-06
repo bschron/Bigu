@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		860466651ABC6CFE00C39BDB /* PickerTaxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860466641ABC6CFE00C39BDB /* PickerTaxCell.xib */; };
-		8608366E1AD0D2B8003DE2C9 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608366D1AD0D2B8003DE2C9 /* UserDetailView.swift */; };
 		8624B86B1ACD71F600A60985 /* DataPersistenceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */; };
 		863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D5E931ACF7185007D9235 /* CustomPopUp.swift */; };
 		863D5E961ACF7277007D9235 /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863D5E951ACF7277007D9235 /* CustomPopUp.xib */; };
@@ -26,9 +25,9 @@
 		86A92DC21AB8687A00B38445 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A92DC11AB8687A00B38445 /* UsersViewController.swift */; };
 		86A92DC51AB868E200B38445 /* TaxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DC41AB868E200B38445 /* TaxCell.xib */; };
 		86A92DCB1AB86A5800B38445 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A92DCA1AB86A5800B38445 /* User.swift */; };
-		86B2F20D1AD0D1F000E1E391 /* UserDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86B2F20C1AD0D1F000E1E391 /* UserDetailView.xib */; };
 		86B6974E1ACF77970052353E /* NewUserPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B6974D1ACF77970052353E /* NewUserPopUp.swift */; };
 		86B697501ACFEB680052353E /* UserHandlingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B6974F1ACFEB680052353E /* UserHandlingDelegate.swift */; };
+		86C23C981AD342A000FE9D63 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C23C971AD342A000FE9D63 /* UserDetailView.swift */; };
 		86D999281ACAD429001E48CD /* TaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D999271ACAD429001E48CD /* TaxCell.swift */; };
 		86D9992C1ACC29C3001E48CD /* TaxHandlingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9992B1ACC29C3001E48CD /* TaxHandlingDelegate.swift */; };
 		86F441CA1ACEA574006B5246 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F441C91ACEA574006B5246 /* UserCell.xib */; };
@@ -47,7 +46,6 @@
 
 /* Begin PBXFileReference section */
 		860466641ABC6CFE00C39BDB /* PickerTaxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerTaxCell.xib; sourceTree = "<group>"; };
-		8608366D1AD0D2B8003DE2C9 /* UserDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersistenceDelegate.swift; sourceTree = "<group>"; };
 		863D5E931ACF7185007D9235 /* CustomPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		863D5E951ACF7277007D9235 /* CustomPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPopUp.xib; sourceTree = "<group>"; };
@@ -69,9 +67,9 @@
 		86A92DC11AB8687A00B38445 /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
 		86A92DC41AB868E200B38445 /* TaxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaxCell.xib; sourceTree = "<group>"; };
 		86A92DCA1AB86A5800B38445 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		86B2F20C1AD0D1F000E1E391 /* UserDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailView.xib; sourceTree = "<group>"; };
 		86B6974D1ACF77970052353E /* NewUserPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserPopUp.swift; sourceTree = "<group>"; };
 		86B6974F1ACFEB680052353E /* UserHandlingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHandlingDelegate.swift; sourceTree = "<group>"; };
+		86C23C971AD342A000FE9D63 /* UserDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		86D999271ACAD429001E48CD /* TaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxCell.swift; sourceTree = "<group>"; };
 		86D9992B1ACC29C3001E48CD /* TaxHandlingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxHandlingDelegate.swift; sourceTree = "<group>"; };
 		86F441C91ACEA574006B5246 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
@@ -245,8 +243,7 @@
 		86B2F20B1AD0D1A700E1E391 /* UserDetailView */ = {
 			isa = PBXGroup;
 			children = (
-				86B2F20C1AD0D1F000E1E391 /* UserDetailView.xib */,
-				8608366D1AD0D2B8003DE2C9 /* UserDetailView.swift */,
+				86C23C971AD342A000FE9D63 /* UserDetailView.swift */,
 			);
 			name = UserDetailView;
 			sourceTree = "<group>";
@@ -340,7 +337,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86B2F20D1AD0D1F000E1E391 /* UserDetailView.xib in Resources */,
 				860466651ABC6CFE00C39BDB /* PickerTaxCell.xib in Resources */,
 				86A92DA61AB863E900B38445 /* Main.storyboard in Resources */,
 				863D5E961ACF7277007D9235 /* CustomPopUp.xib in Resources */,
@@ -378,7 +374,7 @@
 				86D9992C1ACC29C3001E48CD /* TaxHandlingDelegate.swift in Sources */,
 				86A92DC21AB8687A00B38445 /* UsersViewController.swift in Sources */,
 				86A78EE41ACD7EEB009BBF58 /* BillingProtocol.swift in Sources */,
-				8608366E1AD0D2B8003DE2C9 /* UserDetailView.swift in Sources */,
+				86C23C981AD342A000FE9D63 /* UserDetailView.swift in Sources */,
 				8624B86B1ACD71F600A60985 /* DataPersistenceDelegate.swift in Sources */,
 				86F441CE1ACEA9DA006B5246 /* UserCell.swift in Sources */,
 				86A92D9F1AB863E900B38445 /* AppDelegate.swift in Sources */,

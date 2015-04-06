@@ -63,15 +63,16 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == UsersViewController.userDetailSegueIdentifier {
+            let vc = segue.destinationViewController as UIViewController
+            let senderCell = sender as UserCell
+            let userName = senderCell.user.nickName != "" ? senderCell.user.nickName! : senderCell.user.name
+            
+            vc.title = userName
+        }
     }
-    */
     
     // MARK: -Protocols
     
@@ -99,6 +100,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         else if tableView === self.usersTableView {
             let cell = usersTableView.dequeueReusableCellWithIdentifier(UserCell.userCellReuseId, forIndexPath: indexPath) as UserCell
             cell.user = UserList.sharedUserList.list[indexPath.row]
+            cell.viewController = self
             
             return cell
         }
@@ -155,5 +157,10 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     // MARK: UserHandlingDelegate
     func reloadUsersData() {
         self.usersTableView.reloadData()
+    }
+    
+    // MARK: - Class Properties
+    class var userDetailSegueIdentifier: String {
+        return "UserDetailSegue"
     }
 }
