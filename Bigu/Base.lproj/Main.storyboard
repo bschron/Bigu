@@ -108,7 +108,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hLY-hy-htg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hLY-hy-htg">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -222,7 +222,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ar-Gs-vW9">
-                                                    <rect key="frame" x="16" y="17" width="576" height="17"/>
+                                                    <rect key="frame" x="20" y="17" width="572" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -234,7 +234,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="1Ar-Gs-vW9" secondAttribute="centerY" constant="-0.25" id="Emf-Mj-PfQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="1Ar-Gs-vW9" secondAttribute="trailing" constant="8" id="Nt6-Tt-MZK"/>
-                                                <constraint firstItem="1Ar-Gs-vW9" firstAttribute="leading" secondItem="tpP-nw-gZE" secondAttribute="leading" constant="16" id="ZgX-uN-kKn"/>
+                                                <constraint firstItem="1Ar-Gs-vW9" firstAttribute="leading" secondItem="tpP-nw-gZE" secondAttribute="leading" constant="20" id="ZgX-uN-kKn"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -248,7 +248,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Lastname (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cYL-iq-lDr">
-                                                    <rect key="frame" x="16" y="17" width="576" height="17"/>
+                                                    <rect key="frame" x="20" y="17" width="572" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -258,6 +258,7 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="cYL-iq-lDr" firstAttribute="leading" secondItem="hQE-hv-lpC" secondAttribute="leading" constant="20" id="4yS-Pg-HFG"/>
                                                 <constraint firstItem="cYL-iq-lDr" firstAttribute="trailing" secondItem="hQE-hv-lpC" secondAttribute="trailingMargin" id="bXa-tG-WQE"/>
                                                 <constraint firstItem="cYL-iq-lDr" firstAttribute="leading" secondItem="hQE-hv-lpC" secondAttribute="leadingMargin" id="buN-n2-bC1"/>
                                                 <constraint firstItem="cYL-iq-lDr" firstAttribute="leading" secondItem="hQE-hv-lpC" secondAttribute="leading" constant="16" id="e9k-C7-sk5"/>
@@ -266,6 +267,7 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="buN-n2-bC1"/>
+                                                    <exclude reference="e9k-C7-sk5"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -280,7 +282,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nickname (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3V3-n9-uWC">
-                                                    <rect key="frame" x="16" y="17" width="576" height="17"/>
+                                                    <rect key="frame" x="20" y="17" width="572" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -290,7 +292,7 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="3V3-n9-uWC" firstAttribute="leading" secondItem="bdQ-is-9wr" secondAttribute="leading" constant="16" id="3V3-vw-OVc"/>
+                                                <constraint firstItem="3V3-n9-uWC" firstAttribute="leading" secondItem="bdQ-is-9wr" secondAttribute="leading" constant="20" id="3V3-vw-OVc"/>
                                                 <constraint firstItem="3V3-n9-uWC" firstAttribute="leading" secondItem="bdQ-is-9wr" secondAttribute="leadingMargin" id="4by-xz-EQC"/>
                                                 <constraint firstItem="3V3-n9-uWC" firstAttribute="trailing" secondItem="bdQ-is-9wr" secondAttribute="trailingMargin" id="DbQ-qx-qMs"/>
                                                 <constraint firstAttribute="centerY" secondItem="3V3-n9-uWC" secondAttribute="centerY" constant="-0.25" id="sCV-g9-hxs"/>

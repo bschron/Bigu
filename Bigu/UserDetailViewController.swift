@@ -16,7 +16,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
             self.reloadUsersData()
         }
     }
-    private var billSlider: Bool = false
+    var billSlider: Bool = false
     
     // MARK: Outlets
     private weak var mainCell: UserDetailMainTableViewCell!
@@ -53,8 +53,10 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
     // MARK: UITableViewDelegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         var height: Int = 0
+        let section = indexPath.section
+        let row = indexPath.row
         
-        if indexPath.row == 0 {
+        if section == 0 && row == 0 {
             height = 100
         }
         else {
@@ -67,19 +69,20 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell!
+        let section = indexPath.section
+        let row = indexPath.row
         
-        if indexPath.row == 0 {
-            let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.mainCellIdentifier, forIndexPath: indexPath) as UserDetailMainTableViewCell
-            newCell.userIndex = self.userIndex
-            
-            mainCell = newCell
-            cell = newCell
-        }
-        else {
-            let increment: Int = billSlider ? 0 : 1
-            let row = indexPath.row + increment
-            
-            if row == 1 {
+        if section == 0 {
+            if row == 0 {
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.mainCellIdentifier, forIndexPath: indexPath) as UserDetailMainTableViewCell
+                newCell.userIndex = self.userIndex
+                newCell.viewController = self
+                
+                mainCell = newCell
+                
+                cell = newCell
+            }
+            else if row == 1 {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.billSliderCellIdentifier, forIndexPath: indexPath) as UserDetailBillSliderTableViewCell
                 
                 newCell.userIndex = self.userIndex
@@ -87,7 +90,9 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
                 
                 cell = newCell
             }
-            else if row == 2 {
+        }
+        else {
+            if row == 0 {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.firstNameCellIdentifier, forIndexPath: indexPath) as UserDetailFirstNameTableViewCell
                 
                 newCell.userIndex = self.userIndex
@@ -95,7 +100,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
                 
                 cell = newCell
             }
-            else if row == 3 {
+            else if row == 1 {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.lastnameCellIdentifier, forIndexPath: indexPath) as UserDetailLastNameTableViewCell
                 
                 newCell.userIndex = self.userIndex
@@ -103,7 +108,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
                 
                 cell = newCell
             }
-            else if row == 4 {
+            else if row == 2 {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.nicknameCellIdentifier, forIndexPath: indexPath) as UserDetailNickNameTableViewCell
                 
                 newCell.userIndex = self.userIndex
@@ -116,7 +121,38 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
         return cell
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.billSlider ? 5 : 4
+        var rows = 0
+        
+        if section == 0 {
+            rows = billSlider ? 2 : 1
+        }
+        else if section == 1 {
+            rows = 3
+        }
+        else if section == 2 {
+            rows = 0
+        }
+        
+        return rows
+    }
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 3
+    }
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        var height: Int = 0
+        
+        if section == 0 {
+            height = 0
+        }
+        else if section == 1 {
+            height = 50
+        }
+        else if section == 2 {
+            height = Int(self.tableView.frame.height)
+            self.tableView.scrollEnabled = false
+        }
+        
+        return CGFloat(height)
     }
     
     // MARK: - Class Properties

@@ -16,6 +16,7 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
             self.reloadUsersData()
         }
     }
+    weak var viewController: UserDetailViewController!
     
     // MARK: Outlets
     @IBOutlet weak var billLabel: UILabel!
@@ -39,8 +40,17 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
     
     // MARK: Actions
     @IBAction func decreaseButtonPressed(sender: AnyObject) {
+        let curBill = User.usersList.list[userIndex].bill
+        if curBill != 0 {
+            self.viewController.billSlider = true
+            self.viewController.tableView.reloadData()
+        }
     }
     @IBAction func resetButtonPressed(sender: AnyObject) {
+        User.usersList.list[userIndex].resetBalance()
+        viewController.billSlider = false
+        viewController.tableView.reloadData()
+        self.reloadUsersData()
     }
 
 }

@@ -17,6 +17,7 @@ class UserDetailBillSliderTableViewCell: UITableViewCell, UserHandlingDelegate {
         }
     }
     var mainCell: UserHandlingDelegate!
+    private var originalBill: Float!
     
     // MARK: Outlets
     @IBOutlet weak var slider: UISlider!
@@ -34,22 +35,23 @@ class UserDetailBillSliderTableViewCell: UITableViewCell, UserHandlingDelegate {
     }
     
     func reloadUsersData() {
-        let user = User.usersList.list[self.userIndex]
-        let bill = user.bill
-        slider.maximumValue = bill
-        slider.minimumValue = 0
-        slider.value = bill
+        self.originalBill = User.usersList.list[self.userIndex].bill
+        self.slider.maximumValue = originalBill
+        self.slider.minimumValue = 0
+        self.slider.value = originalBill
     }
     
     // MARK: Actions
     @IBAction func sliderValueChanged(sender: AnyObject) {
-        let bill = User.usersList.list[self.userIndex].bill
-        if self.slider.value <= bill {
-            User.usersList.list[self.userIndex].creditValue(bill - self.slider.value)
-        }
-        else {
-            User.usersList.list[self.userIndex].debitValue(self.slider.value - bill)
-        }
+        
+        let sliderValue = self.slider.value
+        let intValue: Int = Int(sliderValue)
+        let floatingPointValue = sliderValue - Float(intValue)
+        let roundedFloatingPointValue: Float = floatingPointValue >= 0.5 ? 0.5 : 0
+        let roundedTotalValue: Float = Float(intValue) + roundedFloatingPointValue
+        
+        User.usersList.list[userIndex].resetBalance()
+        User.usersList.list[userIndex].debitValue(roundedTotalValue)
         
         if self.mainCell != nil {
             self.mainCell.reloadUsersData()
