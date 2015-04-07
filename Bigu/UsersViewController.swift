@@ -159,6 +159,13 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         return result
     }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let row = indexPath.row
+        
+        let cell = self.usersTableView.cellForRowAtIndexPath(indexPath)
+        
+        self.performSegueWithIdentifier(UsersViewController.userDetailSegueIdentifier, sender: cell)
+    }
     
     // MARK: UserHandlingDelegate
     func reloadUsersData() {
