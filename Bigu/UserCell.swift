@@ -22,6 +22,11 @@ class UserCell: UITableViewCell {
     }
     var swipeGesture: UISwipeGestureRecognizer!
     var viewController: UIViewController!
+    var userIndex: Int = 0 {
+        didSet {
+            self.user = User.usersList.list[self.userIndex]
+        }
+    }
     
     //MARK: Outlets
     @IBOutlet weak var nameLabel: UILabel!
@@ -59,15 +64,16 @@ class UserCell: UITableViewCell {
     
     private func updateUserInfo() {
         if configured {
-            self.nameLabel.text = self.user.nickName != "" ? self.user.nickName! : self.user.name
-            self.fullnameLabel.text = self.user.fullName
+            let user = User.usersList.list[self.userIndex]
+            self.nameLabel.text = user.nickName != "" ? user.nickName! : user.name
+            self.fullnameLabel.text = user.fullName
         }
     }
     
     // MARK: Actions
     @IBAction func debitButtonPressed(sender: AnyObject) {
         let currentTaxValue = TaxCell.taxValue
-        self.user.debitValue(currentTaxValue)
+        User.usersList.list[self.userIndex].debitValue(currentTaxValue)
     }
     
     // MARK: - Class Methods and Properties

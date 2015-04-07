@@ -27,7 +27,12 @@
 		86A92DCB1AB86A5800B38445 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A92DCA1AB86A5800B38445 /* User.swift */; };
 		86B6974E1ACF77970052353E /* NewUserPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B6974D1ACF77970052353E /* NewUserPopUp.swift */; };
 		86B697501ACFEB680052353E /* UserHandlingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B6974F1ACFEB680052353E /* UserHandlingDelegate.swift */; };
-		86C23C981AD342A000FE9D63 /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C23C971AD342A000FE9D63 /* UserDetailView.swift */; };
+		86C23C9A1AD34DDB00FE9D63 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C23C991AD34DDB00FE9D63 /* UserDetailViewController.swift */; };
+		86C23C9C1AD35B7E00FE9D63 /* UserDetailMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C23C9B1AD35B7E00FE9D63 /* UserDetailMainTableViewCell.swift */; };
+		86C23C9E1AD35E5100FE9D63 /* UserDetailBillSliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C23C9D1AD35E5100FE9D63 /* UserDetailBillSliderTableViewCell.swift */; };
+		86C23CA01AD3611100FE9D63 /* UserDetailFirstNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C23C9F1AD3611100FE9D63 /* UserDetailFirstNameTableViewCell.swift */; };
+		86C23CA21AD362A200FE9D63 /* UserDetailLastNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C23CA11AD362A200FE9D63 /* UserDetailLastNameTableViewCell.swift */; };
+		86C23CA41AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C23CA31AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift */; };
 		86D999281ACAD429001E48CD /* TaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D999271ACAD429001E48CD /* TaxCell.swift */; };
 		86D9992C1ACC29C3001E48CD /* TaxHandlingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9992B1ACC29C3001E48CD /* TaxHandlingDelegate.swift */; };
 		86F441CA1ACEA574006B5246 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F441C91ACEA574006B5246 /* UserCell.xib */; };
@@ -69,7 +74,12 @@
 		86A92DCA1AB86A5800B38445 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		86B6974D1ACF77970052353E /* NewUserPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserPopUp.swift; sourceTree = "<group>"; };
 		86B6974F1ACFEB680052353E /* UserHandlingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHandlingDelegate.swift; sourceTree = "<group>"; };
-		86C23C971AD342A000FE9D63 /* UserDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		86C23C991AD34DDB00FE9D63 /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		86C23C9B1AD35B7E00FE9D63 /* UserDetailMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailMainTableViewCell.swift; sourceTree = "<group>"; };
+		86C23C9D1AD35E5100FE9D63 /* UserDetailBillSliderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailBillSliderTableViewCell.swift; sourceTree = "<group>"; };
+		86C23C9F1AD3611100FE9D63 /* UserDetailFirstNameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailFirstNameTableViewCell.swift; sourceTree = "<group>"; };
+		86C23CA11AD362A200FE9D63 /* UserDetailLastNameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailLastNameTableViewCell.swift; sourceTree = "<group>"; };
+		86C23CA31AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailNickNameTableViewCell.swift; sourceTree = "<group>"; };
 		86D999271ACAD429001E48CD /* TaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxCell.swift; sourceTree = "<group>"; };
 		86D9992B1ACC29C3001E48CD /* TaxHandlingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxHandlingDelegate.swift; sourceTree = "<group>"; };
 		86F441C91ACEA574006B5246 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
@@ -203,7 +213,7 @@
 				86A92DC31AB868AA00B38445 /* TaxCell */,
 				863D5E971ACF75A0007D9235 /* NewUserPopUp */,
 				86F441C81ACEA540006B5246 /* UserCell */,
-				86B2F20B1AD0D1A700E1E391 /* UserDetailView */,
+				86B2F20B1AD0D1A700E1E391 /* UserDetailViewController */,
 			);
 			name = UsersViewController;
 			sourceTree = "<group>";
@@ -240,12 +250,17 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		86B2F20B1AD0D1A700E1E391 /* UserDetailView */ = {
+		86B2F20B1AD0D1A700E1E391 /* UserDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
-				86C23C971AD342A000FE9D63 /* UserDetailView.swift */,
+				86C23C991AD34DDB00FE9D63 /* UserDetailViewController.swift */,
+				86C23C9B1AD35B7E00FE9D63 /* UserDetailMainTableViewCell.swift */,
+				86C23C9D1AD35E5100FE9D63 /* UserDetailBillSliderTableViewCell.swift */,
+				86C23C9F1AD3611100FE9D63 /* UserDetailFirstNameTableViewCell.swift */,
+				86C23CA11AD362A200FE9D63 /* UserDetailLastNameTableViewCell.swift */,
+				86C23CA31AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift */,
 			);
-			name = UserDetailView;
+			name = UserDetailViewController;
 			sourceTree = "<group>";
 		};
 		86F441C81ACEA540006B5246 /* UserCell */ = {
@@ -363,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86B6974E1ACF77970052353E /* NewUserPopUp.swift in Sources */,
+				86C23CA41AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift in Sources */,
 				86A92DCB1AB86A5800B38445 /* User.swift in Sources */,
 				86A78EE81ACD8231009BBF58 /* BillingHandlerDelegate.swift in Sources */,
 				8662E4261ACACB180087B69B /* PickerTaxCell.swift in Sources */,
@@ -372,12 +388,16 @@
 				8668D3971ACF3E8500C2CB87 /* UserList.swift in Sources */,
 				86D999281ACAD429001E48CD /* TaxCell.swift in Sources */,
 				86D9992C1ACC29C3001E48CD /* TaxHandlingDelegate.swift in Sources */,
+				86C23C9A1AD34DDB00FE9D63 /* UserDetailViewController.swift in Sources */,
 				86A92DC21AB8687A00B38445 /* UsersViewController.swift in Sources */,
 				86A78EE41ACD7EEB009BBF58 /* BillingProtocol.swift in Sources */,
-				86C23C981AD342A000FE9D63 /* UserDetailView.swift in Sources */,
 				8624B86B1ACD71F600A60985 /* DataPersistenceDelegate.swift in Sources */,
+				86C23CA21AD362A200FE9D63 /* UserDetailLastNameTableViewCell.swift in Sources */,
 				86F441CE1ACEA9DA006B5246 /* UserCell.swift in Sources */,
+				86C23C9E1AD35E5100FE9D63 /* UserDetailBillSliderTableViewCell.swift in Sources */,
+				86C23CA01AD3611100FE9D63 /* UserDetailFirstNameTableViewCell.swift in Sources */,
 				86A92D9F1AB863E900B38445 /* AppDelegate.swift in Sources */,
+				86C23C9C1AD35B7E00FE9D63 /* UserDetailMainTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

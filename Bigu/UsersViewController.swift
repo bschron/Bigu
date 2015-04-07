@@ -66,11 +66,12 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == UsersViewController.userDetailSegueIdentifier {
-            let vc = segue.destinationViewController as UIViewController
+            let vc = segue.destinationViewController as UserDetailViewController
             let senderCell = sender as UserCell
             let userName = senderCell.user.nickName != "" ? senderCell.user.nickName! : senderCell.user.name
             
             vc.title = userName
+            vc.userIndex = senderCell.userIndex
         }
     }
     
@@ -100,6 +101,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         else if tableView === self.usersTableView {
             let cell = usersTableView.dequeueReusableCellWithIdentifier(UserCell.userCellReuseId, forIndexPath: indexPath) as UserCell
             cell.user = UserList.sharedUserList.list[indexPath.row]
+            cell.userIndex = indexPath.row
             cell.viewController = self
             
             return cell
