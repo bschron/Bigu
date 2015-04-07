@@ -42,6 +42,10 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
             name: UIApplicationWillResignActiveNotification,
             object: app)
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.reloadUsersData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

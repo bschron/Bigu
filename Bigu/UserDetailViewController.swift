@@ -81,6 +81,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
             
             if row == 1 {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.billSliderCellIdentifier, forIndexPath: indexPath) as UserDetailBillSliderTableViewCell
+                
                 newCell.userIndex = self.userIndex
                 newCell.mainCell = mainCell
                 
@@ -88,6 +89,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
             }
             else if row == 2 {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.firstNameCellIdentifier, forIndexPath: indexPath) as UserDetailFirstNameTableViewCell
+                
                 newCell.userIndex = self.userIndex
                 newCell.userDetailViewController = self
                 
@@ -95,6 +97,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
             }
             else if row == 3 {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.lastnameCellIdentifier, forIndexPath: indexPath) as UserDetailLastNameTableViewCell
+                
                 newCell.userIndex = self.userIndex
                 newCell.userDetailViewController = self
                 
