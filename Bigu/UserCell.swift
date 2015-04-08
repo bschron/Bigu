@@ -31,6 +31,7 @@ class UserCell: UITableViewCell {
     //MARK: Outlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var fullnameLabel: UILabel!
+    @IBOutlet weak var userImageView: UIImageView!
     
     // MARK: - Methods
     
@@ -50,10 +51,14 @@ class UserCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         updateUserInfo()
-            
+        // swipe gesture
         self.swipeGesture.direction = .Right
         self.swipeGesture.numberOfTouchesRequired = 1
         self.addGestureRecognizer(self.swipeGesture)
+        // user image view
+        let userImageViewWidth = self.userImageView.frame.width
+        self.userImageView.layer.cornerRadius = userImageViewWidth / 2
+        self.userImageView.layer.masksToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -67,6 +72,7 @@ class UserCell: UITableViewCell {
             let user = User.usersList.list[self.userIndex]
             self.nameLabel.text = user.nickName != "" ? user.nickName! : user.name
             self.fullnameLabel.text = user.fullName
+            self.userImageView.image = user.userImage
         }
     }
     

@@ -43,7 +43,8 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
             object: app)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.reloadUsersData()
     }
 
@@ -119,7 +120,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         var height: CGFloat!
         
         if tableView === self.usersTableView {
-            height = CGFloat(60)
+            height = CGFloat(80)
         }
         else if tableView === self.upperTableView {
             height = CGFloat(100)

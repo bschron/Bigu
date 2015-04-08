@@ -119,19 +119,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="LNt-GB-zKY">
-                                                    <rect key="frame" x="8" y="20" width="59" height="59"/>
+                                                    <rect key="frame" x="8" y="16" width="67" height="67"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="LNt-GB-zKY" secondAttribute="height" multiplier="1:1" id="KKB-a5-Gfi"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="la8-V4-Dqv">
-                                                    <rect key="frame" x="264" y="36" width="28" height="24"/>
+                                                    <rect key="frame" x="262" y="36" width="28" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coins" translatesAutoresizingMaskIntoConstraints="NO" id="mad-AK-65w">
-                                                    <rect key="frame" x="281" y="40" width="39" height="39"/>
+                                                    <rect key="frame" x="279" y="40" width="43" height="43"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="mad-AK-65w" secondAttribute="height" multiplier="1:1" id="67W-9C-9HA"/>
                                                     </constraints>
@@ -161,7 +161,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cq-te-m8C">
-                                                    <rect key="frame" x="8" y="20" width="59" height="59"/>
+                                                    <rect key="frame" x="8" y="16" width="67" height="67"/>
                                                     <state key="normal">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -175,7 +175,7 @@
                                                 <constraint firstItem="0cq-te-m8C" firstAttribute="height" secondItem="LNt-GB-zKY" secondAttribute="height" id="1ZO-hi-nWf"/>
                                                 <constraint firstItem="0cq-te-m8C" firstAttribute="leading" secondItem="LNt-GB-zKY" secondAttribute="leading" id="511-F2-KTZ"/>
                                                 <constraint firstItem="4qc-kq-aOp" firstAttribute="width" secondItem="4qc-kq-aOp" secondAttribute="height" multiplier="1:1" id="AIu-tB-TXj"/>
-                                                <constraint firstItem="LNt-GB-zKY" firstAttribute="top" secondItem="pTE-KS-Zx1" secondAttribute="topMargin" constant="12" id="CSh-oQ-whA"/>
+                                                <constraint firstItem="LNt-GB-zKY" firstAttribute="top" secondItem="pTE-KS-Zx1" secondAttribute="topMargin" constant="8" id="CSh-oQ-whA"/>
                                                 <constraint firstAttribute="bottom" secondItem="4qc-kq-aOp" secondAttribute="bottom" constant="30" id="FBv-6B-983"/>
                                                 <constraint firstItem="mad-AK-65w" firstAttribute="top" secondItem="la8-V4-Dqv" secondAttribute="bottom" constant="-20" id="Ffb-n7-hyo"/>
                                                 <constraint firstAttribute="trailing" secondItem="mxQ-TX-T6f" secondAttribute="trailing" constant="8" id="JW5-s5-fU0"/>
@@ -184,7 +184,7 @@
                                                 <constraint firstItem="0cq-te-m8C" firstAttribute="top" secondItem="LNt-GB-zKY" secondAttribute="top" id="NlP-dh-pkb"/>
                                                 <constraint firstItem="mad-AK-65w" firstAttribute="leading" secondItem="LNt-GB-zKY" secondAttribute="trailing" constant="30" id="QXU-uS-oP4"/>
                                                 <constraint firstItem="mad-AK-65w" firstAttribute="top" secondItem="pTE-KS-Zx1" secondAttribute="topMargin" constant="32" id="T2z-4I-1fk"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="LNt-GB-zKY" secondAttribute="bottom" constant="12" id="TjJ-Nj-7YX"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="LNt-GB-zKY" secondAttribute="bottom" constant="8" id="TjJ-Nj-7YX"/>
                                                 <constraint firstItem="4qc-kq-aOp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mad-AK-65w" secondAttribute="trailing" constant="8" id="V9g-Xe-yb7"/>
                                                 <constraint firstItem="mxQ-TX-T6f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mad-AK-65w" secondAttribute="trailing" constant="8" id="Yf3-3W-PcW"/>
                                                 <constraint firstItem="0cq-te-m8C" firstAttribute="width" secondItem="LNt-GB-zKY" secondAttribute="width" id="Yfr-50-x3V"/>

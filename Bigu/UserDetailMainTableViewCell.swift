@@ -26,6 +26,9 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        let userImageViewWidth = self.userImageView.frame.width
+        self.userImageView.layer.cornerRadius = userImageViewWidth / 2
+        self.userImageView.layer.masksToBounds = true
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
