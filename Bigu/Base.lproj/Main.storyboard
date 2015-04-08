@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -125,7 +125,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="la8-V4-Dqv">
-                                                    <rect key="frame" x="264" y="36" width="28" height="24"/>
+                                                    <rect key="frame" x="264" y="36" width="27.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -160,10 +160,22 @@
                                                         <action selector="decreaseButtonPressed:" destination="GHP-V9-7aj" eventType="touchUpInside" id="2XR-iX-iWg"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmt-Qb-PHt">
+                                                    <rect key="frame" x="67" y="54" width="30" height="30"/>
+                                                    <state key="normal" title="Edit">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="setUserImage:" destination="GHP-V9-7aj" eventType="touchUpInside" id="6aD-Sg-4UQ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerX" secondItem="mad-AK-65w" secondAttribute="centerX" id="09C-5q-MlX"/>
+                                                <constraint firstItem="fmt-Qb-PHt" firstAttribute="leading" secondItem="LNt-GB-zKY" secondAttribute="trailing" id="55i-VB-px3"/>
+                                                <constraint firstItem="fmt-Qb-PHt" firstAttribute="width" secondItem="LNt-GB-zKY" secondAttribute="width" id="9J9-55-NLr"/>
                                                 <constraint firstItem="4qc-kq-aOp" firstAttribute="width" secondItem="4qc-kq-aOp" secondAttribute="height" multiplier="1:1" id="AIu-tB-TXj"/>
+                                                <constraint firstItem="fmt-Qb-PHt" firstAttribute="height" secondItem="LNt-GB-zKY" secondAttribute="height" id="ByL-tq-iUo"/>
                                                 <constraint firstItem="LNt-GB-zKY" firstAttribute="top" secondItem="pTE-KS-Zx1" secondAttribute="topMargin" constant="12" id="CSh-oQ-whA"/>
                                                 <constraint firstAttribute="bottom" secondItem="4qc-kq-aOp" secondAttribute="bottom" constant="30" id="FBv-6B-983"/>
                                                 <constraint firstItem="mad-AK-65w" firstAttribute="top" secondItem="la8-V4-Dqv" secondAttribute="bottom" constant="-20" id="Ffb-n7-hyo"/>
@@ -178,11 +190,18 @@
                                                 <constraint firstItem="mad-AK-65w" firstAttribute="bottom" secondItem="LNt-GB-zKY" secondAttribute="bottom" id="kOM-DC-rPq"/>
                                                 <constraint firstItem="4qc-kq-aOp" firstAttribute="top" secondItem="pTE-KS-Zx1" secondAttribute="top" constant="30" id="knE-eY-epM"/>
                                                 <constraint firstItem="mad-AK-65w" firstAttribute="leading" secondItem="la8-V4-Dqv" secondAttribute="trailing" constant="-11" id="n5Z-VN-TeX"/>
+                                                <constraint firstItem="fmt-Qb-PHt" firstAttribute="bottom" secondItem="LNt-GB-zKY" secondAttribute="bottom" constant="5" id="nap-y3-46b"/>
+                                                <constraint firstItem="fmt-Qb-PHt" firstAttribute="centerY" secondItem="LNt-GB-zKY" secondAttribute="centerY" id="pi9-o6-gob"/>
                                                 <constraint firstItem="mxQ-TX-T6f" firstAttribute="leading" secondItem="4qc-kq-aOp" secondAttribute="trailing" constant="8" id="ppC-8a-ayz"/>
+                                                <constraint firstItem="fmt-Qb-PHt" firstAttribute="centerX" secondItem="LNt-GB-zKY" secondAttribute="centerX" id="rag-au-DN2"/>
                                                 <constraint firstAttribute="bottom" secondItem="mxQ-TX-T6f" secondAttribute="bottom" constant="30" id="vd4-sH-qUO"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="9J9-55-NLr"/>
+                                                    <exclude reference="ByL-tq-iUo"/>
+                                                    <exclude reference="pi9-o6-gob"/>
+                                                    <exclude reference="rag-au-DN2"/>
                                                     <exclude reference="QXU-uS-oP4"/>
                                                     <exclude reference="Yf3-3W-PcW"/>
                                                 </mask>
@@ -190,6 +209,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="billLabel" destination="la8-V4-Dqv" id="fuX-vI-9qj"/>
+                                            <outlet property="userImage" destination="LNt-GB-zKY" id="8IQ-Yx-Zle"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserDetailTaxSliderCellIdentifier" rowHeight="50" id="bdS-2f-dHV" customClass="UserDetailBillSliderTableViewCell" customModule="Bigu" customModuleProvider="target">

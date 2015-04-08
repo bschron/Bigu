@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class User: BillingProtocol, DataPersistenceDelegate {
     // MARK: -Properties
@@ -55,6 +56,15 @@ class User: BillingProtocol, DataPersistenceDelegate {
             else {
                 _nickName = newValue
             }
+        }
+    }
+    private var _image: UIImage? = nil
+    var image: UIImage? {
+        get {
+            return self._image != nil ? self._image : UIImage(named: "user")
+        }
+        set {
+            self._image = newValue
         }
     }
     
