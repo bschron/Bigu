@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableViewDataSource, UITableViewDelegate {
+class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // MARK: -Properties
     var userIndex: Int = 0 {
@@ -27,11 +27,23 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //self.displayPhotoLibraryPicker()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func displayPhotoLibraryPicker () {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        imagePicker.allowsEditing = true
+        
+        self.presentViewController(imagePicker, animated: true,
+            completion: nil)
     }
     
     // MARK: Navigation
@@ -153,6 +165,21 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
         }
         
         return CGFloat(height)
+    }
+    // MARK: UIImagePickekControllerDelegate
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        
+        let image = info[UIImagePickerControllerEditedImage] as? UIImage
+        
+        User.usersList.list[userIndex].userImage = image
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        self.reloadUsersData()
+        self.mainCell.reloadUsersData()
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: - Class Properties

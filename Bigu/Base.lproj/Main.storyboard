@@ -160,9 +160,20 @@
                                                         <action selector="decreaseButtonPressed:" destination="GHP-V9-7aj" eventType="touchUpInside" id="2XR-iX-iWg"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cq-te-m8C">
+                                                    <rect key="frame" x="8" y="20" width="59" height="59"/>
+                                                    <state key="normal">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="loadImage:" destination="GHP-V9-7aj" eventType="touchUpInside" id="fHZ-ii-LMJ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerX" secondItem="mad-AK-65w" secondAttribute="centerX" id="09C-5q-MlX"/>
+                                                <constraint firstItem="0cq-te-m8C" firstAttribute="height" secondItem="LNt-GB-zKY" secondAttribute="height" id="1ZO-hi-nWf"/>
+                                                <constraint firstItem="0cq-te-m8C" firstAttribute="leading" secondItem="LNt-GB-zKY" secondAttribute="leading" id="511-F2-KTZ"/>
                                                 <constraint firstItem="4qc-kq-aOp" firstAttribute="width" secondItem="4qc-kq-aOp" secondAttribute="height" multiplier="1:1" id="AIu-tB-TXj"/>
                                                 <constraint firstItem="LNt-GB-zKY" firstAttribute="top" secondItem="pTE-KS-Zx1" secondAttribute="topMargin" constant="12" id="CSh-oQ-whA"/>
                                                 <constraint firstAttribute="bottom" secondItem="4qc-kq-aOp" secondAttribute="bottom" constant="30" id="FBv-6B-983"/>
@@ -170,11 +181,13 @@
                                                 <constraint firstAttribute="trailing" secondItem="mxQ-TX-T6f" secondAttribute="trailing" constant="8" id="JW5-s5-fU0"/>
                                                 <constraint firstItem="mxQ-TX-T6f" firstAttribute="top" secondItem="pTE-KS-Zx1" secondAttribute="top" constant="30" id="JlM-Ln-93i"/>
                                                 <constraint firstItem="LNt-GB-zKY" firstAttribute="leading" secondItem="pTE-KS-Zx1" secondAttribute="leadingMargin" id="LpO-ia-uUw"/>
+                                                <constraint firstItem="0cq-te-m8C" firstAttribute="top" secondItem="LNt-GB-zKY" secondAttribute="top" id="NlP-dh-pkb"/>
                                                 <constraint firstItem="mad-AK-65w" firstAttribute="leading" secondItem="LNt-GB-zKY" secondAttribute="trailing" constant="30" id="QXU-uS-oP4"/>
                                                 <constraint firstItem="mad-AK-65w" firstAttribute="top" secondItem="pTE-KS-Zx1" secondAttribute="topMargin" constant="32" id="T2z-4I-1fk"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="LNt-GB-zKY" secondAttribute="bottom" constant="12" id="TjJ-Nj-7YX"/>
                                                 <constraint firstItem="4qc-kq-aOp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mad-AK-65w" secondAttribute="trailing" constant="8" id="V9g-Xe-yb7"/>
                                                 <constraint firstItem="mxQ-TX-T6f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mad-AK-65w" secondAttribute="trailing" constant="8" id="Yf3-3W-PcW"/>
+                                                <constraint firstItem="0cq-te-m8C" firstAttribute="width" secondItem="LNt-GB-zKY" secondAttribute="width" id="Yfr-50-x3V"/>
                                                 <constraint firstItem="mad-AK-65w" firstAttribute="bottom" secondItem="LNt-GB-zKY" secondAttribute="bottom" id="kOM-DC-rPq"/>
                                                 <constraint firstItem="4qc-kq-aOp" firstAttribute="top" secondItem="pTE-KS-Zx1" secondAttribute="top" constant="30" id="knE-eY-epM"/>
                                                 <constraint firstItem="mad-AK-65w" firstAttribute="leading" secondItem="la8-V4-Dqv" secondAttribute="trailing" constant="-11" id="n5Z-VN-TeX"/>
@@ -190,6 +203,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="billLabel" destination="la8-V4-Dqv" id="fuX-vI-9qj"/>
+                                            <outlet property="userImageView" destination="LNt-GB-zKY" id="fsB-zS-iRB"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserDetailTaxSliderCellIdentifier" rowHeight="50" id="bdS-2f-dHV" customClass="UserDetailBillSliderTableViewCell" customModule="Bigu" customModuleProvider="target">

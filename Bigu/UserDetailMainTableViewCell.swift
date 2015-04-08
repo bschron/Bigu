@@ -17,6 +17,7 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
         }
     }
     weak var viewController: UserDetailViewController!
+    @IBOutlet weak var userImageView: UIImageView!
     
     // MARK: Outlets
     @IBOutlet weak var billLabel: UILabel!
@@ -26,7 +27,7 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -36,6 +37,7 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
     func reloadUsersData() {
         let user = User.usersList.list[self.userIndex]
         self.billLabel.text = "\(user.bill)"
+        self.userImageView.image = user.userImage
     }
     
     // MARK: Actions
@@ -51,6 +53,9 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
         viewController.billSlider = false
         viewController.tableView.reloadData()
         self.reloadUsersData()
+    }
+    @IBAction func loadImage(sender: AnyObject) {
+        self.viewController.displayPhotoLibraryPicker()
     }
 
 }
