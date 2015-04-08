@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableViewDataSource, UITableViewDelegate {
 
     // MARK: -Properties
     var userIndex: Int = 0 {
@@ -40,18 +40,6 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    
-    func displayPhotoLibraryView() {
-        let imagePicker = UIImagePickerController()
-        
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        //imagePicker.mediaTypes = [kUTTypeImage as NSString]
-        imagePicker.allowsEditing = true
-        
-        self.presentViewController(imagePicker, animated: true,
-            completion: nil)
     }
     
     // MARK: Actions
@@ -165,19 +153,6 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
         }
         
         return CGFloat(height)
-    }
-    // MARK: UIImagePickerControllerDelegate
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        self.reloadUsersData()
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        
-        let image: UIImage? = info[UIImagePickerControllerEditedImage] as? UIImage
-        User.usersList.list[userIndex].image = image
-        self.reloadUsersData()
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: - Class Properties

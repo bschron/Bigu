@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Foundation
 
 class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
 
@@ -21,7 +20,6 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
     
     // MARK: Outlets
     @IBOutlet weak var billLabel: UILabel!
-    @IBOutlet weak var userImage: UIImageView!
     
     // MARK: - Methods
     override func awakeFromNib() {
@@ -50,12 +48,9 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
     }
     @IBAction func resetButtonPressed(sender: AnyObject) {
         User.usersList.list[userIndex].resetBalance()
-        self.viewController.billSlider = false
-        self.viewController.tableView.reloadData()
+        viewController.billSlider = false
+        viewController.tableView.reloadData()
         self.reloadUsersData()
-    }
-    @IBAction func setUserImage(sender: AnyObject) {
-        self.viewController.displayPhotoLibraryView()
     }
 
 }
