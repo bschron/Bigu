@@ -32,9 +32,6 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         let userCellNib = UINib(nibName: "UserCell", bundle: nil)
         self.usersTableView.registerNib(userCellNib, forCellReuseIdentifier: UserCell.userCellReuseId)
         
-        /* load users from persistence */
-        User.initFromPersistence()
-        
         // persistence call
         let app = UIApplication.sharedApplication()
         NSNotificationCenter.defaultCenter().addObserver(self,
@@ -71,8 +68,8 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     // MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == UsersViewController.userDetailSegueIdentifier {
-            let vc = segue.destinationViewController as UserDetailViewController
-            let senderCell = sender as UserCell
+            let vc = segue.destinationViewController as! UserDetailViewController
+            let senderCell = sender as! UserCell
             let userName = senderCell.user.nickName != "" ? senderCell.user.nickName! : senderCell.user.name
             
             vc.title = userName
@@ -97,14 +94,14 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if tableView === self.upperTableView {
-            let cell = upperTableView.dequeueReusableCellWithIdentifier(TaxCell.currentState.rawValue, forIndexPath: indexPath) as TaxCell
+            let cell = upperTableView.dequeueReusableCellWithIdentifier(TaxCell.currentState.rawValue, forIndexPath: indexPath) as! TaxCell
             // configure cell
             cell.tableView = self.upperTableView
             
             return cell
         }
         else if tableView === self.usersTableView {
-            let cell = usersTableView.dequeueReusableCellWithIdentifier(UserCell.userCellReuseId, forIndexPath: indexPath) as UserCell
+            let cell = usersTableView.dequeueReusableCellWithIdentifier(UserCell.userCellReuseId, forIndexPath: indexPath) as! UserCell
             cell.user = UserList.sharedUserList.list[indexPath.row]
             cell.userIndex = indexPath.row
             cell.viewController = self

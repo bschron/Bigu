@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class User: BillingProtocol, DataPersistenceDelegate {
+class User: BillingProtocol {
     // MARK: -Properties
     private var _name: String?
     var name: String {
@@ -76,7 +76,18 @@ class User: BillingProtocol, DataPersistenceDelegate {
         self.surName = surName
         self.nickName = nickName
         self.handler = handler
-        UserList.sharedUserList.insertUser(self)
+        self.userImage = nil
+    }
+    init(name: String, surName: String?, nickName: String?, bill: Float?, userImage: UIImage?, handler: BillingHandlerDelegate?) {
+        self.name = name
+        self.surName = surName
+        self.nickName = nickName
+        self.handler = handler
+        self.userImage = userImage
+        self._bill = bill
+    }
+    func synchronize() {
+        User.usersList.insertUser(self)
     }
     
     // MARK: -Protocols
@@ -100,72 +111,14 @@ class User: BillingProtocol, DataPersistenceDelegate {
     func resetBalance() {
         _bill = nil
     }
-    // MARK: DataPersistenceDelegate
-    var object: AnyObject? {
-        get {
-            return User.usersList.list
-        }
-        set {}
-    }
-    func save() -> Bool {
-        let users = UserList.sharedUserList.list
-        var data = userArrayToDictionaryArray(users) as [[NSString: NSObject]]
-        let array = data as NSArray
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(array, forKey: User.usersKey)
-        let result = defaults.synchronize()
-        
-        return result
-    }
-    func load() -> AnyObject? {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let storedArray = defaults.objectForKey(User.usersKey) as? [[NSString: NSObject]]
-        return storedArray
-    }
-    private func userArrayToDictionaryArray(users: Array<User>) -> [[NSString: NSObject]] {
-        var output: [[NSString: NSObject]] = []
-        for cur in users {
-            let dictionary: [NSString: NSObject] = [User.nameKey: cur.name, User.surNameKey: cur.surName!, User.nickNameKey: cur.nickName!, User.billKey: cur.bill]
-            output += [dictionary]
-        }
-        return output
-    }
     
     // MARK: -Class Properties and Methods
     class var usersList: UserList {
         return UserList.sharedUserList
     }
-    class private var usersKey: String {
-        return "UsersKey"
-    }
-    class private var nameKey: String {
-        return "UserNameKey"
-    }
-    class private var surNameKey: String {
-        return "UserSurNameKey"
-    }
-    class private var nickNameKey: String {
-        return "UserNickNameKey"
-    }
-    class private var billKey: String {
-        return "UserBillKey"
-    }
-    class func initFromPersistence() {
-        UserList.sharedUserList.clearList()
-        let randomUser = User()
-        let array = randomUser.load() as? [[String: AnyObject]]
-        if array != nil {
-            for cur in array! {
-                let name = cur[User.nameKey] as String
-                let surName = cur[User.surNameKey] as String
-                let nickName = cur[User.nickNameKey] as String
-                let bill = cur[User.nickNameKey] as String
-                let newUser = User(name: name, surName: surName, nickName: nickName, handler: nil)
-            }
-        }
-    }
     class func saveToPersistence() {
-        User().save()
+        let manager = UserPersistenceManager()
+        manager.save()
     }
     class func removeUserAtRow (row: Int) {
         UserList.sharedUserList.removeUserAtIndex(row)

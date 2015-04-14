@@ -36,11 +36,15 @@ class UserList {
     }
     
     //MARK: -Class Propeties and Methods
+    private struct Singleton {
+        static var list = UserList()
+    }
     class var sharedUserList: UserList {
-        struct Singleton {
-            static let list = UserList()
+        get {
+            return UserList.Singleton.list
         }
-        
-        return Singleton.list
+        set {
+            UserList.Singleton.list = newValue
+        }
     }
 }

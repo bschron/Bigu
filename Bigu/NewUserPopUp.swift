@@ -58,7 +58,7 @@ class NewUserPopUp: UIView {
         let nib = UINib(nibName: self.nibName, bundle: bundle)
         
         // Assumes UIView is top level and only object in CustomView.xib file
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as UIView
+        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         return view
     }
     
@@ -87,7 +87,8 @@ class NewUserPopUp: UIView {
     // MARK: Actions
     @IBAction func addButtonPressed(sender: AnyObject) {
         if nameTextField.text != "" {
-            User(name: nameTextField.text, surName: surnameTextField.text, nickName: nicknameTextField.text, handler: nil)
+            let newUser = User(name: nameTextField.text, surName: surnameTextField.text, nickName: nicknameTextField.text, handler: nil)
+            newUser.synchronize()
             self.terminate()
             
             if let handler = usersHandler {

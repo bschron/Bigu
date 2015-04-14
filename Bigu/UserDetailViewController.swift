@@ -77,6 +77,9 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
         
         return CGFloat(height)
     }
+    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
     
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -86,7 +89,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
         
         if section == 0 {
             if row == 0 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.mainCellIdentifier, forIndexPath: indexPath) as UserDetailMainTableViewCell
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.mainCellIdentifier, forIndexPath: indexPath) as! UserDetailMainTableViewCell
                 newCell.userIndex = self.userIndex
                 newCell.viewController = self
                 
@@ -95,7 +98,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
                 cell = newCell
             }
             else if row == 1 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.billSliderCellIdentifier, forIndexPath: indexPath) as UserDetailBillSliderTableViewCell
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.billSliderCellIdentifier, forIndexPath: indexPath) as! UserDetailBillSliderTableViewCell
                 
                 newCell.userIndex = self.userIndex
                 newCell.mainCell = mainCell
@@ -105,7 +108,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
         }
         else {
             if row == 0 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.firstNameCellIdentifier, forIndexPath: indexPath) as UserDetailFirstNameTableViewCell
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.firstNameCellIdentifier, forIndexPath: indexPath) as! UserDetailFirstNameTableViewCell
                 
                 newCell.userIndex = self.userIndex
                 newCell.userDetailViewController = self
@@ -113,7 +116,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
                 cell = newCell
             }
             else if row == 1 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.lastnameCellIdentifier, forIndexPath: indexPath) as UserDetailLastNameTableViewCell
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.lastnameCellIdentifier, forIndexPath: indexPath) as! UserDetailLastNameTableViewCell
                 
                 newCell.userIndex = self.userIndex
                 newCell.userDetailViewController = self
@@ -121,7 +124,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
                 cell = newCell
             }
             else if row == 2 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.nicknameCellIdentifier, forIndexPath: indexPath) as UserDetailNickNameTableViewCell
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.nicknameCellIdentifier, forIndexPath: indexPath) as! UserDetailNickNameTableViewCell
                 
                 newCell.userIndex = self.userIndex
                 newCell.userDetailViewController = self
