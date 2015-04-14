@@ -97,7 +97,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nv1-rL-sYI">
-                            <rect key="frame" x="97" y="204" width="52" height="50"/>
+                            <rect key="frame" x="98" y="204" width="52" height="50"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="nv1-rL-sYI" secondAttribute="height" multiplier="26:25" id="DPa-xd-4oE"/>
@@ -182,7 +182,7 @@
                         <constraint firstItem="R38-6g-PUw" firstAttribute="width" secondItem="QoN-op-jXH" secondAttribute="height" multiplier="15:2" id="ci6-RE-VZL"/>
                         <constraint firstItem="yIs-sc-w32" firstAttribute="height" secondItem="R38-6g-PUw" secondAttribute="height" id="eQe-Ie-5Ie"/>
                         <constraint firstItem="R38-6g-PUw" firstAttribute="leading" secondItem="yIs-sc-w32" secondAttribute="trailing" id="hgW-uc-hqS"/>
-                        <constraint firstItem="nv1-rL-sYI" firstAttribute="trailing" secondItem="yIs-sc-w32" secondAttribute="trailing" constant="-1" id="ieT-JC-ZAj"/>
+                        <constraint firstItem="nv1-rL-sYI" firstAttribute="trailing" secondItem="yIs-sc-w32" secondAttribute="trailing" id="ieT-JC-ZAj"/>
                         <constraint firstAttribute="trailing" secondItem="Cb4-Pf-r55" secondAttribute="trailing" id="iwU-J2-eC7"/>
                         <constraint firstItem="R38-6g-PUw" firstAttribute="leading" secondItem="QoN-op-jXH" secondAttribute="leading" id="lq1-4L-fl8"/>
                         <constraint firstItem="Cb4-Pf-r55" firstAttribute="top" secondItem="ll6-hl-PoO" secondAttribute="bottom" constant="16" id="nO6-Ph-iMw"/>
