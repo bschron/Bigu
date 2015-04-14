@@ -54,6 +54,13 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     // MARK: Actions
     @IBAction func addUserButtonPressed(sender: AnyObject) {
         self.popUp = NewUserPopUp.addPopUpToView(self.view, usersHandler: self) as? NewUserPopUp
+        self.popUp!.alpha = CGFloat(0)
+        self.popUp!.blurView?.alpha = CGFloat(0)
+        UIView.animateWithDuration(0.25
+            , delay: 0.0, options: UIViewAnimationOptions.LayoutSubviews | UIViewAnimationOptions.CurveLinear, animations: {
+                self.popUp!.alpha = CGFloat(1)
+                self.popUp!.blurView?.alpha = CGFloat(1)
+            }, completion: {result in})
     }
     
     func applicationWillResignActive(notification:NSNotification) {

@@ -44,7 +44,7 @@ class UserCell: UITableViewCell {
     
     func handleSwipes(sender: UISwipeGestureRecognizer){
         if sender.direction == .Right{
-            let duration = 0.25
+            let duration = 0.4
             let delay = 0.0 // delay will be 0.0 seconds (e.g. nothing)
             let options = UIViewAnimationOptions.CurveEaseInOut
             let width = self.frame.size.width

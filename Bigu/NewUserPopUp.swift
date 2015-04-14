@@ -73,8 +73,14 @@ class NewUserPopUp: UIView {
     }
     
     private func terminate() {
-        blurView?.removeFromSuperview()
-        self.removeFromSuperview()
+        UIView.animateWithDuration(0.25
+            , delay: 0.0, options: UIViewAnimationOptions.LayoutSubviews | UIViewAnimationOptions.CurveLinear, animations: {
+                self.blurView?.alpha = CGFloat(0)
+                self.alpha = CGFloat(0)
+            }, completion: { result in
+                self.blurView?.removeFromSuperview()
+                self.removeFromSuperview()
+        })
     }
     
     func transitionToSize(size: CGSize) {
