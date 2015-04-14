@@ -20,6 +20,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
     
     // MARK: Outlets
     private weak var mainCell: UserDetailMainTableViewCell!
+    weak var billSliderCell: UserDetailBillSliderTableViewCell?
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Methods
@@ -102,6 +103,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
                 
                 newCell.userIndex = self.userIndex
                 newCell.mainCell = mainCell
+                self.billSliderCell = newCell
                 
                 cell = newCell
             }

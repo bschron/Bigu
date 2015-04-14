@@ -41,6 +41,17 @@ class UserDetailBillSliderTableViewCell: UITableViewCell, UserHandlingDelegate {
         self.slider.value = originalBill
     }
     
+    func zeroValue() {
+        let duration = 0.5
+        let delay = 0.0 // delay will be 0.0 seconds (e.g. nothing)
+        let options = UIViewAnimationOptions.CurveEaseInOut
+        
+        UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
+            self.slider.value = 0
+            }, completion: { finished in
+        })
+    }
+    
     // MARK: Actions
     @IBAction func sliderValueChanged(sender: AnyObject) {
         

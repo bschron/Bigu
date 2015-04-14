@@ -46,17 +46,21 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
     // MARK: Actions
     @IBAction func decreaseButtonPressed(sender: AnyObject) {
         let curBill = User.usersList.list[userIndex].bill
-        if curBill != 0 {
+        if curBill != 0 && !self.viewController.billSlider {
             self.viewController.billSlider = true
-            self.viewController.tableView.reloadData()
+            self.viewController.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+        else if self.viewController.billSlider {
+            self.viewController.billSlider = false
+            self.viewController.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
     }
     @IBAction func resetButtonPressed(sender: AnyObject) {
         User.usersList.list[userIndex].resetBalance()
-        viewController.billSlider = false
-        viewController.tableView.reloadData()
         self.reloadUsersData()
+        self.viewController.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
     }
+    
     @IBAction func loadImage(sender: AnyObject) {
         self.viewController.displayPhotoLibraryPicker()
     }
