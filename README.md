@@ -33,7 +33,8 @@
 ##Classes
 **NOTE:** Any class will inherit from the `NSOBject` Swift/ObjectiveC class
 ###Models
- - `RootUser`
+ - `AbstractUser`
+  - `RootUser`
   - `User`
  - `UserList`
  - `UsersPersistenceManager`
