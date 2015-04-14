@@ -41,6 +41,9 @@ class UserList {
     }
     class var sharedUserList: UserList {
         get {
+            if UserList.Singleton.list.list.count == 0 {
+            UserList.Singleton.list = UserPersistenceManager().load() as! UserList
+        }
             return UserList.Singleton.list
         }
         set {
