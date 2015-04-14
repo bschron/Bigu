@@ -27,7 +27,7 @@ class UserCell: UITableViewCell {
             self.user = User.usersList.list[self.userIndex]
         }
     }
-    private var originalColor: UIColor?
+    
     
     //MARK: Outlets
     @IBOutlet weak var nameLabel: UILabel!
@@ -51,14 +51,12 @@ class UserCell: UITableViewCell {
             
             UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
                 self.backgroundColor = UIColor(red: CGFloat(0.2), green: CGFloat(0.59607843), blue: CGFloat(0.85882353), alpha: CGFloat(1))
-                self.center.x += width
-                self.frame.size.width = CGFloat(0)
+                self.userImageView.center.x += width
                 }, completion: { finished in
                     
                     UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
                         self.backgroundColor = UIColor.whiteColor()
-                        self.frame.size.width = width
-                        self.center.x -= width
+                        self.userImageView.center.x -= width
                         }, completion: { finished in
                             User.usersList.list[self.userIndex].resetBalance()
                     })
@@ -78,8 +76,6 @@ class UserCell: UITableViewCell {
         let userImageViewWidth = self.userImageView.frame.width
         self.userImageView.layer.cornerRadius = userImageViewWidth / 2
         self.userImageView.layer.masksToBounds = true
-        
-        self.originalColor = self.backgroundColor
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -104,22 +100,24 @@ class UserCell: UITableViewCell {
         
         let duration = 0.25
         let delay = 0.0 // delay will be 0.0 seconds (e.g. nothing)
-        let options = UIViewAnimationOptions.CurveEaseInOut
-        let width = self.frame.size.width
+        let options = UIViewAnimationOptions.AllowUserInteraction | UIViewAnimationOptions.CurveEaseIn
+        let width = self.userImageView.frame.width
+        let jump = width / 10
         
         UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
             self.backgroundColor = UIColor.greenColor().colorWithAlphaComponent(0.5)
-            self.center.x += width
-            self.frame.size.width = CGFloat(0)
+            self.userImageView.center.x -= jump
+            self.userImageView.center.y -= jump
+            self.userImageView.frame.size.width += jump * 2
+            self.userImageView.frame.size.height += jump * 2
             }, completion: { finished in
-                
                 UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
                     self.backgroundColor = UIColor.whiteColor()
-                    self.frame.size.width = width
-                    self.center.x -= width
+                    self.userImageView.center.x += jump
+                    self.userImageView.center.y += jump
+                    self.userImageView.frame.size.width -= jump * 2
+                    self.userImageView.frame.size.height -= jump * 2
                     }, completion: { finished in
-                        // any code entered here will be applied
-                        // once the animation has completed
                 })
         })
     }
