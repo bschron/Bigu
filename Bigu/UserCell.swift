@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Universidade Federal De Alagoas. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class UserCell: UITableViewCell {
@@ -20,7 +21,11 @@ class UserCell: UITableViewCell {
             self.updateUserInfo()
         }
     }
-    var swipeGesture: UISwipeGestureRecognizer!
+    //private var swipeGesture: UISwipeGestureRecognizer!
+    private var userImagePanGesture: UIPanGestureRecognizer!
+    private var userImageOriginalPosition: (CGFloat, CGFloat) = (CGFloat(0), CGFloat(0))
+    private var userImagePanGestureIsActive: Bool = false
+    private var invisibleUserImageViewCover: UIView!
     var viewController: UIViewController!
     var userIndex: Int = 0 {
         didSet {
@@ -38,30 +43,6 @@ class UserCell: UITableViewCell {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        swipeGesture = UISwipeGestureRecognizer(target: self, action: "handleSwipes:")
-    }
-    
-    func handleSwipes(sender: UISwipeGestureRecognizer){
-        if sender.direction == .Right{
-            let duration = 0.4
-            let delay = 0.0 // delay will be 0.0 seconds (e.g. nothing)
-            let options = UIViewAnimationOptions.CurveEaseInOut
-            let width = self.frame.size.width
-            
-            UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
-                self.backgroundColor = UIColor(red: CGFloat(0.2), green: CGFloat(0.59607843), blue: CGFloat(0.85882353), alpha: CGFloat(1))
-                self.userImageView.center.x += width
-                }, completion: { finished in
-                    
-                    UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
-                        self.backgroundColor = UIColor.whiteColor()
-                        self.userImageView.center.x -= width
-                        }, completion: { finished in
-                            User.usersList.list[self.userIndex].resetBalance()
-                    })
-            })
-        }
     }
     
     override func awakeFromNib() {
@@ -69,13 +50,25 @@ class UserCell: UITableViewCell {
         // Initialization code
         updateUserInfo()
         // swipe gesture
-        self.swipeGesture.direction = .Right
-        self.swipeGesture.numberOfTouchesRequired = 1
-        self.addGestureRecognizer(self.swipeGesture)
+        //self.swipeGesture.direction = .Right
+        //self.swipeGesture.numberOfTouchesRequired = 1
+        //self.addGestureRecognizer(self.swipeGesture)
         // user image view
         let userImageViewWidth = self.userImageView.frame.width
         self.userImageView.layer.cornerRadius = userImageViewWidth / 2
         self.userImageView.layer.masksToBounds = true
+        
+        self.invisibleUserImageViewCover = UIView()
+        self.invisibleUserImageViewCover.frame.size = self.userImageView.frame.size
+        self.invisibleUserImageViewCover.center = self.userImageView.center
+        self.invisibleUserImageViewCover.layer.cornerRadius = self.userImageView.layer.cornerRadius
+        self.invisibleUserImageViewCover.backgroundColor = UIColor.blueColor().colorWithAlphaComponent(CGFloat(0))
+        self.userImagePanGesture = UIPanGestureRecognizer(target: self, action: "moveUserImage:")
+        self.userImagePanGesture.minimumNumberOfTouches = 1
+        self.userImagePanGesture.maximumNumberOfTouches = 1
+        self.invisibleUserImageViewCover.addGestureRecognizer(self.userImagePanGesture)
+        self.userImageOriginalPosition = (self.userImageView.center.x, self.userImageView.center.y)
+        self.insertSubview(self.invisibleUserImageViewCover, aboveSubview: self.userImageView)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -90,6 +83,38 @@ class UserCell: UITableViewCell {
             self.nameLabel.text = user.nickName != "" ? user.nickName! : user.name
             self.fullnameLabel.text = user.fullName
             self.userImageView.image = user.userImage
+        }
+    }
+    
+    func moveUserImage(sender: UIPanGestureRecognizer) {
+        if sender.state != .Ended && sender.state != .Failed {
+            self.userImagePanGestureIsActive = true
+            let location = sender.locationInView(self)
+            self.userImageView.center.x = location.x
+        }
+        else if sender.state == .Ended {
+            let location = sender.locationInView(self)
+            UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.AllowAnimatedContent, animations: {
+                self.userImageView.center.x = self.userImageOriginalPosition.0
+                }, completion: {result in
+                    let originalColor = self.invisibleUserImageViewCover.backgroundColor!
+                    UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+                        if location.x >= self.frame.width / 2 {
+                            let newColor = UIColor(red: CGFloat(0.1), green: CGFloat(0.59607843), blue: CGFloat(0.85882353), alpha: CGFloat(0.5))
+                            self.invisibleUserImageViewCover.backgroundColor = newColor
+                            User.usersList.list[self.userIndex].resetBalance()
+                        }
+                        else {
+                            let newColor = UIColor.redColor().colorWithAlphaComponent(CGFloat(0.5))
+                            self.invisibleUserImageViewCover.backgroundColor = newColor
+                        }
+                        }, completion: {result in
+                            UIView.animateWithDuration(0.1, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                                self.invisibleUserImageViewCover.backgroundColor = originalColor
+                                }, completion: {result in
+                            })
+                    })
+            })
         }
     }
     
