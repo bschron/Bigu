@@ -34,6 +34,7 @@
 		86C23CA21AD362A200FE9D63 /* UserDetailLastNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C23CA11AD362A200FE9D63 /* UserDetailLastNameTableViewCell.swift */; };
 		86C23CA41AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C23CA31AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift */; };
 		86CA24DF1ADD306800EA98E8 /* UserPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CA24DE1ADD306800EA98E8 /* UserPersistenceManager.swift */; };
+		86D548DB1ADE9F4D0092C9A5 /* AbstractUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D548DA1ADE9F4D0092C9A5 /* AbstractUser.swift */; };
 		86D999281ACAD429001E48CD /* TaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D999271ACAD429001E48CD /* TaxCell.swift */; };
 		86D9992C1ACC29C3001E48CD /* TaxHandlingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9992B1ACC29C3001E48CD /* TaxHandlingDelegate.swift */; };
 		86F441CA1ACEA574006B5246 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F441C91ACEA574006B5246 /* UserCell.xib */; };
@@ -82,6 +83,7 @@
 		86C23CA11AD362A200FE9D63 /* UserDetailLastNameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailLastNameTableViewCell.swift; sourceTree = "<group>"; };
 		86C23CA31AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailNickNameTableViewCell.swift; sourceTree = "<group>"; };
 		86CA24DE1ADD306800EA98E8 /* UserPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPersistenceManager.swift; sourceTree = "<group>"; };
+		86D548DA1ADE9F4D0092C9A5 /* AbstractUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractUser.swift; sourceTree = "<group>"; };
 		86D999271ACAD429001E48CD /* TaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxCell.swift; sourceTree = "<group>"; };
 		86D9992B1ACC29C3001E48CD /* TaxHandlingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxHandlingDelegate.swift; sourceTree = "<group>"; };
 		86F441C91ACEA574006B5246 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				86A92DCA1AB86A5800B38445 /* User.swift */,
+				86D548DA1ADE9F4D0092C9A5 /* AbstractUser.swift */,
 				8668D3961ACF3E8500C2CB87 /* UserList.swift */,
 				86B6974F1ACFEB680052353E /* UserHandlingDelegate.swift */,
 			);
@@ -399,6 +402,7 @@
 				8624B86B1ACD71F600A60985 /* DataPersistenceDelegate.swift in Sources */,
 				86C23CA21AD362A200FE9D63 /* UserDetailLastNameTableViewCell.swift in Sources */,
 				86F441CE1ACEA9DA006B5246 /* UserCell.swift in Sources */,
+				86D548DB1ADE9F4D0092C9A5 /* AbstractUser.swift in Sources */,
 				86C23C9E1AD35E5100FE9D63 /* UserDetailBillSliderTableViewCell.swift in Sources */,
 				86C23CA01AD3611100FE9D63 /* UserDetailFirstNameTableViewCell.swift in Sources */,
 				86A92D9F1AB863E900B38445 /* AppDelegate.swift in Sources */,
