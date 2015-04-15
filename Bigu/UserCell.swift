@@ -98,26 +98,39 @@ class UserCell: UITableViewCell {
         let currentTaxValue = TaxCell.taxValue
         User.usersList.list[self.userIndex].debitValue(currentTaxValue)
         
-        let duration = 0.25
+        let duration = 0.3
         let delay = 0.0 // delay will be 0.0 seconds (e.g. nothing)
         let options = UIViewAnimationOptions.AllowUserInteraction | UIViewAnimationOptions.CurveEaseIn
         let width = self.userImageView.frame.width
         let jump = width / 10
         
+        let originalImageView = self.userImageView
+        let imageViewCopy = UIImageView(image: UIImage(named: "Money"))
+        imageViewCopy.frame.size = originalImageView.frame.size
+        imageViewCopy.center = originalImageView.center
+        imageViewCopy.layer.cornerRadius = originalImageView.layer.cornerRadius
+        imageViewCopy.layer.masksToBounds = originalImageView.layer.masksToBounds
+        self.insertSubview(imageViewCopy, aboveSubview: originalImageView)
+        imageViewCopy.alpha = CGFloat(0)
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = originalImageView.frame
+        originalImageView.addSubview(blurView)
+        blurView.alpha = CGFloat(0)
+        
         UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
             self.backgroundColor = UIColor.greenColor().colorWithAlphaComponent(0.5)
-            self.userImageView.center.x -= jump
-            self.userImageView.center.y -= jump
-            self.userImageView.frame.size.width += jump * 2
-            self.userImageView.frame.size.height += jump * 2
+            imageViewCopy.alpha = CGFloat(1)
+            blurView.alpha = CGFloat(1)
             }, completion: { finished in
                 UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
                     self.backgroundColor = UIColor.whiteColor()
-                    self.userImageView.center.x += jump
-                    self.userImageView.center.y += jump
-                    self.userImageView.frame.size.width -= jump * 2
-                    self.userImageView.frame.size.height -= jump * 2
+                    imageViewCopy.alpha = CGFloat(0)
+                    blurView.alpha = CGFloat(0)
                     }, completion: { finished in
+                        imageViewCopy.removeFromSuperview()
+                        blurView.removeFromSuperview()
                 })
         })
     }
