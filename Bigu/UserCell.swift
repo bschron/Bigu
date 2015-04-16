@@ -98,20 +98,33 @@ class UserCell: UITableViewCell {
                 self.userImageView.center.x = self.userImageOriginalPosition.0
                 }, completion: {result in
                     let originalColor = self.invisibleUserImageViewCover.backgroundColor!
+                    let blurEffect = UIBlurEffect(style: .Light)
+                    let blurView = UIVisualEffectView(effect: blurEffect)
+                    self.addSubview(blurView)
+                    blurView.frame = self.invisibleUserImageViewCover.frame
+                    blurView.layer.cornerRadius = self.invisibleUserImageViewCover.layer.cornerRadius
+                    blurView.layer.masksToBounds = true
+                    blurView.alpha = CGFloat(0)
+                    blurView.center = self.invisibleUserImageViewCover.center
                     UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+                    
+                        blurView.alpha = CGFloat(0.9)
+                        
                         if location.x >= self.frame.width / 2 {
-                            let newColor = UIColor(red: CGFloat(0.1), green: CGFloat(0.59607843), blue: CGFloat(0.85882353), alpha: CGFloat(0.5))
+                            let newColor = UIColor(red: CGFloat(0.1), green: CGFloat(0.59607843), blue: CGFloat(0.85882353), alpha: CGFloat(0.25))
                             self.invisibleUserImageViewCover.backgroundColor = newColor
                             User.usersList.list[self.userIndex].resetBalance()
                         }
                         else {
-                            let newColor = UIColor.redColor().colorWithAlphaComponent(CGFloat(0.5))
+                            let newColor = UIColor.redColor().colorWithAlphaComponent(CGFloat(0.25))
                             self.invisibleUserImageViewCover.backgroundColor = newColor
                         }
                         }, completion: {result in
-                            UIView.animateWithDuration(0.1, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+                            UIView.animateWithDuration(0.1, delay: 0.15, options: UIViewAnimationOptions.CurveEaseIn, animations: {
                                 self.invisibleUserImageViewCover.backgroundColor = originalColor
+                                blurView.alpha = CGFloat(0)
                                 }, completion: {result in
+                                    blurView.removeFromSuperview()
                             })
                     })
             })
