@@ -21,6 +21,8 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
     
     // MARK: Outlets
     @IBOutlet weak var billLabel: UILabel!
+    @IBOutlet weak var decreaseButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     
     // MARK: - Methods
     override func awakeFromNib() {
@@ -29,6 +31,9 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
         let userImageViewWidth = self.userImageView.frame.width
         self.userImageView.layer.cornerRadius = userImageViewWidth / 2
         self.userImageView.layer.masksToBounds = true
+        
+        self.reloadUsersData()
+        
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
@@ -41,6 +46,15 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
         let user = User.usersList.list[self.userIndex]
         self.billLabel.text = "\(user.bill)"
         self.userImageView.image = user.userImage
+        
+        if user.bill <= 0 {
+            self.resetButton.hidden = true
+            self.decreaseButton.hidden = true
+        }
+        else {
+            self.resetButton.hidden = false
+            self.decreaseButton.hidden = false
+        }
     }
     
     // MARK: Actions
@@ -58,7 +72,10 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
     @IBAction func resetButtonPressed(sender: AnyObject) {
         User.usersList.list[userIndex].resetBalance()
         self.reloadUsersData()
-        self.viewController.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
+        if self.viewController.billSlider {
+            self.viewController.billSlider = false
+            self.viewController.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
+        }
     }
     
     @IBAction func loadImage(sender: AnyObject) {

@@ -205,6 +205,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="billLabel" destination="la8-V4-Dqv" id="fuX-vI-9qj"/>
+                                            <outlet property="decreaseButton" destination="4qc-kq-aOp" id="cww-Tj-68n"/>
+                                            <outlet property="resetButton" destination="mxQ-TX-T6f" id="bdo-Ps-H8x"/>
                                             <outlet property="userImageView" destination="LNt-GB-zKY" id="fsB-zS-iRB"/>
                                         </connections>
                                     </tableViewCell>
