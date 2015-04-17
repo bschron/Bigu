@@ -31,15 +31,39 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
         }
         set {}
     }
-    func save() -> Bool {
-        let list: Array<User> = (self.object as! UserList).list
-        let data: [[NSString: NSObject]] = userArrayToDictionaryArray(list)
-        let array =  data as NSArray
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(array, forKey: UserPersistenceManager.usersKey)
-        let result = defaults.synchronize()
+    func save(context: ExecutionContext?) -> Future<Bool> {
         
-        return result
+        let promise = Promise<Bool>()
+        var executionContext: ExecutionContext = context != nil ? context! : Queue.global.context
+        
+        let futureData = future(context: executionContext, { () -> Result<[[NSString: NSObject]]> in
+            let list: Array<User> = (self.object as! UserList).list
+            let data: [[NSString: NSObject]] = self.userArrayToDictionaryArray(list)
+            
+            if data.count == list.count {
+                return .Success(Box(data))
+            }
+            else {
+                return .Failure(NSError())
+            }
+        }).onSuccess(context: executionContext, callback: { data in
+            let array =  data as NSArray
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject(array, forKey: UserPersistenceManager.usersKey)
+            let result = defaults.synchronize()
+            
+            if !result {
+                promise.success(result)
+            }
+            else {
+                promise.failure(NSError())
+            }
+        }).onFailure(context: executionContext, callback: { error in
+            promise.failure(NSError())
+        })
+        
+        
+        return promise.future
     }
     func load() -> AnyObject? {
         let defaults = NSUserDefaults.standardUserDefaults()

@@ -37,6 +37,14 @@
 		86D548DB1ADE9F4D0092C9A5 /* AbstractUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D548DA1ADE9F4D0092C9A5 /* AbstractUser.swift */; };
 		86D999281ACAD429001E48CD /* TaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D999271ACAD429001E48CD /* TaxCell.swift */; };
 		86D9992C1ACC29C3001E48CD /* TaxHandlingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9992B1ACC29C3001E48CD /* TaxHandlingDelegate.swift */; };
+		86DFA2F41AE166FA00D42B65 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2EC1AE166FA00D42B65 /* ExecutionContext.swift */; };
+		86DFA2F51AE166FA00D42B65 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2ED1AE166FA00D42B65 /* Future.swift */; };
+		86DFA2F61AE166FA00D42B65 /* FutureUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2EE1AE166FA00D42B65 /* FutureUtils.swift */; };
+		86DFA2F71AE166FA00D42B65 /* InvalidationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2EF1AE166FA00D42B65 /* InvalidationToken.swift */; };
+		86DFA2F81AE166FA00D42B65 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F01AE166FA00D42B65 /* Promise.swift */; };
+		86DFA2F91AE166FA00D42B65 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F11AE166FA00D42B65 /* Queue.swift */; };
+		86DFA2FA1AE166FA00D42B65 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F21AE166FA00D42B65 /* Result.swift */; };
+		86DFA2FB1AE166FA00D42B65 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F31AE166FA00D42B65 /* Semaphore.swift */; };
 		86F441CA1ACEA574006B5246 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F441C91ACEA574006B5246 /* UserCell.xib */; };
 		86F441CE1ACEA9DA006B5246 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F441CD1ACEA9DA006B5246 /* UserCell.swift */; };
 /* End PBXBuildFile section */
@@ -55,13 +63,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = E9DF0820194470060083F7F2;
 			remoteInfo = BrightFuturesTests;
-		};
-		861C250E1AE0A7170081E9E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 861C25051AE0A7090081E9E8 /* BrightFutures.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E9DF0814194470060083F7F2;
-			remoteInfo = BrightFutures;
 		};
 		86A92DB11AB863E900B38445 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -108,6 +109,14 @@
 		86D548DA1ADE9F4D0092C9A5 /* AbstractUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractUser.swift; sourceTree = "<group>"; };
 		86D999271ACAD429001E48CD /* TaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxCell.swift; sourceTree = "<group>"; };
 		86D9992B1ACC29C3001E48CD /* TaxHandlingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxHandlingDelegate.swift; sourceTree = "<group>"; };
+		86DFA2EC1AE166FA00D42B65 /* ExecutionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExecutionContext.swift; path = BrightFutures/BrightFutures/ExecutionContext.swift; sourceTree = "<group>"; };
+		86DFA2ED1AE166FA00D42B65 /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Future.swift; path = BrightFutures/BrightFutures/Future.swift; sourceTree = "<group>"; };
+		86DFA2EE1AE166FA00D42B65 /* FutureUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FutureUtils.swift; path = BrightFutures/BrightFutures/FutureUtils.swift; sourceTree = "<group>"; };
+		86DFA2EF1AE166FA00D42B65 /* InvalidationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InvalidationToken.swift; path = BrightFutures/BrightFutures/InvalidationToken.swift; sourceTree = "<group>"; };
+		86DFA2F01AE166FA00D42B65 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = BrightFutures/BrightFutures/Promise.swift; sourceTree = "<group>"; };
+		86DFA2F11AE166FA00D42B65 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = BrightFutures/BrightFutures/Queue.swift; sourceTree = "<group>"; };
+		86DFA2F21AE166FA00D42B65 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Result.swift; path = BrightFutures/BrightFutures/Result.swift; sourceTree = "<group>"; };
+		86DFA2F31AE166FA00D42B65 /* Semaphore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Semaphore.swift; path = BrightFutures/BrightFutures/Semaphore.swift; sourceTree = "<group>"; };
 		86F441C91ACEA574006B5246 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		86F441CD1ACEA9DA006B5246 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				861C25051AE0A7090081E9E8 /* BrightFutures.xcodeproj */,
+				86DFA2FC1AE1671400D42B65 /* BrightFutures */,
 				86A92D9B1AB863E900B38445 /* Bigu */,
 				86A92DB31AB863E900B38445 /* BiguTests */,
 				86A92D9A1AB863E900B38445 /* Products */,
@@ -301,6 +311,21 @@
 			name = UserDetailViewController;
 			sourceTree = "<group>";
 		};
+		86DFA2FC1AE1671400D42B65 /* BrightFutures */ = {
+			isa = PBXGroup;
+			children = (
+				86DFA2EC1AE166FA00D42B65 /* ExecutionContext.swift */,
+				86DFA2ED1AE166FA00D42B65 /* Future.swift */,
+				86DFA2EE1AE166FA00D42B65 /* FutureUtils.swift */,
+				86DFA2EF1AE166FA00D42B65 /* InvalidationToken.swift */,
+				86DFA2F01AE166FA00D42B65 /* Promise.swift */,
+				86DFA2F11AE166FA00D42B65 /* Queue.swift */,
+				86DFA2F21AE166FA00D42B65 /* Result.swift */,
+				86DFA2F31AE166FA00D42B65 /* Semaphore.swift */,
+			);
+			name = BrightFutures;
+			sourceTree = "<group>";
+		};
 		86F441C81ACEA540006B5246 /* UserCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,7 +349,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				861C250F1AE0A7170081E9E8 /* PBXTargetDependency */,
 			);
 			name = Bigu;
 			productName = Bigu;
@@ -440,6 +464,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86DFA2F41AE166FA00D42B65 /* ExecutionContext.swift in Sources */,
+				86DFA2F51AE166FA00D42B65 /* Future.swift in Sources */,
+				86DFA2F61AE166FA00D42B65 /* FutureUtils.swift in Sources */,
+				86DFA2F71AE166FA00D42B65 /* InvalidationToken.swift in Sources */,
+				86DFA2F81AE166FA00D42B65 /* Promise.swift in Sources */,
+				86DFA2F91AE166FA00D42B65 /* Queue.swift in Sources */,
+				86DFA2FA1AE166FA00D42B65 /* Result.swift in Sources */,
+				86DFA2FB1AE166FA00D42B65 /* Semaphore.swift in Sources */,
 				86B6974E1ACF77970052353E /* NewUserPopUp.swift in Sources */,
 				86C23CA41AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift in Sources */,
 				86A92DCB1AB86A5800B38445 /* User.swift in Sources */,
@@ -477,11 +509,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		861C250F1AE0A7170081E9E8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = BrightFutures;
-			targetProxy = 861C250E1AE0A7170081E9E8 /* PBXContainerItemProxy */;
-		};
 		86A92DB21AB863E900B38445 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 86A92D981AB863E900B38445 /* Bigu */;

@@ -19,10 +19,6 @@ class User: AbstractUser {
     class var usersList: UserList {
         return UserList.sharedUserList
     }
-    class func saveToPersistence() {
-        let manager = UserPersistenceManager()
-        manager.save()
-    }
     class func removeUserAtRow (row: Int) {
         UserList.sharedUserList.removeUserAtIndex(row)
     }

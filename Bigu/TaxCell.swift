@@ -68,7 +68,11 @@ class TaxCell: UITableViewCell, TaxHandlingDelegate, DataPersistenceDelegate {
     }
     
     func applicationWillResignActive(notification:NSNotification) {
-        self.save()
+        let futureResult = self.save(ImmediateExecutionContext)
+        futureResult.onFailure { value in
+            //try again
+            self.save(ImmediateExecutionContext)
+        }
     }
     
     // MARK: - Protocols
@@ -81,14 +85,30 @@ class TaxCell: UITableViewCell, TaxHandlingDelegate, DataPersistenceDelegate {
     }
     
     // MARK: DataManagingDelegate
-    func save() -> Bool {
-        var data: [String: AnyObject] = [self.taxKey : self.object!]
-        let dictionary = data as NSDictionary
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(dictionary, forKey: self.dataKey)
-        let result = defaults.synchronize()
+    func save(context: ExecutionContext?) -> Future<Bool> {
         
-        return result
+        let promise = Promise<Bool>()
+        let executionContext = context != nil ? context! : Queue.global.context
+        
+        let f = future(context: executionContext, { () -> Result<Bool> in
+            var data: [String: AnyObject] = [self.taxKey : self.object!]
+            let dictionary = data as NSDictionary
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject(dictionary, forKey: self.dataKey)
+            let result = defaults.synchronize()
+            if result {
+                return .Success(Box(result))
+            }
+            else {
+                return .Failure(NSError())
+            }
+        }).onSuccess(context: executionContext, callback: { result in
+            promise.success(result)
+        }).onFailure(context: executionContext, callback: { error in
+            promise.failure(error)
+        })
+        
+        return promise.future
     }
     func load() -> AnyObject? {
         let defaults = NSUserDefaults.standardUserDefaults()

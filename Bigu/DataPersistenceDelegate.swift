@@ -9,7 +9,7 @@
 import Foundation
 
 protocol DataPersistenceDelegate {
-    func save () -> Bool
+    func save (context: ExecutionContext?) -> Future<Bool>
     func load () -> AnyObject?
     var object: AnyObject? {get set}
 }
