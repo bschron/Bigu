@@ -17,6 +17,8 @@
 		8668D3971ACF3E8500C2CB87 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8668D3961ACF3E8500C2CB87 /* UserList.swift */; };
 		86A78EE41ACD7EEB009BBF58 /* BillingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A78EE31ACD7EEB009BBF58 /* BillingProtocol.swift */; };
 		86A78EE81ACD8231009BBF58 /* BillingHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */; };
+		86A88A8D1AE1F078009A4ABD /* RootUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A88A8C1AE1F078009A4ABD /* RootUserViewController.swift */; };
+		86A88A911AE27F07009A4ABD /* RootUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A88A901AE27F07009A4ABD /* RootUser.swift */; };
 		86A92D9F1AB863E900B38445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A92D9E1AB863E900B38445 /* AppDelegate.swift */; };
 		86A92DA61AB863E900B38445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA41AB863E900B38445 /* Main.storyboard */; };
 		86A92DA81AB863E900B38445 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA71AB863E900B38445 /* Images.xcassets */; };
@@ -85,6 +87,8 @@
 		8668D3961ACF3E8500C2CB87 /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
 		86A78EE31ACD7EEB009BBF58 /* BillingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingProtocol.swift; sourceTree = "<group>"; };
 		86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingHandlerDelegate.swift; sourceTree = "<group>"; };
+		86A88A8C1AE1F078009A4ABD /* RootUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserViewController.swift; sourceTree = "<group>"; };
+		86A88A901AE27F07009A4ABD /* RootUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUser.swift; sourceTree = "<group>"; };
 		86A92D991AB863E900B38445 /* Bigu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bigu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A92D9D1AB863E900B38445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A92D9E1AB863E900B38445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				86A92DCA1AB86A5800B38445 /* User.swift */,
+				86A88A901AE27F07009A4ABD /* RootUser.swift */,
 				86D548DA1ADE9F4D0092C9A5 /* AbstractUser.swift */,
 				8668D3961ACF3E8500C2CB87 /* UserList.swift */,
 				86B6974F1ACFEB680052353E /* UserHandlingDelegate.swift */,
@@ -294,6 +299,7 @@
 			children = (
 				86A92DA41AB863E900B38445 /* Main.storyboard */,
 				86A92DC01AB8684B00B38445 /* UsersViewController */,
+				86E529A31AE1A450005FD924 /* RootUserViewController */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -324,6 +330,14 @@
 				86DFA2F31AE166FA00D42B65 /* Semaphore.swift */,
 			);
 			name = BrightFutures;
+			sourceTree = "<group>";
+		};
+		86E529A31AE1A450005FD924 /* RootUserViewController */ = {
+			isa = PBXGroup;
+			children = (
+				86A88A8C1AE1F078009A4ABD /* RootUserViewController.swift */,
+			);
+			name = RootUserViewController;
 			sourceTree = "<group>";
 		};
 		86F441C81ACEA540006B5246 /* UserCell */ = {
@@ -489,8 +503,10 @@
 				86A78EE41ACD7EEB009BBF58 /* BillingProtocol.swift in Sources */,
 				8624B86B1ACD71F600A60985 /* DataPersistenceDelegate.swift in Sources */,
 				86C23CA21AD362A200FE9D63 /* UserDetailLastNameTableViewCell.swift in Sources */,
+				86A88A8D1AE1F078009A4ABD /* RootUserViewController.swift in Sources */,
 				86F441CE1ACEA9DA006B5246 /* UserCell.swift in Sources */,
 				86D548DB1ADE9F4D0092C9A5 /* AbstractUser.swift in Sources */,
+				86A88A911AE27F07009A4ABD /* RootUser.swift in Sources */,
 				86C23C9E1AD35E5100FE9D63 /* UserDetailBillSliderTableViewCell.swift in Sources */,
 				86C23CA01AD3611100FE9D63 /* UserDetailFirstNameTableViewCell.swift in Sources */,
 				86A92D9F1AB863E900B38445 /* AppDelegate.swift in Sources */,

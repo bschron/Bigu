@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class AbstractUser: BillingProtocol {
+class AbstractUser {
     // MARK: -Properties
     private var _name: String?
     var name: String {
@@ -71,41 +71,18 @@ class AbstractUser: BillingProtocol {
     
     // MARK: -Methods
     init() {}
-    init(name: String, surName: String?, nickName: String?, handler: BillingHandlerDelegate?) {
+    init(name: String, surName: String?, nickName: String?) {
         self.name = name
         self.surName = surName
         self.nickName = nickName
-        self.handler = handler
         self.userImage = nil
     }
-    init(name: String, surName: String?, nickName: String?, bill: Float?, userImage: UIImage?, handler: BillingHandlerDelegate?) {
+    init(name: String, surName: String?, nickName: String?, userImage: UIImage?) {
         self.name = name
         self.surName = surName
         self.nickName = nickName
-        self.handler = handler
         self.userImage = userImage
-        self._bill = bill
     }
     
     // MARK: -Protocols
-    // MARK: BillingProtocol
-    private var _bill: Float?
-    var bill: Float {
-        get {
-            return self._bill != nil ? self._bill! : 0
-        }
-    }
-    var handler: BillingHandlerDelegate?
-    func creditValue(value: Float) {
-        self._bill = (self._bill != nil ? self._bill! : 0) + value
-    }
-    func debitValue(value: Float) {
-        self._bill = (self._bill != nil ? self._bill! : 0) + value
-        if self._bill == 0 {
-            self._bill = nil
-        }
-    }
-    func resetBalance() {
-        self._bill = nil
-    }
 }
