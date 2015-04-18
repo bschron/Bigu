@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		860466651ABC6CFE00C39BDB /* PickerTaxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860466641ABC6CFE00C39BDB /* PickerTaxCell.xib */; };
+		860B39271AE2FB8F00D34896 /* RootUserPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */; };
+		860B392B1AE3060F00D34896 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B392A1AE3060F00D34896 /* PersistenceManager.swift */; };
 		86202E6D1AE2A7D500293B79 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86202E6C1AE2A7D500293B79 /* Bill.swift */; };
 		8624B86B1ACD71F600A60985 /* DataPersistenceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */; };
 		863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D5E931ACF7185007D9235 /* CustomPopUp.swift */; };
@@ -77,6 +79,8 @@
 
 /* Begin PBXFileReference section */
 		860466641ABC6CFE00C39BDB /* PickerTaxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerTaxCell.xib; sourceTree = "<group>"; };
+		860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserPersistenceManager.swift; sourceTree = "<group>"; };
+		860B392A1AE3060F00D34896 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		861C25051AE0A7090081E9E8 /* BrightFutures.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BrightFutures.xcodeproj; path = BrightFutures/BrightFutures.xcodeproj; sourceTree = "<group>"; };
 		86202E6C1AE2A7D500293B79 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersistenceDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 			children = (
 				8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */,
 				86CA24DE1ADD306800EA98E8 /* UserPersistenceManager.swift */,
+				860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */,
+				860B392A1AE3060F00D34896 /* PersistenceManager.swift */,
 			);
 			name = Persistence;
 			sourceTree = "<group>";
@@ -479,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86DFA2F41AE166FA00D42B65 /* ExecutionContext.swift in Sources */,
+				860B392B1AE3060F00D34896 /* PersistenceManager.swift in Sources */,
 				86DFA2F51AE166FA00D42B65 /* Future.swift in Sources */,
 				86DFA2F61AE166FA00D42B65 /* FutureUtils.swift in Sources */,
 				86DFA2F71AE166FA00D42B65 /* InvalidationToken.swift in Sources */,
@@ -504,6 +511,7 @@
 				8624B86B1ACD71F600A60985 /* DataPersistenceDelegate.swift in Sources */,
 				86C23CA21AD362A200FE9D63 /* UserDetailLastNameTableViewCell.swift in Sources */,
 				86A88A8D1AE1F078009A4ABD /* RootUserViewController.swift in Sources */,
+				860B39271AE2FB8F00D34896 /* RootUserPersistenceManager.swift in Sources */,
 				86F441CE1ACEA9DA006B5246 /* UserCell.swift in Sources */,
 				86D548DB1ADE9F4D0092C9A5 /* AbstractUser.swift in Sources */,
 				86A88A911AE27F07009A4ABD /* RootUser.swift in Sources */,

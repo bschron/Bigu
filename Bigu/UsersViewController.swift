@@ -64,11 +64,11 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func applicationWillResignActive(notification:NSNotification) {
-        let userManager = UserPersistenceManager()
+        /*let userManager = UserPersistenceManager()
         let futureResult = userManager.save(ImmediateExecutionContext)
         futureResult.onFailure(context: ImmediateExecutionContext, callback: { error in
             userManager.save(ImmediateExecutionContext)
-        })
+        })*/
     }
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {

@@ -14,10 +14,16 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
     // MARK: - Properties
     
     // MARK: - Methods
+    
+    override init() {
+        super.init()
+        PersistenceManager.singleton.registerAsManager(self)
+    }
+    
     private func userArrayToDictionaryArray(users: Array<User>) -> [[NSString: NSObject]] {
         var output: [[NSString: NSObject]] = []
         for cur in users {
-            let dictionary: [NSString: NSObject] = [UserPersistenceManager.nameKey: cur.name, UserPersistenceManager.surNameKey: cur.surName, UserPersistenceManager.nickNameKey: cur.nickName, UserPersistenceManager.billKey: "\(cur.bill)", UserPersistenceManager.userImageKey: UIImagePNGRepresentation(cur.userImage)]
+            let dictionary: [NSString: NSObject] = [UserPersistenceManager.nameKey: cur.name, UserPersistenceManager.surNameKey: cur.surName, UserPersistenceManager.nickNameKey: cur.nickName, UserPersistenceManager.billKey: cur.bill.bill, UserPersistenceManager.userImageKey: UIImagePNGRepresentation(cur.userImage)]
             output += [dictionary]
         }
         return output
@@ -77,8 +83,7 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
             let name = cur[UserPersistenceManager.nameKey] as! String
             let surName = cur[UserPersistenceManager.surNameKey] as! String
             let nickName = cur[UserPersistenceManager.nickNameKey] as! String
-            let billString = cur[UserPersistenceManager.billKey] as! String
-            let bill = (billString as NSString).floatValue
+            let bill = cur[UserPersistenceManager.billKey] as! Float
             let dataImage = cur[UserPersistenceManager.userImageKey] as! NSData
             let userImage = UIImage(data: dataImage)
             let newUser = User(name: name, surName: surName, nickName: nickName, bill: bill, userImage: userImage, handler: nil)
