@@ -8,24 +8,28 @@
 
 import UIKit
 
-class UserDetailBillSliderTableViewCell: UITableViewCell, UserHandlingDelegate {
+class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandlerDelegate {
     
     // MARK: - Properties
     var userIndex: Int = 0 {
         didSet {
-            self.reloadUsersData()
+            self.updateBillingUI()
         }
     }
     var mainCell: UserHandlingDelegate!
+    var viewController: UserDetailViewController!
     private var originalBill: Float!
+    private var decreasedValue: Float!
     
     // MARK: Outlets
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var billValueLabel: UILabel!
 
     // MARK: - Methods
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        User.usersList.list[self.userIndex].bill.registerAsHandler(self)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -34,11 +38,12 @@ class UserDetailBillSliderTableViewCell: UITableViewCell, UserHandlingDelegate {
         // Configure the view for the selected state
     }
     
-    func reloadUsersData() {
-        self.originalBill = User.usersList.list[self.userIndex].bill
+    func updateBillingUI() {
+        self.originalBill = User.usersList.list[self.userIndex].bill.bill
         self.slider.maximumValue = originalBill
         self.slider.minimumValue = 0
         self.slider.value = originalBill
+        self.billValueLabel.text = "\(self.originalBill)"
     }
     
     func zeroValue() {
@@ -52,6 +57,15 @@ class UserDetailBillSliderTableViewCell: UITableViewCell, UserHandlingDelegate {
         })
     }
     
+    func destroy() {
+        if self.viewController.billSlider {
+            self.viewController.billSlider = false
+            self.viewController.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
+            self.viewController.billSliderCell = nil
+        }
+        self.viewController.mainCell.registerAsBillingHandler()
+    }
+    
     // MARK: Actions
     @IBAction func sliderValueChanged(sender: AnyObject) {
         
@@ -61,12 +75,12 @@ class UserDetailBillSliderTableViewCell: UITableViewCell, UserHandlingDelegate {
         let roundedFloatingPointValue: Float = floatingPointValue >= 0.5 ? 0.5 : 0
         let roundedTotalValue: Float = Float(intValue) + roundedFloatingPointValue
         
-        User.usersList.list[userIndex].resetBalance()
-        User.usersList.list[userIndex].debitValue(roundedTotalValue)
-        
-        if self.mainCell != nil {
-            self.mainCell.reloadUsersData()
-        }
+        self.decreasedValue = self.originalBill - roundedTotalValue
+        self.billValueLabel.text = "\(roundedTotalValue)"
+    }
+    @IBAction func submitValueDecrease(sender: AnyObject) {
+        User.usersList.list[userIndex].bill.payPartialBill(payingValue: self.decreasedValue)
+        self.destroy()
     }
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -64,17 +64,29 @@
                                     <constraint firstAttribute="width" secondItem="1Qz-lu-ZLv" secondAttribute="height" multiplier="20:3" id="Hsy-qY-iCi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="closeKeyboard:" destination="4Xc-3V-dKD" eventType="editingDidEndOnExit" id="52J-cc-JVZ"/>
+                                    <action selector="firtsnameFieldChanged:" destination="4Xc-3V-dKD" eventType="editingChanged" id="6Rc-P7-ycB"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a91-RH-qtk">
                                 <rect key="frame" x="24" y="281" width="150" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="closeKeyboard:" destination="4Xc-3V-dKD" eventType="editingDidEndOnExit" id="aa9-BV-G21"/>
+                                    <action selector="lastnameFieldChanged:" destination="4Xc-3V-dKD" eventType="editingChanged" id="qBo-B0-igo"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nickname" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3xx-9M-ksv">
                                 <rect key="frame" x="24" y="311" width="150" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="closeKeyboard:" destination="4Xc-3V-dKD" eventType="editingDidEndOnExit" id="2SL-8C-NcA"/>
+                                    <action selector="nicknameFieldChanged:" destination="4Xc-3V-dKD" eventType="editingChanged" id="IfL-0i-iwP"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FyS-xm-yRD">
                                 <rect key="frame" x="182" y="72" width="402" height="471"/>
@@ -132,7 +144,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="A32-GD-Grs"/>
                     <connections>
-                        <outlet property="firtnameTextField" destination="1Qz-lu-ZLv" id="6sQ-WQ-d0h"/>
+                        <outlet property="firstnameTextField" destination="1Qz-lu-ZLv" id="4Hf-fA-nLL"/>
                         <outlet property="lastnameTextField" destination="a91-RH-qtk" id="hEh-yQ-JMD"/>
                         <outlet property="nicknameTextField" destination="3xx-9M-ksv" id="Qp2-kS-JbP"/>
                         <outlet property="savingsLabel" destination="XUw-cF-Jcw" id="d2J-Hg-p7t"/>
@@ -337,19 +349,46 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="6MH-s8-qVY">
-                                                    <rect key="frame" x="6" y="10" width="588" height="31"/>
+                                                    <rect key="frame" x="6" y="10" width="498" height="31"/>
                                                     <connections>
                                                         <action selector="sliderValueChanged:" destination="bdS-2f-dHV" eventType="valueChanged" id="jc3-TM-3TX"/>
                                                     </connections>
                                                 </slider>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n5g-Oo-zvS">
+                                                    <rect key="frame" x="555" y="10" width="37" height="30"/>
+                                                    <state key="normal" title="Done">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="submitValueDecrease:" destination="bdS-2f-dHV" eventType="touchUpInside" id="VrJ-A7-U7O"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99.99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9c-Xp-DxN">
+                                                    <rect key="frame" x="510" y="16" width="37" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6MH-s8-qVY" firstAttribute="leading" secondItem="Xm6-Mm-yyL" secondAttribute="leading" constant="8" id="DoS-fs-y87"/>
+                                                <constraint firstItem="n5g-Oo-zvS" firstAttribute="leading" secondItem="H9c-Xp-DxN" secondAttribute="trailing" constant="8" id="LQk-RG-aqq"/>
+                                                <constraint firstAttribute="centerY" secondItem="n5g-Oo-zvS" secondAttribute="centerY" constant="-0.5" id="Miv-qz-JqJ"/>
+                                                <constraint firstItem="H9c-Xp-DxN" firstAttribute="leading" secondItem="6MH-s8-qVY" secondAttribute="trailing" constant="8" id="ULk-Oj-rAX"/>
                                                 <constraint firstAttribute="centerY" secondItem="6MH-s8-qVY" secondAttribute="centerY" id="bH1-rD-sRb"/>
+                                                <constraint firstAttribute="trailing" secondItem="n5g-Oo-zvS" secondAttribute="trailing" constant="8" id="j6d-fW-IaC"/>
+                                                <constraint firstItem="n5g-Oo-zvS" firstAttribute="width" secondItem="H9c-Xp-DxN" secondAttribute="width" id="mI9-Yd-WPn"/>
+                                                <constraint firstItem="n5g-Oo-zvS" firstAttribute="centerY" secondItem="H9c-Xp-DxN" secondAttribute="centerY" constant="0.5" id="nqp-hq-znt"/>
                                                 <constraint firstAttribute="trailing" secondItem="6MH-s8-qVY" secondAttribute="trailing" constant="8" id="wFo-be-fOi"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="wFo-be-fOi"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="billValueLabel" destination="H9c-Xp-DxN" id="Ar8-ri-tCm"/>
                                             <outlet property="slider" destination="6MH-s8-qVY" id="0JV-AN-h1n"/>
                                         </connections>
                                     </tableViewCell>

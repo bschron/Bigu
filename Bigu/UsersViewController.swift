@@ -82,7 +82,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         if segue.identifier == UsersViewController.userDetailSegueIdentifier {
             let vc = segue.destinationViewController as! UserDetailViewController
             let senderCell = sender as! UserCell
-            let userName = senderCell.user.nickName != "" ? senderCell.user.nickName! : senderCell.user.name
+            let userName = senderCell.user.nickName != "" ? senderCell.user.nickName : senderCell.user.name
             
             vc.title = userName
             vc.userIndex = senderCell.userIndex

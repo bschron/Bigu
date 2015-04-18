@@ -23,10 +23,11 @@ class AbstractUser {
             else {
                 self._name = newValue
             }
+            handler?.reloadUsersData()
         }
     }
     private var _surName: String?
-    var surName: String? {
+    var surName: String {
         get {
             return self._surName != nil ? self._surName! : ""
         }
@@ -37,15 +38,16 @@ class AbstractUser {
             else {
                 self._surName = newValue
             }
+            handler?.reloadUsersData()
         }
     }
     var fullName: String {
         get {
-            return self.name + " " + (self.surName != nil ? self.surName! : "")
+            return self.name + ((self.surName != "") ? (" " + self.surName) : (""))
         }
     }
     private var _nickName: String?
-    var nickName: String? {
+    var nickName: String {
         get {
             return self._nickName != nil ? self._nickName! : ""
         }
@@ -56,6 +58,7 @@ class AbstractUser {
             else {
                 self._nickName = newValue
             }
+            handler?.reloadUsersData()
         }
     }
     private var _userImage: UIImage? = nil
@@ -65,24 +68,24 @@ class AbstractUser {
         }
         set {
             self._userImage = newValue
+            handler?.reloadUsersData()
         }
     }
+    var handler: UserHandlingDelegate? = nil
     
     
     // MARK: -Methods
     init() {}
     init(name: String, surName: String?, nickName: String?) {
         self.name = name
-        self.surName = surName
-        self.nickName = nickName
+        self.surName = surName != nil ? surName! : ""
+        self.nickName = nickName != nil ? nickName! : ""
         self.userImage = nil
     }
     init(name: String, surName: String?, nickName: String?, userImage: UIImage?) {
         self.name = name
-        self.surName = surName
-        self.nickName = nickName
+        self.surName = surName != nil ? surName! : ""
+        self.nickName = nickName != nil ? nickName! : ""
         self.userImage = userImage
     }
-    
-    // MARK: -Protocols
 }

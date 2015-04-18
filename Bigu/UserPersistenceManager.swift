@@ -17,7 +17,7 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
     private func userArrayToDictionaryArray(users: Array<User>) -> [[NSString: NSObject]] {
         var output: [[NSString: NSObject]] = []
         for cur in users {
-            let dictionary: [NSString: NSObject] = [UserPersistenceManager.nameKey: cur.name, UserPersistenceManager.surNameKey: cur.surName!, UserPersistenceManager.nickNameKey: cur.nickName!, UserPersistenceManager.billKey: "\(cur.bill)", UserPersistenceManager.userImageKey: UIImagePNGRepresentation(cur.userImage)]
+            let dictionary: [NSString: NSObject] = [UserPersistenceManager.nameKey: cur.name, UserPersistenceManager.surNameKey: cur.surName, UserPersistenceManager.nickNameKey: cur.nickName, UserPersistenceManager.billKey: "\(cur.bill)", UserPersistenceManager.userImageKey: UIImagePNGRepresentation(cur.userImage)]
             output += [dictionary]
         }
         return output

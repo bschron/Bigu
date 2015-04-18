@@ -8,12 +8,13 @@
 
 import UIKit
 
-class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
+class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate, BillingHandlerDelegate {
 
     // MARK: - Properties
     var userIndex: Int = 0 {
         didSet {
             self.reloadUsersData()
+            self.registerAsBillingHandler()
         }
     }
     weak var viewController: UserDetailViewController!
@@ -33,6 +34,7 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
         self.userImageView.layer.masksToBounds = true
         
         self.reloadUsersData()
+        self.registerAsBillingHandler()
         
     }
     
@@ -44,10 +46,18 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
     
     func reloadUsersData() {
         let user = User.usersList.list[self.userIndex]
-        self.billLabel.text = "\(user.bill)"
         self.userImageView.image = user.userImage
+    }
+    
+    func registerAsBillingHandler() {
+        User.usersList.list[self.userIndex].bill.registerAsHandler(self)
+    }
+    
+    func updateBillingUI() {
+        let user = User.usersList.list[self.userIndex]
         
-        if user.bill <= 0 {
+        self.billLabel.text = "\(user.bill.bill)"
+        if user.bill.bill <= 0 {
             self.resetButton.hidden = true
             self.decreaseButton.hidden = true
         }
@@ -59,23 +69,19 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
     
     // MARK: Actions
     @IBAction func decreaseButtonPressed(sender: AnyObject) {
-        let curBill = User.usersList.list[userIndex].bill
+        let curBill: Float = User.usersList.list[userIndex].bill.bill
         if curBill != 0 && !self.viewController.billSlider {
             self.viewController.billSlider = true
             self.viewController.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
         else if self.viewController.billSlider {
-            self.viewController.billSlider = false
-            self.viewController.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic)
+            self.viewController.billSliderCell?.destroy()
         }
     }
     @IBAction func resetButtonPressed(sender: AnyObject) {
-        User.usersList.list[userIndex].resetBalance()
-        self.reloadUsersData()
-        if self.viewController.billSlider {
-            self.viewController.billSlider = false
-            self.viewController.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
-        }
+        User.usersList.list[userIndex].bill.payBill()
+        self.registerAsBillingHandler()
+        self.viewController.billSliderCell?.destroy()
     }
     
     @IBAction func loadImage(sender: AnyObject) {

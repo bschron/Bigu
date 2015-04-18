@@ -9,42 +9,30 @@
 import Foundation
 import UIKit
 
-class User: AbstractUser, BillingProtocol {
+class User: AbstractUser {
+    
+    // MARK: - Properties
+    var bill: Bill = Bill()
+    
     // MARK: -Methods
     func synchronize() {
         User.usersList.insertUser(self)
     }
     init(name: String, surName: String?, nickName: String?, handler: BillingHandlerDelegate?) {
         super.init(name: name, surName: surName, nickName: nickName)
-        self.handler = handler
+        if let hand = handler {
+            self.bill.registerAsHandler(hand)
+        }
         self.userImage = nil
     }
     init(name: String, surName: String?, nickName: String?, bill: Float?, userImage: UIImage?, handler: BillingHandlerDelegate?) {
         super.init(name: name, surName: surName, nickName: nickName, userImage: userImage)
-        self.handler = handler
-        self._bill = bill
-    }
-    
-    // MARK: -Protocols
-    // MARK: BillingProtocol
-    private var _bill: Float?
-    var bill: Float {
-        get {
-            return self._bill != nil ? self._bill! : 0
+        if let hand = handler {
+            self.bill.registerAsHandler(hand)
         }
-    }
-    var handler: BillingHandlerDelegate?
-    func creditValue(value: Float) {
-        self._bill = (self._bill != nil ? self._bill! : 0) + value
-    }
-    func debitValue(value: Float) {
-        self._bill = (self._bill != nil ? self._bill! : 0) + value
-        if self._bill == 0 {
-            self._bill = nil
+        if let b = bill {
+            self.bill.increaseBill(b)
         }
-    }
-    func resetBalance() {
-        self._bill = nil
     }
     
     // MARK: -Class Properties and Methods

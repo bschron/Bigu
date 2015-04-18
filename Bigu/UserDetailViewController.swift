@@ -19,7 +19,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
     var billSlider: Bool = false
     
     // MARK: Outlets
-    private weak var mainCell: UserDetailMainTableViewCell!
+    private(set) weak var mainCell: UserDetailMainTableViewCell!
     weak var billSliderCell: UserDetailBillSliderTableViewCell?
     @IBOutlet weak var tableView: UITableView!
     
@@ -61,7 +61,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
     // MARK: UserHandlingDelegate
     func reloadUsersData() {
         let user = User.usersList.list[userIndex]
-        self.title = user.nickName != nil ? user.nickName! : user.name
+        self.title = user.nickName != "" ? user.nickName : user.name
     }
     // MARK: UITableViewDelegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -104,6 +104,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
                 newCell.userIndex = self.userIndex
                 newCell.mainCell = mainCell
                 self.billSliderCell = newCell
+                newCell.viewController = self
                 
                 cell = newCell
             }
