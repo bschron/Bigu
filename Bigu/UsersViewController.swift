@@ -48,7 +48,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        User.usersList.clearList()
+        UserList.freeSingleton(nil)
     }
     
     // MARK: Actions

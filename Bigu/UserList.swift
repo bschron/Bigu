@@ -41,13 +41,28 @@ class UserList {
     }
     class var sharedUserList: UserList {
         get {
-            if UserList.Singleton.list.list.count == 0 {
-            UserList.Singleton.list = UserPersistenceManager().load() as! UserList
-        }
+            if UserList.singletonWasFreed && UserList.Singleton.list.list.count == 0 {
+                let userManager = UserPersistenceManager()
+                UserList.Singleton.list = userManager.load() as! UserList
+            }
             return UserList.Singleton.list
         }
         set {
             UserList.Singleton.list = newValue
         }
+    }
+    private struct freedWrap {
+        static var freed: Bool = false
+    }
+    class func freeSingleton(context: ExecutionContext?) {
+        let executionContext = context != nil ? context! : Queue.global.context
+        future(context: executionContext, { () -> Result<Bool> in
+            UserList.sharedUserList.clearList()
+            UserList.freedWrap.freed = true
+            return .Success(Box(true))
+        })
+    }
+    class var singletonWasFreed: Bool {
+        return UserList.freedWrap.freed
     }
 }
