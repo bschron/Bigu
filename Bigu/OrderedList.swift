@@ -8,6 +8,12 @@
 
 import Foundation
 
+func += (inout left: OrderedList<AnyObject>, right: Array<AnyObject>) {
+    for cur in right {
+        left.insert(cur)
+    }
+}
+
 class OrderedList<T> {
     // MARK: -Properties
     var order: (T, T) -> Bool {
