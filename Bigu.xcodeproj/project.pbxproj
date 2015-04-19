@@ -10,6 +10,8 @@
 		860466651ABC6CFE00C39BDB /* PickerTaxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860466641ABC6CFE00C39BDB /* PickerTaxCell.xib */; };
 		860B39271AE2FB8F00D34896 /* RootUserPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */; };
 		860B392B1AE3060F00D34896 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B392A1AE3060F00D34896 /* PersistenceManager.swift */; };
+		860B392E1AE32D4500D34896 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B392D1AE32D4500D34896 /* Ride.swift */; };
+		860B39341AE33E7100D34896 /* OrderedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B39331AE33E7100D34896 /* OrderedList.swift */; };
 		86202E6D1AE2A7D500293B79 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86202E6C1AE2A7D500293B79 /* Bill.swift */; };
 		8624B86B1ACD71F600A60985 /* DataPersistenceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */; };
 		863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D5E931ACF7185007D9235 /* CustomPopUp.swift */; };
@@ -81,6 +83,8 @@
 		860466641ABC6CFE00C39BDB /* PickerTaxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerTaxCell.xib; sourceTree = "<group>"; };
 		860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserPersistenceManager.swift; sourceTree = "<group>"; };
 		860B392A1AE3060F00D34896 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		860B392D1AE32D4500D34896 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
+		860B39331AE33E7100D34896 /* OrderedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedList.swift; sourceTree = "<group>"; };
 		861C25051AE0A7090081E9E8 /* BrightFutures.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BrightFutures.xcodeproj; path = BrightFutures/BrightFutures.xcodeproj; sourceTree = "<group>"; };
 		86202E6C1AE2A7D500293B79 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersistenceDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +151,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		860B392C1AE32D3300D34896 /* Ride */ = {
+			isa = PBXGroup;
+			children = (
+				860B392D1AE32D4500D34896 /* Ride.swift */,
+			);
+			name = Ride;
+			sourceTree = "<group>";
+		};
+		860B39371AE3427C00D34896 /* OrderedList */ = {
+			isa = PBXGroup;
+			children = (
+				860B39331AE33E7100D34896 /* OrderedList.swift */,
+			);
+			name = OrderedList;
+			sourceTree = "<group>";
+		};
 		861C25061AE0A7090081E9E8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,7 +315,9 @@
 			children = (
 				86A78EEB1ACD86FB009BBF58 /* User */,
 				86A78EE91ACD86C9009BBF58 /* Billing */,
+				860B392C1AE32D3300D34896 /* Ride */,
 				86A78EEA1ACD86DB009BBF58 /* Persistence */,
+				860B39371AE3427C00D34896 /* OrderedList */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -489,6 +511,7 @@
 				86DFA2F51AE166FA00D42B65 /* Future.swift in Sources */,
 				86DFA2F61AE166FA00D42B65 /* FutureUtils.swift in Sources */,
 				86DFA2F71AE166FA00D42B65 /* InvalidationToken.swift in Sources */,
+				860B392E1AE32D4500D34896 /* Ride.swift in Sources */,
 				86DFA2F81AE166FA00D42B65 /* Promise.swift in Sources */,
 				86DFA2F91AE166FA00D42B65 /* Queue.swift in Sources */,
 				86DFA2FA1AE166FA00D42B65 /* Result.swift in Sources */,
@@ -518,6 +541,7 @@
 				86C23C9E1AD35E5100FE9D63 /* UserDetailBillSliderTableViewCell.swift in Sources */,
 				86C23CA01AD3611100FE9D63 /* UserDetailFirstNameTableViewCell.swift in Sources */,
 				86A92D9F1AB863E900B38445 /* AppDelegate.swift in Sources */,
+				860B39341AE33E7100D34896 /* OrderedList.swift in Sources */,
 				86C23C9C1AD35B7E00FE9D63 /* UserDetailMainTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
