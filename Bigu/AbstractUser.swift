@@ -72,20 +72,41 @@ class AbstractUser {
         }
     }
     var handler: UserHandlingDelegate? = nil
-    
+    let id: Int
     
     // MARK: -Methods
-    init() {}
     init(name: String, surName: String?, nickName: String?) {
         self.name = name
         self.surName = surName != nil ? surName! : ""
         self.nickName = nickName != nil ? nickName! : ""
         self.userImage = nil
+        self.id = AbstractUser.greaterId++
     }
     init(name: String, surName: String?, nickName: String?, userImage: UIImage?) {
         self.name = name
         self.surName = surName != nil ? surName! : ""
         self.nickName = nickName != nil ? nickName! : ""
         self.userImage = userImage
+        self.id = AbstractUser.greaterId++
+    }
+    init(id: Int, name: String, surName: String?, nickName: String?, userImage: UIImage?) {
+        self.name = name
+        self.surName = surName != nil ? surName! : ""
+        self.nickName = nickName != nil ? nickName! : ""
+        self.userImage = userImage
+        self.id = id
+    }
+    
+    // MARK: -Class Properties and Methods
+    private struct greaterIdWrap {
+        static var greaterId: Int = 0
+    }
+    class var greaterId: Int {
+        get {
+        return User.greaterIdWrap.greaterId
+        }
+        set {
+            User.greaterIdWrap.greaterId = newValue
+        }
     }
 }

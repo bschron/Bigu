@@ -8,12 +8,6 @@
 
 import Foundation
 
-func += (inout left: OrderedList<AnyObject>, right: Array<AnyObject>) {
-    for cur in right {
-        left.insert(cur)
-    }
-}
-
 class OrderedList<T> {
     // MARK: -Properties
     var order: (T, T) -> Bool {
@@ -30,6 +24,7 @@ class OrderedList<T> {
     init(isOrderedBefore: (T, T) -> Bool) {
         self.order = isOrderedBefore
     }
+    
     func insert(object: T) {
         var i = 0
         for cur in self.list {
@@ -39,6 +34,18 @@ class OrderedList<T> {
             i++
         }
         self.list.insert(object, atIndex: i)
+    }
+    
+    func insert(array: [T]) {
+        for cur in array {
+            self.insert(cur)
+        }
+    }
+    
+    func insert(list: OrderedList<T>) {
+        for cur in list.list {
+            self.insert(cur)
+        }
     }
     
     func getFirstObject() -> T? {
@@ -57,5 +64,45 @@ class OrderedList<T> {
         if index < self.count {
             self.list.removeAtIndex(index)
         }
+    }
+    
+    func removeObject(parameter: (T) -> Bool) -> Bool {
+        var result = false
+        
+        var i = 0
+        for cur in self.list {
+            if parameter(cur) {
+                result = true
+                break
+            }
+            i++
+        }
+        removeAtIndex(i)
+        
+        return result
+    }
+    
+    func findBy(parameter: (T) -> Bool) -> OrderedList<T> {
+        var desired: OrderedList<T> = OrderedList<T>(isOrderedBefore: self.order)
+        
+        for cur in self.list {
+            if parameter(cur) {
+                desired.insert(cur)
+            }
+        }
+        
+        return desired
+    }
+    
+    func clearList() {
+        self.list = []
+    }
+    
+    func arrayCopy() -> Array<T> {
+        var array = Array<T>()
+        for cur in self.list {
+            array += [cur]
+        }
+        return array
     }
 }

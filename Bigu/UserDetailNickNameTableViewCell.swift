@@ -35,13 +35,13 @@ class UserDetailNickNameTableViewCell: UITableViewCell, UserHandlingDelegate {
     }
     
     func reloadUsersData() {
-        self.textField.text = User.usersList.list[userIndex].nickName
+        self.textField.text = User.usersList.list.getElementAtIndex(self.userIndex)!.nickName
     }
     
     // MARK: Actions
     @IBAction func editingDidEnd(sender: AnyObject) {
         let newValue = self.textField.text
-        User.usersList.list[self.userIndex].nickName = newValue
+        User.usersList.list.getElementAtIndex(self.userIndex)!.nickName = newValue
         if userDetailViewController != nil {
             userDetailViewController.reloadUsersData()
         }

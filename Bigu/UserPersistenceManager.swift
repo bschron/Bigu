@@ -23,7 +23,7 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
     private func userArrayToDictionaryArray(users: Array<User>) -> [[NSString: NSObject]] {
         var output: [[NSString: NSObject]] = []
         for cur in users {
-            let dictionary: [NSString: NSObject] = [UserPersistenceManager.nameKey: cur.name, UserPersistenceManager.surNameKey: cur.surName, UserPersistenceManager.nickNameKey: cur.nickName, UserPersistenceManager.billKey: cur.bill.bill, UserPersistenceManager.userImageKey: UIImagePNGRepresentation(cur.userImage)]
+            let dictionary: [NSString: NSObject] = [UserPersistenceManager.nameKey: cur.name, UserPersistenceManager.surNameKey: cur.surName, UserPersistenceManager.nickNameKey: cur.nickName, UserPersistenceManager.billKey: cur.bill.bill, UserPersistenceManager.userImageKey: UIImagePNGRepresentation(cur.userImage), UserPersistenceManager.userIdKey : cur.id]
             output += [dictionary]
         }
         return output
@@ -43,7 +43,7 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
         var executionContext: ExecutionContext = context != nil ? context! : Queue.global.context
         
         let futureData = future(context: executionContext, { () -> Result<[[NSString: NSObject]]> in
-            let list: Array<User> = (self.object as! UserList).list
+            let list: Array<User> = (self.object as! UserList).list.arrayCopy()
             let data: [[NSString: NSObject]] = self.userArrayToDictionaryArray(list)
             
             if data.count == list.count {
@@ -80,13 +80,19 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
         var list = UserList()
         
         for cur in storedArray! {
-            let name = cur[UserPersistenceManager.nameKey] as! String
-            let surName = cur[UserPersistenceManager.surNameKey] as! String
-            let nickName = cur[UserPersistenceManager.nickNameKey] as! String
-            let bill = cur[UserPersistenceManager.billKey] as! Float
-            let dataImage = cur[UserPersistenceManager.userImageKey] as! NSData
-            let userImage = UIImage(data: dataImage)
-            let newUser = User(name: name, surName: surName, nickName: nickName, bill: bill, userImage: userImage, handler: nil)
+            let optionalName = cur[UserPersistenceManager.nameKey] as? String
+            let optionalSurName = cur[UserPersistenceManager.surNameKey] as? String
+            let optionalNickName = cur[UserPersistenceManager.nickNameKey] as? String
+            let optionalBill = cur[UserPersistenceManager.billKey] as? Float
+            let optionalDataImage = cur[UserPersistenceManager.userImageKey] as? NSData
+            let optionalUserImage = optionalDataImage != nil ? UIImage(data: optionalDataImage!) : nil
+            let optionalId = cur[UserPersistenceManager.userIdKey] as? Int
+            
+            let name = optionalName != nil ? optionalName! : "(NULL)"
+            let id = optionalId != nil ? optionalId! : User.greaterId++
+            
+            let newUser = User(id: id, name: name, surName: optionalSurName, nickName: optionalNickName, bill: optionalBill, userImage: optionalUserImage, handler: nil)
+            
             list.insertUser(newUser)
         }
         
@@ -111,5 +117,8 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
     }
     class private var userImageKey: String {
         return "UserImageKey"
+    }
+    class private var userIdKey: String {
+        return "UserIDKey"
     }
 }
