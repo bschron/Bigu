@@ -60,7 +60,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
     // MARK: - Protocols
     // MARK: UserHandlingDelegate
     func reloadUsersData() {
-        let user = User.usersList.list[userIndex]
+        let user = User.usersList.list.getElementAtIndex(self.userIndex)!
         self.title = user.nickName != "" ? user.nickName : user.name
     }
     // MARK: UITableViewDelegate
@@ -177,7 +177,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
         
         let image = info[UIImagePickerControllerEditedImage] as? UIImage
         
-        User.usersList.list[userIndex].userImage = image
+        User.usersList.list.getElementAtIndex(self.userIndex)!.userImage = image
         
         self.dismissViewControllerAnimated(true, completion: nil)
         self.reloadUsersData()

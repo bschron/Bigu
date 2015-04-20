@@ -29,7 +29,7 @@ class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandlerDelegate
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        User.usersList.list[self.userIndex].bill.registerAsHandler(self)
+        User.usersList.list.getElementAtIndex(self.userIndex)!.bill.registerAsHandler(self)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -39,7 +39,7 @@ class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandlerDelegate
     }
     
     func updateBillingUI() {
-        self.originalBill = User.usersList.list[self.userIndex].bill.bill
+        self.originalBill = User.usersList.list.getElementAtIndex(self.userIndex)!.bill.bill
         self.slider.maximumValue = originalBill
         self.slider.minimumValue = 0
         self.slider.value = originalBill
@@ -79,7 +79,7 @@ class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandlerDelegate
         self.billValueLabel.text = "\(roundedTotalValue)"
     }
     @IBAction func submitValueDecrease(sender: AnyObject) {
-        User.usersList.list[userIndex].bill.payPartialBill(payingValue: self.decreasedValue)
+        User.usersList.list.getElementAtIndex(self.userIndex)!.bill.payPartialBill(payingValue: self.decreasedValue)
         self.destroy()
     }
 

@@ -35,13 +35,13 @@ class UserDetailLastNameTableViewCell: UITableViewCell, UserHandlingDelegate {
     }
     
     func reloadUsersData() {
-        self.textField.text = User.usersList.list[userIndex].surName
+        self.textField.text = User.usersList.list.getElementAtIndex(self.userIndex)!.surName
     }
     
     // MARK: Actions
     @IBAction func editingDidEnd(sender: AnyObject) {
         let newValue = self.textField.text
-        User.usersList.list[self.userIndex].surName = newValue
+        User.usersList.list.getElementAtIndex(self.userIndex)!.surName = newValue
         if userDetailViewController != nil {
             userDetailViewController.reloadUsersData()
         }

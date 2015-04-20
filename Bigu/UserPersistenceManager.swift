@@ -23,8 +23,7 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
     private func userArrayToDictionaryArray(users: Array<User>) -> [[NSString: NSObject]] {
         var output: [[NSString: NSObject]] = []
         for cur in users {
-            let dictionary: [NSString: NSObject] = [UserPersistenceManager.nameKey: cur.name, UserPersistenceManager.surNameKey: cur.surName, UserPersistenceManager.nickNameKey: cur.nickName, UserPersistenceManager.billKey: cur.bill.bill, UserPersistenceManager.userImageKey: UIImagePNGRepresentation(cur.userImage), UserPersistenceManager.userIdKey : cur.id]
-            output += [dictionary]
+            output += [cur.toDictionary()]
         }
         return output
     }
@@ -80,18 +79,7 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
         var list = UserList()
         
         for cur in storedArray! {
-            let optionalName = cur[UserPersistenceManager.nameKey] as? String
-            let optionalSurName = cur[UserPersistenceManager.surNameKey] as? String
-            let optionalNickName = cur[UserPersistenceManager.nickNameKey] as? String
-            let optionalBill = cur[UserPersistenceManager.billKey] as? Float
-            let optionalDataImage = cur[UserPersistenceManager.userImageKey] as? NSData
-            let optionalUserImage = optionalDataImage != nil ? UIImage(data: optionalDataImage!) : nil
-            let optionalId = cur[UserPersistenceManager.userIdKey] as? Int
-            
-            let name = optionalName != nil ? optionalName! : "(NULL)"
-            let id = optionalId != nil ? optionalId! : User.greaterId++
-            
-            let newUser = User(id: id, name: name, surName: optionalSurName, nickName: optionalNickName, bill: optionalBill, userImage: optionalUserImage, handler: nil)
+            let newUser = User(fromDictionary: cur)
             
             list.insertUser(newUser)
         }
@@ -102,23 +90,5 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
     // MARK: - Class Properties and Methods
     class private var usersKey: String {
         return "UsersKey"
-    }
-    class private var nameKey: String {
-        return "UserNameKey"
-    }
-    class private var surNameKey: String {
-        return "UserSurNameKey"
-    }
-    class private var nickNameKey: String {
-        return "UserNickNameKey"
-    }
-    class private var billKey: String {
-        return "UserBillKey"
-    }
-    class private var userImageKey: String {
-        return "UserImageKey"
-    }
-    class private var userIdKey: String {
-        return "UserIDKey"
     }
 }

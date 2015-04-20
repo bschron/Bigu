@@ -114,7 +114,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         else if tableView === self.usersTableView {
             let cell = usersTableView.dequeueReusableCellWithIdentifier(UserCell.userCellReuseId, forIndexPath: indexPath) as! UserCell
-            cell.user = UserList.sharedUserList.list[indexPath.row]
+            cell.user = UserList.sharedUserList.list.getElementAtIndex(indexPath.row)!
             cell.userIndex = indexPath.row
             cell.viewController = self
             

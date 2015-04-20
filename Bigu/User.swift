@@ -43,6 +43,17 @@ class User: AbstractUser {
             self.bill.increaseBill(b)
         }
     }
+    override init(fromDictionary dic: [NSString : NSObject]) {
+        super.init(fromDictionary: dic)
+        let optionalBill = dic[User.billKey] as? Float
+        self.bill.increaseBill(optionalBill != nil ? optionalBill! : 0)
+    }
+    
+    override func toDictionary() -> [NSString : NSObject] {
+        var dic = super.toDictionary()
+        dic[User.billKey] = self.bill.bill
+        return dic
+    }
     
     // MARK: -Class Properties and Methods
     class var usersList: UserList {
@@ -50,5 +61,8 @@ class User: AbstractUser {
     }
     class func removeUserAtRow (row: Int) {
         UserList.sharedUserList.removeUserAtIndex(row)
+    }
+    class private var billKey: String {
+        return "UserBillKey"
     }
 }

@@ -29,7 +29,7 @@ class UserCell: UITableViewCell {
     var viewController: UIViewController!
     var userIndex: Int = 0 {
         didSet {
-            self.user = User.usersList.list[self.userIndex]
+            self.user = User.usersList.list.getElementAtIndex(self.userIndex)!
         }
     }
     
@@ -79,7 +79,7 @@ class UserCell: UITableViewCell {
     
     private func updateUserInfo() {
         if configured {
-            let user = User.usersList.list[self.userIndex]
+            let user = User.usersList.list.getElementAtIndex(self.userIndex)!
             self.nameLabel.text = user.nickName != "" ? user.nickName : user.name
             self.fullnameLabel.text = user.fullName
             self.userImageView.image = user.userImage
@@ -113,7 +113,7 @@ class UserCell: UITableViewCell {
                         if location.x >= self.frame.width / 2 {
                             let newColor = UIColor(red: CGFloat(0.1), green: CGFloat(0.59607843), blue: CGFloat(0.85882353), alpha: CGFloat(0.25))
                             self.invisibleUserImageViewCover.backgroundColor = newColor
-                            User.usersList.list[self.userIndex].bill.payBill()
+                            User.usersList.list.getElementAtIndex(self.userIndex)!.bill.payBill()
                         }
                         else {
                             let newColor = UIColor.redColor().colorWithAlphaComponent(CGFloat(0.25))
@@ -134,7 +134,7 @@ class UserCell: UITableViewCell {
     // MARK: Actions
     @IBAction func debitButtonPressed(sender: AnyObject) {
         let currentTaxValue = TaxCell.taxValue
-        User.usersList.list[self.userIndex].bill.increaseBill(currentTaxValue)
+        User.usersList.list.getElementAtIndex(self.userIndex)!.bill.increaseBill(currentTaxValue)
         //Animation
         let duration = 0.3
         let delay = 0.0 // delay will be 0.0 seconds (e.g. nothing)
