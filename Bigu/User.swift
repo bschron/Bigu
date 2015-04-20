@@ -13,6 +13,7 @@ class User: AbstractUser {
     
     // MARK: - Properties
     var bill: Bill = Bill()
+    let id: Int
     
     // MARK: -Methods
     func synchronize() {
@@ -24,6 +25,8 @@ class User: AbstractUser {
             self.bill.registerAsHandler(hand)
         }
         self.userImage = nil
+        self.id = User.greaterId
+        User.greaterId++
     }
     init(name: String, surName: String?, nickName: String?, bill: Float?, userImage: UIImage?, handler: BillingHandlerDelegate?) {
         super.init(name: name, surName: surName, nickName: nickName, userImage: userImage)
@@ -33,6 +36,8 @@ class User: AbstractUser {
         if let b = bill {
             self.bill.increaseBill(b)
         }
+        self.id = User.greaterId
+        User.greaterId++
     }
     
     // MARK: -Class Properties and Methods
@@ -41,5 +46,16 @@ class User: AbstractUser {
     }
     class func removeUserAtRow (row: Int) {
         UserList.sharedUserList.removeUserAtIndex(row)
+    }
+    private struct greaterIdWrap {
+        static var greaterId: Int = 0
+    }
+    class var greaterId: Int {
+        get {
+            return User.greaterIdWrap.greaterId
+        }
+        set {
+            User.greaterIdWrap.greaterId = newValue
+        }
     }
 }

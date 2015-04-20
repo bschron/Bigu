@@ -21,7 +21,16 @@ class RideListManager: DataPersistenceDelegate {
             self.object = RideListManager.rideListSingleton
         }
     }
-    
+    private func toArrayDictionary() -> [[NSString: NSObject]] {
+        let list = self.object as! OrderedList<Ride>
+        var array = [[NSString: NSObject]]()
+        for var i = 0, current = list.getFirstObject(); current != nil; i++, current = list.getElementAtIndex(i) {
+            if let cur = current {
+            var dictionary = [NSString: NSObject]()
+            let 
+            }
+        }
+    }
     // MARK: -Protocols
     // MARK: DataPersistenceDelegate
     var object: AnyObject? {
@@ -37,8 +46,10 @@ class RideListManager: DataPersistenceDelegate {
         let promise = Promise<Bool>()
         future(context: execContext, { () -> Result<Bool> in
             let list = self.object as! OrderedList<Ride>
-            for var i = 0, current = list.getFirstObject(); let cur = current; i++, current = list.getElementAtIndex(i) {
-                
+            for var i = 0, current = list.getFirstObject(); current != nil; i++, current = list.getElementAtIndex(i) {
+                if let cur = current {
+                    
+                }
             }
         })
     }
