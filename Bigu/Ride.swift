@@ -11,7 +11,7 @@ import Foundation
 class Ride {
     // MARK: -Properties
     let time: NSDate
-    var userId: Int
+    let userId: Int
     let value: Float
     var timingSinceOcurrence: NSTimeInterval {
         return self.time.timeIntervalSinceNow
@@ -20,6 +20,12 @@ class Ride {
     // MARK: -Methods
     init(time: NSDate, userId: Int, value: Float) {
         self.time = time
+        self.userId = userId
+        self.value = value
+    }
+    
+    init (userId: Int, value: Float) {
+        self.time = NSDate()
         self.userId = userId
         self.value = value
     }

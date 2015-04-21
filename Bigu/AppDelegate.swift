@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userManager = UserPersistenceManager()
         UserList.sharedUserList = userManager.load() as! UserList
         RootUserPersistenceManager.singleton.load()
+        RideListManager.rideListSingleton
         return true
     }
 

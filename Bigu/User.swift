@@ -12,41 +12,42 @@ import UIKit
 class User: AbstractUser {
     
     // MARK: - Properties
-    var bill: Bill = Bill()
+    var bill: Bill
     
     // MARK: -Methods
     func synchronize() {
         User.usersList.insertUser(self)
     }
     init(name: String, surName: String?, nickName: String?, handler: BillingHandlerDelegate?) {
+        self.bill = Bill()
         super.init(name: name, surName: surName, nickName: nickName)
         if let hand = handler {
             self.bill.registerAsHandler(hand)
         }
         self.userImage = nil
+        self.bill.user = self
     }
     init(name: String, surName: String?, nickName: String?, bill: Float?, userImage: UIImage?, handler: BillingHandlerDelegate?) {
+        self.bill = bill != nil ? Bill(fromBillValue: bill!) : Bill()
         super.init(name: name, surName: surName, nickName: nickName, userImage: userImage)
         if let hand = handler {
             self.bill.registerAsHandler(hand)
         }
-        if let b = bill {
-            self.bill.increaseBill(b)
-        }
+        self.bill.user = self
     }
     init(id: Int, name: String, surName: String?, nickName: String?, bill: Float?, userImage: UIImage?, handler: BillingHandlerDelegate?) {
+        self.bill = bill != nil ? Bill(fromBillValue: bill!) : Bill()
         super.init(id: id, name: name, surName: surName, nickName: nickName, userImage: userImage)
         if let h = handler {
             self.bill.registerAsHandler(h)
         }
-        if let b = bill {
-            self.bill.increaseBill(b)
-        }
+        self.bill.user = self
     }
     override init(fromDictionary dic: [NSString : NSObject]) {
-        super.init(fromDictionary: dic)
         let optionalBill = dic[User.billKey] as? Float
-        self.bill.increaseBill(optionalBill != nil ? optionalBill! : 0)
+        self.bill = optionalBill != nil ? Bill(fromBillValue: optionalBill!) : Bill()
+        super.init(fromDictionary: dic)
+        self.bill.user = self
     }
     
     override func toDictionary() -> [NSString : NSObject] {

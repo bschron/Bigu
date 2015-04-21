@@ -98,6 +98,10 @@ class AbstractUser {
         self.surName = surName != nil ? surName! : ""
         self.nickName = nickName != nil ? nickName! : ""
         self.userImage = userImage
+        
+        if self.id >= AbstractUser.greaterId {
+            AbstractUser.greaterId = self.id + 1
+        }
     }
     init(fromDictionary dic: [NSString: NSObject]) {
         let optionalId = dic[AbstractUser.userIdKey] as? Int
@@ -111,6 +115,11 @@ class AbstractUser {
         self._nickName = optionalNickname
         self._surName = optionalSurname
         self._userImage = optionalImage != nil ? UIImage(data: optionalImage!) : nil
+        
+        if self.id >= AbstractUser.greaterId {
+            AbstractUser.greaterId = self.id + 1
+        }
+        
     }
     
     func toDictionary() -> [NSString: NSObject] {
