@@ -38,10 +38,8 @@ class RideListManager: DataPersistenceDelegate {
     }
     
     init() {
-        self.id = RideListManager.greaterId
         self.singleton = false
         self.list = OrderedList<Ride>(isOrderedBefore: RideListManager.defaultOrder)
-        self.registerId(self.id)
         PersistenceManager.singleton.registerAsManager(self)
     }
     
@@ -82,9 +80,17 @@ class RideListManager: DataPersistenceDelegate {
         return result
     }
     
+    func registerToAvailableId() {
+        self.registerId(RideListManager.greaterId)
+    }
+    
     func unregisterSelfId() {
         if self.id != -1 {
             RideListManager.idList.removeObject({ $0 == self.id })
+            
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.removeObjectForKey(RideListManager.rideListKey(self.id))
+            
             self.id = -1
         }
     }

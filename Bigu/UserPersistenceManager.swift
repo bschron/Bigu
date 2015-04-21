@@ -9,14 +9,13 @@
 import Foundation
 import UIKit
 
-class UserPersistenceManager: NSObject, DataPersistenceDelegate {
+class UserPersistenceManager: DataPersistenceDelegate {
     
     // MARK: - Properties
     
     // MARK: - Methods
     
-    override init() {
-        super.init()
+    init() {
         PersistenceManager.singleton.registerAsManager(self)
     }
     
@@ -89,6 +88,8 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
         
         var list = UserList()
         
+        list.isLoading = true
+        
         for cur in storedArray! {
             let newUser = User(fromDictionary: cur)
             list.insertUser(newUser)
@@ -97,6 +98,8 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
             let erasedUser = ErasedUser(fromDictionary: cur)
             list.insertErasedUser(erasedUser)
         }
+        
+        list.isLoading = false
         
         return list
     }
@@ -107,5 +110,12 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
     }
     class private var erasedUsersKey: String {
         return "ErasedUsersKey"
+    }
+    class var singleton: UserPersistenceManager {
+        struct wrap {
+            static let singleton = UserPersistenceManager()
+        }
+        
+        return wrap.singleton
     }
 }
