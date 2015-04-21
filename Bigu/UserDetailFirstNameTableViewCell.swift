@@ -50,5 +50,9 @@ class UserDetailFirstNameTableViewCell: UITableViewCell, UserHandlingDelegate {
     @IBAction func dismissKeyboard(sender: AnyObject) {
         sender.resignFirstResponder()
     }
-
+    
+    // MARK: -Class Properties and Methods
+    class var reuseId: String {
+        return "UserDetailFirstNameCellIdentifier"
+    }
 }

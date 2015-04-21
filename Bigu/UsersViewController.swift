@@ -14,7 +14,6 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     private weak var popUp: NewUserPopUp?
     
     //MARK: Outlets
-    @IBOutlet weak var upperTableView: UITableView!
     @IBOutlet weak var usersTableView: UITableView!
     
     // MARK: - Methods
@@ -28,8 +27,6 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         /* register tax cells nibs*/
         let defaultTaxCellNib = UINib(nibName: "TaxCell", bundle: nil)
         let pickerTaxCellNib = UINib(nibName: "PickerTaxCell", bundle: nil)
-        upperTableView.registerNib(defaultTaxCellNib, forCellReuseIdentifier: TaxCell.TaxCellState.Default.rawValue)
-        upperTableView.registerNib(pickerTaxCellNib, forCellReuseIdentifier: TaxCell.TaxCellState.TaxPicker.rawValue)
         /* register user cells nibs */
         let userCellNib = UINib(nibName: "UserCell", bundle: nil)
         self.usersTableView.registerNib(userCellNib, forCellReuseIdentifier: UserCell.userCellReuseId)
@@ -95,49 +92,21 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     // MARK: TableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var number: Int = 0
-        
-        if tableView === upperTableView {
-            number = 1
-        }
-        else if tableView == self.usersTableView {
-            number = UserList.sharedUserList.list.count
-        }
-        return number
+        return UserList.sharedUserList.list.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        if tableView === self.upperTableView {
-            let cell = upperTableView.dequeueReusableCellWithIdentifier(TaxCell.currentState.rawValue, forIndexPath: indexPath) as! TaxCell
-            // configure cell
-            cell.tableView = self.upperTableView
-            
-            return cell
-        }
-        else if tableView === self.usersTableView {
-            let cell = usersTableView.dequeueReusableCellWithIdentifier(UserCell.userCellReuseId, forIndexPath: indexPath) as! UserCell
-            cell.user = UserList.sharedUserList.list.getElementAtIndex(indexPath.row)!
-            cell.userIndex = indexPath.row
-            cell.viewController = self
-            
-            return cell
-        }
-        return UITableViewCell()
+        let cell = usersTableView.dequeueReusableCellWithIdentifier(UserCell.userCellReuseId, forIndexPath: indexPath) as! UserCell
+        cell.user = UserList.sharedUserList.list.getElementAtIndex(indexPath.row)!
+        cell.userIndex = indexPath.row
+        cell.viewController = self
+        
+        return cell
     }
     
     // MARK: TableViewDelegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        var height: CGFloat!
-        
-        if tableView === self.usersTableView {
-            height = CGFloat(80)
-        }
-        else if tableView === self.upperTableView {
-            height = CGFloat(100)
-        }
-        
-        return height
+        return CGFloat(80)
     }
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         var result: Bool!
@@ -160,16 +129,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        var result: Bool!
-        
-        if tableView === upperTableView {
-            result = false
-        }
-        else {
-            result = true
-        }
-        
-        return result
+        return true
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let row = indexPath.row

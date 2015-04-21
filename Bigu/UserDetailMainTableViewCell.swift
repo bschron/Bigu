@@ -87,5 +87,10 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate, Billin
     @IBAction func loadImage(sender: AnyObject) {
         self.viewController.displayPhotoLibraryPicker()
     }
+    
+    // MARK: -Class Properties and Methods
+    class var reuseId: String {
+        return "UserDetailMainCellIdentifier"
+    }
 
 }

@@ -50,4 +50,9 @@ class UserDetailLastNameTableViewCell: UITableViewCell, UserHandlingDelegate {
         sender.resignFirstResponder()
     }
     
+    // MARK: -Class Properties and Methods
+    class var reuseId: String {
+        return "UserDetailLastNameIdentifier"
+    }
+    
 }

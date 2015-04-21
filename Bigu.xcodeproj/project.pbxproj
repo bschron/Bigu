@@ -24,6 +24,11 @@
 		863D5E991ACF75F8007D9235 /* NewUserPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863D5E981ACF75F8007D9235 /* NewUserPopUp.xib */; };
 		8661BED91AE6A1EC00BBBF4E /* DarkTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661BED81AE6A1EC00BBBF4E /* DarkTabBarController.swift */; };
 		8661BEDC1AE6A62D00BBBF4E /* DarkNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661BEDB1AE6A62D00BBBF4E /* DarkNavigationController.swift */; };
+		8661BEDF1AE6CA7900BBBF4E /* UserDetailMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8661BEDE1AE6CA7900BBBF4E /* UserDetailMainTableViewCell.xib */; };
+		8661BEE11AE6CAAB00BBBF4E /* UserDetailBillSliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8661BEE01AE6CAAB00BBBF4E /* UserDetailBillSliderTableViewCell.xib */; };
+		8661BEE31AE6CAC700BBBF4E /* UserDetailFirstNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8661BEE21AE6CAC700BBBF4E /* UserDetailFirstNameTableViewCell.xib */; };
+		8661BEE51AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8661BEE41AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib */; };
+		8661BEE71AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8661BEE61AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib */; };
 		8662E4241AC9910D0087B69B /* DefaultTaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662E4231AC9910D0087B69B /* DefaultTaxCell.swift */; };
 		8662E4261ACACB180087B69B /* PickerTaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662E4251ACACB180087B69B /* PickerTaxCell.swift */; };
 		8668D3971ACF3E8500C2CB87 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8668D3961ACF3E8500C2CB87 /* UserList.swift */; };
@@ -105,6 +110,11 @@
 		863D5E981ACF75F8007D9235 /* NewUserPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserPopUp.xib; sourceTree = "<group>"; };
 		8661BED81AE6A1EC00BBBF4E /* DarkTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkTabBarController.swift; sourceTree = "<group>"; };
 		8661BEDB1AE6A62D00BBBF4E /* DarkNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkNavigationController.swift; sourceTree = "<group>"; };
+		8661BEDE1AE6CA7900BBBF4E /* UserDetailMainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailMainTableViewCell.xib; sourceTree = "<group>"; };
+		8661BEE01AE6CAAB00BBBF4E /* UserDetailBillSliderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailBillSliderTableViewCell.xib; sourceTree = "<group>"; };
+		8661BEE21AE6CAC700BBBF4E /* UserDetailFirstNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailFirstNameTableViewCell.xib; sourceTree = "<group>"; };
+		8661BEE41AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailLastNameTableViewCell.xib; sourceTree = "<group>"; };
+		8661BEE61AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailNickNameTableViewCell.xib; sourceTree = "<group>"; };
 		8662E4231AC9910D0087B69B /* DefaultTaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTaxCell.swift; sourceTree = "<group>"; };
 		8662E4251ACACB180087B69B /* PickerTaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerTaxCell.swift; sourceTree = "<group>"; };
 		8668D3961ACF3E8500C2CB87 /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
@@ -390,10 +400,15 @@
 			children = (
 				86C23C991AD34DDB00FE9D63 /* UserDetailViewController.swift */,
 				86C23C9B1AD35B7E00FE9D63 /* UserDetailMainTableViewCell.swift */,
+				8661BEDE1AE6CA7900BBBF4E /* UserDetailMainTableViewCell.xib */,
 				86C23C9D1AD35E5100FE9D63 /* UserDetailBillSliderTableViewCell.swift */,
+				8661BEE01AE6CAAB00BBBF4E /* UserDetailBillSliderTableViewCell.xib */,
 				86C23C9F1AD3611100FE9D63 /* UserDetailFirstNameTableViewCell.swift */,
+				8661BEE21AE6CAC700BBBF4E /* UserDetailFirstNameTableViewCell.xib */,
 				86C23CA11AD362A200FE9D63 /* UserDetailLastNameTableViewCell.swift */,
+				8661BEE41AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib */,
 				86C23CA31AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift */,
+				8661BEE61AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib */,
 			);
 			name = UserDetailViewController;
 			sourceTree = "<group>";
@@ -534,15 +549,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8661BEE11AE6CAAB00BBBF4E /* UserDetailBillSliderTableViewCell.xib in Resources */,
 				860466651ABC6CFE00C39BDB /* PickerTaxCell.xib in Resources */,
 				860058CE1AE69753000F1050 /* RideTableViewCell.xib in Resources */,
 				86A92DA61AB863E900B38445 /* Main.storyboard in Resources */,
 				863D5E961ACF7277007D9235 /* CustomPopUp.xib in Resources */,
+				8661BEE71AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib in Resources */,
 				86F441CA1ACEA574006B5246 /* UserCell.xib in Resources */,
 				86A92DC51AB868E200B38445 /* TaxCell.xib in Resources */,
+				8661BEDF1AE6CA7900BBBF4E /* UserDetailMainTableViewCell.xib in Resources */,
 				86A92DAB1AB863E900B38445 /* LaunchScreen.xib in Resources */,
 				863D5E991ACF75F8007D9235 /* NewUserPopUp.xib in Resources */,
+				8661BEE51AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib in Resources */,
 				86A92DA81AB863E900B38445 /* Images.xcassets in Resources */,
+				8661BEE31AE6CAC700BBBF4E /* UserDetailFirstNameTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

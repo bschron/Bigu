@@ -31,6 +31,11 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
         //self.displayPhotoLibraryPicker()
         
         self.tableView.registerNib(UINib(nibName: "RideTableViewCell", bundle: nil), forCellReuseIdentifier: RideTableViewCell.reuseId)
+        self.tableView.registerNib(UINib(nibName: "UserDetailMainTableViewCell", bundle: nil), forCellReuseIdentifier: UserDetailMainTableViewCell.reuseId)
+        self.tableView.registerNib(UINib(nibName: "UserDetailBillSliderTableViewCell", bundle: nil), forCellReuseIdentifier: UserDetailBillSliderTableViewCell.reuseId)
+        self.tableView.registerNib(UINib(nibName: "UserDetailFirstNameTableViewCell", bundle: nil), forCellReuseIdentifier: UserDetailFirstNameTableViewCell.reuseId)
+        self.tableView.registerNib(UINib(nibName: "UserDetailLastNameTableViewCell", bundle: nil), forCellReuseIdentifier: UserDetailLastNameTableViewCell.reuseId)
+        self.tableView.registerNib(UINib(nibName: "UserDetailNickNameTableViewCell", bundle: nil), forCellReuseIdentifier: UserDetailNickNameTableViewCell.reuseId)
     }
 
     override func didReceiveMemoryWarning() {
@@ -95,7 +100,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
         
         if section == 0 {
             if row == 0 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.mainCellIdentifier, forIndexPath: indexPath) as! UserDetailMainTableViewCell
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailMainTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailMainTableViewCell
                 newCell.userIndex = self.userIndex
                 newCell.viewController = self
                 
@@ -104,7 +109,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
                 cell = newCell
             }
             else if row == 1 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.billSliderCellIdentifier, forIndexPath: indexPath) as! UserDetailBillSliderTableViewCell
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailBillSliderTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailBillSliderTableViewCell
                 
                 newCell.userIndex = self.userIndex
                 newCell.mainCell = mainCell
@@ -116,7 +121,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
         }
         else if section == 1 {
             if row == 0 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.firstNameCellIdentifier, forIndexPath: indexPath) as! UserDetailFirstNameTableViewCell
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailFirstNameTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailFirstNameTableViewCell
                 
                 newCell.userIndex = self.userIndex
                 newCell.userDetailViewController = self
@@ -124,7 +129,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
                 cell = newCell
             }
             else if row == 1 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.lastnameCellIdentifier, forIndexPath: indexPath) as! UserDetailLastNameTableViewCell
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailLastNameTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailLastNameTableViewCell
                 
                 newCell.userIndex = self.userIndex
                 newCell.userDetailViewController = self
@@ -132,7 +137,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
                 cell = newCell
             }
             else if row == 2 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.nicknameCellIdentifier, forIndexPath: indexPath) as! UserDetailNickNameTableViewCell
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailNickNameTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailNickNameTableViewCell
                 
                 newCell.userIndex = self.userIndex
                 newCell.userDetailViewController = self
@@ -212,22 +217,5 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    // MARK: - Class Properties
-    class var mainCellIdentifier: String {
-        return "UserDetailMainCellIdentifier"
-    }
-    class var firstNameCellIdentifier: String {
-        return "UserDetailFirstNameCellIdentifier"
-    }
-    class var lastnameCellIdentifier: String {
-        return "UserDetailLastNameIdentifier"
-    }
-    class var nicknameCellIdentifier: String {
-        return "UserDetailNickNameIdentifier"
-    }
-    class var billSliderCellIdentifier: String {
-        return "UserDetailTaxSliderCellIdentifier"
     }
 }

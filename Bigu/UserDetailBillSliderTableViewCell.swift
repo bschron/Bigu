@@ -82,5 +82,10 @@ class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandlerDelegate
         User.usersList.list.getElementAtIndex(self.userIndex)!.payPartialBill(payingValue: self.decreasedValue)
         self.destroy()
     }
+    
+    // MARK: -Class Properties and Methods
+    class var reuseId: String {
+        return "UserDetailTaxSliderCellIdentifier"
+    }
 
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: - Properties
     private var rootUser: RootUser {
@@ -16,6 +16,17 @@ class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePic
             return RootUser.singleton
         }
     }
+    private var _intValues: Array<Int>? = nil
+    private var integerValues: [Int] {
+        if self._intValues == nil {
+            self._intValues = []
+            for i in 1...50 {
+                self._intValues! += [i]
+            }
+        }
+        return self._intValues!
+    }
+    private let floatingPointValues: [Float] = [0, 0.5]
     
     // MARK: - Outlets
     @IBOutlet weak var userImageView: UIImageView!
@@ -26,6 +37,9 @@ class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePic
     @IBOutlet weak var savingsLabel: UILabel!
     private var userImageTapGesture: UITapGestureRecognizer!
     @IBOutlet weak var rideListTableView: UITableView!
+    @IBOutlet weak var sideView: UIView!
+    @IBOutlet weak var taxValuePicker: UIPickerView!
+    @IBOutlet weak var taxValueLabel: UIButton!
     
     // MARK: - Methods
 
@@ -34,6 +48,8 @@ class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePic
 
         // Do any additional setup after loading the view.
         self.rideListTableView.registerNib(UINib(nibName: "RideTableViewCell", bundle: nil), forCellReuseIdentifier: RideTableViewCell.reuseId)
+        
+        self.sideView.backgroundColor = RGBColor(r: 1, g: 63, b: 26, alpha: 1)
         
         self.userImageView.layer.cornerRadius = self.userImageView.layer.frame.width / 2
         self.userImageView.layer.masksToBounds = true
@@ -53,11 +69,13 @@ class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePic
         super.viewWillAppear(animated)
         self.reloadUsersData()
         self.rideListTableView.reloadData()
+        self.setTaxValueLabel()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        self._intValues = nil
     }
     
     func displayPhotoLibraryPicker () {
@@ -68,6 +86,10 @@ class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePic
         
         self.presentViewController(imagePicker, animated: true,
             completion: nil)
+    }
+    
+    private func setTaxValueLabel() {
+        self.taxValueLabel.setTitle("\(Bill.taxValue)", forState: UIControlState.allZeros)
     }
     
     // MARK: actions
@@ -129,6 +151,32 @@ class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePic
         cell.ride = ride
         
         return cell
+    }
+    
+    // MARK: UIPickerViewDelegate
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        var str: NSAttributedString?
+        
+        if component == 0 {
+            str = NSAttributedString(string: "\(self.integerValues[row])", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+        }
+        else if component == 1 {
+            str = NSAttributedString(string: "\(self.floatingPointValues[row])", attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+        }
+        
+        return str
+    }
+    
+    // MARK: UIPickerViewDataSource
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return component == 0 ? self.integerValues.count : self.floatingPointValues.count
+    }
+    func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        let pickerWidth = pickerView.bounds.size.width
+        return component == 0 ? (2 * pickerWidth) / 3 : pickerWidth / 3
     }
 
     /*
