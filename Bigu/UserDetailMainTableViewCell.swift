@@ -45,19 +45,19 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate, Billin
     }
     
     func reloadUsersData() {
-        let user = User.usersList.list[self.userIndex]
+        let user = User.usersList.list.getElementAtIndex(self.userIndex)!
         self.userImageView.image = user.userImage
     }
     
     func registerAsBillingHandler() {
-        User.usersList.list[self.userIndex].bill.registerAsHandler(self)
+        User.usersList.list.getElementAtIndex(self.userIndex)!.registerAsBillHandler(self)
     }
     
     func updateBillingUI() {
-        let user = User.usersList.list[self.userIndex]
+        let user = User.usersList.list.getElementAtIndex(self.userIndex)!
         
-        self.billLabel.text = "\(user.bill.bill)"
-        if user.bill.bill <= 0 {
+        self.billLabel.text = "\(user.billValue)"
+        if user.billValue <= 0 {
             self.resetButton.hidden = true
             self.decreaseButton.hidden = true
         }
@@ -69,7 +69,7 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate, Billin
     
     // MARK: Actions
     @IBAction func decreaseButtonPressed(sender: AnyObject) {
-        let curBill: Float = User.usersList.list[userIndex].bill.bill
+        let curBill: Float = User.usersList.list.getElementAtIndex(self.userIndex)!.billValue
         if curBill != 0 && !self.viewController.billSlider {
             self.viewController.billSlider = true
             self.viewController.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic)
@@ -79,7 +79,7 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate, Billin
         }
     }
     @IBAction func resetButtonPressed(sender: AnyObject) {
-        User.usersList.list[userIndex].bill.payBill()
+        User.usersList.list.getElementAtIndex(self.userIndex)!.payBill()
         self.registerAsBillingHandler()
         self.viewController.billSliderCell?.destroy()
     }

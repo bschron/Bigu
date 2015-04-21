@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - Properties
     private var rootUser: RootUser {
@@ -25,6 +25,7 @@ class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePic
     @IBOutlet weak var nicknameTextField: UITextField!
     @IBOutlet weak var savingsLabel: UILabel!
     private var userImageTapGesture: UITapGestureRecognizer!
+    @IBOutlet weak var rideListTableView: UITableView!
     
     // MARK: - Methods
 
@@ -32,6 +33,8 @@ class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePic
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.rideListTableView.registerNib(UINib(nibName: "RideTableViewCell", bundle: nil), forCellReuseIdentifier: RideTableViewCell.reuseId)
+        
         self.userImageView.layer.cornerRadius = self.userImageView.layer.frame.width / 2
         self.userImageView.layer.masksToBounds = true
         self.rootUser.handler = self
@@ -49,6 +52,7 @@ class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePic
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.reloadUsersData()
+        self.rideListTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,6 +109,26 @@ class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePic
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    // MARK: UITableViewDelegate
+    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "Rides History" : nil
+    }
+    
+    // MARK: UITableViewDataSource
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return RideListManager.rideListSingleton.count
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let row = indexPath.row
+        let ride = RideListManager.rideListSingleton.list.getElementAtIndex(row)
+        let cell = self.rideListTableView.dequeueReusableCellWithIdentifier(RideTableViewCell.reuseId, forIndexPath: indexPath) as! RideTableViewCell
+        cell.ride = ride
+        
+        return cell
     }
 
     /*

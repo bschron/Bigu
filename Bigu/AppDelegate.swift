@@ -16,9 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         // Load User List
-        let userManager = UserPersistenceManager()
+        let userManager = UserPersistenceManager.singleton
         UserList.sharedUserList = userManager.load() as! UserList
         RootUserPersistenceManager.singleton.load()
+        RideListManager.rideListSingleton
         return true
     }
 

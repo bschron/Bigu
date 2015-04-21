@@ -29,6 +29,8 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
 
         // Do any additional setup after loading the view.
         //self.displayPhotoLibraryPicker()
+        
+        self.tableView.registerNib(UINib(nibName: "RideTableViewCell", bundle: nil), forCellReuseIdentifier: RideTableViewCell.reuseId)
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,7 +62,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
     // MARK: - Protocols
     // MARK: UserHandlingDelegate
     func reloadUsersData() {
-        let user = User.usersList.list[userIndex]
+        let user = User.usersList.list.getElementAtIndex(self.userIndex)!
         self.title = user.nickName != "" ? user.nickName : user.name
     }
     // MARK: UITableViewDelegate
@@ -71,6 +73,9 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
         
         if section == 0 && row == 0 {
             height = 100
+        }
+        else if section == 2 {
+            height = 80
         }
         else {
             height = 50
@@ -109,7 +114,7 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
                 cell = newCell
             }
         }
-        else {
+        else if section == 1 {
             if row == 0 {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.firstNameCellIdentifier, forIndexPath: indexPath) as! UserDetailFirstNameTableViewCell
                 
@@ -135,6 +140,17 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
                 cell = newCell
             }
         }
+        else if section == 2 {
+            let newCell = tableView.dequeueReusableCellWithIdentifier(RideTableViewCell.reuseId, forIndexPath: indexPath) as! RideTableViewCell
+            
+            let user = User.usersList.list.getElementAtIndex(self.userIndex)!
+            let rideHistory = user.rideHistory!
+            let ride = rideHistory.list.getElementAtIndex(row)
+            
+            newCell.ride = ride
+            
+            cell = newCell
+        }
         
         return cell
     }
@@ -148,7 +164,9 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
             rows = 3
         }
         else if section == 2 {
-            rows = 0
+            let user = User.usersList.list.getElementAtIndex(self.userIndex)!
+            let rideHistory = user.rideHistory!
+            rows = rideHistory.count
         }
         
         return rows
@@ -166,18 +184,26 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
             height = 50
         }
         else if section == 2 {
-            height = Int(self.tableView.frame.height)
-            self.tableView.scrollEnabled = false
+            height = 30
         }
         
         return CGFloat(height)
+    }
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var title: String?
+        
+        if section == 2 {
+            title = "Ride History"
+        }
+        
+        return title
     }
     // MARK: UIImagePickekControllerDelegate
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         
         let image = info[UIImagePickerControllerEditedImage] as? UIImage
         
-        User.usersList.list[userIndex].userImage = image
+        User.usersList.list.getElementAtIndex(self.userIndex)!.userImage = image
         
         self.dismissViewControllerAnimated(true, completion: nil)
         self.reloadUsersData()

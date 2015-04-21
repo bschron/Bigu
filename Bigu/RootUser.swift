@@ -23,13 +23,31 @@ class RootUser: AbstractUser {
         }
     }
     
+    override init() {
+        super.init()
+    }
+    override init(fromDictionary dic: [NSString : NSObject]) {
+        super.init(fromDictionary: dic)
+        self.name = dic[RootUser.nameKey] != nil ? dic[RootUser.nameKey] as! String : ""
+        self._savings = dic[RootUser.savingsValueKey] as? Float
+    }
+    
+    override func toDictionary() -> [NSString : NSObject] {
+        var dic = super.toDictionary()
+        dic[RootUser.savingsValueKey] = self.savings
+        return dic
+    }
+    
     // MARK: -Class Methods and Properties
     class var singleton: RootUser {
         get {
             struct sing {
-                static let root = RootUser()
+                static let root = RootUserPersistenceManager().load() as! RootUser
             }
             return sing.root
         }
+    }
+    class private var savingsValueKey: String {
+        return "RootUserSavingValueKey"
     }
 }

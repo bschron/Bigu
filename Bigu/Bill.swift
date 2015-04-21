@@ -22,6 +22,12 @@ class Bill {
     }
     private(set) var handler: BillingHandlerDelegate?
     
+    init() {}
+    
+    init(fromBillValue value: Float) {
+        self.bill = value
+    }
+    
     // MARK: -Methods
     func payBill () {
         RootUser.singleton.savings += self.bill

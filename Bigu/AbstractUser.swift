@@ -72,20 +72,92 @@ class AbstractUser {
         }
     }
     var handler: UserHandlingDelegate? = nil
-    
+    let id: Int
     
     // MARK: -Methods
-    init() {}
+    init() {
+        self.id = AbstractUser.greaterId++
+    }
+    init(withid id: Int) {
+        self.id = id
+    }
     init(name: String, surName: String?, nickName: String?) {
+        self.id = AbstractUser.greaterId++
         self.name = name
         self.surName = surName != nil ? surName! : ""
         self.nickName = nickName != nil ? nickName! : ""
         self.userImage = nil
     }
     init(name: String, surName: String?, nickName: String?, userImage: UIImage?) {
+        self.id = AbstractUser.greaterId++
         self.name = name
         self.surName = surName != nil ? surName! : ""
         self.nickName = nickName != nil ? nickName! : ""
         self.userImage = userImage
+    }
+    init(id: Int, name: String, surName: String?, nickName: String?, userImage: UIImage?) {
+        self.id = id
+        self.name = name
+        self.surName = surName != nil ? surName! : ""
+        self.nickName = nickName != nil ? nickName! : ""
+        self.userImage = userImage
+        
+        if self.id >= AbstractUser.greaterId {
+            AbstractUser.greaterId = self.id + 1
+        }
+    }
+    init(fromDictionary dic: [NSString: NSObject]) {
+        let optionalId = dic[AbstractUser.userIdKey] as? Int
+        let optionalName = dic[AbstractUser.nameKey] as? String
+        let optionalSurname = dic[AbstractUser.surNameKey] as? String
+        let optionalNickname = dic[AbstractUser.nickNameKey] as? String
+        let optionalImage = dic[AbstractUser.userImageKey] as? NSData
+        
+        self.id = optionalId != nil ? optionalId! : AbstractUser.greaterId++
+        self.name = optionalName != nil ? optionalName! : "(NULL)"
+        self._nickName = optionalNickname
+        self._surName = optionalSurname
+        self._userImage = optionalImage != nil ? UIImage(data: optionalImage!) : nil
+        
+        if self.id >= AbstractUser.greaterId {
+            AbstractUser.greaterId = self.id + 1
+        }
+        
+    }
+    
+    func toDictionary() -> [NSString: NSObject] {
+        let dictionary: [NSString: NSObject] = [AbstractUser.nameKey: self.name, AbstractUser.surNameKey: self.surName, AbstractUser.nickNameKey: self.nickName, AbstractUser.userImageKey: UIImagePNGRepresentation(self.userImage), AbstractUser.userIdKey : self.id]
+        return dictionary
+    }
+    
+    // MARK: -Class Properties and Methods
+    private struct greaterIdWrap {
+        static var greaterId: Int = 0
+    }
+    class var greaterId: Int {
+        get {
+        return User.greaterIdWrap.greaterId
+        }
+        set {
+            User.greaterIdWrap.greaterId = newValue
+        }
+    }
+    class private var usersKey: String {
+        return "UsersKey"
+    }
+    class internal var nameKey: String {
+        return "UserNameKey"
+    }
+    class internal var surNameKey: String {
+        return "UserSurNameKey"
+    }
+    class internal var nickNameKey: String {
+        return "UserNickNameKey"
+    }
+    class internal var userImageKey: String {
+        return "UserImageKey"
+    }
+    class internal var userIdKey: String {
+        return "UserIDKey"
     }
 }
