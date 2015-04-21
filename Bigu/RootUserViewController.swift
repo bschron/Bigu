@@ -33,6 +33,8 @@ class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePic
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.rideListTableView.registerNib(UINib(nibName: "RideTableViewCell", bundle: nil), forCellReuseIdentifier: RideTableViewCell.reuseId)
+        
         self.userImageView.layer.cornerRadius = self.userImageView.layer.frame.width / 2
         self.userImageView.layer.masksToBounds = true
         self.rootUser.handler = self

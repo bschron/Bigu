@@ -116,69 +116,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RL9-C1-C8K">
                                 <rect key="frame" x="0.0" y="342" width="600" height="209"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="RideCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="RideCell" rowHeight="80" id="m9l-aj-Yd4" customClass="RideTableViewCell" customModule="Bigu" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m9l-aj-Yd4" id="tzL-ch-AlC">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="HSK-HK-rg9">
-                                                    <rect key="frame" x="5" y="8" width="63" height="63"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="HSK-HK-rg9" secondAttribute="height" multiplier="1:1" id="PX6-kC-zwi"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pR-VF-oHi">
-                                                    <rect key="frame" x="76" y="29" width="43" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bC-KD-UPa">
-                                                    <rect key="frame" x="76" y="49" width="22" height="12"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="20" verticalHuggingPriority="251" text="$ 0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGW-2z-74n">
-                                                    <rect key="frame" x="127" y="28" width="465" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="8pR-VF-oHi" firstAttribute="leading" secondItem="tzL-ch-AlC" secondAttribute="leadingMargin" constant="45" id="36s-Rp-YLq"/>
-                                                <constraint firstItem="3bC-KD-UPa" firstAttribute="top" secondItem="8pR-VF-oHi" secondAttribute="bottom" id="3gN-ak-GoY"/>
-                                                <constraint firstAttribute="bottom" secondItem="HSK-HK-rg9" secondAttribute="bottom" constant="8" id="DdR-5b-uka"/>
-                                                <constraint firstAttribute="centerY" secondItem="cGW-2z-74n" secondAttribute="centerY" id="JIb-qo-QuI"/>
-                                                <constraint firstItem="HSK-HK-rg9" firstAttribute="top" secondItem="tzL-ch-AlC" secondAttribute="top" constant="8" id="N1X-Ik-dIv"/>
-                                                <constraint firstAttribute="centerY" secondItem="8pR-VF-oHi" secondAttribute="centerY" constant="0.25" id="PhB-rX-VV7"/>
-                                                <constraint firstAttribute="centerY" secondItem="HSK-HK-rg9" secondAttribute="centerY" constant="0.25" id="SNI-Ga-tdX"/>
-                                                <constraint firstItem="8pR-VF-oHi" firstAttribute="leading" secondItem="HSK-HK-rg9" secondAttribute="trailing" constant="8" id="SOm-mF-I6n"/>
-                                                <constraint firstItem="HSK-HK-rg9" firstAttribute="leading" secondItem="tzL-ch-AlC" secondAttribute="leading" constant="5" id="Wcr-cf-4rF"/>
-                                                <constraint firstItem="cGW-2z-74n" firstAttribute="leading" secondItem="8pR-VF-oHi" secondAttribute="trailing" constant="8" id="ZVH-T4-Xqz"/>
-                                                <constraint firstItem="HSK-HK-rg9" firstAttribute="leading" secondItem="tzL-ch-AlC" secondAttribute="leadingMargin" id="cF7-BJ-2ei"/>
-                                                <constraint firstItem="8pR-VF-oHi" firstAttribute="leading" secondItem="3bC-KD-UPa" secondAttribute="leading" id="hpy-O3-k5H"/>
-                                                <constraint firstItem="cGW-2z-74n" firstAttribute="trailing" secondItem="tzL-ch-AlC" secondAttribute="trailingMargin" id="nuT-lq-a9T"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="SNI-Ga-tdX"/>
-                                                    <exclude reference="cF7-BJ-2ei"/>
-                                                    <exclude reference="36s-Rp-YLq"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="dateLabel" destination="3bC-KD-UPa" id="0I2-LO-xUl"/>
-                                            <outlet property="nameLabel" destination="8pR-VF-oHi" id="bda-Ve-C04"/>
-                                            <outlet property="userImage" destination="HSK-HK-rg9" id="Lpr-M7-bBb"/>
-                                            <outlet property="valueLabel" destination="cGW-2z-74n" id="aNM-BD-374"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="4Xc-3V-dKD" id="zLL-y7-PwO"/>
                                     <outlet property="delegate" destination="4Xc-3V-dKD" id="usC-Uj-CUd"/>

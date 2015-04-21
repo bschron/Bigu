@@ -21,7 +21,6 @@ class Bill {
         }
     }
     private(set) var handler: BillingHandlerDelegate?
-    var user: User?
     
     init() {}
     
@@ -44,10 +43,6 @@ class Bill {
     
     func increaseBill (value: Float) {
         self.bill += value
-        if let usr = self.user {
-            let ride = Ride(userId: usr.id, value: value)
-            RideListManager.rideListSingleton.insertNewRide(ride)
-        }
         self.handler?.updateBillingUI()
     }
     

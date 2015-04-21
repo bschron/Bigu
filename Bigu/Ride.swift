@@ -18,22 +18,18 @@ class Ride {
     }
     
     // MARK: -Methods
-    init(time: NSDate, userId: Int, value: Float) {
-        self.time = time
-        self.userId = userId
-        self.value = value
-    }
-    
     init (userId: Int, value: Float) {
         self.time = NSDate()
         self.userId = userId
         self.value = value
-    }
-    
-    init(userId: Int) {
-        self.userId = userId
-        self.time = NSDate()
-        self.value = TaxCell.taxValue
+        
+        let user = User.usersList.list.findBy({ $0.id == self.userId })
+        if let usr = user.getFirstObject() {
+            usr.rideHistory?.insertNewRide(self)
+        }
+        
+        RideListManager.rideListSingleton.insertNewRide(self)
+        
     }
     
     init(dictionary: [NSString: NSObject]) {

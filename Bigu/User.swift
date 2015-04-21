@@ -12,8 +12,11 @@ import UIKit
 class User: AbstractUser {
     
     // MARK: - Properties
-    var bill: Bill
+    private var bill: Bill
     var rideHistory: RideListManager?
+    var billValue: Float {
+        return self.bill.bill
+    }
     
     // MARK: -Methods
     func synchronize() {
@@ -31,7 +34,6 @@ class User: AbstractUser {
             self.bill.registerAsHandler(hand)
         }
         self.userImage = nil
-        self.bill.user = self
         self.rideHistory = RideListManager()
         self.rideHistory!.registerToAvailableId()
     }
@@ -39,7 +41,6 @@ class User: AbstractUser {
         let optionalBill = dic[User.billKey] as? Float
         self.bill = optionalBill != nil ? Bill(fromBillValue: optionalBill!) : Bill()
         super.init(fromDictionary: dic)
-        self.bill.user = self
         let rideHistoryId = dic[User.rideHistoryKey] as? Int
         if let history = rideHistoryId {
             self.rideHistory = RideListManager(loadFromId: history)
@@ -54,6 +55,24 @@ class User: AbstractUser {
         var dic = super.toDictionary()
         dic[User.billKey] = self.bill.bill
         return dic
+    }
+    
+    func increaseBill(value: Float) {
+        self.bill.increaseBill(value)
+        
+        let ride = Ride(userId: self.id, value: value)
+    }
+    
+    func payBill() {
+        self.bill.payBill()
+    }
+    
+    func payPartialBill(payingValue value: Float) {
+        self.bill.payPartialBill(payingValue: value)
+    }
+    
+    func registerAsBillHandler(handler: BillingHandlerDelegate) {
+        self.bill.registerAsHandler(handler)
     }
     
     // MARK: -Class Properties and Methods
