@@ -22,6 +22,8 @@
 		863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D5E931ACF7185007D9235 /* CustomPopUp.swift */; };
 		863D5E961ACF7277007D9235 /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863D5E951ACF7277007D9235 /* CustomPopUp.xib */; };
 		863D5E991ACF75F8007D9235 /* NewUserPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863D5E981ACF75F8007D9235 /* NewUserPopUp.xib */; };
+		8661BED91AE6A1EC00BBBF4E /* DarkTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661BED81AE6A1EC00BBBF4E /* DarkTabBarController.swift */; };
+		8661BEDC1AE6A62D00BBBF4E /* DarkNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661BEDB1AE6A62D00BBBF4E /* DarkNavigationController.swift */; };
 		8662E4241AC9910D0087B69B /* DefaultTaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662E4231AC9910D0087B69B /* DefaultTaxCell.swift */; };
 		8662E4261ACACB180087B69B /* PickerTaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662E4251ACACB180087B69B /* PickerTaxCell.swift */; };
 		8668D3971ACF3E8500C2CB87 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8668D3961ACF3E8500C2CB87 /* UserList.swift */; };
@@ -101,6 +103,8 @@
 		863D5E931ACF7185007D9235 /* CustomPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		863D5E951ACF7277007D9235 /* CustomPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPopUp.xib; sourceTree = "<group>"; };
 		863D5E981ACF75F8007D9235 /* NewUserPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserPopUp.xib; sourceTree = "<group>"; };
+		8661BED81AE6A1EC00BBBF4E /* DarkTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkTabBarController.swift; sourceTree = "<group>"; };
+		8661BEDB1AE6A62D00BBBF4E /* DarkNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkNavigationController.swift; sourceTree = "<group>"; };
 		8662E4231AC9910D0087B69B /* DefaultTaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTaxCell.swift; sourceTree = "<group>"; };
 		8662E4251ACACB180087B69B /* PickerTaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerTaxCell.swift; sourceTree = "<group>"; };
 		8668D3961ACF3E8500C2CB87 /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
@@ -220,6 +224,22 @@
 				86B6974D1ACF77970052353E /* NewUserPopUp.swift */,
 			);
 			name = NewUserPopUp;
+			sourceTree = "<group>";
+		};
+		8661BEDA1AE6A5F800BBBF4E /* DarkTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				8661BED81AE6A1EC00BBBF4E /* DarkTabBarController.swift */,
+			);
+			name = DarkTabBarController;
+			sourceTree = "<group>";
+		};
+		8661BEDD1AE6A6D300BBBF4E /* DarkNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				8661BEDB1AE6A62D00BBBF4E /* DarkNavigationController.swift */,
+			);
+			name = DarkNavigationController;
 			sourceTree = "<group>";
 		};
 		86A78EE91ACD86C9009BBF58 /* Billing */ = {
@@ -359,6 +379,8 @@
 				86A92DC01AB8684B00B38445 /* UsersViewController */,
 				86E529A31AE1A450005FD924 /* RootUserViewController */,
 				860058C81AE5E17A000F1050 /* RideTableViewCell */,
+				8661BEDA1AE6A5F800BBBF4E /* DarkTabBarController */,
+				8661BEDD1AE6A6D300BBBF4E /* DarkNavigationController */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -575,8 +597,10 @@
 				86D548DB1ADE9F4D0092C9A5 /* AbstractUser.swift in Sources */,
 				86A88A911AE27F07009A4ABD /* RootUser.swift in Sources */,
 				86C23C9E1AD35E5100FE9D63 /* UserDetailBillSliderTableViewCell.swift in Sources */,
+				8661BEDC1AE6A62D00BBBF4E /* DarkNavigationController.swift in Sources */,
 				86C23CA01AD3611100FE9D63 /* UserDetailFirstNameTableViewCell.swift in Sources */,
 				86A92D9F1AB863E900B38445 /* AppDelegate.swift in Sources */,
+				8661BED91AE6A1EC00BBBF4E /* DarkTabBarController.swift in Sources */,
 				860B39341AE33E7100D34896 /* OrderedList.swift in Sources */,
 				86C23C9C1AD35B7E00FE9D63 /* UserDetailMainTableViewCell.swift in Sources */,
 			);

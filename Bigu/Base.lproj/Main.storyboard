@@ -9,7 +9,7 @@
         <!--Profile-->
         <scene sceneID="Ocp-R7-9ML">
             <objects>
-                <navigationController id="kN1-ip-KOR" sceneMemberID="viewController">
+                <navigationController id="kN1-ip-KOR" customClass="DarkNavigationController" customModule="Bigu" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="user" id="jFl-ow-fe2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="loJ-tq-I14">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -26,7 +26,7 @@
         <!--Users-->
         <scene sceneID="fAr-tp-fHw">
             <objects>
-                <navigationController id="u7C-6O-k4e" sceneMemberID="viewController">
+                <navigationController id="u7C-6O-k4e" customClass="DarkNavigationController" customModule="Bigu" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Users" image="user" id="2fq-R3-Reu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jDP-k1-9Vi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -528,10 +528,10 @@
             </objects>
             <point key="canvasLocation" x="2219" y="459"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Dark Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="DarkTabBarController" customModule="Bigu" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="q8b-3f-b9J"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">

@@ -69,6 +69,9 @@ class UserCell: UITableViewCell {
         self.invisibleUserImageViewCover.addGestureRecognizer(self.userImagePanGesture)
         self.userImageOriginalPosition = (self.userImageView.center.x, self.userImageView.center.y)
         self.insertSubview(self.invisibleUserImageViewCover, aboveSubview: self.userImageView)
+        
+        // set background color
+        self.backgroundColor = UserCell.nextColor
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -111,7 +114,7 @@ class UserCell: UITableViewCell {
                         blurView.alpha = CGFloat(0.9)
                         
                         if location.x >= self.frame.width / 2 {
-                            let newColor = RGBColor(r: 25.5, g: 151.99999965, b: 219.00000015, alpha: 0.25)
+                            let newColor = RGBColor.whiteColor().colorWithAlphaComponent(0.1)
                             self.invisibleUserImageViewCover.backgroundColor = newColor
                             User.usersList.list.getElementAtIndex(self.userIndex)!.payBill()
                         }
@@ -158,12 +161,10 @@ class UserCell: UITableViewCell {
         blurView.alpha = CGFloat(0)
         
         UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
-            self.backgroundColor = UIColor.greenColor().colorWithAlphaComponent(0.5)
             imageViewCopy.alpha = CGFloat(1)
             blurView.alpha = CGFloat(1)
             }, completion: { finished in
                 UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
-                    self.backgroundColor = UIColor.whiteColor()
                     imageViewCopy.alpha = CGFloat(0)
                     blurView.alpha = CGFloat(0)
                     }, completion: { finished in
@@ -174,7 +175,49 @@ class UserCell: UITableViewCell {
     }
     
     // MARK: - Class Methods and Properties
+    private enum UserCellColor {
+        case first
+        case second
+        case third
+        case fourth
+        
+        mutating func toogle() {
+            switch self {
+            case .first:
+                self = .second
+            case .second:
+                self = .third
+            case .third:
+                self = .fourth
+            case .fourth:
+                self = .first
+            }
+        }
+    }
     class var userCellReuseId: String {
         return "userCellReuseId"
+    }
+    class var nextColor: RGBColor {
+        struct wrap {
+            static var current = UserCellColor.first
+        }
+        
+        let nextCase = wrap.current
+        let color: RGBColor
+        
+        wrap.current.toogle()
+        
+        switch nextCase {
+        case .first:
+            color = RGBColor(r: 76, g: 153, b: 107, alpha: 1)
+        case .second:
+            color = RGBColor(r: 41, g: 123, b: 74, alpha: 1)
+        case .third:
+            color = RGBColor(r: 15, g: 92, b: 46, alpha: 1)
+        case .fourth:
+            color = RGBColor(r: 41, g: 123, b: 74, alpha: 1)
+        }
+        
+        return color
     }
 }

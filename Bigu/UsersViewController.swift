@@ -23,6 +23,8 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
 
         // Do any additional setup after loading the view.
         
+        self.usersTableView.backgroundColor = RGBColor(r: 122, g: 183, b: 147, alpha: 1)
+        
         /* register tax cells nibs*/
         let defaultTaxCellNib = UINib(nibName: "TaxCell", bundle: nil)
         let pickerTaxCellNib = UINib(nibName: "PickerTaxCell", bundle: nil)

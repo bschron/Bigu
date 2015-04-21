@@ -55,17 +55,17 @@ class PickerTaxCell: TaxCell, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: - Protocols
     // MARK: Picker Delegate
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         self.updatePickerValues()
-        var stringValue: String = ""
+        var stringValue: NSAttributedString?
+        let color = UIColor.whiteColor()
         
         if component == 0 {
-            stringValue = "\(integerValues[row])"
+            stringValue = NSAttributedString(string: "\(integerValues[row])", attributes: [NSForegroundColorAttributeName : color])
         }
         else if component == 1 {
             let intValue: Int = Int(self.floatingPointValues[row] * 100)
-            stringValue = ".\(intValue)"
+            stringValue = NSAttributedString(string: ".\(intValue)", attributes: [NSForegroundColorAttributeName : color])
         }
         
         return stringValue
