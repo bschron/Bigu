@@ -12,6 +12,7 @@ class UserList {
     
     // MARK: -Properties
     private(set) var list: OrderedList<User> = OrderedList<User>(isOrderedBefore: { $0.id < $1.id })
+    private(set) var erasedUsersList: OrderedList<ErasedUser> = OrderedList<ErasedUser>(isOrderedBefore: { $0.erasedAt.timeIntervalSinceNow > $1.erasedAt.timeIntervalSinceNow })
     var order: ((User,User) -> Bool)! {
         didSet {
             self.list.order = self.order
@@ -32,9 +33,16 @@ class UserList {
         self.list.insert(newUser)
     }
     
+    func insertErasedUser(erasedUser: ErasedUser) {
+        self.erasedUsersList.insert(erasedUser)
+    }
+    
     func removeUserAtIndex(index: Int) {
         if index < self.list.count {
+            let toErase = self.list.getElementAtIndex(index)!
             self.list.removeAtIndex(index)
+            let erased = ErasedUser(id: toErase.id, name: toErase.name, surName: toErase.surName, nickName: toErase.nickName, erasedAt: NSDate())
+            self.erasedUsersList.insert(erased)
         }
     }
     

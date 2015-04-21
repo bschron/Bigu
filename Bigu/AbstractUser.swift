@@ -78,6 +78,9 @@ class AbstractUser {
     init() {
         self.id = AbstractUser.greaterId++
     }
+    init(withid id: Int) {
+        self.id = id
+    }
     init(name: String, surName: String?, nickName: String?) {
         self.id = AbstractUser.greaterId++
         self.name = name

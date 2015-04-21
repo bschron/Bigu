@@ -41,20 +41,26 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
         let promise = Promise<Bool>()
         var executionContext: ExecutionContext = context != nil ? context! : Queue.global.context
         
-        let futureData = future(context: executionContext, { () -> Result<[[NSString: NSObject]]> in
+        let futureData = future(context: executionContext, { () -> Result<([[NSString: NSObject]], [[NSString: NSObject]])> in
             let list: Array<User> = (self.object as! UserList).list.arrayCopy()
+            let erasedList: Array<ErasedUser> = (self.object as! UserList).erasedUsersList.arrayCopy()
             let data: [[NSString: NSObject]] = self.userArrayToDictionaryArray(list)
+            let erasedUsersData: [[NSString: NSObject]] = self.userArrayToDictionaryArray(erasedList)
             
-            if data.count == list.count {
-                return .Success(Box(data))
+            let dataTuple = (data, erasedUsersData)
+            
+            if data.count == list.count && erasedList.count == erasedUsersData.count {
+                return .Success(Box(dataTuple))
             }
             else {
                 return .Failure(NSError())
             }
         }).onSuccess(context: executionContext, callback: { data in
-            let array =  data as NSArray
+            var array =  data.0 as NSArray
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setObject(array, forKey: UserPersistenceManager.usersKey)
+            array = data.1
+            defaults.setObject(array, forKey: UserPersistenceManager.erasedUsersKey)
             let result = defaults.synchronize()
             
             if !result {
@@ -73,15 +79,23 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
     func load() -> AnyObject? {
         let defaults = NSUserDefaults.standardUserDefaults()
         var storedArray = defaults.objectForKey(UserPersistenceManager.usersKey) as? [[NSString: NSObject]]
+        var storedErasedUsersArray = defaults.objectForKey(UserPersistenceManager.erasedUsersKey) as? [[NSString: NSObject]]
         if storedArray == nil {
             storedArray = []
         }
+        if storedErasedUsersArray == nil {
+            storedErasedUsersArray = []
+        }
+        
         var list = UserList()
         
         for cur in storedArray! {
             let newUser = User(fromDictionary: cur)
-            
             list.insertUser(newUser)
+        }
+        for cur in storedErasedUsersArray! {
+            let erasedUser = ErasedUser(fromDictionary: cur)
+            list.insertErasedUser(erasedUser)
         }
         
         return list
@@ -90,5 +104,8 @@ class UserPersistenceManager: NSObject, DataPersistenceDelegate {
     // MARK: - Class Properties and Methods
     class private var usersKey: String {
         return "UsersKey"
+    }
+    class private var erasedUsersKey: String {
+        return "ErasedUsersKey"
     }
 }

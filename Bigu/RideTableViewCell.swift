@@ -30,10 +30,20 @@ class RideTableViewCell: UITableViewCell {
         // Initialization code
         self.userImage.layer.cornerRadius = self.userImage.frame.width / 2
         self.userImage.layer.masksToBounds = true
+        self.userImage.backgroundColor = UIColor.redColor().colorWithAlphaComponent(CGFloat(0.5))
     }
     
     func reloadRideData() {
-        let user = User.usersList.list.findBy({ $0.id == self.ride.userId })
+        
+        let findingparameter: (User) -> Bool = { $0.id == self.ride.userId }
+        
+        var user = User.usersList.list.findBy(findingparameter)
+        
+        if user.getFirstObject() == nil {
+            let erasedUsers = User.usersList.erasedUsersList.findBy(findingparameter).arrayCopy()
+            user.insert(erasedUsers)
+        }
+        
         if let usr = user.getFirstObject() {
             self.userImage.image = usr.userImage
             self.nameLabel.text = usr.nickName != "" ? usr.nickName : usr.fullName

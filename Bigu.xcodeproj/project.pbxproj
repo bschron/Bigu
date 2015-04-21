@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		860058CA1AE5E1A1000F1050 /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860058C91AE5E1A1000F1050 /* RideTableViewCell.swift */; };
+		860058CC1AE66FAF000F1050 /* ErasedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860058CB1AE66FAF000F1050 /* ErasedUser.swift */; };
 		860466651ABC6CFE00C39BDB /* PickerTaxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860466641ABC6CFE00C39BDB /* PickerTaxCell.xib */; };
 		860B39271AE2FB8F00D34896 /* RootUserPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */; };
 		860B392B1AE3060F00D34896 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B392A1AE3060F00D34896 /* PersistenceManager.swift */; };
@@ -83,6 +84,7 @@
 
 /* Begin PBXFileReference section */
 		860058C91AE5E1A1000F1050 /* RideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideTableViewCell.swift; sourceTree = "<group>"; };
+		860058CB1AE66FAF000F1050 /* ErasedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErasedUser.swift; sourceTree = "<group>"; };
 		860466641ABC6CFE00C39BDB /* PickerTaxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerTaxCell.xib; sourceTree = "<group>"; };
 		860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserPersistenceManager.swift; sourceTree = "<group>"; };
 		860B392A1AE3060F00D34896 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
@@ -220,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */,
-				86CA24DE1ADD306800EA98E8 /* UserPersistenceManager.swift */,
 				860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */,
 				860B392A1AE3060F00D34896 /* PersistenceManager.swift */,
 			);
@@ -231,10 +232,12 @@
 			isa = PBXGroup;
 			children = (
 				86A92DCA1AB86A5800B38445 /* User.swift */,
+				860058CB1AE66FAF000F1050 /* ErasedUser.swift */,
 				86A88A901AE27F07009A4ABD /* RootUser.swift */,
 				86D548DA1ADE9F4D0092C9A5 /* AbstractUser.swift */,
 				8668D3961ACF3E8500C2CB87 /* UserList.swift */,
 				86B6974F1ACFEB680052353E /* UserHandlingDelegate.swift */,
+				86CA24DE1ADD306800EA98E8 /* UserPersistenceManager.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				8662E4241AC9910D0087B69B /* DefaultTaxCell.swift in Sources */,
 				86202E6D1AE2A7D500293B79 /* Bill.swift in Sources */,
 				863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */,
+				860058CC1AE66FAF000F1050 /* ErasedUser.swift in Sources */,
 				8668D3971ACF3E8500C2CB87 /* UserList.swift in Sources */,
 				86D999281ACAD429001E48CD /* TaxCell.swift in Sources */,
 				86D9992C1ACC29C3001E48CD /* TaxHandlingDelegate.swift in Sources */,

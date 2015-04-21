@@ -18,6 +18,11 @@ class User: AbstractUser {
     func synchronize() {
         User.usersList.insertUser(self)
     }
+    
+    override init(withid id: Int) {
+        self.bill = Bill()
+        super.init(withid: id)
+    }
     init(name: String, surName: String?, nickName: String?, handler: BillingHandlerDelegate?) {
         self.bill = Bill()
         super.init(name: name, surName: surName, nickName: nickName)
