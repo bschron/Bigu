@@ -10,6 +10,7 @@
 		860058CA1AE5E1A1000F1050 /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860058C91AE5E1A1000F1050 /* RideTableViewCell.swift */; };
 		860058CC1AE66FAF000F1050 /* ErasedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860058CB1AE66FAF000F1050 /* ErasedUser.swift */; };
 		860058CE1AE69753000F1050 /* RideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860058CD1AE69753000F1050 /* RideTableViewCell.xib */; };
+		860058D11AE69928000F1050 /* RGBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860058D01AE69928000F1050 /* RGBColor.swift */; };
 		860466651ABC6CFE00C39BDB /* PickerTaxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860466641ABC6CFE00C39BDB /* PickerTaxCell.xib */; };
 		860B39271AE2FB8F00D34896 /* RootUserPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */; };
 		860B392B1AE3060F00D34896 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B392A1AE3060F00D34896 /* PersistenceManager.swift */; };
@@ -87,6 +88,7 @@
 		860058C91AE5E1A1000F1050 /* RideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideTableViewCell.swift; sourceTree = "<group>"; };
 		860058CB1AE66FAF000F1050 /* ErasedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErasedUser.swift; sourceTree = "<group>"; };
 		860058CD1AE69753000F1050 /* RideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RideTableViewCell.xib; sourceTree = "<group>"; };
+		860058D01AE69928000F1050 /* RGBColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBColor.swift; sourceTree = "<group>"; };
 		860466641ABC6CFE00C39BDB /* PickerTaxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerTaxCell.xib; sourceTree = "<group>"; };
 		860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserPersistenceManager.swift; sourceTree = "<group>"; };
 		860B392A1AE3060F00D34896 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
@@ -166,6 +168,14 @@
 				860058CD1AE69753000F1050 /* RideTableViewCell.xib */,
 			);
 			name = RideTableViewCell;
+			sourceTree = "<group>";
+		};
+		860058CF1AE698F1000F1050 /* RGBColor */ = {
+			isa = PBXGroup;
+			children = (
+				860058D01AE69928000F1050 /* RGBColor.swift */,
+			);
+			name = RGBColor;
 			sourceTree = "<group>";
 		};
 		860B392C1AE32D3300D34896 /* Ride */ = {
@@ -337,6 +347,7 @@
 				860B392C1AE32D3300D34896 /* Ride */,
 				86A78EEA1ACD86DB009BBF58 /* Persistence */,
 				860B39371AE3427C00D34896 /* OrderedList */,
+				860058CF1AE698F1000F1050 /* RGBColor */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -560,6 +571,7 @@
 				86A88A8D1AE1F078009A4ABD /* RootUserViewController.swift in Sources */,
 				860B39271AE2FB8F00D34896 /* RootUserPersistenceManager.swift in Sources */,
 				86F441CE1ACEA9DA006B5246 /* UserCell.swift in Sources */,
+				860058D11AE69928000F1050 /* RGBColor.swift in Sources */,
 				86D548DB1ADE9F4D0092C9A5 /* AbstractUser.swift in Sources */,
 				86A88A911AE27F07009A4ABD /* RootUser.swift in Sources */,
 				86C23C9E1AD35E5100FE9D63 /* UserDetailBillSliderTableViewCell.swift in Sources */,

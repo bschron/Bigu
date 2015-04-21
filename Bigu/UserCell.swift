@@ -111,7 +111,7 @@ class UserCell: UITableViewCell {
                         blurView.alpha = CGFloat(0.9)
                         
                         if location.x >= self.frame.width / 2 {
-                            let newColor = UIColor(red: CGFloat(0.1), green: CGFloat(0.59607843), blue: CGFloat(0.85882353), alpha: CGFloat(0.25))
+                            let newColor = RGBColor(r: 25.5, g: 151.99999965, b: 219.00000015, alpha: 0.25)
                             self.invisibleUserImageViewCover.backgroundColor = newColor
                             User.usersList.list.getElementAtIndex(self.userIndex)!.payBill()
                         }
