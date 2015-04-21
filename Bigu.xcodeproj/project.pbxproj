@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		860058CA1AE5E1A1000F1050 /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860058C91AE5E1A1000F1050 /* RideTableViewCell.swift */; };
 		860466651ABC6CFE00C39BDB /* PickerTaxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860466641ABC6CFE00C39BDB /* PickerTaxCell.xib */; };
 		860B39271AE2FB8F00D34896 /* RootUserPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */; };
 		860B392B1AE3060F00D34896 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B392A1AE3060F00D34896 /* PersistenceManager.swift */; };
@@ -81,6 +82,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		860058C91AE5E1A1000F1050 /* RideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideTableViewCell.swift; sourceTree = "<group>"; };
 		860466641ABC6CFE00C39BDB /* PickerTaxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerTaxCell.xib; sourceTree = "<group>"; };
 		860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserPersistenceManager.swift; sourceTree = "<group>"; };
 		860B392A1AE3060F00D34896 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
@@ -153,6 +155,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		860058C81AE5E17A000F1050 /* RideTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				860058C91AE5E1A1000F1050 /* RideTableViewCell.swift */,
+			);
+			name = RideTableViewCell;
+			sourceTree = "<group>";
+		};
 		860B392C1AE32D3300D34896 /* Ride */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +341,7 @@
 				86A92DA41AB863E900B38445 /* Main.storyboard */,
 				86A92DC01AB8684B00B38445 /* UsersViewController */,
 				86E529A31AE1A450005FD924 /* RootUserViewController */,
+				860058C81AE5E17A000F1050 /* RideTableViewCell */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -521,6 +532,7 @@
 				86DFA2FA1AE166FA00D42B65 /* Result.swift in Sources */,
 				86DFA2FB1AE166FA00D42B65 /* Semaphore.swift in Sources */,
 				86B6974E1ACF77970052353E /* NewUserPopUp.swift in Sources */,
+				860058CA1AE5E1A1000F1050 /* RideTableViewCell.swift in Sources */,
 				86C23CA41AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift in Sources */,
 				86A92DCB1AB86A5800B38445 /* User.swift in Sources */,
 				86A78EE81ACD8231009BBF58 /* BillingHandlerDelegate.swift in Sources */,

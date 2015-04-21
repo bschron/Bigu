@@ -22,6 +22,9 @@ class RideListManager: DataPersistenceDelegate {
         }
     }
     private var id: Int = -1
+    var count: Int {
+        return self.list.count
+    }
     
     // MARK: -Methods
     private init(singleton: Bool) {
@@ -160,7 +163,7 @@ class RideListManager: DataPersistenceDelegate {
         return wrap.list
     }
     class var defaultOrder: (Ride, Ride) -> Bool {
-        return { $0.timingSinceOcurrence < $1.timingSinceOcurrence }
+        return { $0.timingSinceOcurrence > $1.timingSinceOcurrence }
     }
     private struct idListWrap {
         static var list = OrderedList<Int>(isOrderedBefore: { $0 < $1 })
