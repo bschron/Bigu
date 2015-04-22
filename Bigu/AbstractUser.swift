@@ -64,7 +64,7 @@ class AbstractUser {
     private var _userImage: UIImage? = nil
     var userImage: UIImage? {
         get {
-            return self._userImage != nil ? self._userImage! : UIImage(named: "user")
+            return self._userImage != nil ? self._userImage! : UIImage(named: "whiteUser")
         }
         set {
             self._userImage = newValue

@@ -236,6 +236,63 @@
 			name = NewUserPopUp;
 			sourceTree = "<group>";
 		};
+		865C5E8B1AE7CADC00D414AF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				86C23C991AD34DDB00FE9D63 /* UserDetailViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		865C5E8C1AE7CAE900D414AF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				865C5E8E1AE7CB0B00D414AF /* Subclass specific cells */,
+				865C5E8F1AE7CB2C00D414AF /* Global Cells */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		865C5E8E1AE7CB0B00D414AF /* Subclass specific cells */ = {
+			isa = PBXGroup;
+			children = (
+				865C5E901AE7CB4200D414AF /* AbstractUser */,
+				865C5E911AE7CB5B00D414AF /* User */,
+			);
+			name = "Subclass specific cells";
+			sourceTree = "<group>";
+		};
+		865C5E8F1AE7CB2C00D414AF /* Global Cells */ = {
+			isa = PBXGroup;
+			children = (
+				86C23C9F1AD3611100FE9D63 /* UserDetailFirstNameTableViewCell.swift */,
+				8661BEE21AE6CAC700BBBF4E /* UserDetailFirstNameTableViewCell.xib */,
+				86C23CA11AD362A200FE9D63 /* UserDetailLastNameTableViewCell.swift */,
+				8661BEE41AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib */,
+				86C23CA31AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift */,
+				8661BEE61AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib */,
+			);
+			name = "Global Cells";
+			sourceTree = "<group>";
+		};
+		865C5E901AE7CB4200D414AF /* AbstractUser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AbstractUser;
+			sourceTree = "<group>";
+		};
+		865C5E911AE7CB5B00D414AF /* User */ = {
+			isa = PBXGroup;
+			children = (
+				86C23C9B1AD35B7E00FE9D63 /* UserDetailMainTableViewCell.swift */,
+				8661BEDE1AE6CA7900BBBF4E /* UserDetailMainTableViewCell.xib */,
+				86C23C9D1AD35E5100FE9D63 /* UserDetailBillSliderTableViewCell.swift */,
+				8661BEE01AE6CAAB00BBBF4E /* UserDetailBillSliderTableViewCell.xib */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
 		8661BEDA1AE6A5F800BBBF4E /* DarkTabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,7 +408,6 @@
 				86A92DC31AB868AA00B38445 /* TaxCell */,
 				863D5E971ACF75A0007D9235 /* NewUserPopUp */,
 				86F441C81ACEA540006B5246 /* UserCell */,
-				86B2F20B1AD0D1A700E1E391 /* UserDetailViewController */,
 			);
 			name = UsersViewController;
 			sourceTree = "<group>";
@@ -387,6 +443,7 @@
 			children = (
 				86A92DA41AB863E900B38445 /* Main.storyboard */,
 				86A92DC01AB8684B00B38445 /* UsersViewController */,
+				86B2F20B1AD0D1A700E1E391 /* UserDetailViewController */,
 				86E529A31AE1A450005FD924 /* RootUserViewController */,
 				860058C81AE5E17A000F1050 /* RideTableViewCell */,
 				8661BEDA1AE6A5F800BBBF4E /* DarkTabBarController */,
@@ -398,17 +455,8 @@
 		86B2F20B1AD0D1A700E1E391 /* UserDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
-				86C23C991AD34DDB00FE9D63 /* UserDetailViewController.swift */,
-				86C23C9B1AD35B7E00FE9D63 /* UserDetailMainTableViewCell.swift */,
-				8661BEDE1AE6CA7900BBBF4E /* UserDetailMainTableViewCell.xib */,
-				86C23C9D1AD35E5100FE9D63 /* UserDetailBillSliderTableViewCell.swift */,
-				8661BEE01AE6CAAB00BBBF4E /* UserDetailBillSliderTableViewCell.xib */,
-				86C23C9F1AD3611100FE9D63 /* UserDetailFirstNameTableViewCell.swift */,
-				8661BEE21AE6CAC700BBBF4E /* UserDetailFirstNameTableViewCell.xib */,
-				86C23CA11AD362A200FE9D63 /* UserDetailLastNameTableViewCell.swift */,
-				8661BEE41AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib */,
-				86C23CA31AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift */,
-				8661BEE61AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib */,
+				865C5E8B1AE7CADC00D414AF /* Controllers */,
+				865C5E8C1AE7CAE900D414AF /* Cells */,
 			);
 			name = UserDetailViewController;
 			sourceTree = "<group>";

@@ -218,6 +218,6 @@ class UserCell: UITableViewCell {
             color = RGBColor(r: 41, g: 123, b: 74, alpha: 1)
         }
         
-        return color
+        return RGBColor(r: 51, g: 51, b: 51, alpha: 1)
     }
 }

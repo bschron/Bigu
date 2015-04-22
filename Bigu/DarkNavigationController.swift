@@ -11,6 +11,7 @@ import UIKit
 class DarkNavigationController: UINavigationController {
     override func viewDidLoad() {
         self.navigationBar.barStyle = UIBarStyle.Black
-        self.navigationBar.tintColor = RGBColor(r: 41, g: 123, b: 74, alpha: 1)
+        self.navigationBar.tintColor = RGBColor.blackColor()
+        self.navigationBar.barTintColor = RGBColor(r: 41, g: 123, b: 74, alpha: 1)
     }
 }
