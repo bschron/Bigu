@@ -38,6 +38,7 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var fullnameLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var fakeSeparator: UIView!
     
     // MARK: - Methods
     
@@ -59,7 +60,8 @@ class UserCell: UITableViewCell {
         self.userImageView.layer.masksToBounds = true
         
         self.invisibleUserImageViewCover = UIView()
-        self.invisibleUserImageViewCover.frame.size = self.userImageView.frame.size
+        self.invisibleUserImageViewCover.frame.size.height = self.userImageView.frame.size.height + 2
+        self.invisibleUserImageViewCover.frame.size.width = self.userImageView.frame.size.width + 2
         self.invisibleUserImageViewCover.center = self.userImageView.center
         self.invisibleUserImageViewCover.layer.cornerRadius = self.userImageView.layer.cornerRadius
         self.invisibleUserImageViewCover.backgroundColor = UIColor.blueColor().colorWithAlphaComponent(CGFloat(0))
@@ -72,6 +74,7 @@ class UserCell: UITableViewCell {
         
         // set background color
         self.backgroundColor = UserCell.nextColor
+        self.fakeSeparator.backgroundColor = RGBColor(r: 76, g: 153, b: 107, alpha: 1)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -119,7 +122,7 @@ class UserCell: UITableViewCell {
                             User.usersList.list.getElementAtIndex(self.userIndex)!.payBill()
                         }
                         else {
-                            let newColor = UIColor.redColor().colorWithAlphaComponent(CGFloat(0.25))
+                            let newColor = UIColor.blackColor().colorWithAlphaComponent(CGFloat(0.75))
                             self.invisibleUserImageViewCover.backgroundColor = newColor
                         }
                         }, completion: {result in
