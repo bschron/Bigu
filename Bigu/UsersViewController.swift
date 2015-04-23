@@ -22,7 +22,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
 
         // Do any additional setup after loading the view.
         
-        self.usersTableView.backgroundColor = RGBColor(r: 51, g: 51, b: 51, alpha: 1)
+        self.usersTableView.backgroundColor = UIColor.whiteColor()
         self.usersTableView.separatorColor = self.usersTableView.backgroundColor
         
         /* register tax cells nibs*/
