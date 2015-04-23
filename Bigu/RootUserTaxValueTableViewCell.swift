@@ -45,6 +45,15 @@ class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataSource, UI
         // Configure the view for the selected state
     }
     
+    func getTaxPickerValue() -> Float {
+        let intValueRow = self.taxValuePickerView.selectedRowInComponent(0)
+        let intValue = self.intergerValues[intValueRow]
+        let floatValueRow = self.taxValuePickerView.selectedRowInComponent(1)
+        let floatValue = self.floatingValues[floatValueRow]
+        let totalValue = Float(intValue) + floatValue
+        return totalValue
+    }
+    
     // MARK: -Protocols
     // MARK: UIPickerViewDataSource
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

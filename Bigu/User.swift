@@ -57,7 +57,9 @@ class User: AbstractUser {
         return dic
     }
     
-    func increaseBill(value: Float) {
+    func increaseBill() {
+        let value:Float = Bill.taxValue
+        
         self.bill.increaseBill(value)
         
         let ride = Ride(userId: self.id, value: value)

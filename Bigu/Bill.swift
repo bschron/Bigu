@@ -64,7 +64,7 @@ class Bill {
             return Bill.wrap.taxValue != nil ? Bill.wrap.taxValue! : 0
         }
         set {
-            if taxValue > 0 {
+            if newValue > 0 {
                 Bill.wrap.taxValue = newValue
             }
             else {

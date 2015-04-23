@@ -134,8 +134,7 @@ class UserCell: UITableViewCell {
     
     // MARK: Actions
     @IBAction func debitButtonPressed(sender: AnyObject) {
-        let currentTaxValue = TaxCell.taxValue
-        User.usersList.list.getElementAtIndex(self.userIndex)!.increaseBill(currentTaxValue)
+        User.usersList.list.getElementAtIndex(self.userIndex)!.increaseBill()
         //Animation
         let duration = 0.3
         let delay = 0.0 // delay will be 0.0 seconds (e.g. nothing)

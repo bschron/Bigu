@@ -28,6 +28,12 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
         self.tableView.registerNib(UINib(nibName: "RootUserTaxValueTableViewCell", bundle: nil), forCellReuseIdentifier: RootUserTaxValueTableViewCell.reuseId)
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        let newTaxValue = taxValueCell.getTaxPickerValue()
+        Bill.taxValue = newTaxValue
+    }
+    
     // MARK: -Protocols
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -41,12 +47,15 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
                 newCell.user = self.user
                 newCell.viewController = self
                 
-                mainCell = newCell
+                self.mainCell = newCell
                 
                 cell = newCell
             }
             else if row == 1 {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(RootUserTaxValueTableViewCell.reuseId, forIndexPath: indexPath) as! RootUserTaxValueTableViewCell
+                
+                self.taxValueCell = newCell
+                
                 cell = newCell
             }
         }
