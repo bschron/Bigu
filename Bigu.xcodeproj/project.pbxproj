@@ -22,6 +22,8 @@
 		863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D5E931ACF7185007D9235 /* CustomPopUp.swift */; };
 		863D5E961ACF7277007D9235 /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863D5E951ACF7277007D9235 /* CustomPopUp.xib */; };
 		863D5E991ACF75F8007D9235 /* NewUserPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863D5E981ACF75F8007D9235 /* NewUserPopUp.xib */; };
+		865C5E931AE7E1A400D414AF /* AbstractUserDetailMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865C5E921AE7E1A400D414AF /* AbstractUserDetailMainTableViewCell.swift */; };
+		865E44C81AE880B9008C58F8 /* AbstractUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865E44C71AE880B9008C58F8 /* AbstractUserDetailViewController.swift */; };
 		8661BED91AE6A1EC00BBBF4E /* DarkTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661BED81AE6A1EC00BBBF4E /* DarkTabBarController.swift */; };
 		8661BEDC1AE6A62D00BBBF4E /* DarkNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661BEDB1AE6A62D00BBBF4E /* DarkNavigationController.swift */; };
 		8661BEDF1AE6CA7900BBBF4E /* UserDetailMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8661BEDE1AE6CA7900BBBF4E /* UserDetailMainTableViewCell.xib */; };
@@ -108,6 +110,8 @@
 		863D5E931ACF7185007D9235 /* CustomPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		863D5E951ACF7277007D9235 /* CustomPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPopUp.xib; sourceTree = "<group>"; };
 		863D5E981ACF75F8007D9235 /* NewUserPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserPopUp.xib; sourceTree = "<group>"; };
+		865C5E921AE7E1A400D414AF /* AbstractUserDetailMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractUserDetailMainTableViewCell.swift; sourceTree = "<group>"; };
+		865E44C71AE880B9008C58F8 /* AbstractUserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractUserDetailViewController.swift; sourceTree = "<group>"; };
 		8661BED81AE6A1EC00BBBF4E /* DarkTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkTabBarController.swift; sourceTree = "<group>"; };
 		8661BEDB1AE6A62D00BBBF4E /* DarkNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkNavigationController.swift; sourceTree = "<group>"; };
 		8661BEDE1AE6CA7900BBBF4E /* UserDetailMainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailMainTableViewCell.xib; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				86C23C991AD34DDB00FE9D63 /* UserDetailViewController.swift */,
+				865E44C71AE880B9008C58F8 /* AbstractUserDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 		865C5E901AE7CB4200D414AF /* AbstractUser */ = {
 			isa = PBXGroup;
 			children = (
+				865C5E921AE7E1A400D414AF /* AbstractUserDetailMainTableViewCell.swift */,
 			);
 			name = AbstractUser;
 			sourceTree = "<group>";
@@ -646,6 +652,7 @@
 				86A78EE81ACD8231009BBF58 /* BillingHandlerDelegate.swift in Sources */,
 				86CA24DF1ADD306800EA98E8 /* UserPersistenceManager.swift in Sources */,
 				8662E4261ACACB180087B69B /* PickerTaxCell.swift in Sources */,
+				865C5E931AE7E1A400D414AF /* AbstractUserDetailMainTableViewCell.swift in Sources */,
 				86B697501ACFEB680052353E /* UserHandlingDelegate.swift in Sources */,
 				8662E4241AC9910D0087B69B /* DefaultTaxCell.swift in Sources */,
 				86202E6D1AE2A7D500293B79 /* Bill.swift in Sources */,
@@ -668,6 +675,7 @@
 				8661BEDC1AE6A62D00BBBF4E /* DarkNavigationController.swift in Sources */,
 				86C23CA01AD3611100FE9D63 /* UserDetailFirstNameTableViewCell.swift in Sources */,
 				86A92D9F1AB863E900B38445 /* AppDelegate.swift in Sources */,
+				865E44C81AE880B9008C58F8 /* AbstractUserDetailViewController.swift in Sources */,
 				8661BED91AE6A1EC00BBBF4E /* DarkTabBarController.swift in Sources */,
 				860B39341AE33E7100D34896 /* OrderedList.swift in Sources */,
 				86C23C9C1AD35B7E00FE9D63 /* UserDetailMainTableViewCell.swift in Sources */,

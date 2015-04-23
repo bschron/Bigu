@@ -63,7 +63,7 @@ class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandlerDelegate
             self.viewController.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
             self.viewController.billSliderCell = nil
         }
-        self.viewController.mainCell.registerAsBillingHandler()
+        (self.viewController.mainCell as! UserDetailMainTableViewCell).registerAsBillingHandler()
     }
     
     // MARK: Actions

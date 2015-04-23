@@ -85,7 +85,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
             let userName = senderCell.user.nickName != "" ? senderCell.user.nickName : senderCell.user.name
             
             vc.title = userName
-            vc.userIndex = senderCell.userIndex
+            vc.user = User.usersList.list.getElementAtIndex(senderCell.userIndex)
         }
     }
     

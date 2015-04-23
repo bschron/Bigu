@@ -11,7 +11,7 @@ import UIKit
 class UserDetailNickNameTableViewCell: UITableViewCell, UserHandlingDelegate {
     
     // MARK: - Properties
-    var userIndex: Int = 0 {
+    var user: AbstractUser! {
         didSet {
             self.reloadUsersData()
         }
@@ -35,13 +35,13 @@ class UserDetailNickNameTableViewCell: UITableViewCell, UserHandlingDelegate {
     }
     
     func reloadUsersData() {
-        self.textField.text = User.usersList.list.getElementAtIndex(self.userIndex)!.nickName
+        self.textField.text = self.user.nickName
     }
     
     // MARK: Actions
     @IBAction func editingDidEnd(sender: AnyObject) {
         let newValue = self.textField.text
-        User.usersList.list.getElementAtIndex(self.userIndex)!.nickName = newValue
+        self.user.nickName = newValue
         if userDetailViewController != nil {
             userDetailViewController.reloadUsersData()
         }

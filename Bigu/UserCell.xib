@@ -52,7 +52,6 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="xWL-8A-n9V" secondAttribute="trailing" id="0Db-JF-5kf"/>
                     <constraint firstAttribute="bottom" secondItem="xWL-8A-n9V" secondAttribute="bottom" id="8mz-H8-NpE"/>

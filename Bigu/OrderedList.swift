@@ -105,4 +105,18 @@ class OrderedList<T> {
         }
         return array
     }
+    
+    func getObjectIndex(indexFor object: T, compareBy parameter: (T) -> Bool) -> Int? {
+        var i: Int = 0
+        var result: Int?
+        for cur in self.list {
+            if parameter(cur) {
+                result = i
+                break
+            }
+            i++
+        }
+        
+        return result
+    }
 }

@@ -161,7 +161,7 @@ class TaxCell: UITableViewCell, TaxHandlingDelegate, DataPersistenceDelegate {
     }
     class var taxValue: Float {
         get {
-            return TaxCell.storedTaxValue(nil)
+            return 3.5 /*TaxCell.storedTaxValue(nil)*/
         }
         set {
             if newValue >= 0 && newValue <= TaxCell.maximumTaxValue {

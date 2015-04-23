@@ -8,56 +8,36 @@
 
 import UIKit
 
-class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate, BillingHandlerDelegate {
-
-    // MARK: - Properties
-    var userIndex: Int = 0 {
+class UserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell, BillingHandlerDelegate {
+    
+    // MARK: -Properties
+    override var user: AbstractUser! {
         didSet {
             self.reloadUsersData()
             self.registerAsBillingHandler()
         }
     }
-    weak var viewController: UserDetailViewController!
-    @IBOutlet weak var userImageView: UIImageView!
+    private var downcastedUser: User! {
+        return self.user as! User
+    }
+    private var downcastedViewController: UserDetailViewController {
+        return self.viewController as! UserDetailViewController
+    }
     
     // MARK: Outlets
     @IBOutlet weak var billLabel: UILabel!
     @IBOutlet weak var decreaseButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
-    // MARK: - Methods
+    // MARK: -Methods
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        let userImageViewWidth = self.userImageView.frame.width
-        self.userImageView.layer.cornerRadius = userImageViewWidth / 2
-        self.userImageView.layer.masksToBounds = true
-        
-        self.reloadUsersData()
-        self.registerAsBillingHandler()
-        
-    }
-    
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    func reloadUsersData() {
-        let user = User.usersList.list.getElementAtIndex(self.userIndex)!
-        self.userImageView.image = user.userImage
-    }
-    
-    func registerAsBillingHandler() {
-        User.usersList.list.getElementAtIndex(self.userIndex)!.registerAsBillHandler(self)
     }
     
     func updateBillingUI() {
-        let user = User.usersList.list.getElementAtIndex(self.userIndex)!
         
-        self.billLabel.text = "\(user.billValue)"
-        if user.billValue <= 0 {
+        self.billLabel.text = "\(self.downcastedUser.billValue)"
+        if self.downcastedUser.billValue <= 0 {
             self.resetButton.hidden = true
             self.decreaseButton.hidden = true
         }
@@ -67,30 +47,30 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate, Billin
         }
     }
     
+    func registerAsBillingHandler() {
+        self.downcastedUser.registerAsBillHandler(self)
+    }
+    
     // MARK: Actions
     @IBAction func decreaseButtonPressed(sender: AnyObject) {
-        let curBill: Float = User.usersList.list.getElementAtIndex(self.userIndex)!.billValue
-        if curBill != 0 && !self.viewController.billSlider {
-            self.viewController.billSlider = true
+        let curBill: Float = self.downcastedUser.billValue
+        if curBill != 0 && !self.downcastedViewController.billSlider {
+            self.downcastedViewController.billSlider = true
             self.viewController.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic)
+            self.viewController.tableView.reloadData()
         }
-        else if self.viewController.billSlider {
-            self.viewController.billSliderCell?.destroy()
+        else if self.downcastedViewController.billSlider {
+            self.downcastedViewController.billSliderCell?.destroy()
         }
     }
     @IBAction func resetButtonPressed(sender: AnyObject) {
-        User.usersList.list.getElementAtIndex(self.userIndex)!.payBill()
+        self.downcastedUser.payBill()
         self.registerAsBillingHandler()
-        self.viewController.billSliderCell?.destroy()
+        self.downcastedViewController.billSliderCell?.destroy()
     }
     
-    @IBAction func loadImage(sender: AnyObject) {
-        self.viewController.displayPhotoLibraryPicker()
-    }
-    
-    // MARK: -Class Properties and Methods
-    class var reuseId: String {
+    // MARK; -Class Properties and Methods
+    override class var reuseId: String {
         return "UserDetailMainCellIdentifier"
     }
-
 }
