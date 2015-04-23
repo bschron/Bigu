@@ -4,34 +4,37 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootUserTaxValueTableViewCell" customModule="Bigu" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="RootUserTaxValueTableViewCell" customModule="Bigu" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="TaxValueCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaxValueCell" id="KGk-i7-Jjw" customClass="RootUserTaxValueTableViewCell" customModule="Bigu" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ygl-pF-vdl">
+                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTA-ae-07Z">
                         <rect key="frame" x="0.0" y="-41" width="320" height="162"/>
-                        <connections>
-                            <outlet property="dataSource" destination="-1" id="tk0-x9-eMR"/>
-                            <outlet property="delegate" destination="-1" id="UvA-69-kCS"/>
-                        </connections>
                     </pickerView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOO-uX-X3C">
+                        <rect key="frame" x="8" y="29" width="73" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="Ygl-pF-vdl" secondAttribute="bottom" id="TdI-fP-wjn"/>
-                    <constraint firstAttribute="trailing" secondItem="Ygl-pF-vdl" secondAttribute="trailing" id="W0z-FR-nQg"/>
-                    <constraint firstItem="Ygl-pF-vdl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="YKn-gG-HUI"/>
-                    <constraint firstItem="Ygl-pF-vdl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="thH-5F-HHc"/>
+                    <constraint firstItem="uOO-uX-X3C" firstAttribute="centerY" secondItem="dTA-ae-07Z" secondAttribute="centerY" constant="-0.5" id="Vry-JS-VfR"/>
+                    <constraint firstAttribute="trailing" secondItem="dTA-ae-07Z" secondAttribute="trailing" id="cRl-J3-WIb"/>
+                    <constraint firstItem="dTA-ae-07Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="oUR-7g-6Zx"/>
+                    <constraint firstAttribute="centerY" secondItem="dTA-ae-07Z" secondAttribute="centerY" constant="-0.5" id="scZ-hq-AVb"/>
+                    <constraint firstItem="uOO-uX-X3C" firstAttribute="leading" secondItem="dTA-ae-07Z" secondAttribute="leading" constant="8" id="uZl-jl-269"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="taxValuePickerView" destination="Ygl-pF-vdl" id="Ndh-ML-SAC"/>
+                <outlet property="taxValuePickerView" destination="dTA-ae-07Z" id="3pJ-lR-2LH"/>
             </connections>
-            <point key="canvasLocation" x="320" y="435"/>
+            <point key="canvasLocation" x="322" y="144"/>
         </tableViewCell>
     </objects>
 </document>

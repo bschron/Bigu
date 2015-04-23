@@ -35,6 +35,8 @@ class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataSource, UI
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.taxValuePickerView.dataSource = self
+        self.taxValuePickerView.delegate = self
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -68,7 +70,7 @@ class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataSource, UI
             title = NSAttributedString(string: "\(self.intergerValues[row])")
         }
         else {
-            title = NSAttributedString(string: "\(self.floatingValues[row])")
+            title = NSAttributedString(string: row == 0 ? ".0" : ".5")
         }
         
         return title
@@ -77,12 +79,17 @@ class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataSource, UI
         var width: CGFloat!
         
         if component == 0 {
-            width = pickerView.frame.width * 2 / 3
+            width = pickerView.frame.width / 3
         }
         else {
-            width = pickerView.frame.width / 3
+            width = pickerView.frame.width / 6
         }
         
         return width
+    }
+    
+    // MARK: -Class Properties and Methods
+    class var reuseId: String {
+        return "TaxValueCell"
     }
 }

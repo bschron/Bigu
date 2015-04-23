@@ -13,10 +13,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="Gje-qp-Eqc" kind="relationship" relationship="rootViewController" id="Pat-2G-C69"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z5C-bq-gF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="788" y="-251"/>
+        </scene>
+        <!--Root User Detail View Controller-->
+        <scene sceneID="Jbo-nE-DxX">
+            <objects>
+                <viewController id="Gje-qp-Eqc" customClass="RootUserDetailViewController" customModule="Bigu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O7n-Q3-Dyw"/>
+                        <viewControllerLayoutGuide type="bottom" id="qJG-uJ-Tlz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sdh-YG-kQr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fxa-gB-VBo">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Gje-qp-Eqc" id="MFO-9T-LQg"/>
+                                    <outlet property="delegate" destination="Gje-qp-Eqc" id="dEe-Le-rlX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fxa-gB-VBo" firstAttribute="leading" secondItem="Sdh-YG-kQr" secondAttribute="leading" id="23V-f0-1Xc"/>
+                            <constraint firstAttribute="trailing" secondItem="fxa-gB-VBo" secondAttribute="trailing" id="Squ-gF-F5V"/>
+                            <constraint firstAttribute="bottom" secondItem="fxa-gB-VBo" secondAttribute="bottom" id="VWM-MJ-pXO"/>
+                            <constraint firstItem="fxa-gB-VBo" firstAttribute="top" secondItem="Sdh-YG-kQr" secondAttribute="top" id="juU-cN-VyX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wg1-DL-0Mr"/>
+                    <connections>
+                        <outlet property="tableView" destination="fxa-gB-VBo" id="m8p-B6-JJB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qbd-Hr-RjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1528" y="-251"/>
         </scene>
         <!--Users-->
         <scene sceneID="fAr-tp-fHw">
@@ -121,13 +162,14 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="dED-7M-5Cv"/>
                     <connections>
                         <outlet property="tableView" destination="hLY-hy-htg" id="tsW-Ix-pwL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ify-y2-MaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2219" y="459"/>
+            <point key="canvasLocation" x="2253" y="459"/>
         </scene>
         <!--Dark Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

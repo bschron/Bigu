@@ -9,7 +9,7 @@
 import UIKit
 
 class AbstractUserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
-    
+
     // MARK: - Properties
     var user: AbstractUser! {
         didSet {

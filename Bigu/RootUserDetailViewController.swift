@@ -1,33 +1,31 @@
 //
-//  UserDetailViewController.swift
+//  RootUserDetailViewController.swift
 //  Bigu
 //
-//  Created by Bruno Chroniaris on 4/6/15.
+//  Created by Bruno Chroniaris on 4/23/15.
 //  Copyright (c) 2015 Universidade Federal De Alagoas. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class UserDetailViewController: AbstractUserDetailViewController {
+class RootUserDetailViewController: AbstractUserDetailViewController {
     
     // MARK: -Properties
-    private var downcastedUser: User {
-        return self.user as! User
+    private var downcastedUser: RootUser! {
+        return self.user as! RootUser
     }
-    private var expensiveUserIndex: Int {
-        return User.usersList.list.getObjectIndex(indexFor: self.downcastedUser, compareBy: { $0.id == self.user.id })!
-    }
-    var billSlider: Bool = false
     
     // MARK: Outlets
-    weak var billSliderCell: UserDetailBillSliderTableViewCell?
+    internal (set) weak var taxValueCell: RootUserTaxValueTableViewCell!
     
     // MARK: -Methods
     override func viewDidLoad() {
+        self.user = RootUser.singleton
         super.viewDidLoad()
         
-        self.tableView.registerNib(UINib(nibName: "UserDetailMainTableViewCell", bundle: nil), forCellReuseIdentifier: UserDetailMainTableViewCell.reuseId)
-        self.tableView.registerNib(UINib(nibName: "UserDetailBillSliderTableViewCell", bundle: nil), forCellReuseIdentifier: UserDetailBillSliderTableViewCell.reuseId)
+        self.tableView.registerNib(UINib(nibName: "RootUserDetailMainTableViewCell", bundle: nil), forCellReuseIdentifier: RootUserDetailMainTableViewCell.reuseId)
+        self.tableView.registerNib(UINib(nibName: "RootUserTaxValueTableViewCell", bundle: nil), forCellReuseIdentifier: RootUserTaxValueTableViewCell.reuseId)
     }
     
     // MARK: -Protocols
@@ -39,7 +37,7 @@ class UserDetailViewController: AbstractUserDetailViewController {
         
         if section == 0 {
             if row == 0 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailMainTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailMainTableViewCell
+                let newCell = tableView.dequeueReusableCellWithIdentifier(RootUserDetailMainTableViewCell.reuseId, forIndexPath: indexPath) as! RootUserDetailMainTableViewCell
                 newCell.user = self.user
                 newCell.viewController = self
                 
@@ -48,13 +46,7 @@ class UserDetailViewController: AbstractUserDetailViewController {
                 cell = newCell
             }
             else if row == 1 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailBillSliderTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailBillSliderTableViewCell
-                
-                newCell.userIndex = self.expensiveUserIndex
-                newCell.mainCell = mainCell
-                self.billSliderCell = newCell
-                newCell.viewController = self
-                
+                let newCell = tableView.dequeueReusableCellWithIdentifier(RootUserTaxValueTableViewCell.reuseId, forIndexPath: indexPath) as! RootUserTaxValueTableViewCell
                 cell = newCell
             }
         }
@@ -87,7 +79,7 @@ class UserDetailViewController: AbstractUserDetailViewController {
         else if section == 2 {
             let newCell = tableView.dequeueReusableCellWithIdentifier(RideTableViewCell.reuseId, forIndexPath: indexPath) as! RideTableViewCell
             
-            let rideHistory = self.downcastedUser.rideHistory!
+            let rideHistory = RideListManager.rideListSingleton
             let ride = rideHistory.list.getElementAtIndex(row)
             
             newCell.ride = ride
@@ -98,19 +90,29 @@ class UserDetailViewController: AbstractUserDetailViewController {
         return cell
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var rows = 0
+        var rows: Int = 0
         
         if section == 0 {
-            rows = billSlider ? 2 : 1
+            rows = 2
         }
         else if section == 1 {
             rows = 3
         }
         else if section == 2 {
-            let rideHistory = self.downcastedUser.rideHistory!
+            let rideHistory = RideListManager.rideListSingleton
             rows = rideHistory.count
         }
         
         return rows
+    }
+    // MARK: UITableViewDelegate
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        var height = super.tableView(tableView, heightForRowAtIndexPath: indexPath)
+        
+        if indexPath.section == 0 && indexPath.row == 1 {
+            height = CGFloat(100)
+        }
+        
+        return height
     }
 }

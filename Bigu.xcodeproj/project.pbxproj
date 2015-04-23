@@ -69,6 +69,7 @@
 		86DFA2FB1AE166FA00D42B65 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F31AE166FA00D42B65 /* Semaphore.swift */; };
 		86F390F61AE98F950099C7ED /* RootUserTaxValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F390F41AE98F950099C7ED /* RootUserTaxValueTableViewCell.swift */; };
 		86F390F71AE98F950099C7ED /* RootUserTaxValueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F390F51AE98F950099C7ED /* RootUserTaxValueTableViewCell.xib */; };
+		86F390FB1AE996E40099C7ED /* RootUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F390FA1AE996E40099C7ED /* RootUserDetailViewController.swift */; };
 		86F441CA1ACEA574006B5246 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F441C91ACEA574006B5246 /* UserCell.xib */; };
 		86F441CE1ACEA9DA006B5246 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F441CD1ACEA9DA006B5246 /* UserCell.swift */; };
 /* End PBXBuildFile section */
@@ -165,6 +166,7 @@
 		86DFA2F31AE166FA00D42B65 /* Semaphore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Semaphore.swift; path = BrightFutures/BrightFutures/Semaphore.swift; sourceTree = "<group>"; };
 		86F390F41AE98F950099C7ED /* RootUserTaxValueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserTaxValueTableViewCell.swift; sourceTree = "<group>"; };
 		86F390F51AE98F950099C7ED /* RootUserTaxValueTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootUserTaxValueTableViewCell.xib; sourceTree = "<group>"; };
+		86F390FA1AE996E40099C7ED /* RootUserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserDetailViewController.swift; sourceTree = "<group>"; };
 		86F441C91ACEA574006B5246 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		86F441CD1ACEA9DA006B5246 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -264,6 +266,7 @@
 			children = (
 				86C23C991AD34DDB00FE9D63 /* UserDetailViewController.swift */,
 				865E44C71AE880B9008C58F8 /* AbstractUserDetailViewController.swift */,
+				86F390FA1AE996E40099C7ED /* RootUserDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 				860058CC1AE66FAF000F1050 /* ErasedUser.swift in Sources */,
 				8668D3971ACF3E8500C2CB87 /* UserList.swift in Sources */,
 				86D999281ACAD429001E48CD /* TaxCell.swift in Sources */,
+				86F390FB1AE996E40099C7ED /* RootUserDetailViewController.swift in Sources */,
 				86D9992C1ACC29C3001E48CD /* TaxHandlingDelegate.swift in Sources */,
 				86C23C9A1AD34DDB00FE9D63 /* UserDetailViewController.swift in Sources */,
 				86A92DC21AB8687A00B38445 /* UsersViewController.swift in Sources */,
