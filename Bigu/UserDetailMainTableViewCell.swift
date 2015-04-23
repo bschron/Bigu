@@ -30,10 +30,6 @@ class UserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell, BillingH
     @IBOutlet weak var resetButton: UIButton!
     
     // MARK: -Methods
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     func updateBillingUI() {
         
         self.billLabel.text = "\(self.downcastedUser.billValue)"
