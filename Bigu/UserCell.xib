@@ -43,8 +43,17 @@
                             <action selector="debitButtonPressed:" destination="kmb-SO-f32" eventType="touchUpInside" id="gYw-0O-xeL"/>
                         </connections>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWL-8A-n9V" userLabel="Fake separator">
+                        <rect key="frame" x="38" y="78" width="562" height="1"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="WUF-iJ-bct"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="xWL-8A-n9V" secondAttribute="trailing" id="0Db-JF-5kf"/>
+                    <constraint firstAttribute="bottom" secondItem="xWL-8A-n9V" secondAttribute="bottom" id="8mz-H8-NpE"/>
                     <constraint firstItem="Lgv-E3-8j9" firstAttribute="leading" secondItem="aKF-F6-P5o" secondAttribute="leading" constant="5" id="9KL-Nd-02U"/>
                     <constraint firstItem="Bx1-4x-714" firstAttribute="leading" secondItem="Lgv-E3-8j9" secondAttribute="trailing" constant="8" id="Ao0-fM-kG2"/>
                     <constraint firstAttribute="trailing" secondItem="b6f-a1-75e" secondAttribute="trailing" constant="4" id="FAM-6u-u0Y"/>
@@ -53,6 +62,7 @@
                     <constraint firstAttribute="centerY" secondItem="b6f-a1-75e" secondAttribute="centerY" constant="-0.25" id="Pwk-F5-EMY"/>
                     <constraint firstAttribute="bottomMargin" secondItem="b6f-a1-75e" secondAttribute="bottom" constant="12" id="QKG-0R-fjQ"/>
                     <constraint firstAttribute="bottom" secondItem="Lgv-E3-8j9" secondAttribute="bottom" constant="8" id="ant-oM-kTn"/>
+                    <constraint firstItem="xWL-8A-n9V" firstAttribute="leading" secondItem="aKF-F6-P5o" secondAttribute="leadingMargin" constant="30" id="c9x-0u-v9a"/>
                     <constraint firstItem="b6f-a1-75e" firstAttribute="leading" secondItem="aKF-F6-P5o" secondAttribute="leadingMargin" constant="282" id="kSu-wv-zNp"/>
                     <constraint firstItem="b6f-a1-75e" firstAttribute="top" secondItem="aKF-F6-P5o" secondAttribute="topMargin" constant="12" id="o4O-KZ-DyQ"/>
                     <constraint firstItem="WbL-dH-8cl" firstAttribute="top" secondItem="Bx1-4x-714" secondAttribute="bottom" id="oW5-tc-coa"/>
@@ -74,6 +84,7 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="fakeSeparator" destination="xWL-8A-n9V" id="sad-IR-fv7"/>
                 <outlet property="fullnameLabel" destination="WbL-dH-8cl" id="QBk-44-m8m"/>
                 <outlet property="nameLabel" destination="Bx1-4x-714" id="ocv-Fg-U2j"/>
                 <outlet property="userImageView" destination="Lgv-E3-8j9" id="SBa-x8-R46"/>

@@ -23,6 +23,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view.
         
         self.usersTableView.backgroundColor = UIColor.whiteColor()
+        self.usersTableView.separatorColor = self.usersTableView.backgroundColor
         
         /* register tax cells nibs*/
         let defaultTaxCellNib = UINib(nibName: "TaxCell", bundle: nil)
