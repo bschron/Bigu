@@ -34,6 +34,19 @@
 		8661BEE71AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8661BEE61AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib */; };
 		8668D3971ACF3E8500C2CB87 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8668D3961ACF3E8500C2CB87 /* UserList.swift */; };
 		86717B861AEA5CAC0028B418 /* FakeSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86717B851AEA5CAC0028B418 /* FakeSeparator.swift */; };
+		86A4D3191AEACBF900477C07 /* BrightFutures.h in Headers */ = {isa = PBXBuildFile; fileRef = 86A4D3181AEACBF900477C07 /* BrightFutures.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86A4D31F1AEACBF900477C07 /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A4D3141AEACBF900477C07 /* BrightFutures.framework */; };
+		86A4D3281AEACBF900477C07 /* BrightFuturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A4D3271AEACBF900477C07 /* BrightFuturesTests.swift */; };
+		86A4D32B1AEACBF900477C07 /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A4D3141AEACBF900477C07 /* BrightFutures.framework */; };
+		86A4D32C1AEACBF900477C07 /* BrightFutures.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 86A4D3141AEACBF900477C07 /* BrightFutures.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		86A4D3361AEACC2000477C07 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2EC1AE166FA00D42B65 /* ExecutionContext.swift */; };
+		86A4D3371AEACC2000477C07 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2ED1AE166FA00D42B65 /* Future.swift */; };
+		86A4D3381AEACC2000477C07 /* FutureUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2EE1AE166FA00D42B65 /* FutureUtils.swift */; };
+		86A4D3391AEACC2000477C07 /* InvalidationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2EF1AE166FA00D42B65 /* InvalidationToken.swift */; };
+		86A4D33A1AEACC2000477C07 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F01AE166FA00D42B65 /* Promise.swift */; };
+		86A4D33B1AEACC2000477C07 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F11AE166FA00D42B65 /* Queue.swift */; };
+		86A4D33C1AEACC2000477C07 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F21AE166FA00D42B65 /* Result.swift */; };
+		86A4D33D1AEACC2000477C07 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F31AE166FA00D42B65 /* Semaphore.swift */; };
 		86A78EE81ACD8231009BBF58 /* BillingHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */; };
 		86A88A8D1AE1F078009A4ABD /* RootUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A88A8C1AE1F078009A4ABD /* RootUserViewController.swift */; };
 		86A88A911AE27F07009A4ABD /* RootUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A88A901AE27F07009A4ABD /* RootUser.swift */; };
@@ -54,14 +67,6 @@
 		86C23CA41AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C23CA31AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift */; };
 		86CA24DF1ADD306800EA98E8 /* UserPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CA24DE1ADD306800EA98E8 /* UserPersistenceManager.swift */; };
 		86D548DB1ADE9F4D0092C9A5 /* AbstractUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D548DA1ADE9F4D0092C9A5 /* AbstractUser.swift */; };
-		86DFA2F41AE166FA00D42B65 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2EC1AE166FA00D42B65 /* ExecutionContext.swift */; };
-		86DFA2F51AE166FA00D42B65 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2ED1AE166FA00D42B65 /* Future.swift */; };
-		86DFA2F61AE166FA00D42B65 /* FutureUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2EE1AE166FA00D42B65 /* FutureUtils.swift */; };
-		86DFA2F71AE166FA00D42B65 /* InvalidationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2EF1AE166FA00D42B65 /* InvalidationToken.swift */; };
-		86DFA2F81AE166FA00D42B65 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F01AE166FA00D42B65 /* Promise.swift */; };
-		86DFA2F91AE166FA00D42B65 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F11AE166FA00D42B65 /* Queue.swift */; };
-		86DFA2FA1AE166FA00D42B65 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F21AE166FA00D42B65 /* Result.swift */; };
-		86DFA2FB1AE166FA00D42B65 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F31AE166FA00D42B65 /* Semaphore.swift */; };
 		86F390F61AE98F950099C7ED /* RootUserTaxValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F390F41AE98F950099C7ED /* RootUserTaxValueTableViewCell.swift */; };
 		86F390F71AE98F950099C7ED /* RootUserTaxValueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F390F51AE98F950099C7ED /* RootUserTaxValueTableViewCell.xib */; };
 		86F390FB1AE996E40099C7ED /* RootUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F390FA1AE996E40099C7ED /* RootUserDetailViewController.swift */; };
@@ -84,6 +89,27 @@
 			remoteGlobalIDString = E9DF0820194470060083F7F2;
 			remoteInfo = BrightFuturesTests;
 		};
+		86A4D3201AEACBF900477C07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A4D3131AEACBF900477C07;
+			remoteInfo = BrightFutures;
+		};
+		86A4D3221AEACBF900477C07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A92D981AB863E900B38445;
+			remoteInfo = Bigu;
+		};
+		86A4D3291AEACBF900477C07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A4D3131AEACBF900477C07;
+			remoteInfo = BrightFutures;
+		};
 		86A92DB11AB863E900B38445 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
@@ -92,6 +118,20 @@
 			remoteInfo = Bigu;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		86A4D3341AEACBF900477C07 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				86A4D32C1AEACBF900477C07 /* BrightFutures.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		860058C91AE5E1A1000F1050 /* RideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideTableViewCell.swift; sourceTree = "<group>"; };
@@ -122,6 +162,12 @@
 		8661BEE61AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailNickNameTableViewCell.xib; sourceTree = "<group>"; };
 		8668D3961ACF3E8500C2CB87 /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
 		86717B851AEA5CAC0028B418 /* FakeSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeSeparator.swift; sourceTree = "<group>"; };
+		86A4D3141AEACBF900477C07 /* BrightFutures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BrightFutures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86A4D3171AEACBF900477C07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86A4D3181AEACBF900477C07 /* BrightFutures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrightFutures.h; sourceTree = "<group>"; };
+		86A4D31E1AEACBF900477C07 /* BrightFuturesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrightFuturesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		86A4D3261AEACBF900477C07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86A4D3271AEACBF900477C07 /* BrightFuturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightFuturesTests.swift; sourceTree = "<group>"; };
 		86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingHandlerDelegate.swift; sourceTree = "<group>"; };
 		86A88A8C1AE1F078009A4ABD /* RootUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserViewController.swift; sourceTree = "<group>"; };
 		86A88A901AE27F07009A4ABD /* RootUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUser.swift; sourceTree = "<group>"; };
@@ -146,14 +192,14 @@
 		86C23CA31AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailNickNameTableViewCell.swift; sourceTree = "<group>"; };
 		86CA24DE1ADD306800EA98E8 /* UserPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPersistenceManager.swift; sourceTree = "<group>"; };
 		86D548DA1ADE9F4D0092C9A5 /* AbstractUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractUser.swift; sourceTree = "<group>"; };
-		86DFA2EC1AE166FA00D42B65 /* ExecutionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExecutionContext.swift; path = BrightFutures/BrightFutures/ExecutionContext.swift; sourceTree = "<group>"; };
-		86DFA2ED1AE166FA00D42B65 /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Future.swift; path = BrightFutures/BrightFutures/Future.swift; sourceTree = "<group>"; };
-		86DFA2EE1AE166FA00D42B65 /* FutureUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FutureUtils.swift; path = BrightFutures/BrightFutures/FutureUtils.swift; sourceTree = "<group>"; };
-		86DFA2EF1AE166FA00D42B65 /* InvalidationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InvalidationToken.swift; path = BrightFutures/BrightFutures/InvalidationToken.swift; sourceTree = "<group>"; };
-		86DFA2F01AE166FA00D42B65 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = BrightFutures/BrightFutures/Promise.swift; sourceTree = "<group>"; };
-		86DFA2F11AE166FA00D42B65 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = BrightFutures/BrightFutures/Queue.swift; sourceTree = "<group>"; };
-		86DFA2F21AE166FA00D42B65 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Result.swift; path = BrightFutures/BrightFutures/Result.swift; sourceTree = "<group>"; };
-		86DFA2F31AE166FA00D42B65 /* Semaphore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Semaphore.swift; path = BrightFutures/BrightFutures/Semaphore.swift; sourceTree = "<group>"; };
+		86DFA2EC1AE166FA00D42B65 /* ExecutionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExecutionContext.swift; path = BrightFutures/ExecutionContext.swift; sourceTree = "<group>"; };
+		86DFA2ED1AE166FA00D42B65 /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Future.swift; path = BrightFutures/Future.swift; sourceTree = "<group>"; };
+		86DFA2EE1AE166FA00D42B65 /* FutureUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FutureUtils.swift; path = BrightFutures/FutureUtils.swift; sourceTree = "<group>"; };
+		86DFA2EF1AE166FA00D42B65 /* InvalidationToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InvalidationToken.swift; path = BrightFutures/InvalidationToken.swift; sourceTree = "<group>"; };
+		86DFA2F01AE166FA00D42B65 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = BrightFutures/Promise.swift; sourceTree = "<group>"; };
+		86DFA2F11AE166FA00D42B65 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = BrightFutures/Queue.swift; sourceTree = "<group>"; };
+		86DFA2F21AE166FA00D42B65 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Result.swift; path = BrightFutures/Result.swift; sourceTree = "<group>"; };
+		86DFA2F31AE166FA00D42B65 /* Semaphore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Semaphore.swift; path = BrightFutures/Semaphore.swift; sourceTree = "<group>"; };
 		86F390F41AE98F950099C7ED /* RootUserTaxValueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserTaxValueTableViewCell.swift; sourceTree = "<group>"; };
 		86F390F51AE98F950099C7ED /* RootUserTaxValueTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootUserTaxValueTableViewCell.xib; sourceTree = "<group>"; };
 		86F390FA1AE996E40099C7ED /* RootUserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserDetailViewController.swift; sourceTree = "<group>"; };
@@ -162,10 +208,26 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		86A4D3101AEACBF900477C07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86A4D31B1AEACBF900477C07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86A4D31F1AEACBF900477C07 /* BrightFutures.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		86A92D961AB863E900B38445 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86A4D32B1AEACBF900477C07 /* BrightFutures.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +398,48 @@
 			name = FakeSeparator;
 			sourceTree = "<group>";
 		};
+		86A4D3151AEACBF900477C07 /* BrightFutures */ = {
+			isa = PBXGroup;
+			children = (
+				86DFA2EC1AE166FA00D42B65 /* ExecutionContext.swift */,
+				86DFA2ED1AE166FA00D42B65 /* Future.swift */,
+				86DFA2EE1AE166FA00D42B65 /* FutureUtils.swift */,
+				86DFA2EF1AE166FA00D42B65 /* InvalidationToken.swift */,
+				86DFA2F01AE166FA00D42B65 /* Promise.swift */,
+				86DFA2F11AE166FA00D42B65 /* Queue.swift */,
+				86DFA2F21AE166FA00D42B65 /* Result.swift */,
+				86DFA2F31AE166FA00D42B65 /* Semaphore.swift */,
+				86A4D3181AEACBF900477C07 /* BrightFutures.h */,
+				86A4D3161AEACBF900477C07 /* Supporting Files */,
+			);
+			path = BrightFutures;
+			sourceTree = "<group>";
+		};
+		86A4D3161AEACBF900477C07 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				86A4D3171AEACBF900477C07 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		86A4D3241AEACBF900477C07 /* BrightFuturesTests */ = {
+			isa = PBXGroup;
+			children = (
+				86A4D3271AEACBF900477C07 /* BrightFuturesTests.swift */,
+				86A4D3251AEACBF900477C07 /* Supporting Files */,
+			);
+			path = BrightFuturesTests;
+			sourceTree = "<group>";
+		};
+		86A4D3251AEACBF900477C07 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				86A4D3261AEACBF900477C07 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		86A78EE91ACD86C9009BBF58 /* Billing */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,9 +477,10 @@
 			isa = PBXGroup;
 			children = (
 				861C25051AE0A7090081E9E8 /* BrightFutures.xcodeproj */,
-				86DFA2FC1AE1671400D42B65 /* BrightFutures */,
 				86A92D9B1AB863E900B38445 /* Bigu */,
 				86A92DB31AB863E900B38445 /* BiguTests */,
+				86A4D3151AEACBF900477C07 /* BrightFutures */,
+				86A4D3241AEACBF900477C07 /* BrightFuturesTests */,
 				86A92D9A1AB863E900B38445 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -385,6 +490,8 @@
 			children = (
 				86A92D991AB863E900B38445 /* Bigu.app */,
 				86A92DB01AB863E900B38445 /* BiguTests.xctest */,
+				86A4D3141AEACBF900477C07 /* BrightFutures.framework */,
+				86A4D31E1AEACBF900477C07 /* BrightFuturesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -475,21 +582,6 @@
 			name = UserDetailViewController;
 			sourceTree = "<group>";
 		};
-		86DFA2FC1AE1671400D42B65 /* BrightFutures */ = {
-			isa = PBXGroup;
-			children = (
-				86DFA2EC1AE166FA00D42B65 /* ExecutionContext.swift */,
-				86DFA2ED1AE166FA00D42B65 /* Future.swift */,
-				86DFA2EE1AE166FA00D42B65 /* FutureUtils.swift */,
-				86DFA2EF1AE166FA00D42B65 /* InvalidationToken.swift */,
-				86DFA2F01AE166FA00D42B65 /* Promise.swift */,
-				86DFA2F11AE166FA00D42B65 /* Queue.swift */,
-				86DFA2F21AE166FA00D42B65 /* Result.swift */,
-				86DFA2F31AE166FA00D42B65 /* Semaphore.swift */,
-			);
-			name = BrightFutures;
-			sourceTree = "<group>";
-		};
 		86E529A31AE1A450005FD924 /* RootUserViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,7 +601,55 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		86A4D3111AEACBF900477C07 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86A4D3191AEACBF900477C07 /* BrightFutures.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		86A4D3131AEACBF900477C07 /* BrightFutures */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86A4D3331AEACBF900477C07 /* Build configuration list for PBXNativeTarget "BrightFutures" */;
+			buildPhases = (
+				86A4D30F1AEACBF900477C07 /* Sources */,
+				86A4D3101AEACBF900477C07 /* Frameworks */,
+				86A4D3111AEACBF900477C07 /* Headers */,
+				86A4D3121AEACBF900477C07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrightFutures;
+			productName = BrightFutures;
+			productReference = 86A4D3141AEACBF900477C07 /* BrightFutures.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		86A4D31D1AEACBF900477C07 /* BrightFuturesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86A4D3351AEACBF900477C07 /* Build configuration list for PBXNativeTarget "BrightFuturesTests" */;
+			buildPhases = (
+				86A4D31A1AEACBF900477C07 /* Sources */,
+				86A4D31B1AEACBF900477C07 /* Frameworks */,
+				86A4D31C1AEACBF900477C07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86A4D3211AEACBF900477C07 /* PBXTargetDependency */,
+				86A4D3231AEACBF900477C07 /* PBXTargetDependency */,
+			);
+			name = BrightFuturesTests;
+			productName = BrightFuturesTests;
+			productReference = 86A4D31E1AEACBF900477C07 /* BrightFuturesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		86A92D981AB863E900B38445 /* Bigu */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86A92DBA1AB863E900B38445 /* Build configuration list for PBXNativeTarget "Bigu" */;
@@ -517,10 +657,12 @@
 				86A92D951AB863E900B38445 /* Sources */,
 				86A92D961AB863E900B38445 /* Frameworks */,
 				86A92D971AB863E900B38445 /* Resources */,
+				86A4D3341AEACBF900477C07 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				86A4D32A1AEACBF900477C07 /* PBXTargetDependency */,
 			);
 			name = Bigu;
 			productName = Bigu;
@@ -554,6 +696,14 @@
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Universidade Federal De Alagoas";
 				TargetAttributes = {
+					86A4D3131AEACBF900477C07 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = LBFUFN3H7E;
+					};
+					86A4D31D1AEACBF900477C07 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 86A92D981AB863E900B38445;
+					};
 					86A92D981AB863E900B38445 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = LBFUFN3H7E;
@@ -585,6 +735,8 @@
 			targets = (
 				86A92D981AB863E900B38445 /* Bigu */,
 				86A92DAF1AB863E900B38445 /* BiguTests */,
+				86A4D3131AEACBF900477C07 /* BrightFutures */,
+				86A4D31D1AEACBF900477C07 /* BrightFuturesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -607,6 +759,20 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		86A4D3121AEACBF900477C07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86A4D31C1AEACBF900477C07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		86A92D971AB863E900B38445 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -638,21 +804,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		86A4D30F1AEACBF900477C07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86A4D3371AEACC2000477C07 /* Future.swift in Sources */,
+				86A4D33B1AEACC2000477C07 /* Queue.swift in Sources */,
+				86A4D3391AEACC2000477C07 /* InvalidationToken.swift in Sources */,
+				86A4D33A1AEACC2000477C07 /* Promise.swift in Sources */,
+				86A4D33C1AEACC2000477C07 /* Result.swift in Sources */,
+				86A4D3381AEACC2000477C07 /* FutureUtils.swift in Sources */,
+				86A4D33D1AEACC2000477C07 /* Semaphore.swift in Sources */,
+				86A4D3361AEACC2000477C07 /* ExecutionContext.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86A4D31A1AEACBF900477C07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86A4D3281AEACBF900477C07 /* BrightFuturesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		86A92D951AB863E900B38445 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86DFA2F41AE166FA00D42B65 /* ExecutionContext.swift in Sources */,
 				860B39391AE3BD3F00D34896 /* RideListManager.swift in Sources */,
 				860B392B1AE3060F00D34896 /* PersistenceManager.swift in Sources */,
-				86DFA2F51AE166FA00D42B65 /* Future.swift in Sources */,
-				86DFA2F61AE166FA00D42B65 /* FutureUtils.swift in Sources */,
-				86DFA2F71AE166FA00D42B65 /* InvalidationToken.swift in Sources */,
 				860B392E1AE32D4500D34896 /* Ride.swift in Sources */,
-				86DFA2F81AE166FA00D42B65 /* Promise.swift in Sources */,
-				86DFA2F91AE166FA00D42B65 /* Queue.swift in Sources */,
-				86DFA2FA1AE166FA00D42B65 /* Result.swift in Sources */,
-				86DFA2FB1AE166FA00D42B65 /* Semaphore.swift in Sources */,
 				86B6974E1ACF77970052353E /* NewUserPopUp.swift in Sources */,
 				860058CA1AE5E1A1000F1050 /* RideTableViewCell.swift in Sources */,
 				86C23CA41AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift in Sources */,
@@ -701,6 +882,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		86A4D3211AEACBF900477C07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A4D3131AEACBF900477C07 /* BrightFutures */;
+			targetProxy = 86A4D3201AEACBF900477C07 /* PBXContainerItemProxy */;
+		};
+		86A4D3231AEACBF900477C07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A92D981AB863E900B38445 /* Bigu */;
+			targetProxy = 86A4D3221AEACBF900477C07 /* PBXContainerItemProxy */;
+		};
+		86A4D32A1AEACBF900477C07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A4D3131AEACBF900477C07 /* BrightFutures */;
+			targetProxy = 86A4D3291AEACBF900477C07 /* PBXContainerItemProxy */;
+		};
 		86A92DB21AB863E900B38445 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 86A92D981AB863E900B38445 /* Bigu */;
@@ -728,6 +924,94 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		86A4D32D1AEACBF900477C07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BrightFutures/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		86A4D32E1AEACBF900477C07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BrightFutures/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		86A4D32F1AEACBF900477C07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BrightFuturesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
+			};
+			name = Debug;
+		};
+		86A4D3301AEACBF900477C07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BrightFuturesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
+			};
+			name = Release;
+		};
 		86A92DB81AB863E900B38445 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -870,6 +1154,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		86A4D3331AEACBF900477C07 /* Build configuration list for PBXNativeTarget "BrightFutures" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86A4D32D1AEACBF900477C07 /* Debug */,
+				86A4D32E1AEACBF900477C07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		86A4D3351AEACBF900477C07 /* Build configuration list for PBXNativeTarget "BrightFuturesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86A4D32F1AEACBF900477C07 /* Debug */,
+				86A4D3301AEACBF900477C07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		86A92D941AB863E900B38445 /* Build configuration list for PBXProject "Bigu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
