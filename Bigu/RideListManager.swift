@@ -8,6 +8,7 @@
 
 import Foundation
 import BrightFutures
+import Collection
 
 public class RideListManager: DataPersistenceDelegate {
     
