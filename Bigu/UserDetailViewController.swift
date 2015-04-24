@@ -72,6 +72,9 @@ class UserDetailViewController: AbstractUserDetailViewController {
                 newCell.userDetailViewController = self
                 
                 cell = newCell
+                
+                let separator = FakeSeparator(forView: cell)
+                separator.center.x = 0
             }
             else if row == 1 {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailLastNameTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailLastNameTableViewCell
@@ -80,6 +83,9 @@ class UserDetailViewController: AbstractUserDetailViewController {
                 newCell.userDetailViewController = self
                 
                 cell = newCell
+                
+                let separator = FakeSeparator(forView: cell)
+                separator.center.x = 0
             }
             else if row == 2 {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailNickNameTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailNickNameTableViewCell

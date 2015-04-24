@@ -33,7 +33,7 @@ class FakeSeparator: UIView {
         self.frame.size.width = frame.size.width * 2
         self.frame.size.height = CGFloat(1)
         self.center.x = frame.width + frame.width / 30
-        self.center.y = frame.size.height - self.frame.size.height
+        self.center.y = frame.size.height
         self.backgroundColor = RGBColor(r: 230, g: 230, b: 230, alpha: 1)
     }
 }

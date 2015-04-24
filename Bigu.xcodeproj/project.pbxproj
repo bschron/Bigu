@@ -328,6 +328,14 @@
 			name = DarkNavigationController;
 			sourceTree = "<group>";
 		};
+		86717B871AEA65590028B418 /* FakeSeparator */ = {
+			isa = PBXGroup;
+			children = (
+				86717B851AEA5CAC0028B418 /* FakeSeparator.swift */,
+			);
+			name = FakeSeparator;
+			sourceTree = "<group>";
+		};
 		86A78EE91ACD86C9009BBF58 /* Billing */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,7 +461,7 @@
 				860058C81AE5E17A000F1050 /* RideTableViewCell */,
 				8661BEDA1AE6A5F800BBBF4E /* DarkTabBarController */,
 				8661BEDD1AE6A6D300BBBF4E /* DarkNavigationController */,
-				86717B851AEA5CAC0028B418 /* FakeSeparator.swift */,
+				86717B871AEA65590028B418 /* FakeSeparator */,
 			);
 			name = Views;
 			sourceTree = "<group>";
