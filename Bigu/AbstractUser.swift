@@ -77,9 +77,17 @@ class AbstractUser {
     // MARK: -Methods
     init() {
         self.id = AbstractUser.greaterId++
+        
+        if self.id >= AbstractUser.greaterId {
+            AbstractUser.greaterId = self.id + 1
+        }
     }
     init(withid id: Int) {
         self.id = id
+        
+        if self.id >= AbstractUser.greaterId {
+            AbstractUser.greaterId = self.id + 1
+        }
     }
     init(name: String, surName: String?, nickName: String?) {
         self.id = AbstractUser.greaterId++
@@ -87,6 +95,10 @@ class AbstractUser {
         self.surName = surName != nil ? surName! : ""
         self.nickName = nickName != nil ? nickName! : ""
         self.userImage = nil
+        
+        if self.id >= AbstractUser.greaterId {
+            AbstractUser.greaterId = self.id + 1
+        }
     }
     init(name: String, surName: String?, nickName: String?, userImage: UIImage?) {
         self.id = AbstractUser.greaterId++
@@ -94,6 +106,10 @@ class AbstractUser {
         self.surName = surName != nil ? surName! : ""
         self.nickName = nickName != nil ? nickName! : ""
         self.userImage = userImage
+        
+        if self.id >= AbstractUser.greaterId {
+            AbstractUser.greaterId = self.id + 1
+        }
     }
     init(id: Int, name: String, surName: String?, nickName: String?, userImage: UIImage?) {
         self.id = id
@@ -101,6 +117,10 @@ class AbstractUser {
         self.surName = surName != nil ? surName! : ""
         self.nickName = nickName != nil ? nickName! : ""
         self.userImage = userImage
+        
+        if self.id >= AbstractUser.greaterId {
+            AbstractUser.greaterId = self.id + 1
+        }
         
         if self.id >= AbstractUser.greaterId {
             AbstractUser.greaterId = self.id + 1

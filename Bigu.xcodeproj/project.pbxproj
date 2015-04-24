@@ -357,10 +357,10 @@
 		86A78EEB1ACD86FB009BBF58 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				86D548DA1ADE9F4D0092C9A5 /* AbstractUser.swift */,
 				86A92DCA1AB86A5800B38445 /* User.swift */,
 				860058CB1AE66FAF000F1050 /* ErasedUser.swift */,
 				86A88A901AE27F07009A4ABD /* RootUser.swift */,
-				86D548DA1ADE9F4D0092C9A5 /* AbstractUser.swift */,
 				8668D3961ACF3E8500C2CB87 /* UserList.swift */,
 				86B6974F1ACFEB680052353E /* UserHandlingDelegate.swift */,
 				86CA24DE1ADD306800EA98E8 /* UserPersistenceManager.swift */,
