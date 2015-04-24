@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Models
 
 class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

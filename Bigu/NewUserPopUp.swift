@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Models
 
 class NewUserPopUp: UIView {
 

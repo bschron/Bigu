@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import Models
 
 class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataSource, UIPickerViewDelegate {
 

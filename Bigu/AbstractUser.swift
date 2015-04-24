@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-class AbstractUser {
+public class AbstractUser {
     // MARK: -Properties
     private var _name: String?
-    var name: String {
+    public var name: String {
         get {
             return self._name != nil ? self._name! : ""
         }
@@ -27,7 +27,7 @@ class AbstractUser {
         }
     }
     private var _surName: String?
-    var surName: String {
+    public var surName: String {
         get {
             return self._surName != nil ? self._surName! : ""
         }
@@ -41,13 +41,13 @@ class AbstractUser {
             handler?.reloadUsersData()
         }
     }
-    var fullName: String {
+    public var fullName: String {
         get {
             return self.name + ((self.surName != "") ? (" " + self.surName) : (""))
         }
     }
     private var _nickName: String?
-    var nickName: String {
+    public var nickName: String {
         get {
             return self._nickName != nil ? self._nickName! : ""
         }
@@ -62,7 +62,7 @@ class AbstractUser {
         }
     }
     private var _userImage: UIImage? = nil
-    var userImage: UIImage? {
+    public var userImage: UIImage? {
         get {
             return self._userImage != nil ? self._userImage! : AbstractUser.emptyUserImage
         }
@@ -71,25 +71,25 @@ class AbstractUser {
             handler?.reloadUsersData()
         }
     }
-    var handler: UserHandlingDelegate? = nil
-    let id: Int
+    public var handler: UserHandlingDelegate? = nil
+    public let id: Int
     
     // MARK: -Methods
-    init() {
+    public init() {
         self.id = AbstractUser.greaterId++
         
         if self.id >= AbstractUser.greaterId {
             AbstractUser.greaterId = self.id + 1
         }
     }
-    init(withid id: Int) {
+    public init(withid id: Int) {
         self.id = id
         
         if self.id >= AbstractUser.greaterId {
             AbstractUser.greaterId = self.id + 1
         }
     }
-    init(name: String, surName: String?, nickName: String?) {
+    public init(name: String, surName: String?, nickName: String?) {
         self.id = AbstractUser.greaterId++
         self.name = name
         self.surName = surName != nil ? surName! : ""
@@ -100,7 +100,7 @@ class AbstractUser {
             AbstractUser.greaterId = self.id + 1
         }
     }
-    init(name: String, surName: String?, nickName: String?, userImage: UIImage?) {
+    public init(name: String, surName: String?, nickName: String?, userImage: UIImage?) {
         self.id = AbstractUser.greaterId++
         self.name = name
         self.surName = surName != nil ? surName! : ""
@@ -111,7 +111,7 @@ class AbstractUser {
             AbstractUser.greaterId = self.id + 1
         }
     }
-    init(id: Int, name: String, surName: String?, nickName: String?, userImage: UIImage?) {
+    public init(id: Int, name: String, surName: String?, nickName: String?, userImage: UIImage?) {
         self.id = id
         self.name = name
         self.surName = surName != nil ? surName! : ""
@@ -126,7 +126,7 @@ class AbstractUser {
             AbstractUser.greaterId = self.id + 1
         }
     }
-    init(fromDictionary dic: [NSString: NSObject]) {
+    public init(fromDictionary dic: [NSString: NSObject]) {
         let optionalId = dic[AbstractUser.userIdKey] as? Int
         let optionalName = dic[AbstractUser.nameKey] as? String
         let optionalSurname = dic[AbstractUser.surNameKey] as? String
@@ -151,7 +151,7 @@ class AbstractUser {
         
     }
     
-    func toDictionary() -> [NSString: NSObject] {
+    public func toDictionary() -> [NSString: NSObject] {
         let dictionary: [NSString: NSObject] = [AbstractUser.nameKey: self.name, AbstractUser.surNameKey: self.surName, AbstractUser.nickNameKey: self.nickName, AbstractUser.userImageKey: UIImagePNGRepresentation(self.userImage), AbstractUser.userIdKey : self.id]
         return dictionary
     }

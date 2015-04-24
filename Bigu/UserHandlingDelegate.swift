@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol UserHandlingDelegate {
+public protocol UserHandlingDelegate {
     func reloadUsersData()
 }

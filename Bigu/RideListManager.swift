@@ -9,12 +9,12 @@
 import Foundation
 import BrightFutures
 
-class RideListManager: DataPersistenceDelegate {
+public class RideListManager: DataPersistenceDelegate {
     
     // MARK: -Properties
     let singleton: Bool
     private var _list: OrderedList<Ride>!
-    var list: OrderedList<Ride> {
+    public var list: OrderedList<Ride> {
         get {
             return self._list
         }
@@ -23,7 +23,7 @@ class RideListManager: DataPersistenceDelegate {
         }
     }
     private(set) var id: Int = -1
-    var count: Int {
+    public var count: Int {
         return self.list.count
     }
     
@@ -117,13 +117,13 @@ class RideListManager: DataPersistenceDelegate {
     
     // MARK: -Protocols
     // MARK: DataPersistenceDelegate
-    var object: AnyObject? {
+    public var object: AnyObject? {
         get {
             return self.list
         }
         set {}
     }
-    func save(context: ExecutionContext?) -> Future<Bool> {
+    public func save(context: ExecutionContext?) -> Future<Bool> {
         let execContext = context != nil ? context! : Queue.global.context
         let promise = Promise<Bool>()
         
@@ -153,8 +153,7 @@ class RideListManager: DataPersistenceDelegate {
         
         return promise.future
     }
-    
-    func load() -> AnyObject? {
+  public func load() -> AnyObject? {
         RideListManager.rideListIdsPersistenceLoad()
         if self.id == -1 {
             return nil
@@ -180,7 +179,7 @@ class RideListManager: DataPersistenceDelegate {
     }
     
     // MARK: -Class Methods and Properties
-    class var rideListSingleton: RideListManager {
+    class public var rideListSingleton: RideListManager {
         struct wrap {
             static let list = RideListManager(singleton: true)
         }

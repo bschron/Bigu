@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-class RGBColor: UIColor {
+public class RGBColor: UIColor {
     // MARK: -Methods
-    required init(coder aDecoder: NSCoder) {
+    required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    init(r: Float, g: Float, b: Float, alpha: CGFloat) {
+    public init(r: Float, g: Float, b: Float, alpha: CGFloat) {
         func convert(n: Float) -> CGFloat {
             return CGFloat(n) / 255
         }

@@ -8,24 +8,24 @@
 
 import Foundation
 
-class OrderedList<T> {
+public class OrderedList<T> {
     // MARK: -Properties
-    var order: (T, T) -> Bool {
+    public var order: (T, T) -> Bool {
         didSet {
             self.list.sort(self.order)
         }
     }
     private var list: Array<T> = []
-    var count: Int {
+    public var count: Int {
         return self.list.count
     }
     
     // MARK: -Methods
-    init(isOrderedBefore: (T, T) -> Bool) {
+    public init(isOrderedBefore: (T, T) -> Bool) {
         self.order = isOrderedBefore
     }
     
-    func insert(object: T) {
+    public func insert(object: T) {
         var i = 0
         for cur in self.list {
             if order(object, cur) {
@@ -36,37 +36,37 @@ class OrderedList<T> {
         self.list.insert(object, atIndex: i)
     }
     
-    func insert(array: [T]) {
+    public func insert(array: [T]) {
         for cur in array {
             self.insert(cur)
         }
     }
     
-    func insert(list: OrderedList<T>) {
+    public func insert(list: OrderedList<T>) {
         for cur in list.list {
             self.insert(cur)
         }
     }
     
-    func getFirstObject() -> T? {
+    public func getFirstObject() -> T? {
         return self.count > 0 ? self.list[0] : nil
     }
     
-    func getLastObject() -> T? {
+    public func getLastObject() -> T? {
         return self.count > 0 ? self.list[self.list.count - 1] : nil
     }
     
-    func getElementAtIndex(index: Int) -> T? {
+    public func getElementAtIndex(index: Int) -> T? {
         return index < self.count ? self.list[index] : nil
     }
     
-    func removeAtIndex(index: Int) {
+    public func removeAtIndex(index: Int) {
         if index < self.count {
             self.list.removeAtIndex(index)
         }
     }
     
-    func removeObject(parameter: (T) -> Bool) -> Bool {
+    public func removeObject(parameter: (T) -> Bool) -> Bool {
         var result = false
         
         var i = 0
@@ -82,7 +82,7 @@ class OrderedList<T> {
         return result
     }
     
-    func findBy(parameter: (T) -> Bool) -> OrderedList<T> {
+    public func findBy(parameter: (T) -> Bool) -> OrderedList<T> {
         var desired: OrderedList<T> = OrderedList<T>(isOrderedBefore: self.order)
         
         for cur in self.list {
@@ -94,11 +94,11 @@ class OrderedList<T> {
         return desired
     }
     
-    func clearList() {
+    public func clearList() {
         self.list = []
     }
     
-    func arrayCopy() -> Array<T> {
+    public func arrayCopy() -> Array<T> {
         var array = Array<T>()
         for cur in self.list {
             array += [cur]
@@ -106,7 +106,7 @@ class OrderedList<T> {
         return array
     }
     
-    func getObjectIndex(indexFor object: T, compareBy parameter: (T) -> Bool) -> Int? {
+    public func getObjectIndex(indexFor object: T, compareBy parameter: (T) -> Bool) -> Int? {
         var i: Int = 0
         var result: Int?
         for cur in self.list {

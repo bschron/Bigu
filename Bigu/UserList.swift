@@ -9,11 +9,11 @@
 import Foundation
 import BrightFutures
 
-class UserList {
+public class UserList {
     
     // MARK: -Properties
-    private(set) var list: OrderedList<User> = OrderedList<User>(isOrderedBefore: { $0.id < $1.id })
-    private(set) var erasedUsersList: OrderedList<ErasedUser> = OrderedList<ErasedUser>(isOrderedBefore: { $0.erasedAt.timeIntervalSinceNow > $1.erasedAt.timeIntervalSinceNow })
+    public private(set) var list: OrderedList<User> = OrderedList<User>(isOrderedBefore: { $0.id < $1.id })
+    public private(set) var erasedUsersList: OrderedList<ErasedUser> = OrderedList<ErasedUser>(isOrderedBefore: { $0.erasedAt.timeIntervalSinceNow > $1.erasedAt.timeIntervalSinceNow })
     var order: ((User,User) -> Bool)! {
         didSet {
             self.list.order = self.order
@@ -70,7 +70,7 @@ class UserList {
     private struct Singleton {
         static var list = UserList()
     }
-    class var sharedUserList: UserList {
+    class public var sharedUserList: UserList {
         get {
             if UserList.singletonWasFreed && UserList.Singleton.list.list.count == 0 {
                 let userManager = UserPersistenceManager.singleton
@@ -85,7 +85,7 @@ class UserList {
     private struct freedWrap {
         static var freed: Bool = false
     }
-    class func freeSingleton(context: ExecutionContext?) {
+    class public func freeSingleton(context: ExecutionContext?) {
         let executionContext = context != nil ? context! : Queue.global.context
         future(context: executionContext, { () -> Result<Bool> in
             UserList.sharedUserList.clearList()

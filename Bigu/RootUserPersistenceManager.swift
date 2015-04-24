@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import BrightFutures
 
-class RootUserPersistenceManager: NSObject, DataPersistenceDelegate {
+public class RootUserPersistenceManager: NSObject, DataPersistenceDelegate {
     
     // MARK: - Methods
     override init() {
@@ -20,14 +20,14 @@ class RootUserPersistenceManager: NSObject, DataPersistenceDelegate {
     
     // MARK: - Protocols
     // MARK: DataPersistenceDelegate
-    var object: AnyObject? {
+    public var object: AnyObject? {
         get {
             return RootUser.singleton
         }
         set{}
     }
     
-    func save(context: ExecutionContext?) -> Future<Bool> {
+    public func save(context: ExecutionContext?) -> Future<Bool> {
         
         let promise = Promise<Bool>()
         var executionContext: ExecutionContext = context != nil ? context!: Queue.global.context
@@ -55,7 +55,7 @@ class RootUserPersistenceManager: NSObject, DataPersistenceDelegate {
         
         return promise.future
     }
-    func load() -> AnyObject? {
+    public func load() -> AnyObject? {
         let defaults = NSUserDefaults.standardUserDefaults()
         var storedDictionary = defaults.objectForKey(RootUserPersistenceManager.rootUserKey) as? [NSString: NSObject]
         
@@ -72,7 +72,7 @@ class RootUserPersistenceManager: NSObject, DataPersistenceDelegate {
     }
     
     // MARK: -Class Properties and Methods
-    class var singleton: RootUserPersistenceManager {
+    class public var singleton: RootUserPersistenceManager {
         struct wrap {
             static let single = RootUserPersistenceManager()
         }

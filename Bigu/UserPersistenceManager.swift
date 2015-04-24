@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import BrightFutures
 
-class UserPersistenceManager: DataPersistenceDelegate {
+public class UserPersistenceManager: DataPersistenceDelegate {
     
     // MARK: - Properties
     
@@ -30,13 +30,13 @@ class UserPersistenceManager: DataPersistenceDelegate {
     
     // MARK: - Protocols
     // MARK: DataPersistenceDelegate
-    var object: AnyObject? {
+    public var object: AnyObject? {
         get {
             return User.usersList
         }
         set {}
     }
-    func save(context: ExecutionContext?) -> Future<Bool> {
+    public func save(context: ExecutionContext?) -> Future<Bool> {
         
         let promise = Promise<Bool>()
         var executionContext: ExecutionContext = context != nil ? context! : Queue.global.context
@@ -76,7 +76,7 @@ class UserPersistenceManager: DataPersistenceDelegate {
         
         return promise.future
     }
-    func load() -> AnyObject? {
+    public func load() -> AnyObject? {
         let defaults = NSUserDefaults.standardUserDefaults()
         var storedArray = defaults.objectForKey(UserPersistenceManager.usersKey) as? [[NSString: NSObject]]
         var storedErasedUsersArray = defaults.objectForKey(UserPersistenceManager.erasedUsersKey) as? [[NSString: NSObject]]
@@ -112,7 +112,7 @@ class UserPersistenceManager: DataPersistenceDelegate {
     class private var erasedUsersKey: String {
         return "ErasedUsersKey"
     }
-    class var singleton: UserPersistenceManager {
+    class public var singleton: UserPersistenceManager {
         struct wrap {
             static let singleton = UserPersistenceManager()
         }

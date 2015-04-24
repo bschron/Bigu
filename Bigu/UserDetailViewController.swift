@@ -8,6 +8,7 @@
 
 import UIKit
 import BrightFutures
+import Models
 
 class UserDetailViewController: AbstractUserDetailViewController {
     

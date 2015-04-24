@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Bill {
+public class Bill {
     
     // MARK: -Properties
     private var _bill: Float? = nil

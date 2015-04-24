@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Models
 
 class UserDetailNickNameTableViewCell: UITableViewCell, UserHandlingDelegate {
     

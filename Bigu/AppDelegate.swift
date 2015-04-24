@@ -8,6 +8,7 @@
 
 import UIKit
 import BrightFutures
+import Models
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

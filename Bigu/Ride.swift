@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Ride {
+public class Ride {
     // MARK: -Properties
-    let time: NSDate
-    let userId: Int
-    let value: Float
+    public let time: NSDate
+    public let userId: Int
+    public let value: Float
     var timingSinceOcurrence: NSTimeInterval {
         return self.time.timeIntervalSinceNow
     }

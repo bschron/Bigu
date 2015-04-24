@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-class RootUser: AbstractUser {
+public class RootUser: AbstractUser {
     // MARK: -Properties
     private var _savings: Float? = nil
-    var savings: Float {
+    public var savings: Float {
         get {
             return self._savings != nil ? _savings! : 0
         }
@@ -23,7 +23,7 @@ class RootUser: AbstractUser {
         }
     }
     private var _taxValue: Float?
-    var taxValue: Float {
+    public var taxValue: Float {
         get {
             return self._taxValue != nil ? self._taxValue! : 0
         }
@@ -49,7 +49,7 @@ class RootUser: AbstractUser {
         self._taxValue = dic[RootUser.taxValueKey] as? Float
     }
     
-    override func toDictionary() -> [NSString : NSObject] {
+    override public func toDictionary() -> [NSString : NSObject] {
         var dic = super.toDictionary()
         dic[RootUser.savingsValueKey] = self.savings
         dic[RootUser.taxValueKey] = self.taxValue
@@ -57,7 +57,7 @@ class RootUser: AbstractUser {
     }
     
     // MARK: -Class Methods and Properties
-    class var singleton: RootUser {
+    class public var singleton: RootUser {
         get {
             struct sing {
                 static let root = RootUserPersistenceManager().load() as! RootUser

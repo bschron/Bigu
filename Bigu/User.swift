@@ -9,25 +9,25 @@
 import Foundation
 import UIKit
 
-class User: AbstractUser {
+public class User: AbstractUser {
     
     // MARK: - Properties
     private var bill: Bill
-    var rideHistory: RideListManager?
-    var billValue: Float {
+    public var rideHistory: RideListManager?
+    public var billValue: Float {
         return self.bill.bill
     }
     
     // MARK: -Methods
-    func synchronize() {
+    public func synchronize() {
         User.usersList.insertUser(self)
     }
     
-    override init(withid id: Int) {
+    override internal init(withid id: Int) {
         self.bill = Bill()
         super.init(withid: id)
     }
-    init(name: String, surName: String?, nickName: String?, handler: BillingHandlerDelegate?) {
+    public init(name: String, surName: String?, nickName: String?, handler: BillingHandlerDelegate?) {
         self.bill = Bill()
         super.init(name: name, surName: surName, nickName: nickName)
         if let hand = handler {
@@ -37,7 +37,7 @@ class User: AbstractUser {
         self.rideHistory = RideListManager()
         self.rideHistory!.registerToAvailableId()
     }
-    override init(fromDictionary dic: [NSString : NSObject]) {
+    override internal init(fromDictionary dic: [NSString : NSObject]) {
         let optionalBill = dic[User.billKey] as? Float
         self.bill = optionalBill != nil ? Bill(fromBillValue: optionalBill!) : Bill()
         super.init(fromDictionary: dic)
@@ -51,14 +51,14 @@ class User: AbstractUser {
         }
     }
     
-    override func toDictionary() -> [NSString : NSObject] {
+    override public func toDictionary() -> [NSString : NSObject] {
         var dic = super.toDictionary()
         dic[User.billKey] = self.bill.bill
         dic[User.rideHistoryKey] = self.rideHistory?.id
         return dic
     }
     
-    func increaseBill() {
+    public func increaseBill() {
         let value:Float = RootUser.singleton.taxValue
         
         self.bill.increaseBill(value)
@@ -66,23 +66,23 @@ class User: AbstractUser {
         let ride = Ride(userId: self.id, value: value)
     }
     
-    func payBill() {
+    public func payBill() {
         self.bill.payBill()
     }
     
-    func payPartialBill(payingValue value: Float) {
+    public func payPartialBill(payingValue value: Float) {
         self.bill.payPartialBill(payingValue: value)
     }
     
-    func registerAsBillHandler(handler: BillingHandlerDelegate) {
+    public func registerAsBillHandler(handler: BillingHandlerDelegate) {
         self.bill.registerAsHandler(handler)
     }
     
     // MARK: -Class Properties and Methods
-    class var usersList: UserList {
+    class public var usersList: UserList {
         return UserList.sharedUserList
     }
-    class func removeUserAtRow (row: Int) {
+    class public func removeUserAtRow (row: Int) {
         UserList.sharedUserList.removeUserAtIndex(row)
     }
     class private var billKey: String {

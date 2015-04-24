@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class ErasedUser: User {
+public class ErasedUser: User {
     // MARK: -Properties
-    override var userImage: UIImage? {
+    override public var userImage: UIImage? {
         get {
             return ErasedUser.erasedUserImage
         }
@@ -46,7 +46,7 @@ class ErasedUser: User {
         self.nickName = optionalNickname != nil ? optionalNickname! : ""
     }
     
-    override func toDictionary() -> [NSString : NSObject] {
+    override public func toDictionary() -> [NSString : NSObject] {
         var dictionary = [NSString: NSObject]()
         
         dictionary[ErasedUser.nameKey] = self.name
