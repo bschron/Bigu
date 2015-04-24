@@ -9,7 +9,7 @@
 import UIKit
 import Models
 
-class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandlerDelegate {
+internal class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandlerDelegate {
     
     // MARK: - Properties
     var userIndex: Int = 0 {

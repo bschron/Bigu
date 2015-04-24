@@ -9,7 +9,7 @@
 import UIKit
 import Models
 
-class UserDetailFirstNameTableViewCell: UITableViewCell, UserHandlingDelegate {
+internal class UserDetailFirstNameTableViewCell: UITableViewCell, UserHandlingDelegate {
     
     // MARK: - Properties
     var user: AbstractUser! {

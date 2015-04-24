@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Models
 import RGBColor
+import FakeSeparator
 
 class UserCell: UITableViewCell {
 

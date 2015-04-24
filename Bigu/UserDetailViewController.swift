@@ -9,8 +9,10 @@
 import UIKit
 import BrightFutures
 import Models
+import FakeSeparator
+import RideTableViewCell
 
-class UserDetailViewController: AbstractUserDetailViewController {
+public class UserDetailViewController: AbstractUserDetailViewController {
     
     // MARK: -Properties
     private var downcastedUser: User {
@@ -25,14 +27,14 @@ class UserDetailViewController: AbstractUserDetailViewController {
     weak var billSliderCell: UserDetailBillSliderTableViewCell?
     
     // MARK: -Methods
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.registerNib(UINib(nibName: "UserDetailMainTableViewCell", bundle: nil), forCellReuseIdentifier: UserDetailMainTableViewCell.reuseId)
         self.tableView.registerNib(UINib(nibName: "UserDetailBillSliderTableViewCell", bundle: nil), forCellReuseIdentifier: UserDetailBillSliderTableViewCell.reuseId)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override public func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         //persistence
         UserPersistenceManager.singleton.save(nil)
@@ -40,7 +42,7 @@ class UserDetailViewController: AbstractUserDetailViewController {
     
     // MARK: -Protocols
     // MARK: UITableViewDataSource
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell!
         let section = indexPath.section
         let row = indexPath.row
@@ -111,7 +113,7 @@ class UserDetailViewController: AbstractUserDetailViewController {
         
         return cell
     }
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var rows = 0
         
         if section == 0 {

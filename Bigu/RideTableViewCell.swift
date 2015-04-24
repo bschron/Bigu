@@ -9,10 +9,10 @@
 import UIKit
 import Models
 
-class RideTableViewCell: UITableViewCell {
+public class RideTableViewCell: UITableViewCell {
 
     // MARK: -Properties
-    var ride: Ride! {
+    public var ride: Ride! {
         didSet{
             self.reloadRideData()
         }
@@ -26,7 +26,7 @@ class RideTableViewCell: UITableViewCell {
     
     // MARK: -Methods
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.userImage.layer.cornerRadius = self.userImage.frame.width / 2
@@ -63,14 +63,14 @@ class RideTableViewCell: UITableViewCell {
         return dateFormatter.stringFromDate(date)
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override public func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
     // MARK: -Class Properties and Methods
-    class var reuseId: String {
+    class public var reuseId: String {
         return "RideCell"
     }
 }

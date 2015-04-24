@@ -11,7 +11,7 @@ import Foundation
 import RGBColor
 import Models
 
-class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataSource, UIPickerViewDelegate {
+internal class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataSource, UIPickerViewDelegate {
 
     // MARK: -Properties
     private var _intValues: Array<Int>?

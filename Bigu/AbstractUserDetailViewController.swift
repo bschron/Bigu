@@ -9,11 +9,12 @@
 import UIKit
 import Models
 import RGBColor
+import RideTableViewCell
 
-class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+public class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: -Properties
-    var user: AbstractUser! {
+    public var user: AbstractUser! {
         didSet {
             self.reloadUsersData()
         }
@@ -24,7 +25,7 @@ class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, 
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Methods
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
@@ -39,7 +40,7 @@ class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, 
         self.tableView.separatorStyle = .None
     }
     
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -55,7 +56,7 @@ class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, 
             completion: nil)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override public func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
         self.reloadUsersData()
@@ -64,7 +65,7 @@ class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, 
     // MARK: Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
@@ -73,11 +74,11 @@ class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, 
     
     // MARK: - Protocols
     // MARK: UserHandlingDelegate
-    func reloadUsersData() {
+    public func reloadUsersData() {
         self.title = self.user.nickName != "" ? self.user.nickName : self.user.name
     }
     // MARK: UITableViewDelegate
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         var height: Int = 0
         let section = indexPath.section
         let row = indexPath.row
@@ -94,10 +95,10 @@ class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, 
         
         return CGFloat(height)
     }
-    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    public func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return false
     }
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 2 {
             
             let color: UIColor!
@@ -114,19 +115,19 @@ class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, 
     }
     
     // MARK: UITableViewDataSource
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell! //not implemented
         return UITableViewCell()
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var rows = 0
         //not implemented
         return rows
     }
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    public func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 3
     }
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    public func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         var height: Int = 0
         
         if section == 0 {
@@ -141,7 +142,7 @@ class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, 
         
         return CGFloat(height)
     }
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    public func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         var title: String?
         
         if section == 2 {
@@ -151,7 +152,7 @@ class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, 
         return title
     }
     // MARK: UIImagePickekControllerDelegate
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    public func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         
         let image = info[UIImagePickerControllerEditedImage] as? UIImage
         
@@ -162,7 +163,7 @@ class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, 
         self.mainCell.reloadUsersData()
     }
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+    public func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

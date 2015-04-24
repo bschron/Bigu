@@ -10,8 +10,10 @@ import Foundation
 import UIKit
 import BrightFutures
 import Models
+import FakeSeparator
+import RideTableViewCell
 
-class RootUserDetailViewController: AbstractUserDetailViewController {
+public class RootUserDetailViewController: AbstractUserDetailViewController {
     
     // MARK: -Properties
     private var downcastedUser: RootUser! {
@@ -37,7 +39,7 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
     internal (set) weak var taxValueCell: RootUserTaxValueTableViewCell?
     
     // MARK: -Methods
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         self.user = RootUser.singleton
         super.viewDidLoad()
         
@@ -45,7 +47,7 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
         self.tableView.registerNib(UINib(nibName: "RootUserTaxValueTableViewCell", bundle: nil), forCellReuseIdentifier: RootUserTaxValueTableViewCell.reuseId)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override public func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
         let newTaxValue = taxValueCell?.getTaxPickerValue()
@@ -56,14 +58,14 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
         RootUserPersistenceManager.singleton.save(nil)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override public func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.taxValueCell?.setTaxPickerValue()
     }
     
     // MARK: -Protocols
     // MARK: UITableViewDataSource
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell!
         let section = indexPath.section
         let row = indexPath.row
@@ -131,7 +133,7 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
         
         return cell
     }
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var rows: Int = 0
         
         if section == 0 {
@@ -148,7 +150,7 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
         return rows
     }
     // MARK: UITableViewDelegate
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         var height = super.tableView(tableView, heightForRowAtIndexPath: indexPath)
         
         if indexPath.section == 0 && indexPath.row == 1 {
@@ -157,7 +159,7 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
         
         return height
     }
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, willDisplayCell: cell, forRowAtIndexPath: indexPath)
         if indexPath.section == 0 && indexPath.row == 1 {
             if indexPath.row == 0 {

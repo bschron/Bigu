@@ -9,7 +9,7 @@
 import UIKit
 import Models
 
-class RootUserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell {
+internal class RootUserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell {
     
     // MARK: -Properties
     private var downcastedUser: RootUser! {

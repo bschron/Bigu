@@ -8,6 +8,7 @@
 
 import UIKit
 import Models
+import UserDetailViewController
 
 class UsersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UserHandlingDelegate {
 

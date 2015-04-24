@@ -9,7 +9,7 @@
 import UIKit
 import Models
 
-class UserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell, BillingHandlerDelegate {
+internal class UserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell, BillingHandlerDelegate {
     
     // MARK: -Properties
     override var user: AbstractUser! {

@@ -9,7 +9,7 @@
 import UIKit
 import RGBColor
 
-class FakeSeparator: UIView {
+public class FakeSeparator: UIView {
 
     
     // MARK: -Methods
@@ -22,11 +22,11 @@ class FakeSeparator: UIView {
     }
     */
     
-    required init(coder aDecoder: NSCoder) {
+    required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    init(forView view: UIView) {
+    public init(forView view: UIView) {
         let frame = view.frame
         super.init(frame: frame)
         
