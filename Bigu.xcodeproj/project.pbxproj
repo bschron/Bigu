@@ -33,6 +33,7 @@
 		8661BEE51AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8661BEE41AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib */; };
 		8661BEE71AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8661BEE61AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib */; };
 		8668D3971ACF3E8500C2CB87 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8668D3961ACF3E8500C2CB87 /* UserList.swift */; };
+		86717B861AEA5CAC0028B418 /* FakeSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86717B851AEA5CAC0028B418 /* FakeSeparator.swift */; };
 		86A78EE81ACD8231009BBF58 /* BillingHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */; };
 		86A88A8D1AE1F078009A4ABD /* RootUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A88A8C1AE1F078009A4ABD /* RootUserViewController.swift */; };
 		86A88A911AE27F07009A4ABD /* RootUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A88A901AE27F07009A4ABD /* RootUser.swift */; };
@@ -120,6 +121,7 @@
 		8661BEE41AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailLastNameTableViewCell.xib; sourceTree = "<group>"; };
 		8661BEE61AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailNickNameTableViewCell.xib; sourceTree = "<group>"; };
 		8668D3961ACF3E8500C2CB87 /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
+		86717B851AEA5CAC0028B418 /* FakeSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeSeparator.swift; sourceTree = "<group>"; };
 		86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingHandlerDelegate.swift; sourceTree = "<group>"; };
 		86A88A8C1AE1F078009A4ABD /* RootUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserViewController.swift; sourceTree = "<group>"; };
 		86A88A901AE27F07009A4ABD /* RootUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUser.swift; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 				860058C81AE5E17A000F1050 /* RideTableViewCell */,
 				8661BEDA1AE6A5F800BBBF4E /* DarkTabBarController */,
 				8661BEDD1AE6A6D300BBBF4E /* DarkNavigationController */,
+				86717B851AEA5CAC0028B418 /* FakeSeparator.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				860B39271AE2FB8F00D34896 /* RootUserPersistenceManager.swift in Sources */,
 				86F441CE1ACEA9DA006B5246 /* UserCell.swift in Sources */,
 				860058D11AE69928000F1050 /* RGBColor.swift in Sources */,
+				86717B861AEA5CAC0028B418 /* FakeSeparator.swift in Sources */,
 				86D548DB1ADE9F4D0092C9A5 /* AbstractUser.swift in Sources */,
 				86A88A911AE27F07009A4ABD /* RootUser.swift in Sources */,
 				86F390F61AE98F950099C7ED /* RootUserTaxValueTableViewCell.swift in Sources */,

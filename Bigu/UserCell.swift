@@ -38,7 +38,6 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var fullnameLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
-    @IBOutlet weak var fakeSeparator: UIView!
     
     // MARK: - Methods
     
@@ -69,7 +68,7 @@ class UserCell: UITableViewCell {
         
         // set background color
         self.backgroundColor = RGBColor.whiteColor()
-        self.fakeSeparator.backgroundColor = RGBColor(r: 230, g: 230, b: 230, alpha: 1)
+        FakeSeparator(forView: self)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
