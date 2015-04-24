@@ -54,4 +54,6 @@ class Bill {
     func clearRegisteredHandler() {
         self.handler = nil
     }
+    
+    // MARK: -Class Properties and Methods
 }

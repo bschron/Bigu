@@ -11,7 +11,6 @@
 		860058CC1AE66FAF000F1050 /* ErasedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860058CB1AE66FAF000F1050 /* ErasedUser.swift */; };
 		860058CE1AE69753000F1050 /* RideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860058CD1AE69753000F1050 /* RideTableViewCell.xib */; };
 		860058D11AE69928000F1050 /* RGBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860058D01AE69928000F1050 /* RGBColor.swift */; };
-		860466651ABC6CFE00C39BDB /* PickerTaxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860466641ABC6CFE00C39BDB /* PickerTaxCell.xib */; };
 		860B39271AE2FB8F00D34896 /* RootUserPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */; };
 		860B392B1AE3060F00D34896 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B392A1AE3060F00D34896 /* PersistenceManager.swift */; };
 		860B392E1AE32D4500D34896 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B392D1AE32D4500D34896 /* Ride.swift */; };
@@ -22,9 +21,19 @@
 		863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D5E931ACF7185007D9235 /* CustomPopUp.swift */; };
 		863D5E961ACF7277007D9235 /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863D5E951ACF7277007D9235 /* CustomPopUp.xib */; };
 		863D5E991ACF75F8007D9235 /* NewUserPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863D5E981ACF75F8007D9235 /* NewUserPopUp.xib */; };
-		8662E4241AC9910D0087B69B /* DefaultTaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662E4231AC9910D0087B69B /* DefaultTaxCell.swift */; };
-		8662E4261ACACB180087B69B /* PickerTaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8662E4251ACACB180087B69B /* PickerTaxCell.swift */; };
+		86417A951AE967B700087702 /* RootUserDetailMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86417A941AE967B700087702 /* RootUserDetailMainTableViewCell.swift */; };
+		86417A971AE967ED00087702 /* RootUserDetailMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86417A961AE967ED00087702 /* RootUserDetailMainTableViewCell.xib */; };
+		865C5E931AE7E1A400D414AF /* AbstractUserDetailMainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865C5E921AE7E1A400D414AF /* AbstractUserDetailMainTableViewCell.swift */; };
+		865E44C81AE880B9008C58F8 /* AbstractUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865E44C71AE880B9008C58F8 /* AbstractUserDetailViewController.swift */; };
+		8661BED91AE6A1EC00BBBF4E /* DarkTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661BED81AE6A1EC00BBBF4E /* DarkTabBarController.swift */; };
+		8661BEDC1AE6A62D00BBBF4E /* DarkNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661BEDB1AE6A62D00BBBF4E /* DarkNavigationController.swift */; };
+		8661BEDF1AE6CA7900BBBF4E /* UserDetailMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8661BEDE1AE6CA7900BBBF4E /* UserDetailMainTableViewCell.xib */; };
+		8661BEE11AE6CAAB00BBBF4E /* UserDetailBillSliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8661BEE01AE6CAAB00BBBF4E /* UserDetailBillSliderTableViewCell.xib */; };
+		8661BEE31AE6CAC700BBBF4E /* UserDetailFirstNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8661BEE21AE6CAC700BBBF4E /* UserDetailFirstNameTableViewCell.xib */; };
+		8661BEE51AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8661BEE41AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib */; };
+		8661BEE71AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8661BEE61AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib */; };
 		8668D3971ACF3E8500C2CB87 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8668D3961ACF3E8500C2CB87 /* UserList.swift */; };
+		86717B861AEA5CAC0028B418 /* FakeSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86717B851AEA5CAC0028B418 /* FakeSeparator.swift */; };
 		86A78EE81ACD8231009BBF58 /* BillingHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */; };
 		86A88A8D1AE1F078009A4ABD /* RootUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A88A8C1AE1F078009A4ABD /* RootUserViewController.swift */; };
 		86A88A911AE27F07009A4ABD /* RootUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A88A901AE27F07009A4ABD /* RootUser.swift */; };
@@ -34,7 +43,6 @@
 		86A92DAB1AB863E900B38445 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA91AB863E900B38445 /* LaunchScreen.xib */; };
 		86A92DB71AB863E900B38445 /* BiguTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A92DB61AB863E900B38445 /* BiguTests.swift */; };
 		86A92DC21AB8687A00B38445 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A92DC11AB8687A00B38445 /* UsersViewController.swift */; };
-		86A92DC51AB868E200B38445 /* TaxCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DC41AB868E200B38445 /* TaxCell.xib */; };
 		86A92DCB1AB86A5800B38445 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A92DCA1AB86A5800B38445 /* User.swift */; };
 		86B6974E1ACF77970052353E /* NewUserPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B6974D1ACF77970052353E /* NewUserPopUp.swift */; };
 		86B697501ACFEB680052353E /* UserHandlingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B6974F1ACFEB680052353E /* UserHandlingDelegate.swift */; };
@@ -46,8 +54,6 @@
 		86C23CA41AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C23CA31AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift */; };
 		86CA24DF1ADD306800EA98E8 /* UserPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CA24DE1ADD306800EA98E8 /* UserPersistenceManager.swift */; };
 		86D548DB1ADE9F4D0092C9A5 /* AbstractUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D548DA1ADE9F4D0092C9A5 /* AbstractUser.swift */; };
-		86D999281ACAD429001E48CD /* TaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D999271ACAD429001E48CD /* TaxCell.swift */; };
-		86D9992C1ACC29C3001E48CD /* TaxHandlingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D9992B1ACC29C3001E48CD /* TaxHandlingDelegate.swift */; };
 		86DFA2F41AE166FA00D42B65 /* ExecutionContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2EC1AE166FA00D42B65 /* ExecutionContext.swift */; };
 		86DFA2F51AE166FA00D42B65 /* Future.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2ED1AE166FA00D42B65 /* Future.swift */; };
 		86DFA2F61AE166FA00D42B65 /* FutureUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2EE1AE166FA00D42B65 /* FutureUtils.swift */; };
@@ -56,6 +62,9 @@
 		86DFA2F91AE166FA00D42B65 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F11AE166FA00D42B65 /* Queue.swift */; };
 		86DFA2FA1AE166FA00D42B65 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F21AE166FA00D42B65 /* Result.swift */; };
 		86DFA2FB1AE166FA00D42B65 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F31AE166FA00D42B65 /* Semaphore.swift */; };
+		86F390F61AE98F950099C7ED /* RootUserTaxValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F390F41AE98F950099C7ED /* RootUserTaxValueTableViewCell.swift */; };
+		86F390F71AE98F950099C7ED /* RootUserTaxValueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F390F51AE98F950099C7ED /* RootUserTaxValueTableViewCell.xib */; };
+		86F390FB1AE996E40099C7ED /* RootUserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F390FA1AE996E40099C7ED /* RootUserDetailViewController.swift */; };
 		86F441CA1ACEA574006B5246 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F441C91ACEA574006B5246 /* UserCell.xib */; };
 		86F441CE1ACEA9DA006B5246 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F441CD1ACEA9DA006B5246 /* UserCell.swift */; };
 /* End PBXBuildFile section */
@@ -89,7 +98,6 @@
 		860058CB1AE66FAF000F1050 /* ErasedUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErasedUser.swift; sourceTree = "<group>"; };
 		860058CD1AE69753000F1050 /* RideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RideTableViewCell.xib; sourceTree = "<group>"; };
 		860058D01AE69928000F1050 /* RGBColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBColor.swift; sourceTree = "<group>"; };
-		860466641ABC6CFE00C39BDB /* PickerTaxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerTaxCell.xib; sourceTree = "<group>"; };
 		860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserPersistenceManager.swift; sourceTree = "<group>"; };
 		860B392A1AE3060F00D34896 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		860B392D1AE32D4500D34896 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
@@ -101,9 +109,19 @@
 		863D5E931ACF7185007D9235 /* CustomPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		863D5E951ACF7277007D9235 /* CustomPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPopUp.xib; sourceTree = "<group>"; };
 		863D5E981ACF75F8007D9235 /* NewUserPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserPopUp.xib; sourceTree = "<group>"; };
-		8662E4231AC9910D0087B69B /* DefaultTaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTaxCell.swift; sourceTree = "<group>"; };
-		8662E4251ACACB180087B69B /* PickerTaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerTaxCell.swift; sourceTree = "<group>"; };
+		86417A941AE967B700087702 /* RootUserDetailMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserDetailMainTableViewCell.swift; sourceTree = "<group>"; };
+		86417A961AE967ED00087702 /* RootUserDetailMainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootUserDetailMainTableViewCell.xib; sourceTree = "<group>"; };
+		865C5E921AE7E1A400D414AF /* AbstractUserDetailMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractUserDetailMainTableViewCell.swift; sourceTree = "<group>"; };
+		865E44C71AE880B9008C58F8 /* AbstractUserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractUserDetailViewController.swift; sourceTree = "<group>"; };
+		8661BED81AE6A1EC00BBBF4E /* DarkTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkTabBarController.swift; sourceTree = "<group>"; };
+		8661BEDB1AE6A62D00BBBF4E /* DarkNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkNavigationController.swift; sourceTree = "<group>"; };
+		8661BEDE1AE6CA7900BBBF4E /* UserDetailMainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailMainTableViewCell.xib; sourceTree = "<group>"; };
+		8661BEE01AE6CAAB00BBBF4E /* UserDetailBillSliderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailBillSliderTableViewCell.xib; sourceTree = "<group>"; };
+		8661BEE21AE6CAC700BBBF4E /* UserDetailFirstNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailFirstNameTableViewCell.xib; sourceTree = "<group>"; };
+		8661BEE41AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailLastNameTableViewCell.xib; sourceTree = "<group>"; };
+		8661BEE61AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailNickNameTableViewCell.xib; sourceTree = "<group>"; };
 		8668D3961ACF3E8500C2CB87 /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
+		86717B851AEA5CAC0028B418 /* FakeSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeSeparator.swift; sourceTree = "<group>"; };
 		86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingHandlerDelegate.swift; sourceTree = "<group>"; };
 		86A88A8C1AE1F078009A4ABD /* RootUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserViewController.swift; sourceTree = "<group>"; };
 		86A88A901AE27F07009A4ABD /* RootUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUser.swift; sourceTree = "<group>"; };
@@ -117,7 +135,6 @@
 		86A92DB51AB863E900B38445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A92DB61AB863E900B38445 /* BiguTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiguTests.swift; sourceTree = "<group>"; };
 		86A92DC11AB8687A00B38445 /* UsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
-		86A92DC41AB868E200B38445 /* TaxCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaxCell.xib; sourceTree = "<group>"; };
 		86A92DCA1AB86A5800B38445 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		86B6974D1ACF77970052353E /* NewUserPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserPopUp.swift; sourceTree = "<group>"; };
 		86B6974F1ACFEB680052353E /* UserHandlingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHandlingDelegate.swift; sourceTree = "<group>"; };
@@ -129,8 +146,6 @@
 		86C23CA31AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailNickNameTableViewCell.swift; sourceTree = "<group>"; };
 		86CA24DE1ADD306800EA98E8 /* UserPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPersistenceManager.swift; sourceTree = "<group>"; };
 		86D548DA1ADE9F4D0092C9A5 /* AbstractUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractUser.swift; sourceTree = "<group>"; };
-		86D999271ACAD429001E48CD /* TaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxCell.swift; sourceTree = "<group>"; };
-		86D9992B1ACC29C3001E48CD /* TaxHandlingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaxHandlingDelegate.swift; sourceTree = "<group>"; };
 		86DFA2EC1AE166FA00D42B65 /* ExecutionContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExecutionContext.swift; path = BrightFutures/BrightFutures/ExecutionContext.swift; sourceTree = "<group>"; };
 		86DFA2ED1AE166FA00D42B65 /* Future.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Future.swift; path = BrightFutures/BrightFutures/Future.swift; sourceTree = "<group>"; };
 		86DFA2EE1AE166FA00D42B65 /* FutureUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FutureUtils.swift; path = BrightFutures/BrightFutures/FutureUtils.swift; sourceTree = "<group>"; };
@@ -139,6 +154,9 @@
 		86DFA2F11AE166FA00D42B65 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = BrightFutures/BrightFutures/Queue.swift; sourceTree = "<group>"; };
 		86DFA2F21AE166FA00D42B65 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Result.swift; path = BrightFutures/BrightFutures/Result.swift; sourceTree = "<group>"; };
 		86DFA2F31AE166FA00D42B65 /* Semaphore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Semaphore.swift; path = BrightFutures/BrightFutures/Semaphore.swift; sourceTree = "<group>"; };
+		86F390F41AE98F950099C7ED /* RootUserTaxValueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserTaxValueTableViewCell.swift; sourceTree = "<group>"; };
+		86F390F51AE98F950099C7ED /* RootUserTaxValueTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootUserTaxValueTableViewCell.xib; sourceTree = "<group>"; };
+		86F390FA1AE996E40099C7ED /* RootUserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserDetailViewController.swift; sourceTree = "<group>"; };
 		86F441C91ACEA574006B5246 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		86F441CD1ACEA9DA006B5246 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +240,102 @@
 			name = NewUserPopUp;
 			sourceTree = "<group>";
 		};
+		86417A911AE9677400087702 /* RootUser */ = {
+			isa = PBXGroup;
+			children = (
+				86417A941AE967B700087702 /* RootUserDetailMainTableViewCell.swift */,
+				86417A961AE967ED00087702 /* RootUserDetailMainTableViewCell.xib */,
+				86F390F41AE98F950099C7ED /* RootUserTaxValueTableViewCell.swift */,
+				86F390F51AE98F950099C7ED /* RootUserTaxValueTableViewCell.xib */,
+			);
+			name = RootUser;
+			sourceTree = "<group>";
+		};
+		865C5E8B1AE7CADC00D414AF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				86C23C991AD34DDB00FE9D63 /* UserDetailViewController.swift */,
+				865E44C71AE880B9008C58F8 /* AbstractUserDetailViewController.swift */,
+				86F390FA1AE996E40099C7ED /* RootUserDetailViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		865C5E8C1AE7CAE900D414AF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				865C5E8E1AE7CB0B00D414AF /* Subclass specific cells */,
+				865C5E8F1AE7CB2C00D414AF /* Global Cells */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		865C5E8E1AE7CB0B00D414AF /* Subclass specific cells */ = {
+			isa = PBXGroup;
+			children = (
+				865C5E901AE7CB4200D414AF /* AbstractUser */,
+				865C5E911AE7CB5B00D414AF /* User */,
+				86417A911AE9677400087702 /* RootUser */,
+			);
+			name = "Subclass specific cells";
+			sourceTree = "<group>";
+		};
+		865C5E8F1AE7CB2C00D414AF /* Global Cells */ = {
+			isa = PBXGroup;
+			children = (
+				86C23C9F1AD3611100FE9D63 /* UserDetailFirstNameTableViewCell.swift */,
+				8661BEE21AE6CAC700BBBF4E /* UserDetailFirstNameTableViewCell.xib */,
+				86C23CA11AD362A200FE9D63 /* UserDetailLastNameTableViewCell.swift */,
+				8661BEE41AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib */,
+				86C23CA31AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift */,
+				8661BEE61AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib */,
+			);
+			name = "Global Cells";
+			sourceTree = "<group>";
+		};
+		865C5E901AE7CB4200D414AF /* AbstractUser */ = {
+			isa = PBXGroup;
+			children = (
+				865C5E921AE7E1A400D414AF /* AbstractUserDetailMainTableViewCell.swift */,
+			);
+			name = AbstractUser;
+			sourceTree = "<group>";
+		};
+		865C5E911AE7CB5B00D414AF /* User */ = {
+			isa = PBXGroup;
+			children = (
+				86C23C9B1AD35B7E00FE9D63 /* UserDetailMainTableViewCell.swift */,
+				8661BEDE1AE6CA7900BBBF4E /* UserDetailMainTableViewCell.xib */,
+				86C23C9D1AD35E5100FE9D63 /* UserDetailBillSliderTableViewCell.swift */,
+				8661BEE01AE6CAAB00BBBF4E /* UserDetailBillSliderTableViewCell.xib */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		8661BEDA1AE6A5F800BBBF4E /* DarkTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				8661BED81AE6A1EC00BBBF4E /* DarkTabBarController.swift */,
+			);
+			name = DarkTabBarController;
+			sourceTree = "<group>";
+		};
+		8661BEDD1AE6A6D300BBBF4E /* DarkNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				8661BEDB1AE6A62D00BBBF4E /* DarkNavigationController.swift */,
+			);
+			name = DarkNavigationController;
+			sourceTree = "<group>";
+		};
+		86717B871AEA65590028B418 /* FakeSeparator */ = {
+			isa = PBXGroup;
+			children = (
+				86717B851AEA5CAC0028B418 /* FakeSeparator.swift */,
+			);
+			name = FakeSeparator;
+			sourceTree = "<group>";
+		};
 		86A78EE91ACD86C9009BBF58 /* Billing */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,7 +349,6 @@
 			isa = PBXGroup;
 			children = (
 				8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */,
-				860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */,
 				860B392A1AE3060F00D34896 /* PersistenceManager.swift */,
 			);
 			name = Persistence;
@@ -251,6 +364,7 @@
 				8668D3961ACF3E8500C2CB87 /* UserList.swift */,
 				86B6974F1ACFEB680052353E /* UserHandlingDelegate.swift */,
 				86CA24DE1ADD306800EA98E8 /* UserPersistenceManager.swift */,
+				860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -318,25 +432,10 @@
 			isa = PBXGroup;
 			children = (
 				86A92DC11AB8687A00B38445 /* UsersViewController.swift */,
-				86A92DC31AB868AA00B38445 /* TaxCell */,
 				863D5E971ACF75A0007D9235 /* NewUserPopUp */,
 				86F441C81ACEA540006B5246 /* UserCell */,
-				86B2F20B1AD0D1A700E1E391 /* UserDetailViewController */,
 			);
 			name = UsersViewController;
-			sourceTree = "<group>";
-		};
-		86A92DC31AB868AA00B38445 /* TaxCell */ = {
-			isa = PBXGroup;
-			children = (
-				86A92DC41AB868E200B38445 /* TaxCell.xib */,
-				860466641ABC6CFE00C39BDB /* PickerTaxCell.xib */,
-				86D999271ACAD429001E48CD /* TaxCell.swift */,
-				8662E4231AC9910D0087B69B /* DefaultTaxCell.swift */,
-				8662E4251ACACB180087B69B /* PickerTaxCell.swift */,
-				86D9992B1ACC29C3001E48CD /* TaxHandlingDelegate.swift */,
-			);
-			name = TaxCell;
 			sourceTree = "<group>";
 		};
 		86A92DC81AB869C500B38445 /* Models */ = {
@@ -357,8 +456,12 @@
 			children = (
 				86A92DA41AB863E900B38445 /* Main.storyboard */,
 				86A92DC01AB8684B00B38445 /* UsersViewController */,
+				86B2F20B1AD0D1A700E1E391 /* UserDetailViewController */,
 				86E529A31AE1A450005FD924 /* RootUserViewController */,
 				860058C81AE5E17A000F1050 /* RideTableViewCell */,
+				8661BEDA1AE6A5F800BBBF4E /* DarkTabBarController */,
+				8661BEDD1AE6A6D300BBBF4E /* DarkNavigationController */,
+				86717B871AEA65590028B418 /* FakeSeparator */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -366,12 +469,8 @@
 		86B2F20B1AD0D1A700E1E391 /* UserDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
-				86C23C991AD34DDB00FE9D63 /* UserDetailViewController.swift */,
-				86C23C9B1AD35B7E00FE9D63 /* UserDetailMainTableViewCell.swift */,
-				86C23C9D1AD35E5100FE9D63 /* UserDetailBillSliderTableViewCell.swift */,
-				86C23C9F1AD3611100FE9D63 /* UserDetailFirstNameTableViewCell.swift */,
-				86C23CA11AD362A200FE9D63 /* UserDetailLastNameTableViewCell.swift */,
-				86C23CA31AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift */,
+				865C5E8B1AE7CADC00D414AF /* Controllers */,
+				865C5E8C1AE7CAE900D414AF /* Cells */,
 			);
 			name = UserDetailViewController;
 			sourceTree = "<group>";
@@ -512,15 +611,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				860466651ABC6CFE00C39BDB /* PickerTaxCell.xib in Resources */,
+				8661BEE11AE6CAAB00BBBF4E /* UserDetailBillSliderTableViewCell.xib in Resources */,
+				86417A971AE967ED00087702 /* RootUserDetailMainTableViewCell.xib in Resources */,
 				860058CE1AE69753000F1050 /* RideTableViewCell.xib in Resources */,
 				86A92DA61AB863E900B38445 /* Main.storyboard in Resources */,
 				863D5E961ACF7277007D9235 /* CustomPopUp.xib in Resources */,
+				86F390F71AE98F950099C7ED /* RootUserTaxValueTableViewCell.xib in Resources */,
+				8661BEE71AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib in Resources */,
 				86F441CA1ACEA574006B5246 /* UserCell.xib in Resources */,
-				86A92DC51AB868E200B38445 /* TaxCell.xib in Resources */,
+				8661BEDF1AE6CA7900BBBF4E /* UserDetailMainTableViewCell.xib in Resources */,
 				86A92DAB1AB863E900B38445 /* LaunchScreen.xib in Resources */,
 				863D5E991ACF75F8007D9235 /* NewUserPopUp.xib in Resources */,
+				8661BEE51AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib in Resources */,
 				86A92DA81AB863E900B38445 /* Images.xcassets in Resources */,
+				8661BEE31AE6CAC700BBBF4E /* UserDetailFirstNameTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,15 +659,13 @@
 				86A92DCB1AB86A5800B38445 /* User.swift in Sources */,
 				86A78EE81ACD8231009BBF58 /* BillingHandlerDelegate.swift in Sources */,
 				86CA24DF1ADD306800EA98E8 /* UserPersistenceManager.swift in Sources */,
-				8662E4261ACACB180087B69B /* PickerTaxCell.swift in Sources */,
+				865C5E931AE7E1A400D414AF /* AbstractUserDetailMainTableViewCell.swift in Sources */,
 				86B697501ACFEB680052353E /* UserHandlingDelegate.swift in Sources */,
-				8662E4241AC9910D0087B69B /* DefaultTaxCell.swift in Sources */,
 				86202E6D1AE2A7D500293B79 /* Bill.swift in Sources */,
 				863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */,
 				860058CC1AE66FAF000F1050 /* ErasedUser.swift in Sources */,
 				8668D3971ACF3E8500C2CB87 /* UserList.swift in Sources */,
-				86D999281ACAD429001E48CD /* TaxCell.swift in Sources */,
-				86D9992C1ACC29C3001E48CD /* TaxHandlingDelegate.swift in Sources */,
+				86F390FB1AE996E40099C7ED /* RootUserDetailViewController.swift in Sources */,
 				86C23C9A1AD34DDB00FE9D63 /* UserDetailViewController.swift in Sources */,
 				86A92DC21AB8687A00B38445 /* UsersViewController.swift in Sources */,
 				8624B86B1ACD71F600A60985 /* DataPersistenceDelegate.swift in Sources */,
@@ -572,12 +674,18 @@
 				860B39271AE2FB8F00D34896 /* RootUserPersistenceManager.swift in Sources */,
 				86F441CE1ACEA9DA006B5246 /* UserCell.swift in Sources */,
 				860058D11AE69928000F1050 /* RGBColor.swift in Sources */,
+				86717B861AEA5CAC0028B418 /* FakeSeparator.swift in Sources */,
 				86D548DB1ADE9F4D0092C9A5 /* AbstractUser.swift in Sources */,
 				86A88A911AE27F07009A4ABD /* RootUser.swift in Sources */,
+				86F390F61AE98F950099C7ED /* RootUserTaxValueTableViewCell.swift in Sources */,
 				86C23C9E1AD35E5100FE9D63 /* UserDetailBillSliderTableViewCell.swift in Sources */,
+				8661BEDC1AE6A62D00BBBF4E /* DarkNavigationController.swift in Sources */,
 				86C23CA01AD3611100FE9D63 /* UserDetailFirstNameTableViewCell.swift in Sources */,
 				86A92D9F1AB863E900B38445 /* AppDelegate.swift in Sources */,
+				865E44C81AE880B9008C58F8 /* AbstractUserDetailViewController.swift in Sources */,
+				8661BED91AE6A1EC00BBBF4E /* DarkTabBarController.swift in Sources */,
 				860B39341AE33E7100D34896 /* OrderedList.swift in Sources */,
+				86417A951AE967B700087702 /* RootUserDetailMainTableViewCell.swift in Sources */,
 				86C23C9C1AD35B7E00FE9D63 /* UserDetailMainTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

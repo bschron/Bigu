@@ -36,12 +36,7 @@ class RootUserPersistenceManager: NSObject, DataPersistenceDelegate {
             
             var dictionary = rootUser.toDictionary()
             
-            if dictionary.count == 6 {
-                return .Success(Box(dictionary as NSDictionary))
-            }
-            else {
-                return .Failure(NSError())
-            }
+            return .Success(Box(dictionary as NSDictionary))
         }).onSuccess(context: executionContext, callback: {dictionary in
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setObject(dictionary, forKey: RootUserPersistenceManager.rootUserKey)
@@ -84,6 +79,6 @@ class RootUserPersistenceManager: NSObject, DataPersistenceDelegate {
         return wrap.single
     }
     class private var rootUserKey: String {
-        return "RootUserKey"
+        return "RootUserPersistenceKey"
     }
 }

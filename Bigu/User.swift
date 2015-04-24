@@ -54,10 +54,13 @@ class User: AbstractUser {
     override func toDictionary() -> [NSString : NSObject] {
         var dic = super.toDictionary()
         dic[User.billKey] = self.bill.bill
+        dic[User.rideHistoryKey] = self.rideHistory?.id
         return dic
     }
     
-    func increaseBill(value: Float) {
+    func increaseBill() {
+        let value:Float = RootUser.singleton.taxValue
+        
         self.bill.increaseBill(value)
         
         let ride = Ride(userId: self.id, value: value)

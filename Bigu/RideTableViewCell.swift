@@ -30,7 +30,7 @@ class RideTableViewCell: UITableViewCell {
         // Initialization code
         self.userImage.layer.cornerRadius = self.userImage.frame.width / 2
         self.userImage.layer.masksToBounds = true
-        self.userImage.backgroundColor = UIColor.redColor().colorWithAlphaComponent(CGFloat(0.5))
+        self.userImage.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(CGFloat(0))
     }
     
     func reloadRideData() {
@@ -49,7 +49,7 @@ class RideTableViewCell: UITableViewCell {
             self.nameLabel.text = usr.nickName != "" ? usr.nickName : usr.fullName
         }
         else {
-            self.userImage.image = UIImage(named: "user")
+            self.userImage.image = UIImage(named: "greenThumbsdown")
             self.nameLabel.text = "unkown"
         }
         self.dateLabel.text = shortDate(self.ride.time)

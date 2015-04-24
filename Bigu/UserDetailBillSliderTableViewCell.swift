@@ -63,7 +63,7 @@ class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandlerDelegate
             self.viewController.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
             self.viewController.billSliderCell = nil
         }
-        self.viewController.mainCell.registerAsBillingHandler()
+        (self.viewController.mainCell as! UserDetailMainTableViewCell).registerAsBillingHandler()
     }
     
     // MARK: Actions
@@ -81,6 +81,11 @@ class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandlerDelegate
     @IBAction func submitValueDecrease(sender: AnyObject) {
         User.usersList.list.getElementAtIndex(self.userIndex)!.payPartialBill(payingValue: self.decreasedValue)
         self.destroy()
+    }
+    
+    // MARK: -Class Properties and Methods
+    class var reuseId: String {
+        return "UserDetailTaxSliderCellIdentifier"
     }
 
 }

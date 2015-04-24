@@ -21,7 +21,7 @@ class RideListManager: DataPersistenceDelegate {
             self._list = newValue
         }
     }
-    private var id: Int = -1
+    private(set) var id: Int = -1
     var count: Int {
         return self.list.count
     }
@@ -81,7 +81,22 @@ class RideListManager: DataPersistenceDelegate {
     }
     
     func registerToAvailableId() {
-        self.registerId(RideListManager.greaterId)
+        var firstAvailableId: Int?
+        
+        var last: Int = 0
+        for cur in RideListManager.idList.arrayCopy() {
+            if cur - last > 1 {
+                firstAvailableId = last + 1
+                break
+            }
+            last = cur
+        }
+        
+        if firstAvailableId == nil {
+            firstAvailableId = last + 1
+        }
+        
+        self.registerId(firstAvailableId!)
     }
     
     func unregisterSelfId() {
@@ -119,6 +134,9 @@ class RideListManager: DataPersistenceDelegate {
                 let array = self.toArrayDictionary()
                 return .Success(Box(array))
             }).onSuccess(context: execContext, callback: { array in
+                
+                RideListManager.rideListIdsPersistenceSave()
+                
                 let defaults = NSUserDefaults.standardUserDefaults()
                 defaults.setObject(array, forKey: RideListManager.rideListKey(self.id))
                 let result = defaults.synchronize()

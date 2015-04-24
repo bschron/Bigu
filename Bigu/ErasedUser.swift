@@ -13,7 +13,7 @@ class ErasedUser: User {
     // MARK: -Properties
     override var userImage: UIImage? {
         get {
-            return UIImage(named: "ErasedUserImage")
+            return ErasedUser.erasedUserImage
         }
         set {
             super.userImage = nil
@@ -33,8 +33,17 @@ class ErasedUser: User {
     override init(fromDictionary dic: [NSString : NSObject]) {
         let optionalErasedAt = dic[ErasedUser.erasedAtKey] as? NSDate
         self.erasedAt = optionalErasedAt != nil ? optionalErasedAt! : NSDate()
-        super.init(fromDictionary: dic)
+        let id = dic[User.userIdKey] as? Int
+        super.init(withid: id != nil ? id! : 0)
         self.userImage = nil
+        
+        let optionalName = dic[User.nameKey] as? String
+        let optionalsurName = dic[User.surNameKey] as? String
+        let optionalNickname = dic[User.nickNameKey] as? String
+        
+        self.name = optionalName != nil ? optionalName! : "unknown"
+        self.surName = optionalsurName != nil ? optionalsurName! : ""
+        self.nickName = optionalNickname != nil ? optionalNickname! : ""
     }
     
     override func toDictionary() -> [NSString : NSObject] {
@@ -52,5 +61,12 @@ class ErasedUser: User {
     // MARK: -Class Properties and Methods
     class private var erasedAtKey: String {
         return "ErasingDateKey"
+    }
+    class var erasedUserImage: UIImage {
+        struct wrap {
+            static let image: UIImage = UIImage(named: "greenThumbsdown")!
+        }
+        
+        return wrap.image
     }
 }

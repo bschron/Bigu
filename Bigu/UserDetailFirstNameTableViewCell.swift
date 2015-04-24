@@ -11,7 +11,7 @@ import UIKit
 class UserDetailFirstNameTableViewCell: UITableViewCell, UserHandlingDelegate {
     
     // MARK: - Properties
-    var userIndex: Int = 0 {
+    var user: AbstractUser! {
         didSet {
             self.reloadUsersData()
         }
@@ -35,14 +35,13 @@ class UserDetailFirstNameTableViewCell: UITableViewCell, UserHandlingDelegate {
     }
     
     func reloadUsersData() {
-        let user = User.usersList.list.getElementAtIndex(self.userIndex)!
-        self.textField.text = user.name
+        self.textField.text = self.user.name
     }
     
     // MARK: Actions
     @IBAction func editingDidEnd(sender: AnyObject) {
         let newValue = self.textField.text
-        User.usersList.list.getElementAtIndex(self.userIndex)!.name = newValue
+        self.user.name = newValue
         if userDetailViewController != nil {
             userDetailViewController.reloadUsersData()
         }
@@ -50,5 +49,9 @@ class UserDetailFirstNameTableViewCell: UITableViewCell, UserHandlingDelegate {
     @IBAction func dismissKeyboard(sender: AnyObject) {
         sender.resignFirstResponder()
     }
-
+    
+    // MARK: -Class Properties and Methods
+    class var reuseId: String {
+        return "UserDetailFirstNameCellIdentifier"
+    }
 }
