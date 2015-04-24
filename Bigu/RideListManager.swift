@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import BrightFutures
 
 class RideListManager: DataPersistenceDelegate {
     

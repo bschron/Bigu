@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BrightFutures
 
 class UserDetailViewController: AbstractUserDetailViewController {
     

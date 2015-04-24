@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import BrightFutures
 
 protocol DataPersistenceDelegate {
     func save (context: ExecutionContext?) -> Future<Bool>

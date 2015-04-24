@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BrightFutures
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
