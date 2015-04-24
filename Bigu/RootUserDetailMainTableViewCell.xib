@@ -41,6 +41,18 @@
                             <constraint firstAttribute="width" secondItem="jCc-jK-LM9" secondAttribute="height" multiplier="1:1" id="VOH-jc-kOm"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65f-xK-CpU">
+                        <rect key="frame" x="553" y="30" width="39" height="39"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="65f-xK-CpU" secondAttribute="height" multiplier="1:1" id="rfq-hy-85b"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="taxValue">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="taxButtonPressed:" destination="V6o-YR-3dD" eventType="touchUpInside" id="GAm-P4-gLn"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="fZW-Wg-UgX" firstAttribute="bottom" secondItem="jCc-jK-LM9" secondAttribute="bottom" id="0M7-bY-OKs"/>
@@ -57,6 +69,9 @@
                     <constraint firstItem="TVc-5T-XDB" firstAttribute="top" secondItem="Ehs-GD-0kD" secondAttribute="top" id="hSg-5o-GI5"/>
                     <constraint firstItem="Ehs-GD-0kD" firstAttribute="leading" secondItem="RHE-EA-JQa" secondAttribute="leading" constant="5" id="hi3-lB-hOX"/>
                     <constraint firstItem="TVc-5T-XDB" firstAttribute="height" secondItem="Ehs-GD-0kD" secondAttribute="height" id="k3N-dM-xqL"/>
+                    <constraint firstAttribute="bottom" secondItem="65f-xK-CpU" secondAttribute="bottom" constant="30" id="thS-X2-t8A"/>
+                    <constraint firstItem="65f-xK-CpU" firstAttribute="top" secondItem="RHE-EA-JQa" secondAttribute="top" constant="30" id="uhD-ld-ArE"/>
+                    <constraint firstAttribute="trailing" secondItem="65f-xK-CpU" secondAttribute="trailing" constant="8" id="yDo-XM-tMG"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
@@ -73,6 +88,7 @@
     </objects>
     <resources>
         <image name="pig" width="2933" height="3422"/>
+        <image name="taxValue" width="2244" height="2244"/>
         <image name="user" width="43" height="50"/>
     </resources>
 </document>

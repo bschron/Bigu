@@ -31,7 +31,6 @@ class RideTableViewCell: UITableViewCell {
         self.userImage.layer.cornerRadius = self.userImage.frame.width / 2
         self.userImage.layer.masksToBounds = true
         self.userImage.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(CGFloat(0))
-        self.backgroundColor = RideTableViewCell.curColor
     }
     
     func reloadRideData() {
@@ -72,32 +71,5 @@ class RideTableViewCell: UITableViewCell {
     // MARK: -Class Properties and Methods
     class var reuseId: String {
         return "RideCell"
-    }
-    private enum Color {
-        case first
-        case second
-        
-        mutating func toggle() {
-            if self == .first {
-                self = .second
-            }
-            else {
-                self = .first
-            }
-        }
-    }
-    class private var curColor: UIColor {
-        struct wrap {
-            static var cur: Color = Color.first
-        }
-        
-        wrap.cur.toggle()
-
-        if wrap.cur == .first {
-            return RGBColor(r: 122, g: 183, b: 147, alpha: 0.1)
-        }
-        else {
-            return UIColor.whiteColor()
-        }
     }
 }

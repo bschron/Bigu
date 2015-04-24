@@ -15,6 +15,18 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
     private var downcastedUser: RootUser! {
         return self.user as! RootUser
     }
+    private var firstRun: Bool = true
+    var shouldDisplayTaxValueCell: Bool = false {
+        didSet {
+            if self.shouldDisplayTaxValueCell {
+                self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
+            }
+            else if !self.firstRun {
+                self.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
+            }
+            self.firstRun = false
+        }
+    }
     
     // MARK: Outlets
     internal (set) weak var taxValueCell: RootUserTaxValueTableViewCell?
@@ -30,9 +42,11 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        let newTaxValue = taxValueCell?.getTaxPickerValue()
-        RootUser.singleton.taxValue = newTaxValue != nil ? newTaxValue! : 0
         
+        let newTaxValue = taxValueCell?.getTaxPickerValue()
+        if let value = newTaxValue {
+            RootUser.singleton.taxValue = value
+        }
         //persistence
         RootUserPersistenceManager.singleton.save(nil)
     }
@@ -58,9 +72,6 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
                 self.mainCell = newCell
                 
                 cell = newCell
-                
-                let separator = FakeSeparator(forView: cell)
-                separator.center.x = 0
             }
             else if row == 1 {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(RootUserTaxValueTableViewCell.reuseId, forIndexPath: indexPath) as! RootUserTaxValueTableViewCell
@@ -119,7 +130,7 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
         var rows: Int = 0
         
         if section == 0 {
-            rows = 2
+            rows = self.shouldDisplayTaxValueCell ? 2 : 1
         }
         else if section == 1 {
             rows = 3
@@ -136,9 +147,23 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
         var height = super.tableView(tableView, heightForRowAtIndexPath: indexPath)
         
         if indexPath.section == 0 && indexPath.row == 1 {
-            height = CGFloat(100)
+            height = CGFloat(162)
         }
         
         return height
+    }
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        super.tableView(tableView, willDisplayCell: cell, forRowAtIndexPath: indexPath)
+        if indexPath.section == 0 && indexPath.row == 1 {
+            self.taxValueCell?.setTaxPickerValue()
+        }
+    }
+    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 && indexPath.row == 1 {
+            let newTaxValue = taxValueCell?.getTaxPickerValue()
+            if let value = newTaxValue {
+                RootUser.singleton.taxValue = value
+            }
+        }
     }
 }

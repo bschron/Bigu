@@ -95,6 +95,21 @@ class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, 
     func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return false
     }
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 2 {
+            
+            let color: UIColor!
+            
+            if indexPath.row % 2 != 0 {
+                color = RGBColor(r: 122, g: 183, b: 147, alpha: 0.1)
+            }
+            else {
+                color = UIColor.whiteColor()
+            }
+            
+            cell.backgroundColor = color
+        }
+    }
     
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

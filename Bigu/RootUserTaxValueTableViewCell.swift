@@ -37,6 +37,7 @@ class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataSource, UI
         // Initialization code
         self.taxValuePickerView.dataSource = self
         self.taxValuePickerView.delegate = self
+        self.backgroundColor = RGBColor(r: 122, g: 183, b: 147, alpha: 1)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

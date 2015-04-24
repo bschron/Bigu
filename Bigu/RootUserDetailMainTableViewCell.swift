@@ -14,11 +14,17 @@ class RootUserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell {
     private var downcastedUser: RootUser! {
         return self.user as! RootUser
     }
+    private var downcastedViewController: RootUserDetailViewController! {
+        return self.viewController as! RootUserDetailViewController
+    }
     
     // MARK: Outlets
     @IBOutlet weak var savingsLabel: UILabel!
     
     // MARK: -Methods
+    @IBAction func taxButtonPressed(sender: AnyObject) {
+        self.downcastedViewController.shouldDisplayTaxValueCell = !self.downcastedViewController.shouldDisplayTaxValueCell
+    }
     
     // MARK: -Protocols
     // MARK: UserHandlingDelegate
