@@ -11,6 +11,13 @@
 		8626E31D1AEAECA6003872A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA71AB863E900B38445 /* Images.xcassets */; };
 		8626E31E1AEAECA7003872A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA71AB863E900B38445 /* Images.xcassets */; };
 		8626E31F1AEAECA8003872A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA71AB863E900B38445 /* Images.xcassets */; };
+		8626E32A1AEAED3B003872A2 /* DarkThemedViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8626E3291AEAED3B003872A2 /* DarkThemedViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8626E3301AEAED3B003872A2 /* DarkThemedViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8626E3251AEAED3B003872A2 /* DarkThemedViewController.framework */; };
+		8626E3391AEAED3C003872A2 /* DarkThemedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8626E3381AEAED3C003872A2 /* DarkThemedViewControllerTests.swift */; };
+		8626E33C1AEAED3C003872A2 /* DarkThemedViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8626E3251AEAED3B003872A2 /* DarkThemedViewController.framework */; };
+		8626E33D1AEAED3C003872A2 /* DarkThemedViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8626E3251AEAED3B003872A2 /* DarkThemedViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8626E3441AEAED75003872A2 /* DarkTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661BED81AE6A1EC00BBBF4E /* DarkTabBarController.swift */; };
+		8626E3451AEAED75003872A2 /* DarkNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661BEDB1AE6A62D00BBBF4E /* DarkNavigationController.swift */; };
 		863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D5E931ACF7185007D9235 /* CustomPopUp.swift */; };
 		863D5E961ACF7277007D9235 /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863D5E951ACF7277007D9235 /* CustomPopUp.xib */; };
 		864AEA231AEACD85009147D9 /* Models.h in Headers */ = {isa = PBXBuildFile; fileRef = 864AEA221AEACD85009147D9 /* Models.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -44,8 +51,6 @@
 		865137771AEADBCF00CB2A63 /* RGBColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 865137601AEADBCF00CB2A63 /* RGBColor.framework */; };
 		865137781AEADBCF00CB2A63 /* RGBColor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 865137601AEADBCF00CB2A63 /* RGBColor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		865137811AEADBE000CB2A63 /* RGBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860058D01AE69928000F1050 /* RGBColor.swift */; };
-		8661BED91AE6A1EC00BBBF4E /* DarkTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661BED81AE6A1EC00BBBF4E /* DarkTabBarController.swift */; };
-		8661BEDC1AE6A62D00BBBF4E /* DarkNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661BEDB1AE6A62D00BBBF4E /* DarkNavigationController.swift */; };
 		86A4D3191AEACBF900477C07 /* BrightFutures.h in Headers */ = {isa = PBXBuildFile; fileRef = 86A4D3181AEACBF900477C07 /* BrightFutures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86A4D31F1AEACBF900477C07 /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A4D3141AEACBF900477C07 /* BrightFutures.framework */; };
 		86A4D3281AEACBF900477C07 /* BrightFuturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A4D3271AEACBF900477C07 /* BrightFuturesTests.swift */; };
@@ -126,6 +131,27 @@
 			proxyType = 2;
 			remoteGlobalIDString = E9DF0820194470060083F7F2;
 			remoteInfo = BrightFuturesTests;
+		};
+		8626E3311AEAED3B003872A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8626E3241AEAED3B003872A2;
+			remoteInfo = DarkThemedViewController;
+		};
+		8626E3331AEAED3C003872A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A92D981AB863E900B38445;
+			remoteInfo = Bigu;
+		};
+		8626E33A1AEAED3C003872A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8626E3241AEAED3B003872A2;
+			remoteInfo = DarkThemedViewController;
 		};
 		864AEA2A1AEACD85009147D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -315,6 +341,7 @@
 				864AEA361AEACD85009147D9 /* Models.framework in Embed Frameworks */,
 				86CD07A11AEADF65006B6CE1 /* UserDetailViewController.framework in Embed Frameworks */,
 				86CD07531AEADE3A006B6CE1 /* UsersViewController.framework in Embed Frameworks */,
+				8626E33D1AEAED3C003872A2 /* DarkThemedViewController.framework in Embed Frameworks */,
 				864D843E1AEADABB0046C2C0 /* Collection.framework in Embed Frameworks */,
 				86A4D32C1AEACBF900477C07 /* BrightFutures.framework in Embed Frameworks */,
 				86CD07D71AEAE161006B6CE1 /* RideTableViewCell.framework in Embed Frameworks */,
@@ -338,6 +365,12 @@
 		861C25051AE0A7090081E9E8 /* BrightFutures.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BrightFutures.xcodeproj; path = BrightFutures/BrightFutures.xcodeproj; sourceTree = "<group>"; };
 		86202E6C1AE2A7D500293B79 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersistenceDelegate.swift; sourceTree = "<group>"; };
+		8626E3251AEAED3B003872A2 /* DarkThemedViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DarkThemedViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8626E3281AEAED3B003872A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8626E3291AEAED3B003872A2 /* DarkThemedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DarkThemedViewController.h; sourceTree = "<group>"; };
+		8626E32F1AEAED3B003872A2 /* DarkThemedViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkThemedViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8626E3371AEAED3C003872A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8626E3381AEAED3C003872A2 /* DarkThemedViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkThemedViewControllerTests.swift; sourceTree = "<group>"; };
 		863D5E931ACF7185007D9235 /* CustomPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		863D5E951ACF7277007D9235 /* CustomPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPopUp.xib; sourceTree = "<group>"; };
 		863D5E981ACF75F8007D9235 /* NewUserPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserPopUp.xib; sourceTree = "<group>"; };
@@ -441,6 +474,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8626E3211AEAED3B003872A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8626E32C1AEAED3B003872A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8626E3301AEAED3B003872A2 /* DarkThemedViewController.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		864AEA1A1AEACD85009147D9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -509,6 +557,7 @@
 				864AEA351AEACD85009147D9 /* Models.framework in Frameworks */,
 				86CD07A01AEADF65006B6CE1 /* UserDetailViewController.framework in Frameworks */,
 				86CD07521AEADE3A006B6CE1 /* UsersViewController.framework in Frameworks */,
+				8626E33C1AEAED3C003872A2 /* DarkThemedViewController.framework in Frameworks */,
 				864D843D1AEADABB0046C2C0 /* Collection.framework in Frameworks */,
 				86A4D32B1AEACBF900477C07 /* BrightFutures.framework in Frameworks */,
 				86CD07D61AEAE161006B6CE1 /* RideTableViewCell.framework in Frameworks */,
@@ -612,6 +661,42 @@
 				861C250D1AE0A7090081E9E8 /* BrightFuturesTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8626E3261AEAED3B003872A2 /* DarkThemedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8661BEDA1AE6A5F800BBBF4E /* DarkTabBarController */,
+				8661BEDD1AE6A6D300BBBF4E /* DarkNavigationController */,
+				8626E3291AEAED3B003872A2 /* DarkThemedViewController.h */,
+				8626E3271AEAED3B003872A2 /* Supporting Files */,
+			);
+			path = DarkThemedViewController;
+			sourceTree = "<group>";
+		};
+		8626E3271AEAED3B003872A2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8626E3281AEAED3B003872A2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8626E3351AEAED3C003872A2 /* DarkThemedViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8626E3381AEAED3C003872A2 /* DarkThemedViewControllerTests.swift */,
+				8626E3361AEAED3C003872A2 /* Supporting Files */,
+			);
+			path = DarkThemedViewControllerTests;
+			sourceTree = "<group>";
+		};
+		8626E3361AEAED3C003872A2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8626E3371AEAED3C003872A2 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		863D5E901ACF7135007D9235 /* CustomPopUp */ = {
@@ -821,6 +906,7 @@
 				8661BED81AE6A1EC00BBBF4E /* DarkTabBarController.swift */,
 			);
 			name = DarkTabBarController;
+			path = ../Bigu;
 			sourceTree = "<group>";
 		};
 		8661BEDD1AE6A6D300BBBF4E /* DarkNavigationController */ = {
@@ -829,6 +915,7 @@
 				8661BEDB1AE6A62D00BBBF4E /* DarkNavigationController.swift */,
 			);
 			name = DarkNavigationController;
+			path = ../Bigu;
 			sourceTree = "<group>";
 		};
 		86A4D3151AEACBF900477C07 /* BrightFutures */ = {
@@ -915,10 +1002,10 @@
 				861C25051AE0A7090081E9E8 /* BrightFutures.xcodeproj */,
 				86A92D9B1AB863E900B38445 /* Bigu */,
 				86CD07351AEADDFC006B6CE1 /* ViewsAndControlllers */,
+				864AEA1F1AEACD85009147D9 /* Models */,
 				86A92DB31AB863E900B38445 /* BiguTests */,
 				86A4D3151AEACBF900477C07 /* BrightFutures */,
 				86A4D3241AEACBF900477C07 /* BrightFuturesTests */,
-				864AEA1F1AEACD85009147D9 /* Models */,
 				864AEA2E1AEACD85009147D9 /* ModelsTests */,
 				864D84271AEADABB0046C2C0 /* Collection */,
 				864D84361AEADABB0046C2C0 /* CollectionTests */,
@@ -949,6 +1036,8 @@
 				86CD07931AEADF65006B6CE1 /* UserDetailViewControllerTests.xctest */,
 				86CD07BF1AEAE160006B6CE1 /* RideTableViewCell.framework */,
 				86CD07C91AEAE161006B6CE1 /* RideTableViewCellTests.xctest */,
+				8626E3251AEAED3B003872A2 /* DarkThemedViewController.framework */,
+				8626E32F1AEAED3B003872A2 /* DarkThemedViewControllerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -960,7 +1049,6 @@
 				86A92DA71AB863E900B38445 /* Images.xcassets */,
 				86A92DA91AB863E900B38445 /* LaunchScreen.xib */,
 				86A92DA41AB863E900B38445 /* Main.storyboard */,
-				86A92DC91AB869E700B38445 /* Views */,
 				863D5E901ACF7135007D9235 /* CustomPopUp */,
 				86A92D9C1AB863E900B38445 /* Supporting Files */,
 			);
@@ -992,15 +1080,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		86A92DC91AB869E700B38445 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8661BEDA1AE6A5F800BBBF4E /* DarkTabBarController */,
-				8661BEDD1AE6A6D300BBBF4E /* DarkNavigationController */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
 		86CD07351AEADDFC006B6CE1 /* ViewsAndControlllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1012,6 +1091,8 @@
 				86CD07991AEADF65006B6CE1 /* UserDetailViewControllerTests */,
 				86CD07C01AEAE160006B6CE1 /* RideTableViewCell */,
 				86CD07CF1AEAE161006B6CE1 /* RideTableViewCellTests */,
+				8626E3261AEAED3B003872A2 /* DarkThemedViewController */,
+				8626E3351AEAED3C003872A2 /* DarkThemedViewControllerTests */,
 			);
 			name = ViewsAndControlllers;
 			sourceTree = "<group>";
@@ -1173,6 +1254,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		8626E3221AEAED3B003872A2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8626E32A1AEAED3B003872A2 /* DarkThemedViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		864AEA1B1AEACD85009147D9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1240,6 +1329,43 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		8626E3241AEAED3B003872A2 /* DarkThemedViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8626E33E1AEAED3C003872A2 /* Build configuration list for PBXNativeTarget "DarkThemedViewController" */;
+			buildPhases = (
+				8626E3201AEAED3B003872A2 /* Sources */,
+				8626E3211AEAED3B003872A2 /* Frameworks */,
+				8626E3221AEAED3B003872A2 /* Headers */,
+				8626E3231AEAED3B003872A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DarkThemedViewController;
+			productName = DarkThemedViewController;
+			productReference = 8626E3251AEAED3B003872A2 /* DarkThemedViewController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8626E32E1AEAED3B003872A2 /* DarkThemedViewControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8626E3411AEAED3C003872A2 /* Build configuration list for PBXNativeTarget "DarkThemedViewControllerTests" */;
+			buildPhases = (
+				8626E32B1AEAED3B003872A2 /* Sources */,
+				8626E32C1AEAED3B003872A2 /* Frameworks */,
+				8626E32D1AEAED3B003872A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8626E3321AEAED3B003872A2 /* PBXTargetDependency */,
+				8626E3341AEAED3C003872A2 /* PBXTargetDependency */,
+			);
+			name = DarkThemedViewControllerTests;
+			productName = DarkThemedViewControllerTests;
+			productReference = 8626E32F1AEAED3B003872A2 /* DarkThemedViewControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		864AEA1D1AEACD85009147D9 /* Models */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 864AEA371AEACD85009147D9 /* Build configuration list for PBXNativeTarget "Models" */;
@@ -1408,6 +1534,7 @@
 				86CD077A1AEADEED006B6CE1 /* PBXTargetDependency */,
 				86CD079F1AEADF65006B6CE1 /* PBXTargetDependency */,
 				86CD07D51AEAE161006B6CE1 /* PBXTargetDependency */,
+				8626E33B1AEAED3C003872A2 /* PBXTargetDependency */,
 			);
 			name = Bigu;
 			productName = Bigu;
@@ -1589,6 +1716,14 @@
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Universidade Federal De Alagoas";
 				TargetAttributes = {
+					8626E3241AEAED3B003872A2 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = LBFUFN3H7E;
+					};
+					8626E32E1AEAED3B003872A2 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 86A92D981AB863E900B38445;
+					};
 					864AEA1D1AEACD85009147D9 = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = LBFUFN3H7E;
@@ -1700,6 +1835,8 @@
 				86CD07921AEADF65006B6CE1 /* UserDetailViewControllerTests */,
 				86CD07BE1AEAE160006B6CE1 /* RideTableViewCell */,
 				86CD07C81AEAE161006B6CE1 /* RideTableViewCellTests */,
+				8626E3241AEAED3B003872A2 /* DarkThemedViewController */,
+				8626E32E1AEAED3B003872A2 /* DarkThemedViewControllerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1722,6 +1859,20 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8626E3231AEAED3B003872A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8626E32D1AEAED3B003872A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		864AEA1C1AEACD85009147D9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1869,6 +2020,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8626E3201AEAED3B003872A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8626E3441AEAED75003872A2 /* DarkTabBarController.swift in Sources */,
+				8626E3451AEAED75003872A2 /* DarkNavigationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8626E32B1AEAED3B003872A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8626E3391AEAED3C003872A2 /* DarkThemedViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		864AEA191AEACD85009147D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1958,9 +2126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */,
-				8661BEDC1AE6A62D00BBBF4E /* DarkNavigationController.swift in Sources */,
 				86A92D9F1AB863E900B38445 /* AppDelegate.swift in Sources */,
-				8661BED91AE6A1EC00BBBF4E /* DarkTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2051,6 +2217,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8626E3321AEAED3B003872A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8626E3241AEAED3B003872A2 /* DarkThemedViewController */;
+			targetProxy = 8626E3311AEAED3B003872A2 /* PBXContainerItemProxy */;
+		};
+		8626E3341AEAED3C003872A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A92D981AB863E900B38445 /* Bigu */;
+			targetProxy = 8626E3331AEAED3C003872A2 /* PBXContainerItemProxy */;
+		};
+		8626E33B1AEAED3C003872A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8626E3241AEAED3B003872A2 /* DarkThemedViewController */;
+			targetProxy = 8626E33A1AEAED3C003872A2 /* PBXContainerItemProxy */;
+		};
 		864AEA2B1AEACD85009147D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 864AEA1D1AEACD85009147D9 /* Models */;
@@ -2198,6 +2379,94 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8626E33F1AEAED3C003872A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DarkThemedViewController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8626E3401AEAED3C003872A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = DarkThemedViewController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8626E3421AEAED3C003872A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DarkThemedViewControllerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
+			};
+			name = Debug;
+		};
+		8626E3431AEAED3C003872A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = DarkThemedViewControllerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
+			};
+			name = Release;
+		};
 		864AEA381AEACD85009147D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3044,6 +3313,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8626E33E1AEAED3C003872A2 /* Build configuration list for PBXNativeTarget "DarkThemedViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8626E33F1AEAED3C003872A2 /* Debug */,
+				8626E3401AEAED3C003872A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8626E3411AEAED3C003872A2 /* Build configuration list for PBXNativeTarget "DarkThemedViewControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8626E3421AEAED3C003872A2 /* Debug */,
+				8626E3431AEAED3C003872A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		864AEA371AEACD85009147D9 /* Build configuration list for PBXNativeTarget "Models" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

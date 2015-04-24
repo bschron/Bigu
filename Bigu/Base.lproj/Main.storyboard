@@ -7,7 +7,7 @@
         <!--Profile-->
         <scene sceneID="Ocp-R7-9ML">
             <objects>
-                <navigationController id="kN1-ip-KOR" customClass="DarkNavigationController" customModule="Bigu" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="kN1-ip-KOR" customClass="DarkNavigationController" customModule="DarkThemedViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="profile" id="jFl-ow-fe2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="loJ-tq-I14">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -62,7 +62,7 @@
         <!--Friends-->
         <scene sceneID="fAr-tp-fHw">
             <objects>
-                <navigationController id="u7C-6O-k4e" customClass="DarkNavigationController" customModule="Bigu" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="u7C-6O-k4e" customClass="DarkNavigationController" customModule="DarkThemedViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Friends" image="users" id="2fq-R3-Reu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jDP-k1-9Vi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -174,7 +174,7 @@
         <!--Dark Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="DarkTabBarController" customModule="Bigu" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="DarkTabBarController" customModule="DarkThemedViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="q8b-3f-b9J"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
