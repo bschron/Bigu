@@ -30,7 +30,7 @@ class RideTableViewCell: UITableViewCell {
         // Initialization code
         self.userImage.layer.cornerRadius = self.userImage.frame.width / 2
         self.userImage.layer.masksToBounds = true
-        self.userImage.backgroundColor = UIColor.redColor().colorWithAlphaComponent(CGFloat(0.5))
+        self.userImage.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(CGFloat(0))
     }
     
     func reloadRideData() {

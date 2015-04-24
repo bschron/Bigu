@@ -56,20 +56,4 @@ class Bill {
     }
     
     // MARK: -Class Properties and Methods
-    private struct wrap {
-        static var taxValue: Float?
-    }
-    class var taxValue: Float {
-        get {
-            return Bill.wrap.taxValue != nil ? Bill.wrap.taxValue! : 0
-        }
-        set {
-            if newValue > 0 {
-                Bill.wrap.taxValue = newValue
-            }
-            else {
-                Bill.wrap.taxValue = nil
-            }
-        }
-    }
 }

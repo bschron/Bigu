@@ -17,7 +17,7 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
     }
     
     // MARK: Outlets
-    internal (set) weak var taxValueCell: RootUserTaxValueTableViewCell!
+    internal (set) weak var taxValueCell: RootUserTaxValueTableViewCell?
     
     // MARK: -Methods
     override func viewDidLoad() {
@@ -30,8 +30,16 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        let newTaxValue = taxValueCell.getTaxPickerValue()
-        Bill.taxValue = newTaxValue
+        let newTaxValue = taxValueCell?.getTaxPickerValue()
+        RootUser.singleton.taxValue = newTaxValue != nil ? newTaxValue! : 0
+        
+        //persistence
+        RootUserPersistenceManager.singleton.save(nil)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.taxValueCell?.setTaxPickerValue()
     }
     
     // MARK: -Protocols

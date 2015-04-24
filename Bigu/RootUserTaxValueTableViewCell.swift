@@ -54,6 +54,32 @@ class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataSource, UI
         return totalValue
     }
     
+    func setTaxPickerValue() {
+        let taxValue: Float = RootUser.singleton.taxValue
+        let taxIntValue: Int = Int(taxValue)
+        let taxPointValue: Float = taxValue - Float(taxIntValue)
+        
+        var taxIntValueRow: Int = 0
+        for cur in self.intergerValues {
+            if cur == taxIntValue
+            {
+                break
+            }
+            taxIntValueRow++
+        }
+        
+        var taxPointValueRow: Int = 0
+        for cur in self.floatingValues {
+            if cur == taxPointValue {
+                break
+            }
+            taxPointValueRow++
+        }
+        
+        self.taxValuePickerView.selectRow(taxIntValueRow, inComponent: 0, animated: true)
+        self.taxValuePickerView.selectRow(taxPointValueRow, inComponent: 1, animated: true)
+    }
+    
     // MARK: -Protocols
     // MARK: UIPickerViewDataSource
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

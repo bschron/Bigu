@@ -64,7 +64,7 @@ class AbstractUser {
     private var _userImage: UIImage? = nil
     var userImage: UIImage? {
         get {
-            return self._userImage != nil ? self._userImage! : UIImage(named: "whiteUser")
+            return self._userImage != nil ? self._userImage! : AbstractUser.emptyUserImage
         }
         set {
             self._userImage = newValue
@@ -111,7 +111,13 @@ class AbstractUser {
         let optionalName = dic[AbstractUser.nameKey] as? String
         let optionalSurname = dic[AbstractUser.surNameKey] as? String
         let optionalNickname = dic[AbstractUser.nickNameKey] as? String
-        let optionalImage = dic[AbstractUser.userImageKey] as? NSData
+        var optionalImage = dic[AbstractUser.userImageKey] as? NSData
+        
+        if let image = optionalImage {
+            if image == UIImagePNGRepresentation(AbstractUser.emptyUserImage) {
+                optionalImage = nil
+            }
+        }
         
         self.id = optionalId != nil ? optionalId! : AbstractUser.greaterId++
         self.name = optionalName != nil ? optionalName! : "(NULL)"
@@ -159,5 +165,12 @@ class AbstractUser {
     }
     class internal var userIdKey: String {
         return "UserIDKey"
+    }
+    class private var emptyUserImage: UIImage {
+        struct wrap {
+            static let image: UIImage = UIImage(named: "whiteUser")!
+        }
+        
+        return wrap.image
     }
 }

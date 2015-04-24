@@ -30,6 +30,12 @@ class UserDetailViewController: AbstractUserDetailViewController {
         self.tableView.registerNib(UINib(nibName: "UserDetailBillSliderTableViewCell", bundle: nil), forCellReuseIdentifier: UserDetailBillSliderTableViewCell.reuseId)
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        //persistence
+        UserPersistenceManager.singleton.save(nil)
+    }
+    
     // MARK: -Protocols
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

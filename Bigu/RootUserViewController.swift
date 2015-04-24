@@ -89,7 +89,7 @@ class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePic
     }
     
     private func setTaxValueLabel() {
-        self.taxValueLabel.setTitle("\(Bill.taxValue)", forState: UIControlState.allZeros)
+        self.taxValueLabel.setTitle("\(RootUser.singleton.taxValue)", forState: UIControlState.allZeros)
     }
     
     // MARK: actions

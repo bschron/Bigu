@@ -50,6 +50,12 @@ class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, 
             completion: nil)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+        self.reloadUsersData()
+    }
+    
     // MARK: Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
