@@ -9,6 +9,9 @@
 import UIKit
 
 class DarkNavigationController: UINavigationController {
+    
+    var blurView: UIVisualEffectView?
+    
     override func viewDidLoad() {
         self.navigationBar.barStyle = UIBarStyle.Black
         self.navigationBar.tintColor = RGBColor.blackColor()

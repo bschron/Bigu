@@ -51,9 +51,23 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         UserList.freeSingleton(nil)
     }
     
+    func freePopUp() {
+        if self.popUp != nil {
+            self.popUp!.terminate()
+            self.popUp = nil
+        }
+    }
+    
     // MARK: Actions
     @IBAction func addUserButtonPressed(sender: AnyObject) {
-        self.popUp = NewUserPopUp.addPopUpToView(self.view, usersHandler: self) as? NewUserPopUp
+        
+        if self.popUp != nil {
+            self.popUp!.tryToAddUserWithProvidedInfo()
+            self.freePopUp()
+            return
+        }
+        
+        self.popUp = NewUserPopUp.addPopUpToView(aViewController: self, usersHandler: self) as? NewUserPopUp
         self.popUp!.alpha = CGFloat(0)
         self.popUp!.blurView?.alpha = CGFloat(0)
         UIView.animateWithDuration(0.25

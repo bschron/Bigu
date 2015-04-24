@@ -193,7 +193,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="profile" width="43" height="50"/>
-        <image name="users" width="43" height="50"/>
+        <image name="profile" width="32" height="32"/>
+        <image name="users" width="32" height="19"/>
     </resources>
 </document>
