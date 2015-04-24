@@ -15,6 +15,9 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
     private var downcastedUser: RootUser! {
         return self.user as! RootUser
     }
+    private var downcastedMainCell: RootUserDetailMainTableViewCell! {
+        return self.mainCell as! RootUserDetailMainTableViewCell
+    }
     private var firstRun: Bool = true
     var shouldDisplayTaxValueCell: Bool = false {
         didSet {
@@ -155,7 +158,12 @@ class RootUserDetailViewController: AbstractUserDetailViewController {
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         super.tableView(tableView, willDisplayCell: cell, forRowAtIndexPath: indexPath)
         if indexPath.section == 0 && indexPath.row == 1 {
-            self.taxValueCell?.setTaxPickerValue()
+            if indexPath.row == 0 {
+                self.downcastedMainCell.taxValueButton.setImage(self.downcastedMainCell.taxButtonImage, forState: .allZeros)
+            }
+            else if indexPath.row == 1 {
+                self.taxValueCell?.setTaxPickerValue()
+            }
         }
     }
     func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {

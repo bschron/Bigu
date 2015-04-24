@@ -17,13 +17,31 @@ class RootUserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell {
     private var downcastedViewController: RootUserDetailViewController! {
         return self.viewController as! RootUserDetailViewController
     }
+    var taxButtonImage: UIImage {
+        get {
+            let image: UIImage!
+            if self.downcastedViewController.shouldDisplayTaxValueCell {
+                image = UIImage(named: "taxValue(highlighted)")
+            }
+            else {
+                image = UIImage(named: "taxValue")
+            }
+            return image
+        }
+    }
     
     // MARK: Outlets
     @IBOutlet weak var savingsLabel: UILabel!
+    @IBOutlet weak var taxValueButton: UIButton!
     
     // MARK: -Methods
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
     @IBAction func taxButtonPressed(sender: AnyObject) {
         self.downcastedViewController.shouldDisplayTaxValueCell = !self.downcastedViewController.shouldDisplayTaxValueCell
+        self.taxValueButton.setImage(self.taxButtonImage, forState: UIControlState.allZeros)
     }
     
     // MARK: -Protocols

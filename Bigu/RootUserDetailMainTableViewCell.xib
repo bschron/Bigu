@@ -49,6 +49,7 @@
                         <state key="normal" title="Button" image="taxValue">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <state key="highlighted" image="taxValue(highlighted)"/>
                         <connections>
                             <action selector="taxButtonPressed:" destination="V6o-YR-3dD" eventType="touchUpInside" id="GAm-P4-gLn"/>
                         </connections>
@@ -81,6 +82,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="savingsLabel" destination="fZW-Wg-UgX" id="4Cp-XZ-JU9"/>
+                <outlet property="taxValueButton" destination="65f-xK-CpU" id="q6Z-Dj-hR5"/>
                 <outlet property="userImageView" destination="Ehs-GD-0kD" id="RIt-Cn-FC9"/>
             </connections>
             <point key="canvasLocation" x="243" y="487"/>
@@ -89,6 +91,7 @@
     <resources>
         <image name="pig" width="2933" height="3422"/>
         <image name="taxValue" width="2244" height="2244"/>
+        <image name="taxValue(highlighted)" width="2244" height="2244"/>
         <image name="user" width="43" height="50"/>
     </resources>
 </document>
