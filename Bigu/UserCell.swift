@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Models
+import RGBColor
 
 class UserCell: UITableViewCell {
 

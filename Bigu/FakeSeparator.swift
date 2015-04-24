@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Models
+import RGBColor
 
 class FakeSeparator: UIView {
 

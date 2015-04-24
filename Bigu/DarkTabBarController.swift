@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Models
+import RGBColor
 
 class DarkTabBarController: UITabBarController {
     override func viewDidLoad() {

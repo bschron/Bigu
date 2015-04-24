@@ -8,6 +8,7 @@
 
 import UIKit
 import Models
+import RGBColor
 
 class RootUserViewController: UIViewController, UserHandlingDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate {
     
