@@ -43,8 +43,8 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
         self.user = RootUser.singleton
         super.viewDidLoad()
         
-        self.tableView.registerNib(UINib(nibName: "RootUserDetailMainTableViewCell", bundle: nil), forCellReuseIdentifier: RootUserDetailMainTableViewCell.reuseId)
-        self.tableView.registerNib(UINib(nibName: "RootUserTaxValueTableViewCell", bundle: nil), forCellReuseIdentifier: RootUserTaxValueTableViewCell.reuseId)
+        self.tableView.registerNib(UINib(nibName: "RootUserDetailMainTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: RootUserDetailMainTableViewCell.reuseId)
+        self.tableView.registerNib(UINib(nibName: "RootUserTaxValueTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: RootUserTaxValueTableViewCell.reuseId)
     }
     
     override public func viewWillDisappear(animated: Bool) {

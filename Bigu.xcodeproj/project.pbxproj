@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8626E31C1AEAECA6003872A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA71AB863E900B38445 /* Images.xcassets */; };
+		8626E31D1AEAECA6003872A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA71AB863E900B38445 /* Images.xcassets */; };
+		8626E31E1AEAECA7003872A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA71AB863E900B38445 /* Images.xcassets */; };
+		8626E31F1AEAECA8003872A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA71AB863E900B38445 /* Images.xcassets */; };
 		863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D5E931ACF7185007D9235 /* CustomPopUp.swift */; };
 		863D5E961ACF7277007D9235 /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863D5E951ACF7277007D9235 /* CustomPopUp.xib */; };
 		864AEA231AEACD85009147D9 /* Models.h in Headers */ = {isa = PBXBuildFile; fileRef = 864AEA221AEACD85009147D9 /* Models.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -55,7 +59,6 @@
 		86A4D33B1AEACC2000477C07 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F11AE166FA00D42B65 /* Queue.swift */; };
 		86A4D33C1AEACC2000477C07 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F21AE166FA00D42B65 /* Result.swift */; };
 		86A4D33D1AEACC2000477C07 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DFA2F31AE166FA00D42B65 /* Semaphore.swift */; };
-		86A88A8D1AE1F078009A4ABD /* RootUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A88A8C1AE1F078009A4ABD /* RootUserViewController.swift */; };
 		86A92D9F1AB863E900B38445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A92D9E1AB863E900B38445 /* AppDelegate.swift */; };
 		86A92DA61AB863E900B38445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA41AB863E900B38445 /* Main.storyboard */; };
 		86A92DA81AB863E900B38445 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA71AB863E900B38445 /* Images.xcassets */; };
@@ -376,7 +379,6 @@
 		86A4D3261AEACBF900477C07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A4D3271AEACBF900477C07 /* BrightFuturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightFuturesTests.swift; sourceTree = "<group>"; };
 		86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingHandlerDelegate.swift; sourceTree = "<group>"; };
-		86A88A8C1AE1F078009A4ABD /* RootUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserViewController.swift; sourceTree = "<group>"; };
 		86A88A901AE27F07009A4ABD /* RootUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUser.swift; sourceTree = "<group>"; };
 		86A92D991AB863E900B38445 /* Bigu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bigu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A92D9D1AB863E900B38445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -957,6 +959,7 @@
 				86A92D9E1AB863E900B38445 /* AppDelegate.swift */,
 				86A92DA71AB863E900B38445 /* Images.xcassets */,
 				86A92DA91AB863E900B38445 /* LaunchScreen.xib */,
+				86A92DA41AB863E900B38445 /* Main.storyboard */,
 				86A92DC91AB869E700B38445 /* Views */,
 				863D5E901ACF7135007D9235 /* CustomPopUp */,
 				86A92D9C1AB863E900B38445 /* Supporting Files */,
@@ -992,8 +995,6 @@
 		86A92DC91AB869E700B38445 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				86A92DA41AB863E900B38445 /* Main.storyboard */,
-				86E529A31AE1A450005FD924 /* RootUserViewController */,
 				8661BEDA1AE6A5F800BBBF4E /* DarkTabBarController */,
 				8661BEDD1AE6A6D300BBBF4E /* DarkNavigationController */,
 			);
@@ -1157,14 +1158,6 @@
 				86CD07D11AEAE161006B6CE1 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		86E529A31AE1A450005FD924 /* RootUserViewController */ = {
-			isa = PBXGroup;
-			children = (
-				86A88A8C1AE1F078009A4ABD /* RootUserViewController.swift */,
-			);
-			name = RootUserViewController;
 			sourceTree = "<group>";
 		};
 		86F441C81ACEA540006B5246 /* UserCell */ = {
@@ -1807,6 +1800,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8626E31C1AEAECA6003872A2 /* Images.xcassets in Resources */,
 				86CD075D1AEADEA4006B6CE1 /* UserCell.xib in Resources */,
 				86CD075B1AEADE97006B6CE1 /* NewUserPopUp.xib in Resources */,
 			);
@@ -1823,6 +1817,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8626E31D1AEAECA6003872A2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1838,6 +1833,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86CD07AD1AEADFB9006B6CE1 /* UserDetailMainTableViewCell.xib in Resources */,
+				8626E31E1AEAECA7003872A2 /* Images.xcassets in Resources */,
 				86CD07AF1AEADFB9006B6CE1 /* UserDetailBillSliderTableViewCell.xib in Resources */,
 				86CD07B71AEADFCC006B6CE1 /* UserDetailLastNameTableViewCell.xib in Resources */,
 				86CD07B51AEADFCC006B6CE1 /* UserDetailFirstNameTableViewCell.xib in Resources */,
@@ -1859,6 +1855,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86CD07DF1AEAE186006B6CE1 /* RideTableViewCell.xib in Resources */,
+				8626E31F1AEAECA8003872A2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1961,7 +1958,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */,
-				86A88A8D1AE1F078009A4ABD /* RootUserViewController.swift in Sources */,
 				8661BEDC1AE6A62D00BBBF4E /* DarkNavigationController.swift in Sources */,
 				86A92D9F1AB863E900B38445 /* AppDelegate.swift in Sources */,
 				8661BED91AE6A1EC00BBBF4E /* DarkTabBarController.swift in Sources */,
@@ -3154,6 +3150,7 @@
 				86CD07561AEADE3A006B6CE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86CD07571AEADE3A006B6CE1 /* Build configuration list for PBXNativeTarget "UsersViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -3162,6 +3159,7 @@
 				86CD07591AEADE3A006B6CE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86CD077D1AEADEED006B6CE1 /* Build configuration list for PBXNativeTarget "FakeSeparator" */ = {
 			isa = XCConfigurationList;
@@ -3170,6 +3168,7 @@
 				86CD077F1AEADEED006B6CE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86CD07801AEADEED006B6CE1 /* Build configuration list for PBXNativeTarget "FakeSeparatorTests" */ = {
 			isa = XCConfigurationList;
@@ -3178,6 +3177,7 @@
 				86CD07821AEADEED006B6CE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86CD07A21AEADF65006B6CE1 /* Build configuration list for PBXNativeTarget "UserDetailViewController" */ = {
 			isa = XCConfigurationList;
@@ -3186,6 +3186,7 @@
 				86CD07A41AEADF65006B6CE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86CD07A51AEADF65006B6CE1 /* Build configuration list for PBXNativeTarget "UserDetailViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -3194,6 +3195,7 @@
 				86CD07A71AEADF65006B6CE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86CD07D81AEAE161006B6CE1 /* Build configuration list for PBXNativeTarget "RideTableViewCell" */ = {
 			isa = XCConfigurationList;
@@ -3202,6 +3204,7 @@
 				86CD07DA1AEAE161006B6CE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86CD07DB1AEAE161006B6CE1 /* Build configuration list for PBXNativeTarget "RideTableViewCellTests" */ = {
 			isa = XCConfigurationList;
@@ -3210,6 +3213,7 @@
 				86CD07DD1AEAE161006B6CE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -31,10 +31,10 @@ public class AbstractUserDetailViewController: UIViewController, UserHandlingDel
         // Do any additional setup after loading the view.
         //self.displayPhotoLibraryPicker()
         
-        self.tableView.registerNib(UINib(nibName: "RideTableViewCell", bundle: nil), forCellReuseIdentifier: RideTableViewCell.reuseId)
-        self.tableView.registerNib(UINib(nibName: "UserDetailFirstNameTableViewCell", bundle: nil), forCellReuseIdentifier: UserDetailFirstNameTableViewCell.reuseId)
-        self.tableView.registerNib(UINib(nibName: "UserDetailLastNameTableViewCell", bundle: nil), forCellReuseIdentifier: UserDetailLastNameTableViewCell.reuseId)
-        self.tableView.registerNib(UINib(nibName: "UserDetailNickNameTableViewCell", bundle: nil), forCellReuseIdentifier: UserDetailNickNameTableViewCell.reuseId)
+        self.tableView.registerNib(UINib(nibName: "RideTableViewCell", bundle: NSBundle(identifier: "IC.RideTableViewCell")), forCellReuseIdentifier: RideTableViewCell.reuseId)
+        self.tableView.registerNib(UINib(nibName: "UserDetailFirstNameTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: UserDetailFirstNameTableViewCell.reuseId)
+        self.tableView.registerNib(UINib(nibName: "UserDetailLastNameTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: UserDetailLastNameTableViewCell.reuseId)
+        self.tableView.registerNib(UINib(nibName: "UserDetailNickNameTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: UserDetailNickNameTableViewCell.reuseId)
         
         self.tableView.backgroundColor = UIColor.whiteColor()
         self.tableView.separatorStyle = .None

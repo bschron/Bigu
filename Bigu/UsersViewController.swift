@@ -27,11 +27,8 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.usersTableView.backgroundColor = UIColor.whiteColor()
         self.usersTableView.separatorStyle = .None
         
-        /* register tax cells nibs*/
-        let defaultTaxCellNib = UINib(nibName: "TaxCell", bundle: nil)
-        let pickerTaxCellNib = UINib(nibName: "PickerTaxCell", bundle: nil)
         /* register user cells nibs */
-        let userCellNib = UINib(nibName: "UserCell", bundle: nil)
+        let userCellNib = UINib(nibName: "UserCell", bundle: NSBundle(identifier: "IC.UsersViewController"))
         self.usersTableView.registerNib(userCellNib, forCellReuseIdentifier: UserCell.userCellReuseId)
         
         // persistence call

@@ -24,7 +24,7 @@
         <!--Root User Detail View Controller-->
         <scene sceneID="Jbo-nE-DxX">
             <objects>
-                <viewController id="Gje-qp-Eqc" customClass="RootUserDetailViewController" customModule="Bigu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Gje-qp-Eqc" customClass="RootUserDetailViewController" customModule="UserDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="O7n-Q3-Dyw"/>
                         <viewControllerLayoutGuide type="bottom" id="qJG-uJ-Tlz"/>
@@ -79,7 +79,7 @@
         <!--Users-->
         <scene sceneID="BAG-2a-tTZ">
             <objects>
-                <viewController id="AuD-qE-8e2" customClass="UsersViewController" customModule="Bigu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AuD-qE-8e2" customClass="UsersViewController" customModule="UsersViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7cx-Nr-y97"/>
                         <viewControllerLayoutGuide type="bottom" id="i0g-rO-blD"/>
@@ -130,7 +130,7 @@
         <!--User Detail View Controller-->
         <scene sceneID="NeN-Ej-ykN">
             <objects>
-                <viewController id="Jvf-tK-idI" customClass="UserDetailViewController" customModule="Bigu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Jvf-tK-idI" customClass="UserDetailViewController" customModule="UserDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x8K-pg-Xzw"/>
                         <viewControllerLayoutGuide type="bottom" id="gLQ-xN-D0K"/>
