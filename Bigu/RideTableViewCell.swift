@@ -49,7 +49,7 @@ class RideTableViewCell: UITableViewCell {
             self.nameLabel.text = usr.nickName != "" ? usr.nickName : usr.fullName
         }
         else {
-            self.userImage.image = UIImage(named: "user")
+            self.userImage.image = UIImage(named: "greenThumbsdown")
             self.nameLabel.text = "unkown"
         }
         self.dateLabel.text = shortDate(self.ride.time)

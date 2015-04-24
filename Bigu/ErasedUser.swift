@@ -64,7 +64,7 @@ class ErasedUser: User {
     }
     class var erasedUserImage: UIImage {
         struct wrap {
-            static let image: UIImage = UIImage(named: "ErasedUserImage")!
+            static let image: UIImage = UIImage(named: "greenThumbsdown")!
         }
         
         return wrap.image
