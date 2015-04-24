@@ -34,7 +34,7 @@ class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, 
         self.tableView.registerNib(UINib(nibName: "UserDetailNickNameTableViewCell", bundle: nil), forCellReuseIdentifier: UserDetailNickNameTableViewCell.reuseId)
         
         self.tableView.backgroundColor = UIColor.whiteColor()
-        self.tableView.separatorColor = self.tableView.backgroundColor
+        self.tableView.separatorStyle = .None
     }
     
     override func didReceiveMemoryWarning() {
