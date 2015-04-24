@@ -69,7 +69,7 @@ class UserCell: UITableViewCell {
         
         // set background color
         self.backgroundColor = RGBColor.whiteColor()
-        self.fakeSeparator.backgroundColor = RGBColor(r: 76, g: 153, b: 107, alpha: 1)
+        self.fakeSeparator.backgroundColor = RGBColor(r: 230, g: 230, b: 230, alpha: 1)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
