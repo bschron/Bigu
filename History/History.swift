@@ -156,6 +156,12 @@ public class History {
         }
     }
     
+    public func registerRide(userId id: Int, value: Float) {
+        let ride = Ride(userId: id, value: value)
+        self.rideHistory.insertNewRide(ride)
+        History.singleton.rideHistory.insertNewRide(ride)
+    }
+    
     // MARK: -Class Properties and Functions
     private struct wrap {
         static var shoudLoadIdList: Bool = true
@@ -235,10 +241,5 @@ public class History {
         }
         
         return firstAvailableId!
-    }/*
-    class public func registerRide(forUserWithId id: Int, andHistory history: History, withValue value: Float) {
-        let ride = Ride(userId: id, value: value)
-        history.rideHistory.insertNewRide(ride)
-        RideListManager.rideListSingleton.insertNewRide(ride)
-    }*/
+    }
 }

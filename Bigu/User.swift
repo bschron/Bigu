@@ -66,7 +66,7 @@ public class User: AbstractUser {
         
         self.bill.increaseBill(value)
         
-        History.registerRide(forUserWithId: self.id, andHistory: self.history, withValue: value)
+        self.history.registerRide(userId: self.id, value: value)
     }
     
     public func payBill() {
