@@ -7,91 +7,50 @@
 //
 
 import UIKit
+import BrightFutures
+import Models
+import FakeSeparator
+import RideTableViewCell
 
-class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+public class UserDetailViewController: AbstractUserDetailViewController {
+    
     // MARK: -Properties
-    var userIndex: Int = 0 {
-        didSet {
-            self.reloadUsersData()
-        }
+    private var downcastedUser: User {
+        return self.user as! User
     }
-    var billSlider: Bool = false
+    private var expensiveUserIndex: Int {
+        return User.usersList.list.getObjectIndex(indexFor: self.downcastedUser, compareBy: { $0.id == self.user.id })!
+    }
+    internal var billSlider: Bool = false
     
     // MARK: Outlets
-    private(set) weak var mainCell: UserDetailMainTableViewCell!
     weak var billSliderCell: UserDetailBillSliderTableViewCell?
-    @IBOutlet weak var tableView: UITableView!
     
-    // MARK: - Methods
-    override func viewDidLoad() {
+    // MARK: -Methods
+    override public func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        //self.displayPhotoLibraryPicker()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    func displayPhotoLibraryPicker () {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        imagePicker.allowsEditing = true
         
-        self.presentViewController(imagePicker, animated: true,
-            completion: nil)
+        self.tableView.registerNib(UINib(nibName: "UserDetailMainTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: UserDetailMainTableViewCell.reuseId)
+        self.tableView.registerNib(UINib(nibName: "UserDetailBillSliderTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: UserDetailBillSliderTableViewCell.reuseId)
     }
     
-    // MARK: Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override public func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        //persistence
+        UserPersistenceManager.singleton.save(nil)
     }
     
-    // MARK: Actions
-
-    // MARK: - Protocols
-    // MARK: UserHandlingDelegate
-    func reloadUsersData() {
-        let user = User.usersList.list[userIndex]
-        self.title = user.nickName != "" ? user.nickName : user.name
-    }
-    // MARK: UITableViewDelegate
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        var height: Int = 0
-        let section = indexPath.section
-        let row = indexPath.row
-        
-        if section == 0 && row == 0 {
-            height = 100
-        }
-        else {
-            height = 50
-        }
-        
-        return CGFloat(height)
-    }
-    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-    
+    // MARK: -Protocols
     // MARK: UITableViewDataSource
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell!
         let section = indexPath.section
         let row = indexPath.row
         
         if section == 0 {
             if row == 0 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.mainCellIdentifier, forIndexPath: indexPath) as! UserDetailMainTableViewCell
-                newCell.userIndex = self.userIndex
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailMainTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailMainTableViewCell
+                newCell.user = self.user
                 newCell.viewController = self
                 
                 mainCell = newCell
@@ -99,9 +58,9 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
                 cell = newCell
             }
             else if row == 1 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.billSliderCellIdentifier, forIndexPath: indexPath) as! UserDetailBillSliderTableViewCell
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailBillSliderTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailBillSliderTableViewCell
                 
-                newCell.userIndex = self.userIndex
+                newCell.userIndex = self.expensiveUserIndex
                 newCell.mainCell = mainCell
                 self.billSliderCell = newCell
                 newCell.viewController = self
@@ -109,36 +68,52 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
                 cell = newCell
             }
         }
-        else {
+        else if section == 1 {
             if row == 0 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.firstNameCellIdentifier, forIndexPath: indexPath) as! UserDetailFirstNameTableViewCell
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailFirstNameTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailFirstNameTableViewCell
                 
-                newCell.userIndex = self.userIndex
+                newCell.user = self.user
                 newCell.userDetailViewController = self
                 
                 cell = newCell
+                
+                let separator = FakeSeparator(forView: cell)
+                separator.center.x = 0
             }
             else if row == 1 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.lastnameCellIdentifier, forIndexPath: indexPath) as! UserDetailLastNameTableViewCell
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailLastNameTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailLastNameTableViewCell
                 
-                newCell.userIndex = self.userIndex
+                newCell.user = self.user
                 newCell.userDetailViewController = self
                 
                 cell = newCell
+                
+                let separator = FakeSeparator(forView: cell)
+                separator.center.x = 0
             }
             else if row == 2 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailViewController.nicknameCellIdentifier, forIndexPath: indexPath) as! UserDetailNickNameTableViewCell
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailNickNameTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailNickNameTableViewCell
                 
-                newCell.userIndex = self.userIndex
+                newCell.user = self.user
                 newCell.userDetailViewController = self
                 
                 cell = newCell
             }
         }
+        else if section == 2 {
+            let newCell = tableView.dequeueReusableCellWithIdentifier(RideTableViewCell.reuseId, forIndexPath: indexPath) as! RideTableViewCell
+            
+            let rideHistory = self.downcastedUser.rideHistory!
+            let ride = rideHistory.list.getElementAtIndex(row)
+            
+            newCell.ride = ride
+            
+            cell = newCell
+        }
         
         return cell
     }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var rows = 0
         
         if section == 0 {
@@ -148,60 +123,10 @@ class UserDetailViewController: UIViewController, UserHandlingDelegate, UITableV
             rows = 3
         }
         else if section == 2 {
-            rows = 0
+            let rideHistory = self.downcastedUser.rideHistory!
+            rows = rideHistory.count
         }
         
         return rows
-    }
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
-    }
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        var height: Int = 0
-        
-        if section == 0 {
-            height = 0
-        }
-        else if section == 1 {
-            height = 50
-        }
-        else if section == 2 {
-            height = Int(self.tableView.frame.height)
-            self.tableView.scrollEnabled = false
-        }
-        
-        return CGFloat(height)
-    }
-    // MARK: UIImagePickekControllerDelegate
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        
-        let image = info[UIImagePickerControllerEditedImage] as? UIImage
-        
-        User.usersList.list[userIndex].userImage = image
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
-        self.reloadUsersData()
-        self.mainCell.reloadUsersData()
-    }
-    
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    // MARK: - Class Properties
-    class var mainCellIdentifier: String {
-        return "UserDetailMainCellIdentifier"
-    }
-    class var firstNameCellIdentifier: String {
-        return "UserDetailFirstNameCellIdentifier"
-    }
-    class var lastnameCellIdentifier: String {
-        return "UserDetailLastNameIdentifier"
-    }
-    class var nicknameCellIdentifier: String {
-        return "UserDetailNickNameIdentifier"
-    }
-    class var billSliderCellIdentifier: String {
-        return "UserDetailTaxSliderCellIdentifier"
     }
 }

@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol BillingHandlerDelegate {
+public protocol BillingHandlerDelegate {
     func updateBillingUI()
 }

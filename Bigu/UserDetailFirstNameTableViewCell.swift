@@ -7,48 +7,52 @@
 //
 
 import UIKit
+import Models
 
-class UserDetailFirstNameTableViewCell: UITableViewCell, UserHandlingDelegate {
+public class UserDetailFirstNameTableViewCell: UITableViewCell, UserHandlingDelegate {
     
     // MARK: - Properties
-    var userIndex: Int = 0 {
+    public var user: AbstractUser! {
         didSet {
             self.reloadUsersData()
         }
     }
-    var userDetailViewController: UserHandlingDelegate!
+    public var userDetailViewController: UserHandlingDelegate!
     
     // MARK: Outlets
     @IBOutlet weak var textField: UITextField!
     
     // MARK: - Methods
 
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override public func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
-    func reloadUsersData() {
-        let user = User.usersList.list[userIndex]
-        self.textField.text = user.name
+    public func reloadUsersData() {
+        self.textField.text = self.user.name
     }
     
     // MARK: Actions
-    @IBAction func editingDidEnd(sender: AnyObject) {
+    @IBAction private func editingDidEnd(sender: AnyObject) {
         let newValue = self.textField.text
-        User.usersList.list[self.userIndex].name = newValue
+        self.user.name = newValue
         if userDetailViewController != nil {
             userDetailViewController.reloadUsersData()
         }
     }
-    @IBAction func dismissKeyboard(sender: AnyObject) {
+    @IBAction private func dismissKeyboard(sender: AnyObject) {
         sender.resignFirstResponder()
     }
-
+    
+    // MARK: -Class Properties and Methods
+    class public var reuseId: String {
+        return "UserDetailFirstNameCellIdentifier"
+    }
 }

@@ -8,45 +8,36 @@
 
 import Foundation
 import UIKit
+import BrightFutures
 
-class RootUserPersistenceManager: NSObject, DataPersistenceDelegate {
+public class RootUserPersistenceManager: NSObject, DataPersistenceDelegate {
     
     // MARK: - Methods
-    override init() {
+    override public init() {
         super.init()
         PersistenceManager.singleton.registerAsManager(self)
     }
     
     // MARK: - Protocols
     // MARK: DataPersistenceDelegate
-    var object: AnyObject? {
+    public var object: AnyObject? {
         get {
             return RootUser.singleton
         }
         set{}
     }
     
-    func save(context: ExecutionContext?) -> Future<Bool> {
+    public func save(context: ExecutionContext?) -> Future<Bool> {
         
         let promise = Promise<Bool>()
         var executionContext: ExecutionContext = context != nil ? context!: Queue.global.context
         let rootUser = self.object as! RootUser
         
         let futureData = future(context: executionContext, { () -> Result<NSDictionary> in
-            var dictionary: [NSString: NSObject] = [NSString: NSObject]()
             
-            dictionary[RootUserPersistenceManager.nameKey] = rootUser.name
-            dictionary[RootUserPersistenceManager.lastNameKey] = rootUser.surName
-            dictionary[RootUserPersistenceManager.nicknameKey] = rootUser.nickName
-            dictionary[RootUserPersistenceManager.userImageKey] = UIImagePNGRepresentation(rootUser.userImage!)
-            dictionary[RootUserPersistenceManager.savingsValueKey] = rootUser.savings
+            var dictionary = rootUser.toDictionary()
             
-            if dictionary.count == 5 {
-                return .Success(Box(dictionary as NSDictionary))
-            }
-            else {
-                return .Failure(NSError())
-            }
+            return .Success(Box(dictionary as NSDictionary))
         }).onSuccess(context: executionContext, callback: {dictionary in
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setObject(dictionary, forKey: RootUserPersistenceManager.rootUserKey)
@@ -64,53 +55,31 @@ class RootUserPersistenceManager: NSObject, DataPersistenceDelegate {
         
         return promise.future
     }
-    func load() -> AnyObject? {
+    public func load() -> AnyObject? {
         let defaults = NSUserDefaults.standardUserDefaults()
         var storedDictionary = defaults.objectForKey(RootUserPersistenceManager.rootUserKey) as? [NSString: NSObject]
         
-        let rootUser = RootUser.singleton
+        let rootUser: RootUser!
         
         if storedDictionary != nil {
-            let name = storedDictionary![RootUserPersistenceManager.nameKey] as! String
-            let lastname = storedDictionary![RootUserPersistenceManager.lastNameKey] as! String
-            let nickname = storedDictionary![RootUserPersistenceManager.nicknameKey] as! String
-            let savings = storedDictionary![RootUserPersistenceManager.savingsValueKey] as! Float
-            let userImage = storedDictionary![RootUserPersistenceManager.userImageKey] as! NSData
-            
-            rootUser.name = name
-            rootUser.surName = lastname
-            rootUser.nickName = nickname
-            rootUser.savings = savings
-            rootUser.userImage = UIImage(data: userImage)
+            rootUser = RootUser(fromDictionary: storedDictionary!)
+        }
+        else {
+            rootUser = RootUser()
         }
         
         return rootUser
     }
     
     // MARK: -Class Properties and Methods
-    class private var nameKey: String {
-        return "RootUserNameKey"
-    }
-    class private var lastNameKey: String {
-        return "RootUserLastNameKey"
-    }
-    class private var nicknameKey: String {
-        return "RootUserNickNameKey"
-    }
-    class private var userImageKey: String {
-        return "RootUserImageKey"
-    }
-    class private var savingsValueKey: String {
-        return "RootUserSavingValueKey"
-    }
-    class private var rootUserKey: String {
-        return "RootUserKey"
-    }
-    class var singleton: RootUserPersistenceManager {
+    class public var singleton: RootUserPersistenceManager {
         struct wrap {
             static let single = RootUserPersistenceManager()
         }
         
         return wrap.single
+    }
+    class private var rootUserKey: String {
+        return "RootUserPersistenceKey"
     }
 }

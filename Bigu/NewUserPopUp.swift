@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import Models
 
-class NewUserPopUp: UIView {
+internal class NewUserPopUp: UIView {
 
     // MARK: - Properties
-    var view: UIView!
-    var blurView: UIVisualEffectView?
-    var usersHandler: UserHandlingDelegate?
+    private var view: UIView!
+    private(set) var blurView: UIVisualEffectView?
+    private var usersHandler: UserHandlingDelegate?
+    private var viewController: UsersViewController?
+    private var isBeingTerminated: Bool = false
     
     @IBOutlet weak private var box: UIView!
     @IBOutlet weak var title: UILabel!
@@ -27,13 +30,14 @@ class NewUserPopUp: UIView {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var header: UIView!
     
-    var nibName: String {
+    
+    internal var nibName: String {
         return "NewUserPopUp"
     }
     
     // MARK: - Methods
     
-    func xibSetup() {
+    private func xibSetup() {
         view = loadViewFromNib()
         
         // use bounds not frame or it'll be offset
@@ -53,7 +57,7 @@ class NewUserPopUp: UIView {
         addSubview(view)
     }
     
-    func loadViewFromNib() -> UIView {
+    private func loadViewFromNib() -> UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: self.nibName, bundle: bundle)
         
@@ -62,36 +66,48 @@ class NewUserPopUp: UIView {
         return view
     }
     
-    override init(frame: CGRect) {
+    override internal init(frame: CGRect) {
         super.init(frame: frame)
-        xibSetup()
+        self.xibSetup()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    internal init(frame: CGRect, aViewController vc: UsersViewController, aHandler handler: UserHandlingDelegate?) {
+        super.init(frame: frame)
+        self.xibSetup()
+        self.viewController = vc
+        self.usersHandler = handler
+    }
+    
+    required internal init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        xibSetup()
+        self.xibSetup()
     }
     
-    private func terminate() {
-        UIView.animateWithDuration(0.25
-            , delay: 0.0, options: UIViewAnimationOptions.LayoutSubviews | UIViewAnimationOptions.CurveLinear, animations: {
-                self.blurView?.alpha = CGFloat(0)
-                self.alpha = CGFloat(0)
-            }, completion: { result in
-                self.blurView?.removeFromSuperview()
-                self.removeFromSuperview()
-        })
+    internal func terminate() {
+        if !self.isBeingTerminated {
+            self.isBeingTerminated = true
+            UIView.animateWithDuration(0.25
+                , delay: 0.0, options: UIViewAnimationOptions.LayoutSubviews | UIViewAnimationOptions.CurveLinear, animations: {
+                    self.blurView?.alpha = CGFloat(0)
+                    self.alpha = CGFloat(0)
+                }, completion: { result in
+                    self.blurView?.removeFromSuperview()
+                    self.removeFromSuperview()
+                    self.viewController?.freePopUp()
+            })
+        }
     }
     
-    func transitionToSize(size: CGSize) {
+    internal func transitionToSize(size: CGSize) {
         self.frame.size = size
         if self.blurView != nil {
             self.blurView!.frame.size = size
         }
     }
     
-    // MARK: Actions
-    @IBAction func addButtonPressed(sender: AnyObject) {
+    internal func tryToAddUserWithProvidedInfo() -> Bool {
+        let result: Bool!
+        
         if nameTextField.text != "" {
             let newUser = User(name: nameTextField.text, surName: surnameTextField.text, nickName: nicknameTextField.text, handler: nil)
             newUser.synchronize()
@@ -100,27 +116,36 @@ class NewUserPopUp: UIView {
             if let handler = usersHandler {
                 handler.reloadUsersData()
             }
+            result = true
         }
         else {
             self.title.text = "Name Required"
+            result = false
         }
+        
+        return result
     }
-    @IBAction func cancelButtonPressed(sender: AnyObject) {
+    
+    // MARK: Actions
+    @IBAction private func addButtonPressed(sender: AnyObject) {
+        self.tryToAddUserWithProvidedInfo()
+    }
+    @IBAction private func cancelButtonPressed(sender: AnyObject) {
         self.terminate()
     }
-    @IBAction func closeKeyboard(sender: AnyObject) {
+    @IBAction private func closeKeyboard(sender: AnyObject) {
         sender.resignFirstResponder()
     }
-    @IBAction func tappedOutside(sender: AnyObject) {
+    @IBAction private func tappedOutside(sender: AnyObject) {
         self.terminate()
     }
     
     // MARK: - Class Methods
-    class func addPopUpToView (aView: UIView, usersHandler handler: UserHandlingDelegate?) -> UIView {
+    class internal func addPopUpToView (aViewController vc: UsersViewController, usersHandler handler: UserHandlingDelegate?) -> UIView {
 
+        let aView = vc.view
         let frame = aView.frame
-        let pop = NewUserPopUp(frame: frame)
-        pop.usersHandler = handler
+        let pop = NewUserPopUp(frame: frame, aViewController: vc, aHandler: handler)
         
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         let blurView = UIVisualEffectView(effect: blurEffect)

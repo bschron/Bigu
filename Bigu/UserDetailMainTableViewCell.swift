@@ -7,57 +7,34 @@
 //
 
 import UIKit
+import Models
 
-class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate, BillingHandlerDelegate {
-
-    // MARK: - Properties
-    var userIndex: Int = 0 {
+internal class UserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell, BillingHandlerDelegate {
+    
+    // MARK: -Properties
+    override var user: AbstractUser! {
         didSet {
             self.reloadUsersData()
             self.registerAsBillingHandler()
         }
     }
-    weak var viewController: UserDetailViewController!
-    @IBOutlet weak var userImageView: UIImageView!
+    private var downcastedUser: User! {
+        return self.user as! User
+    }
+    private var downcastedViewController: UserDetailViewController {
+        return self.viewController as! UserDetailViewController
+    }
     
     // MARK: Outlets
-    @IBOutlet weak var billLabel: UILabel!
-    @IBOutlet weak var decreaseButton: UIButton!
-    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak private var billLabel: UILabel!
+    @IBOutlet weak private var decreaseButton: UIButton!
+    @IBOutlet weak private var resetButton: UIButton!
     
-    // MARK: - Methods
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        let userImageViewWidth = self.userImageView.frame.width
-        self.userImageView.layer.cornerRadius = userImageViewWidth / 2
-        self.userImageView.layer.masksToBounds = true
+    // MARK: -Methods
+    internal func updateBillingUI() {
         
-        self.reloadUsersData()
-        self.registerAsBillingHandler()
-        
-    }
-    
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
-    func reloadUsersData() {
-        let user = User.usersList.list[self.userIndex]
-        self.userImageView.image = user.userImage
-    }
-    
-    func registerAsBillingHandler() {
-        User.usersList.list[self.userIndex].bill.registerAsHandler(self)
-    }
-    
-    func updateBillingUI() {
-        let user = User.usersList.list[self.userIndex]
-        
-        self.billLabel.text = "\(user.bill.bill)"
-        if user.bill.bill <= 0 {
+        self.billLabel.text = "\(self.downcastedUser.billValue)"
+        if self.downcastedUser.billValue <= 0 {
             self.resetButton.hidden = true
             self.decreaseButton.hidden = true
         }
@@ -67,25 +44,30 @@ class UserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate, Billin
         }
     }
     
-    // MARK: Actions
-    @IBAction func decreaseButtonPressed(sender: AnyObject) {
-        let curBill: Float = User.usersList.list[userIndex].bill.bill
-        if curBill != 0 && !self.viewController.billSlider {
-            self.viewController.billSlider = true
-            self.viewController.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic)
-        }
-        else if self.viewController.billSlider {
-            self.viewController.billSliderCell?.destroy()
-        }
-    }
-    @IBAction func resetButtonPressed(sender: AnyObject) {
-        User.usersList.list[userIndex].bill.payBill()
-        self.registerAsBillingHandler()
-        self.viewController.billSliderCell?.destroy()
+    internal func registerAsBillingHandler() {
+        self.downcastedUser.registerAsBillHandler(self)
     }
     
-    @IBAction func loadImage(sender: AnyObject) {
-        self.viewController.displayPhotoLibraryPicker()
+    // MARK: Actions
+    @IBAction private func decreaseButtonPressed(sender: AnyObject) {
+        let curBill: Float = self.downcastedUser.billValue
+        if curBill != 0 && !self.downcastedViewController.billSlider {
+            self.downcastedViewController.billSlider = true
+            self.viewController.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic)
+            self.viewController.tableView.reloadData()
+        }
+        else if self.downcastedViewController.billSlider {
+            self.downcastedViewController.billSliderCell?.destroy()
+        }
     }
-
+    @IBAction private func resetButtonPressed(sender: AnyObject) {
+        self.downcastedUser.payBill()
+        self.registerAsBillingHandler()
+        self.downcastedViewController.billSliderCell?.destroy()
+    }
+    
+    // MARK; -Class Properties and Methods
+    override internal class var reuseId: String {
+        return "UserDetailMainCellIdentifier"
+    }
 }

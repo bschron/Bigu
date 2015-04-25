@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import BrightFutures
 
-class PersistenceManager {
+public class PersistenceManager {
     
     // MARK: -Properties
     
@@ -16,11 +17,11 @@ class PersistenceManager {
     
     // MARK: -Methods
     
-    func registerAsManager(manager: DataPersistenceDelegate) {
+    public func registerAsManager(manager: DataPersistenceDelegate) {
         self.managersList += [manager]
     }
     
-    func saveAllManagers(context: ExecutionContext?) -> Future<Bool> {
+    public func saveAllManagers(context: ExecutionContext?) -> Future<Bool> {
         let promise = Promise<Bool>()
         let executionContext = context != nil ? context! : Queue.global.context
         
@@ -50,7 +51,7 @@ class PersistenceManager {
     }
     
     // MARK: - Class Methods and properties
-    class var singleton: PersistenceManager {
+    class public var singleton: PersistenceManager {
         struct wrap {
             static let single = PersistenceManager()
         }

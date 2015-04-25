@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import BrightFutures
 
-protocol DataPersistenceDelegate {
+public protocol DataPersistenceDelegate {
     func save (context: ExecutionContext?) -> Future<Bool>
     func load () -> AnyObject?
     var object: AnyObject? {get set}

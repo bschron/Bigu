@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserDetailFirstNameCellIdentifier" rowHeight="50" id="sgk-a1-vMW" customClass="UserDetailFirstNameTableViewCell" customModule="Bigu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sgk-a1-vMW" id="jrt-bu-j7r">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opx-XF-4ji">
+                        <rect key="frame" x="20" y="17" width="572" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <action selector="dismissKeyboard:" destination="sgk-a1-vMW" eventType="editingDidEndOnExit" id="gWH-8g-apW"/>
+                            <action selector="editingDidEnd:" destination="sgk-a1-vMW" eventType="editingDidEnd" id="oE3-Cq-xK4"/>
+                        </connections>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="opx-XF-4ji" secondAttribute="trailing" constant="8" id="F8E-q7-DEt"/>
+                    <constraint firstAttribute="centerY" secondItem="opx-XF-4ji" secondAttribute="centerY" constant="-0.25" id="ORK-LN-Cup"/>
+                    <constraint firstItem="opx-XF-4ji" firstAttribute="leading" secondItem="jrt-bu-j7r" secondAttribute="leading" constant="20" id="dzC-XI-aAd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="textField" destination="opx-XF-4ji" id="Fc9-Sp-eoW"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

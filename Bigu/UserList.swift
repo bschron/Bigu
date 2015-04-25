@@ -7,42 +7,74 @@
 //
 
 import Foundation
+import BrightFutures
+import Collection
 
-class UserList {
+public class UserList {
     
     // MARK: -Properties
-    private(set) var list: [User]
+    public private(set) var list: OrderedList<User> = OrderedList<User>(isOrderedBefore: { $0.id < $1.id })
+    public private(set) var erasedUsersList: OrderedList<ErasedUser> = OrderedList<ErasedUser>(isOrderedBefore: { $0.erasedAt.timeIntervalSinceNow > $1.erasedAt.timeIntervalSinceNow })
+    internal var order: ((User,User) -> Bool)! {
+        didSet {
+            self.list.order = self.order
+        }
+    }
+    private let defaultOrder: (User, User) -> Bool = { $0.id < $1.id }
+    internal var isLoading: Bool = false
     
     // MARK: -Methods
-    init() {
-        self.list = []
+    public init() {
+        self.order = self.defaultOrder
     }
-    init(userArray: [User]) {
-        list = userArray
-    }
-    
-    func insertUser(newUser: User) {
-        list += [newUser]
-    }
-    
-    func removeUserAtIndex(index: Int) {
-        if index < self.list.count {
-            self.list.removeAtIndex(index)
+    public init(userArray: [User]) {
+        self.order = self.defaultOrder
+        self.list.insert(userArray)
+        // if should save to defaults
+        if !isLoading && self === UserList.Singleton.list {
+            UserPersistenceManager.singleton.save(nil)
         }
     }
     
-    func clearList() {
-        self.list = []
+    public func insertUser(newUser: User) {
+        self.list.insert(newUser)
+        // if should save to defaults
+        if !isLoading && self === UserList.Singleton.list {
+            UserPersistenceManager.singleton.save(nil)
+        }
     }
     
-    //MARK: -Class Propeties and Methods
+    public func insertErasedUser(erasedUser: ErasedUser) {
+        self.erasedUsersList.insert(erasedUser)
+    }
+    
+    public func removeUserAtIndex(index: Int) {
+        if index < self.list.count {
+            let toErase = self.list.getElementAtIndex(index)!
+            toErase.rideHistory?.unregisterSelfId()
+            toErase.rideHistory = nil
+            self.list.removeAtIndex(index)
+            let erased = ErasedUser(id: toErase.id, name: toErase.name, surName: toErase.surName, nickName: toErase.nickName, erasedAt: NSDate())
+            self.erasedUsersList.insert(erased)
+            // if its the sigleton list
+            if self === UserList.Singleton.list {
+                UserPersistenceManager.singleton.save(nil)
+            }
+        }
+    }
+    
+    public func clearList() {
+        self.list.clearList()
+    }
+    
+    //MARK: -Class Properties and Methods
     private struct Singleton {
         static var list = UserList()
     }
-    class var sharedUserList: UserList {
+    class public var sharedUserList: UserList {
         get {
             if UserList.singletonWasFreed && UserList.Singleton.list.list.count == 0 {
-                let userManager = UserPersistenceManager()
+                let userManager = UserPersistenceManager.singleton
                 UserList.Singleton.list = userManager.load() as! UserList
             }
             return UserList.Singleton.list
@@ -54,7 +86,7 @@ class UserList {
     private struct freedWrap {
         static var freed: Bool = false
     }
-    class func freeSingleton(context: ExecutionContext?) {
+    class public func freeSingleton(context: ExecutionContext?) {
         let executionContext = context != nil ? context! : Queue.global.context
         future(context: executionContext, { () -> Result<Bool> in
             UserList.sharedUserList.clearList()
@@ -62,7 +94,7 @@ class UserList {
             return .Success(Box(true))
         })
     }
-    class var singletonWasFreed: Bool {
+    class internal var singletonWasFreed: Bool {
         return UserList.freedWrap.freed
     }
 }

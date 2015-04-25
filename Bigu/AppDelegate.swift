@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import BrightFutures
+import Models
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,9 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         // Load User List
-        let userManager = UserPersistenceManager()
+        let userManager = UserPersistenceManager.singleton
         UserList.sharedUserList = userManager.load() as! UserList
-        RootUserPersistenceManager.singleton.load()
+        RootUser.singleton
+        RideListManager.rideListSingleton
         return true
     }
 

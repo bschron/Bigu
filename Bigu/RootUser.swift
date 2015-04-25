@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-class RootUser: AbstractUser {
+public class RootUser: AbstractUser {
     // MARK: -Properties
     private var _savings: Float? = nil
-    var savings: Float {
+    public var savings: Float {
         get {
             return self._savings != nil ? _savings! : 0
         }
@@ -22,14 +22,53 @@ class RootUser: AbstractUser {
             }
         }
     }
+    private var _taxValue: Float?
+    public var taxValue: Float {
+        get {
+            return self._taxValue != nil ? self._taxValue! : 0
+        }
+        set {
+            if newValue > 0 {
+                self._taxValue = newValue
+            }
+            else {
+                self._taxValue = nil
+            }
+        }
+    }
+    
+    // MARK: -Methods
+    
+    override internal init() {
+        super.init()
+    }
+    override internal init(fromDictionary dic: [NSString : NSObject]) {
+        super.init(fromDictionary: dic)
+        self.name = dic[RootUser.nameKey] != nil ? dic[RootUser.nameKey] as! String : ""
+        self._savings = dic[RootUser.savingsValueKey] as? Float
+        self._taxValue = dic[RootUser.taxValueKey] as? Float
+    }
+    
+    override public func toDictionary() -> [NSString : NSObject] {
+        var dic = super.toDictionary()
+        dic[RootUser.savingsValueKey] = self.savings
+        dic[RootUser.taxValueKey] = self.taxValue
+        return dic
+    }
     
     // MARK: -Class Methods and Properties
-    class var singleton: RootUser {
+    class public var singleton: RootUser {
         get {
             struct sing {
-                static let root = RootUser()
+                static let root = RootUserPersistenceManager().load() as! RootUser
             }
             return sing.root
         }
+    }
+    class private var savingsValueKey: String {
+        return "RootUserSavingValueKey"
+    }
+    class private var taxValueKey: String {
+        return "RootUserTaxValueKey"
     }
 }

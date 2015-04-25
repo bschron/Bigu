@@ -8,12 +8,15 @@
 
 import Foundation
 import UIKit
+import Models
+import RGBColor
+import FakeSeparator
 
-class UserCell: UITableViewCell {
+internal class UserCell: UITableViewCell {
 
     // MARK: - Properties
-    var configured: Bool = false
-    var user: User! {
+    internal var configured: Bool = false
+    internal var user: User! {
         didSet {
             if user != nil {
                 self.configured = true
@@ -26,40 +29,36 @@ class UserCell: UITableViewCell {
     private var userImageOriginalPosition: (CGFloat, CGFloat) = (CGFloat(0), CGFloat(0))
     private var userImagePanGestureIsActive: Bool = false
     private var invisibleUserImageViewCover: UIView!
-    var viewController: UIViewController!
-    var userIndex: Int = 0 {
+    internal var viewController: UIViewController!
+    internal var userIndex: Int = 0 {
         didSet {
-            self.user = User.usersList.list[self.userIndex]
+            self.user = User.usersList.list.getElementAtIndex(self.userIndex)!
         }
     }
     
     
     //MARK: Outlets
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var fullnameLabel: UILabel!
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak private var nameLabel: UILabel!
+    @IBOutlet weak private var fullnameLabel: UILabel!
+    @IBOutlet weak private var userImageView: UIImageView!
     
     // MARK: - Methods
     
-    required init(coder aDecoder: NSCoder) {
+    required internal init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    override func awakeFromNib() {
+    override internal func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         updateUserInfo()
-        // swipe gesture
-        //self.swipeGesture.direction = .Right
-        //self.swipeGesture.numberOfTouchesRequired = 1
-        //self.addGestureRecognizer(self.swipeGesture)
-        // user image view
         let userImageViewWidth = self.userImageView.frame.width
         self.userImageView.layer.cornerRadius = userImageViewWidth / 2
         self.userImageView.layer.masksToBounds = true
         
         self.invisibleUserImageViewCover = UIView()
-        self.invisibleUserImageViewCover.frame.size = self.userImageView.frame.size
+        self.invisibleUserImageViewCover.frame.size.height = self.userImageView.frame.size.height + 2
+        self.invisibleUserImageViewCover.frame.size.width = self.userImageView.frame.size.width + 2
         self.invisibleUserImageViewCover.center = self.userImageView.center
         self.invisibleUserImageViewCover.layer.cornerRadius = self.userImageView.layer.cornerRadius
         self.invisibleUserImageViewCover.backgroundColor = UIColor.blueColor().colorWithAlphaComponent(CGFloat(0))
@@ -69,9 +68,13 @@ class UserCell: UITableViewCell {
         self.invisibleUserImageViewCover.addGestureRecognizer(self.userImagePanGesture)
         self.userImageOriginalPosition = (self.userImageView.center.x, self.userImageView.center.y)
         self.insertSubview(self.invisibleUserImageViewCover, aboveSubview: self.userImageView)
+        
+        // set background color
+        self.backgroundColor = RGBColor.whiteColor()
+        FakeSeparator(forView: self)
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override internal func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
@@ -79,14 +82,14 @@ class UserCell: UITableViewCell {
     
     private func updateUserInfo() {
         if configured {
-            let user = User.usersList.list[self.userIndex]
+            let user = User.usersList.list.getElementAtIndex(self.userIndex)!
             self.nameLabel.text = user.nickName != "" ? user.nickName : user.name
             self.fullnameLabel.text = user.fullName
             self.userImageView.image = user.userImage
         }
     }
     
-    func moveUserImage(sender: UIPanGestureRecognizer) {
+    internal func moveUserImage(sender: UIPanGestureRecognizer) {
         if sender.state != .Ended && sender.state != .Failed {
             self.userImagePanGestureIsActive = true
             let location = sender.locationInView(self)
@@ -111,12 +114,12 @@ class UserCell: UITableViewCell {
                         blurView.alpha = CGFloat(0.9)
                         
                         if location.x >= self.frame.width / 2 {
-                            let newColor = UIColor(red: CGFloat(0.1), green: CGFloat(0.59607843), blue: CGFloat(0.85882353), alpha: CGFloat(0.25))
+                            let newColor = RGBColor.whiteColor().colorWithAlphaComponent(0.1)
                             self.invisibleUserImageViewCover.backgroundColor = newColor
-                            User.usersList.list[self.userIndex].bill.payBill()
+                            User.usersList.list.getElementAtIndex(self.userIndex)!.payBill()
                         }
                         else {
-                            let newColor = UIColor.redColor().colorWithAlphaComponent(CGFloat(0.25))
+                            let newColor = UIColor.blackColor().colorWithAlphaComponent(CGFloat(0.75))
                             self.invisibleUserImageViewCover.backgroundColor = newColor
                         }
                         }, completion: {result in
@@ -132,9 +135,8 @@ class UserCell: UITableViewCell {
     }
     
     // MARK: Actions
-    @IBAction func debitButtonPressed(sender: AnyObject) {
-        let currentTaxValue = TaxCell.taxValue
-        User.usersList.list[self.userIndex].bill.increaseBill(currentTaxValue)
+    @IBAction private func debitButtonPressed(sender: AnyObject) {
+        User.usersList.list.getElementAtIndex(self.userIndex)!.increaseBill()
         //Animation
         let duration = 0.3
         let delay = 0.0 // delay will be 0.0 seconds (e.g. nothing)
@@ -158,12 +160,10 @@ class UserCell: UITableViewCell {
         blurView.alpha = CGFloat(0)
         
         UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
-            self.backgroundColor = UIColor.greenColor().colorWithAlphaComponent(0.5)
             imageViewCopy.alpha = CGFloat(1)
             blurView.alpha = CGFloat(1)
             }, completion: { finished in
                 UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
-                    self.backgroundColor = UIColor.whiteColor()
                     imageViewCopy.alpha = CGFloat(0)
                     blurView.alpha = CGFloat(0)
                     }, completion: { finished in
@@ -174,7 +174,7 @@ class UserCell: UITableViewCell {
     }
     
     // MARK: - Class Methods and Properties
-    class var userCellReuseId: String {
+    class internal var userCellReuseId: String {
         return "userCellReuseId"
     }
 }
