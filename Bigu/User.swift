@@ -40,15 +40,18 @@ public class User: AbstractUser {
     override public init(fromDictionary dic: [NSString : NSObject]) {
         let optionalBill = dic[User.billKey] as? Float
         self.bill = optionalBill != nil ? Bill(fromBillValue: optionalBill!) : Bill()
+        
+        let optionalHistoryId = dic[User.historyKey] as? Int
+        
         super.init(fromDictionary: dic)
-        let rideHistoryId = dic[User.rideHistoryKey] as? Int
-        if let history = rideHistoryId {
+        /*let rideHistoryId = dic[User.rideHistoryKey] as? Int
+        //if let history = rideHistoryId {
             //self.rideHistory = RideListManager(loadFromId: history)
         }
         else {
             //self.rideHistory = RideListManager()
             //self.rideHistory!.registerToAvailableId()
-        }
+        }*/
     }
     
     override public func toDictionary() -> [NSString : NSObject] {
@@ -81,8 +84,5 @@ public class User: AbstractUser {
     // MARK: -Class Properties and Methods
     class private var billKey: String {
         return "UserBillKey"
-    }
-    class private var rideHistoryKey: String {
-        return "RideHistoryKey"
     }
 }

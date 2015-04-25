@@ -24,7 +24,7 @@ public class RideListManager: DataPersistenceDelegate {
             self._list = newValue
         }
     }
-    private(set) var id: Int = -1
+    public private(set) var id: Int = -1
     public var count: Int {
         return self.list.count
     }

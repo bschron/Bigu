@@ -15,6 +15,9 @@ public class Extract {
     public let user: AbstractUser?
     public let value: Float
     public let date: NSDate
+    public var secondsSinceOcurrence: NSTimeInterval {
+        return self.date.timeIntervalSinceNow
+    }
     
     // MARK: -Methods
     public init(user: AbstractUser, paidValue value: Float) {

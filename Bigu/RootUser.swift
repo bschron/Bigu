@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AbstractUser
+import History
 
 public class RootUser: AbstractUser {
     // MARK: -Properties

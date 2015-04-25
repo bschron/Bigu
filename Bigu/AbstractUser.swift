@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import History
 
 public class AbstractUser {
     // MARK: -Properties
@@ -73,17 +74,23 @@ public class AbstractUser {
     }
     public var handler: UserHandlingDelegate? = nil
     public let id: Int
+    public let history: History
     
     // MARK: -Methods
     public init() {
         self.id = AbstractUser.greaterId++
+        self.history = History()
         
+        self.history.registerToPersistence()
         if self.id >= AbstractUser.greaterId {
             AbstractUser.greaterId = self.id + 1
         }
     }
     public init(withid id: Int) {
         self.id = id
+        self.history = History()
+        
+        self.history.registerToPersistence()
         
         if self.id >= AbstractUser.greaterId {
             AbstractUser.greaterId = self.id + 1
@@ -91,10 +98,13 @@ public class AbstractUser {
     }
     public init(name: String, surName: String?, nickName: String?) {
         self.id = AbstractUser.greaterId++
+        self.history = History()
         self.name = name
         self.surName = surName != nil ? surName! : ""
         self.nickName = nickName != nil ? nickName! : ""
         self.userImage = nil
+        
+        self.history.registerToPersistence()
         
         if self.id >= AbstractUser.greaterId {
             AbstractUser.greaterId = self.id + 1
@@ -102,10 +112,13 @@ public class AbstractUser {
     }
     public init(name: String, surName: String?, nickName: String?, userImage: UIImage?) {
         self.id = AbstractUser.greaterId++
+        self.history = History()
         self.name = name
         self.surName = surName != nil ? surName! : ""
         self.nickName = nickName != nil ? nickName! : ""
         self.userImage = userImage
+        
+        self.history.registerToPersistence()
         
         if self.id >= AbstractUser.greaterId {
             AbstractUser.greaterId = self.id + 1
@@ -113,10 +126,13 @@ public class AbstractUser {
     }
     public init(id: Int, name: String, surName: String?, nickName: String?, userImage: UIImage?) {
         self.id = id
+        self.history = History()
         self.name = name
         self.surName = surName != nil ? surName! : ""
         self.nickName = nickName != nil ? nickName! : ""
         self.userImage = userImage
+        
+        self.history.registerToPersistence()
         
         if self.id >= AbstractUser.greaterId {
             AbstractUser.greaterId = self.id + 1
@@ -132,6 +148,7 @@ public class AbstractUser {
         let optionalSurname = dic[AbstractUser.surNameKey] as? String
         let optionalNickname = dic[AbstractUser.nickNameKey] as? String
         var optionalImage = dic[AbstractUser.userImageKey] as? NSData
+        let optionalHistoryId = dic[AbstractUser.historyKey] as? Int
         
         if let image = optionalImage {
             if image == UIImagePNGRepresentation(AbstractUser.emptyUserImage) {
@@ -139,20 +156,37 @@ public class AbstractUser {
             }
         }
         
+        let history: History!
+        if let id = optionalHistoryId {
+            history = History(fromId: id)
+        }
+        else {
+            history = History()
+        }
+        
         self.id = optionalId != nil ? optionalId! : AbstractUser.greaterId++
+        self.history = history
         self.name = optionalName != nil ? optionalName! : "(NULL)"
         self._nickName = optionalNickname
         self._surName = optionalSurname
         self._userImage = optionalImage != nil ? UIImage(data: optionalImage!) : nil
         
+        self.history.registerToPersistence()
         if self.id >= AbstractUser.greaterId {
             AbstractUser.greaterId = self.id + 1
         }
-        
     }
     
     public func toDictionary() -> [NSString: NSObject] {
-        let dictionary: [NSString: NSObject] = [AbstractUser.nameKey: self.name, AbstractUser.surNameKey: self.surName, AbstractUser.nickNameKey: self.nickName, AbstractUser.userImageKey: UIImagePNGRepresentation(self.userImage), AbstractUser.userIdKey : self.id]
+        var dictionary = [NSString: NSObject]()
+        
+        dictionary[AbstractUser.nameKey] = self.name
+        dictionary[AbstractUser.surNameKey] = self.surName
+        dictionary[AbstractUser.nickNameKey] = self.nickName
+        dictionary[AbstractUser.userImageKey] = UIImagePNGRepresentation(self.userImage)
+        dictionary[AbstractUser.userIdKey] = self.id
+        dictionary[AbstractUser.historyKey] = self.history.id
+        
         return dictionary
     }
     
@@ -185,6 +219,9 @@ public class AbstractUser {
     }
     class public var userIdKey: String {
         return "UserIDKey"
+    }
+    class public var historyKey: String {
+        return "UserHistoryKey"
     }
     class private var emptyUserImage: UIImage {
         struct wrap {
