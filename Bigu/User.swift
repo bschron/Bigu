@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AbstractUser
 
 public class User: AbstractUser {
     

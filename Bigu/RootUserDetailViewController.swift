@@ -12,6 +12,7 @@ import BrightFutures
 import Models
 import FakeSeparator
 import RideTableViewCell
+import AbstractUser
 
 public class RootUserDetailViewController: AbstractUserDetailViewController {
     

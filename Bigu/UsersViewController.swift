@@ -9,6 +9,7 @@
 import UIKit
 import Models
 import UserDetailViewController
+import AbstractUser
 
 public class UsersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UserHandlingDelegate {
 

@@ -162,28 +162,28 @@ public class AbstractUser {
     }
     class var greaterId: Int {
         get {
-        return User.greaterIdWrap.greaterId
+        return AbstractUser.greaterIdWrap.greaterId
         }
         set {
-            User.greaterIdWrap.greaterId = newValue
+            AbstractUser.greaterIdWrap.greaterId = newValue
         }
     }
     class private var usersKey: String {
         return "UsersKey"
     }
-    class internal var nameKey: String {
+    class public var nameKey: String {
         return "UserNameKey"
     }
-    class internal var surNameKey: String {
+    class public var surNameKey: String {
         return "UserSurNameKey"
     }
-    class internal var nickNameKey: String {
+    class public var nickNameKey: String {
         return "UserNickNameKey"
     }
-    class internal var userImageKey: String {
+    class public var userImageKey: String {
         return "UserImageKey"
     }
-    class internal var userIdKey: String {
+    class public var userIdKey: String {
         return "UserIDKey"
     }
     class private var emptyUserImage: UIImage {

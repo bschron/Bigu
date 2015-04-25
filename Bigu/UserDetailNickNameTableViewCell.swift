@@ -8,6 +8,7 @@
 
 import UIKit
 import Models
+import AbstractUser
 
 public class UserDetailNickNameTableViewCell: UITableViewCell, UserHandlingDelegate {
     

@@ -10,6 +10,7 @@ import UIKit
 import Models
 import RGBColor
 import RideTableViewCell
+import AbstractUser
 
 public class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

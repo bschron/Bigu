@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AbstractUser
 import Models
 
 internal class UserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell, BillingHandlerDelegate {
