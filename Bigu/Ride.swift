@@ -26,13 +26,6 @@ public class Ride {
         self.value = value
         
         let user = UserList.sharedUserList.list.findBy({ $0.id == self.userId })
-        if let usr = user.getFirstObject() {
-            usr.history.rideHistory.insertNewRide(self)
-            RootUser.singleton.history.rideHistory.insertNewRide(self)
-        }
-        
-        RideListManager.rideListSingleton.insertNewRide(self)
-        
     }
     
     internal init(dictionary: [NSString: NSObject]) {

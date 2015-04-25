@@ -43,8 +43,6 @@ public class UserList {
     public func removeUserAtIndex(index: Int) {
         if index < self.list.count {
             let toErase = self.list.getElementAtIndex(index)!
-            //toErase.rideHistory?.unregisterSelfId()
-            //toErase.rideHistory = nil
             self.list.removeAtIndex(index)
             let erased = ErasedUser(id: toErase.id, name: toErase.name, surName: toErase.surName, nickName: toErase.nickName, erasedAt: NSDate())
             self.erasedUsersList.insert(erased)

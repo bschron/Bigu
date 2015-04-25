@@ -40,6 +40,9 @@ internal class HistoryPersistenceManager: DataPersistenceDelegate {
         future(context: exec, { () -> Result<Bool> in
             let defaults = NSUserDefaults.standardUserDefaults()
             let arrayCopy = self.list.arrayCopy()
+            
+            History.idListSave()
+            
             for cur in arrayCopy {
                 cur.saveExtractHistory(exec)
                 let dictionary = cur.toDictionary()

@@ -11,12 +11,12 @@ import UIKit
 import AbstractUser
 import Billing
 import RootUser
+import History
 
 public class User: AbstractUser {
     
     // MARK: - Properties
     private var bill: Bill
-    //public var rideHistory: RideListManager?
     public var billValue: Float {
         return self.bill.bill
     }
@@ -34,8 +34,6 @@ public class User: AbstractUser {
             self.bill.registerAsHandler(hand)
         }
         self.userImage = nil
-        //self.rideHistory = RideListManager()
-        //self.rideHistory!.registerToAvailableId()
     }
     override public init(fromDictionary dic: [NSString : NSObject]) {
         let optionalBill = dic[User.billKey] as? Float
@@ -44,20 +42,11 @@ public class User: AbstractUser {
         let optionalHistoryId = dic[User.historyKey] as? Int
         
         super.init(fromDictionary: dic)
-        /*let rideHistoryId = dic[User.rideHistoryKey] as? Int
-        //if let history = rideHistoryId {
-            //self.rideHistory = RideListManager(loadFromId: history)
-        }
-        else {
-            //self.rideHistory = RideListManager()
-            //self.rideHistory!.registerToAvailableId()
-        }*/
     }
     
     override public func toDictionary() -> [NSString : NSObject] {
         var dic = super.toDictionary()
         dic[User.billKey] = self.bill.bill
-        //dic[User.rideHistoryKey] = self.rideHistory?.id
         return dic
     }
     
@@ -66,7 +55,7 @@ public class User: AbstractUser {
         
         self.bill.increaseBill(value)
         
-        //let ride = Ride(userId: self.id, value: value)
+        History.registerRide(forUser: self, withValue: value)
     }
     
     public func payBill() {

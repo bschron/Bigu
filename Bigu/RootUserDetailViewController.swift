@@ -126,7 +126,7 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
         else if section == 2 {
             let newCell = tableView.dequeueReusableCellWithIdentifier(RideTableViewCell.reuseId, forIndexPath: indexPath) as! RideTableViewCell
             
-            let rideHistory = RideListManager.rideListSingleton
+            let rideHistory = RootUser.singleton.history.rideHistory
             let ride = rideHistory.list.getElementAtIndex(row)
             
             newCell.ride = ride
@@ -146,7 +146,7 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
             rows = 3
         }
         else if section == 2 {
-            let rideHistory = RideListManager.rideListSingleton
+            let rideHistory = RootUser.singleton.history.rideHistory
             rows = rideHistory.count
         }
         

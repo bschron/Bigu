@@ -106,10 +106,10 @@ public class UserDetailViewController: AbstractUserDetailViewController {
         else if section == 2 {
             let newCell = tableView.dequeueReusableCellWithIdentifier(RideTableViewCell.reuseId, forIndexPath: indexPath) as! RideTableViewCell
             
-            //let rideHistory = self.downcastedUser.rideHistory!
-            //let ride = rideHistory.list.getElementAtIndex(row)
+            let rideHistory = self.downcastedUser.history.rideHistory
+            let ride = rideHistory.list.getElementAtIndex(row)
             
-            //newCell.ride = ride
+            newCell.ride = ride
             
             cell = newCell
         }
@@ -126,8 +126,8 @@ public class UserDetailViewController: AbstractUserDetailViewController {
             rows = 3
         }
         else if section == 2 {
-            //let rideHistory = self.downcastedUser.rideHistory!
-            //rows = rideHistory.count
+            let rideHistory = self.downcastedUser.history.rideHistory
+            rows = rideHistory.count
         }
         
         return rows

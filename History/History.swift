@@ -11,6 +11,8 @@ import Extract
 import Collection
 import Ride
 import BrightFutures
+import AbstractUser
+import RootUser
 
 public class History {
     // MARK: -Properties
@@ -26,6 +28,8 @@ public class History {
         self.extractHistory = OrderedList<Extract>(isOrderedBefore: History.extractListDefaultOrder)
         
         self.rideHistory.registerToAvailableId()
+        self.registerSelfId()
+        History.idList.insert(self.id)
     }
     
     public init(fromId id: Int) {
@@ -151,7 +155,6 @@ public class History {
     
     // MARK: -Class Properties and Functions
     private struct wrap {
-        static let list = OrderedList<Int>(isOrderedBefore: { $0 < $1 })
         static var shoudLoadIdList: Bool = true
     }
     class private var historyIdListKey: String {
@@ -176,9 +179,12 @@ public class History {
         return {$0.secondsSinceOcurrence > $1.secondsSinceOcurrence}
     }
     class private var idList: OrderedList<Int> {
-        return History.wrap.list
+        struct wrap {
+            static var list = OrderedList<Int>(isOrderedBefore: { $0 > $1 })
+        }
+        return wrap.list
     }
-    class private func idListSave() -> Bool {
+    class internal func idListSave() -> Bool {
         
         let defaults = NSUserDefaults.standardUserDefaults()
         let array = History.idList.arrayCopy()
@@ -186,7 +192,7 @@ public class History {
         
         return defaults.synchronize()
     }
-    class private func idListLoad() {
+    class internal func idListLoad() {
         if !History.wrap.shoudLoadIdList {
             return
         }
@@ -194,14 +200,15 @@ public class History {
         let defaults = NSUserDefaults.standardUserDefaults()
         let array = defaults.objectForKey(History.historyIdListKey) as? Array<Int>
         
-        History.idList.clearList()
+        //History.idList.clearList()
         if array != nil {
             History.idList.insert(array!)
-            History.wrap.shoudLoadIdList = false
         }
+        History.wrap.shoudLoadIdList = false
     }
     class private func firstAvailableId() -> Int {
         var firstAvailableId: Int?
+        History.idListLoad()
         
         var last: Int = 0
         let ids = History.idList.arrayCopy()
@@ -218,5 +225,10 @@ public class History {
         }
         
         return firstAvailableId!
+    }
+    class public func registerRide(forUser user: AbstractUser, withValue value: Float) {
+        let ride = Ride(userId: user.id, value: value)
+        user.history.rideHistory.insertNewRide(ride)
+        RootUser.singleton.history.rideHistory.insertNewRide(ride)
     }
 }
