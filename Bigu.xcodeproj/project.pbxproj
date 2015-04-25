@@ -34,14 +34,10 @@
 		864AEA361AEACD85009147D9 /* Models.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 864AEA1E1AEACD85009147D9 /* Models.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		864AEA3E1AEACE9B009147D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A92DCA1AB86A5800B38445 /* User.swift */; };
 		864AEA3F1AEACE9B009147D9 /* ErasedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860058CB1AE66FAF000F1050 /* ErasedUser.swift */; };
-		864AEA401AEACE9B009147D9 /* RootUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A88A901AE27F07009A4ABD /* RootUser.swift */; };
 		864AEA411AEACE9B009147D9 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8668D3961ACF3E8500C2CB87 /* UserList.swift */; };
 		864AEA431AEACE9B009147D9 /* UserPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CA24DE1ADD306800EA98E8 /* UserPersistenceManager.swift */; };
-		864AEA441AEACE9B009147D9 /* RootUserPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */; };
 		864AEA471AEACF37009147D9 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B392D1AE32D4500D34896 /* Ride.swift */; };
 		864AEA481AEACF37009147D9 /* RideListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B39381AE3BD3F00D34896 /* RideListManager.swift */; };
-		864AEA491AEACF46009147D9 /* DataPersistenceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */; };
-		864AEA4A1AEACF46009147D9 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B392A1AE3060F00D34896 /* PersistenceManager.swift */; };
 		864D842B1AEADABB0046C2C0 /* Collection.h in Headers */ = {isa = PBXBuildFile; fileRef = 864D842A1AEADABB0046C2C0 /* Collection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		864D84311AEADABB0046C2C0 /* Collection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 864D84261AEADABB0046C2C0 /* Collection.framework */; };
 		864D843A1AEADABB0046C2C0 /* CollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D84391AEADABB0046C2C0 /* CollectionTests.swift */; };
@@ -61,6 +57,20 @@
 		8692A8F11AEBBC1A0005BCA4 /* Billing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8692A8D91AEBBC190005BCA4 /* Billing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8692A8F81AEBBC260005BCA4 /* BillingHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */; };
 		8692A8F91AEBBC260005BCA4 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86202E6C1AE2A7D500293B79 /* Bill.swift */; };
+		8692A9041AEBBD300005BCA4 /* RootUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 8692A9031AEBBD300005BCA4 /* RootUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8692A90A1AEBBD300005BCA4 /* RootUser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8692A8FF1AEBBD300005BCA4 /* RootUser.framework */; };
+		8692A9131AEBBD300005BCA4 /* RootUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8692A9121AEBBD300005BCA4 /* RootUserTests.swift */; };
+		8692A9161AEBBD300005BCA4 /* RootUser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8692A8FF1AEBBD300005BCA4 /* RootUser.framework */; };
+		8692A9171AEBBD300005BCA4 /* RootUser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8692A8FF1AEBBD300005BCA4 /* RootUser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8692A91E1AEBBD490005BCA4 /* RootUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A88A901AE27F07009A4ABD /* RootUser.swift */; };
+		8692A91F1AEBBD490005BCA4 /* RootUserPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */; };
+		8692A92A1AEBBD810005BCA4 /* Persistence.h in Headers */ = {isa = PBXBuildFile; fileRef = 8692A9291AEBBD810005BCA4 /* Persistence.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8692A9301AEBBD810005BCA4 /* Persistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8692A9251AEBBD810005BCA4 /* Persistence.framework */; };
+		8692A9391AEBBD810005BCA4 /* PersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8692A9381AEBBD810005BCA4 /* PersistenceTests.swift */; };
+		8692A93C1AEBBD810005BCA4 /* Persistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8692A9251AEBBD810005BCA4 /* Persistence.framework */; };
+		8692A93D1AEBBD810005BCA4 /* Persistence.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8692A9251AEBBD810005BCA4 /* Persistence.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8692A9441AEBBD9A0005BCA4 /* DataPersistenceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */; };
+		8692A9451AEBBD9A0005BCA4 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B392A1AE3060F00D34896 /* PersistenceManager.swift */; };
 		86A4D3191AEACBF900477C07 /* BrightFutures.h in Headers */ = {isa = PBXBuildFile; fileRef = 86A4D3181AEACBF900477C07 /* BrightFutures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86A4D31F1AEACBF900477C07 /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A4D3141AEACBF900477C07 /* BrightFutures.framework */; };
 		86A4D3281AEACBF900477C07 /* BrightFuturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A4D3271AEACBF900477C07 /* BrightFuturesTests.swift */; };
@@ -254,6 +264,48 @@
 			remoteGlobalIDString = 8692A8D81AEBBC190005BCA4;
 			remoteInfo = Billing;
 		};
+		8692A90B1AEBBD300005BCA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A8FE1AEBBD300005BCA4;
+			remoteInfo = RootUser;
+		};
+		8692A90D1AEBBD300005BCA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A92D981AB863E900B38445;
+			remoteInfo = Bigu;
+		};
+		8692A9141AEBBD300005BCA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A8FE1AEBBD300005BCA4;
+			remoteInfo = RootUser;
+		};
+		8692A9311AEBBD810005BCA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A9241AEBBD810005BCA4;
+			remoteInfo = Persistence;
+		};
+		8692A9331AEBBD810005BCA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A92D981AB863E900B38445;
+			remoteInfo = Bigu;
+		};
+		8692A93A1AEBBD810005BCA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A9241AEBBD810005BCA4;
+			remoteInfo = Persistence;
+		};
 		86A4D3201AEACBF900477C07 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
@@ -375,11 +427,13 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				8692A93D1AEBBD810005BCA4 /* Persistence.framework in Embed Frameworks */,
 				865137781AEADBCF00CB2A63 /* RGBColor.framework in Embed Frameworks */,
 				864AEA361AEACD85009147D9 /* Models.framework in Embed Frameworks */,
 				86CD07A11AEADF65006B6CE1 /* UserDetailViewController.framework in Embed Frameworks */,
 				86CD07531AEADE3A006B6CE1 /* UsersViewController.framework in Embed Frameworks */,
 				8626E33D1AEAED3C003872A2 /* DarkThemedViewController.framework in Embed Frameworks */,
+				8692A9171AEBBD300005BCA4 /* RootUser.framework in Embed Frameworks */,
 				8692A8F11AEBBC1A0005BCA4 /* Billing.framework in Embed Frameworks */,
 				864D843E1AEADABB0046C2C0 /* Collection.framework in Embed Frameworks */,
 				86A4D32C1AEACBF900477C07 /* BrightFutures.framework in Embed Frameworks */,
@@ -403,13 +457,13 @@
 		860B11F21AEBB81C00D80E25 /* AbstractUserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AbstractUserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		860B11FA1AEBB81C00D80E25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		860B11FB1AEBB81C00D80E25 /* AbstractUserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractUserTests.swift; sourceTree = "<group>"; };
-		860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserPersistenceManager.swift; sourceTree = "<group>"; };
-		860B392A1AE3060F00D34896 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootUserPersistenceManager.swift; path = ../Bigu/RootUserPersistenceManager.swift; sourceTree = "<group>"; };
+		860B392A1AE3060F00D34896 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistenceManager.swift; path = ../Bigu/PersistenceManager.swift; sourceTree = "<group>"; };
 		860B392D1AE32D4500D34896 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
 		860B39331AE33E7100D34896 /* OrderedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedList.swift; sourceTree = "<group>"; };
 		860B39381AE3BD3F00D34896 /* RideListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideListManager.swift; sourceTree = "<group>"; };
 		86202E6C1AE2A7D500293B79 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bill.swift; path = ../Bigu/Bill.swift; sourceTree = "<group>"; };
-		8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersistenceDelegate.swift; sourceTree = "<group>"; };
+		8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataPersistenceDelegate.swift; path = ../Bigu/DataPersistenceDelegate.swift; sourceTree = "<group>"; };
 		8626E3251AEAED3B003872A2 /* DarkThemedViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DarkThemedViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8626E3281AEAED3B003872A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8626E3291AEAED3B003872A2 /* DarkThemedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DarkThemedViewController.h; sourceTree = "<group>"; };
@@ -456,6 +510,18 @@
 		8692A8E31AEBBC1A0005BCA4 /* BillingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BillingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8692A8EB1AEBBC1A0005BCA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8692A8EC1AEBBC1A0005BCA4 /* BillingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingTests.swift; sourceTree = "<group>"; };
+		8692A8FF1AEBBD300005BCA4 /* RootUser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RootUser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8692A9021AEBBD300005BCA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8692A9031AEBBD300005BCA4 /* RootUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootUser.h; sourceTree = "<group>"; };
+		8692A9091AEBBD300005BCA4 /* RootUserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RootUserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8692A9111AEBBD300005BCA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8692A9121AEBBD300005BCA4 /* RootUserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootUserTests.swift; sourceTree = "<group>"; };
+		8692A9251AEBBD810005BCA4 /* Persistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Persistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8692A9281AEBBD810005BCA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8692A9291AEBBD810005BCA4 /* Persistence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Persistence.h; sourceTree = "<group>"; };
+		8692A92F1AEBBD810005BCA4 /* PersistenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersistenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8692A9371AEBBD810005BCA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8692A9381AEBBD810005BCA4 /* PersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceTests.swift; sourceTree = "<group>"; };
 		86A4D3141AEACBF900477C07 /* BrightFutures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BrightFutures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A4D3171AEACBF900477C07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A4D3181AEACBF900477C07 /* BrightFutures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrightFutures.h; sourceTree = "<group>"; };
@@ -463,7 +529,7 @@
 		86A4D3261AEACBF900477C07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A4D3271AEACBF900477C07 /* BrightFuturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightFuturesTests.swift; sourceTree = "<group>"; };
 		86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BillingHandlerDelegate.swift; path = ../Bigu/BillingHandlerDelegate.swift; sourceTree = "<group>"; };
-		86A88A901AE27F07009A4ABD /* RootUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUser.swift; sourceTree = "<group>"; };
+		86A88A901AE27F07009A4ABD /* RootUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootUser.swift; path = ../Bigu/RootUser.swift; sourceTree = "<group>"; };
 		86A92D991AB863E900B38445 /* Bigu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bigu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A92D9D1AB863E900B38445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A92D9E1AB863E900B38445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -615,6 +681,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8692A8FB1AEBBD300005BCA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A9061AEBBD300005BCA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8692A90A1AEBBD300005BCA4 /* RootUser.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A9211AEBBD810005BCA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A92C1AEBBD810005BCA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8692A9301AEBBD810005BCA4 /* Persistence.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		86A4D3101AEACBF900477C07 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -634,11 +730,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8692A93C1AEBBD810005BCA4 /* Persistence.framework in Frameworks */,
 				865137771AEADBCF00CB2A63 /* RGBColor.framework in Frameworks */,
 				864AEA351AEACD85009147D9 /* Models.framework in Frameworks */,
 				86CD07A01AEADF65006B6CE1 /* UserDetailViewController.framework in Frameworks */,
 				86CD07521AEADE3A006B6CE1 /* UsersViewController.framework in Frameworks */,
 				8626E33C1AEAED3C003872A2 /* DarkThemedViewController.framework in Frameworks */,
+				8692A9161AEBBD300005BCA4 /* RootUser.framework in Frameworks */,
 				8692A8F01AEBBC1A0005BCA4 /* Billing.framework in Frameworks */,
 				864D843D1AEADABB0046C2C0 /* Collection.framework in Frameworks */,
 				86A4D32B1AEACBF900477C07 /* BrightFutures.framework in Frameworks */,
@@ -846,11 +944,14 @@
 			children = (
 				860B11E91AEBB81C00D80E25 /* AbstractUser */,
 				860B11F81AEBB81C00D80E25 /* AbstractUserTests */,
+				8692A9001AEBBD300005BCA4 /* RootUser */,
+				8692A90F1AEBBD300005BCA4 /* RootUserTests */,
 				8692A8DA1AEBBC190005BCA4 /* Billing */,
 				8692A8E91AEBBC1A0005BCA4 /* BillingTests */,
 				86A78EEB1ACD86FB009BBF58 /* User */,
 				860B392C1AE32D3300D34896 /* Ride */,
-				86A78EEA1ACD86DB009BBF58 /* Persistence */,
+				8692A9261AEBBD810005BCA4 /* Persistence */,
+				8692A9351AEBBD810005BCA4 /* PersistenceTests */,
 				864AEA221AEACD85009147D9 /* Models.h */,
 				864AEA201AEACD85009147D9 /* Supporting Files */,
 			);
@@ -1071,6 +1172,82 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8692A9001AEBBD300005BCA4 /* RootUser */ = {
+			isa = PBXGroup;
+			children = (
+				86A88A901AE27F07009A4ABD /* RootUser.swift */,
+				860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */,
+				8692A9031AEBBD300005BCA4 /* RootUser.h */,
+				8692A9011AEBBD300005BCA4 /* Supporting Files */,
+			);
+			name = RootUser;
+			path = ../RootUser;
+			sourceTree = "<group>";
+		};
+		8692A9011AEBBD300005BCA4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8692A9021AEBBD300005BCA4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8692A90F1AEBBD300005BCA4 /* RootUserTests */ = {
+			isa = PBXGroup;
+			children = (
+				8692A9121AEBBD300005BCA4 /* RootUserTests.swift */,
+				8692A9101AEBBD300005BCA4 /* Supporting Files */,
+			);
+			name = RootUserTests;
+			path = ../RootUserTests;
+			sourceTree = "<group>";
+		};
+		8692A9101AEBBD300005BCA4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8692A9111AEBBD300005BCA4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8692A9261AEBBD810005BCA4 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */,
+				860B392A1AE3060F00D34896 /* PersistenceManager.swift */,
+				8692A9291AEBBD810005BCA4 /* Persistence.h */,
+				8692A9271AEBBD810005BCA4 /* Supporting Files */,
+			);
+			name = Persistence;
+			path = ../Persistence;
+			sourceTree = "<group>";
+		};
+		8692A9271AEBBD810005BCA4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8692A9281AEBBD810005BCA4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8692A9351AEBBD810005BCA4 /* PersistenceTests */ = {
+			isa = PBXGroup;
+			children = (
+				8692A9381AEBBD810005BCA4 /* PersistenceTests.swift */,
+				8692A9361AEBBD810005BCA4 /* Supporting Files */,
+			);
+			name = PersistenceTests;
+			path = ../PersistenceTests;
+			sourceTree = "<group>";
+		};
+		8692A9361AEBBD810005BCA4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8692A9371AEBBD810005BCA4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		86A4D3151AEACBF900477C07 /* BrightFutures */ = {
 			isa = PBXGroup;
 			children = (
@@ -1113,25 +1290,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		86A78EEA1ACD86DB009BBF58 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */,
-				860B392A1AE3060F00D34896 /* PersistenceManager.swift */,
-			);
-			name = Persistence;
-			path = ../Bigu;
-			sourceTree = "<group>";
-		};
 		86A78EEB1ACD86FB009BBF58 /* User */ = {
 			isa = PBXGroup;
 			children = (
 				86A92DCA1AB86A5800B38445 /* User.swift */,
 				860058CB1AE66FAF000F1050 /* ErasedUser.swift */,
-				86A88A901AE27F07009A4ABD /* RootUser.swift */,
 				8668D3961ACF3E8500C2CB87 /* UserList.swift */,
 				86CA24DE1ADD306800EA98E8 /* UserPersistenceManager.swift */,
-				860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */,
 			);
 			name = User;
 			path = ../Bigu;
@@ -1182,6 +1347,10 @@
 				860B11F21AEBB81C00D80E25 /* AbstractUserTests.xctest */,
 				8692A8D91AEBBC190005BCA4 /* Billing.framework */,
 				8692A8E31AEBBC1A0005BCA4 /* BillingTests.xctest */,
+				8692A8FF1AEBBD300005BCA4 /* RootUser.framework */,
+				8692A9091AEBBD300005BCA4 /* RootUserTests.xctest */,
+				8692A9251AEBBD810005BCA4 /* Persistence.framework */,
+				8692A92F1AEBBD810005BCA4 /* PersistenceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1443,6 +1612,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				8692A8DE1AEBBC1A0005BCA4 /* Billing.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A8FC1AEBBD300005BCA4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8692A9041AEBBD300005BCA4 /* RootUser.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A9221AEBBD810005BCA4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8692A92A1AEBBD810005BCA4 /* Persistence.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1711,6 +1896,80 @@
 			productReference = 8692A8E31AEBBC1A0005BCA4 /* BillingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8692A8FE1AEBBD300005BCA4 /* RootUser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8692A9181AEBBD300005BCA4 /* Build configuration list for PBXNativeTarget "RootUser" */;
+			buildPhases = (
+				8692A8FA1AEBBD300005BCA4 /* Sources */,
+				8692A8FB1AEBBD300005BCA4 /* Frameworks */,
+				8692A8FC1AEBBD300005BCA4 /* Headers */,
+				8692A8FD1AEBBD300005BCA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RootUser;
+			productName = RootUser;
+			productReference = 8692A8FF1AEBBD300005BCA4 /* RootUser.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8692A9081AEBBD300005BCA4 /* RootUserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8692A91B1AEBBD300005BCA4 /* Build configuration list for PBXNativeTarget "RootUserTests" */;
+			buildPhases = (
+				8692A9051AEBBD300005BCA4 /* Sources */,
+				8692A9061AEBBD300005BCA4 /* Frameworks */,
+				8692A9071AEBBD300005BCA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8692A90C1AEBBD300005BCA4 /* PBXTargetDependency */,
+				8692A90E1AEBBD300005BCA4 /* PBXTargetDependency */,
+			);
+			name = RootUserTests;
+			productName = RootUserTests;
+			productReference = 8692A9091AEBBD300005BCA4 /* RootUserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8692A9241AEBBD810005BCA4 /* Persistence */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8692A93E1AEBBD820005BCA4 /* Build configuration list for PBXNativeTarget "Persistence" */;
+			buildPhases = (
+				8692A9201AEBBD810005BCA4 /* Sources */,
+				8692A9211AEBBD810005BCA4 /* Frameworks */,
+				8692A9221AEBBD810005BCA4 /* Headers */,
+				8692A9231AEBBD810005BCA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Persistence;
+			productName = Persistence;
+			productReference = 8692A9251AEBBD810005BCA4 /* Persistence.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8692A92E1AEBBD810005BCA4 /* PersistenceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8692A9411AEBBD820005BCA4 /* Build configuration list for PBXNativeTarget "PersistenceTests" */;
+			buildPhases = (
+				8692A92B1AEBBD810005BCA4 /* Sources */,
+				8692A92C1AEBBD810005BCA4 /* Frameworks */,
+				8692A92D1AEBBD810005BCA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8692A9321AEBBD810005BCA4 /* PBXTargetDependency */,
+				8692A9341AEBBD810005BCA4 /* PBXTargetDependency */,
+			);
+			name = PersistenceTests;
+			productName = PersistenceTests;
+			productReference = 8692A92F1AEBBD810005BCA4 /* PersistenceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		86A4D3131AEACBF900477C07 /* BrightFutures */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86A4D3331AEACBF900477C07 /* Build configuration list for PBXNativeTarget "BrightFutures" */;
@@ -1771,6 +2030,8 @@
 				8626E33B1AEAED3C003872A2 /* PBXTargetDependency */,
 				860B11FE1AEBB81C00D80E25 /* PBXTargetDependency */,
 				8692A8EF1AEBBC1A0005BCA4 /* PBXTargetDependency */,
+				8692A9151AEBBD300005BCA4 /* PBXTargetDependency */,
+				8692A93B1AEBBD810005BCA4 /* PBXTargetDependency */,
 			);
 			name = Bigu;
 			productName = Bigu;
@@ -2000,6 +2261,22 @@
 						CreatedOnToolsVersion = 6.3;
 						TestTargetID = 86A92D981AB863E900B38445;
 					};
+					8692A8FE1AEBBD300005BCA4 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = LBFUFN3H7E;
+					};
+					8692A9081AEBBD300005BCA4 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 86A92D981AB863E900B38445;
+					};
+					8692A9241AEBBD810005BCA4 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = LBFUFN3H7E;
+					};
+					8692A92E1AEBBD810005BCA4 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 86A92D981AB863E900B38445;
+					};
 					86A4D3131AEACBF900477C07 = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = LBFUFN3H7E;
@@ -2087,6 +2364,10 @@
 				860B11F11AEBB81C00D80E25 /* AbstractUserTests */,
 				8692A8D81AEBBC190005BCA4 /* Billing */,
 				8692A8E21AEBBC1A0005BCA4 /* BillingTests */,
+				8692A8FE1AEBBD300005BCA4 /* RootUser */,
+				8692A9081AEBBD300005BCA4 /* RootUserTests */,
+				8692A9241AEBBD810005BCA4 /* Persistence */,
+				8692A92E1AEBBD810005BCA4 /* PersistenceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -2170,6 +2451,34 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8692A8E11AEBBC1A0005BCA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A8FD1AEBBD300005BCA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A9071AEBBD300005BCA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A9231AEBBD810005BCA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A92D1AEBBD810005BCA4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2320,13 +2629,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				864AEA411AEACE9B009147D9 /* UserList.swift in Sources */,
-				864AEA4A1AEACF46009147D9 /* PersistenceManager.swift in Sources */,
-				864AEA401AEACE9B009147D9 /* RootUser.swift in Sources */,
 				864AEA3F1AEACE9B009147D9 /* ErasedUser.swift in Sources */,
 				864AEA481AEACF37009147D9 /* RideListManager.swift in Sources */,
 				864AEA431AEACE9B009147D9 /* UserPersistenceManager.swift in Sources */,
-				864AEA441AEACE9B009147D9 /* RootUserPersistenceManager.swift in Sources */,
-				864AEA491AEACF46009147D9 /* DataPersistenceDelegate.swift in Sources */,
 				864AEA471AEACF37009147D9 /* Ride.swift in Sources */,
 				864AEA3E1AEACE9B009147D9 /* User.swift in Sources */,
 			);
@@ -2386,6 +2691,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				8692A8ED1AEBBC1A0005BCA4 /* BillingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A8FA1AEBBD300005BCA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8692A91F1AEBBD490005BCA4 /* RootUserPersistenceManager.swift in Sources */,
+				8692A91E1AEBBD490005BCA4 /* RootUser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A9051AEBBD300005BCA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8692A9131AEBBD300005BCA4 /* RootUserTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A9201AEBBD810005BCA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8692A9441AEBBD9A0005BCA4 /* DataPersistenceDelegate.swift in Sources */,
+				8692A9451AEBBD9A0005BCA4 /* PersistenceManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A92B1AEBBD810005BCA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8692A9391AEBBD810005BCA4 /* PersistenceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2597,6 +2936,36 @@
 			isa = PBXTargetDependency;
 			target = 8692A8D81AEBBC190005BCA4 /* Billing */;
 			targetProxy = 8692A8EE1AEBBC1A0005BCA4 /* PBXContainerItemProxy */;
+		};
+		8692A90C1AEBBD300005BCA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A8FE1AEBBD300005BCA4 /* RootUser */;
+			targetProxy = 8692A90B1AEBBD300005BCA4 /* PBXContainerItemProxy */;
+		};
+		8692A90E1AEBBD300005BCA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A92D981AB863E900B38445 /* Bigu */;
+			targetProxy = 8692A90D1AEBBD300005BCA4 /* PBXContainerItemProxy */;
+		};
+		8692A9151AEBBD300005BCA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A8FE1AEBBD300005BCA4 /* RootUser */;
+			targetProxy = 8692A9141AEBBD300005BCA4 /* PBXContainerItemProxy */;
+		};
+		8692A9321AEBBD810005BCA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A9241AEBBD810005BCA4 /* Persistence */;
+			targetProxy = 8692A9311AEBBD810005BCA4 /* PBXContainerItemProxy */;
+		};
+		8692A9341AEBBD810005BCA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A92D981AB863E900B38445 /* Bigu */;
+			targetProxy = 8692A9331AEBBD810005BCA4 /* PBXContainerItemProxy */;
+		};
+		8692A93B1AEBBD810005BCA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A9241AEBBD810005BCA4 /* Persistence */;
+			targetProxy = 8692A93A1AEBBD810005BCA4 /* PBXContainerItemProxy */;
 		};
 		86A4D3211AEACBF900477C07 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3221,6 +3590,182 @@
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = BillingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
+			};
+			name = Release;
+		};
+		8692A9191AEBBD300005BCA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RootUser/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8692A91A1AEBBD300005BCA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = RootUser/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8692A91C1AEBBD300005BCA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RootUserTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
+			};
+			name = Debug;
+		};
+		8692A91D1AEBBD300005BCA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = RootUserTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
+			};
+			name = Release;
+		};
+		8692A93F1AEBBD820005BCA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Persistence/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8692A9401AEBBD820005BCA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = Persistence/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8692A9421AEBBD820005BCA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PersistenceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
+			};
+			name = Debug;
+		};
+		8692A9431AEBBD820005BCA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = PersistenceTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3913,6 +4458,38 @@
 			buildConfigurations = (
 				8692A8F41AEBBC1A0005BCA4 /* Debug */,
 				8692A8F51AEBBC1A0005BCA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8692A9181AEBBD300005BCA4 /* Build configuration list for PBXNativeTarget "RootUser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8692A9191AEBBD300005BCA4 /* Debug */,
+				8692A91A1AEBBD300005BCA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8692A91B1AEBBD300005BCA4 /* Build configuration list for PBXNativeTarget "RootUserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8692A91C1AEBBD300005BCA4 /* Debug */,
+				8692A91D1AEBBD300005BCA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8692A93E1AEBBD820005BCA4 /* Build configuration list for PBXNativeTarget "Persistence" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8692A93F1AEBBD820005BCA4 /* Debug */,
+				8692A9401AEBBD820005BCA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8692A9411AEBBD820005BCA4 /* Build configuration list for PBXNativeTarget "PersistenceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8692A9421AEBBD820005BCA4 /* Debug */,
+				8692A9431AEBBD820005BCA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

@@ -13,6 +13,7 @@ import Models
 import FakeSeparator
 import RideTableViewCell
 import AbstractUser
+import RootUser
 
 public class RootUserDetailViewController: AbstractUserDetailViewController {
     

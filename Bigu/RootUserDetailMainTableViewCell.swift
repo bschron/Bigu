@@ -9,6 +9,7 @@
 import UIKit
 import Models
 import AbstractUser
+import RootUser
 
 internal class RootUserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell {
     

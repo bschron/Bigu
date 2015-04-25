@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import AbstractUser
 import Billing
+import RootUser
 
 public class User: AbstractUser {
     

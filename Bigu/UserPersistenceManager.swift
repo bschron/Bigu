@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import BrightFutures
+import Persistence
 
 public class UserPersistenceManager: DataPersistenceDelegate {
     

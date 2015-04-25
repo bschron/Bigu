@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Persistence
 import BrightFutures
 
 public class RootUserPersistenceManager: NSObject, DataPersistenceDelegate {

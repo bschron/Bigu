@@ -9,6 +9,8 @@
 import UIKit
 import BrightFutures
 import Models
+import RootUser
+import Persistence
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

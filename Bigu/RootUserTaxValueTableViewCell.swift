@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import RGBColor
 import Models
+import RootUser
 
 internal class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataSource, UIPickerViewDelegate {
 
