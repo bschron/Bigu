@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import AbstractUser
-import History
 
 public class RootUser: AbstractUser {
     // MARK: -Properties
@@ -24,20 +23,6 @@ public class RootUser: AbstractUser {
             }
         }
     }
-    private var _taxValue: Float?
-    public var taxValue: Float {
-        get {
-            return self._taxValue != nil ? self._taxValue! : 0
-        }
-        set {
-            if newValue > 0 {
-                self._taxValue = newValue
-            }
-            else {
-                self._taxValue = nil
-            }
-        }
-    }
     
     // MARK: -Methods
     
@@ -48,13 +33,11 @@ public class RootUser: AbstractUser {
         super.init(fromDictionary: dic)
         self.name = dic[RootUser.nameKey] != nil ? dic[RootUser.nameKey] as! String : ""
         self._savings = dic[RootUser.savingsValueKey] as? Float
-        self._taxValue = dic[RootUser.taxValueKey] as? Float
     }
     
     override public func toDictionary() -> [NSString : NSObject] {
         var dic = super.toDictionary()
         dic[RootUser.savingsValueKey] = self.savings
-        dic[RootUser.taxValueKey] = self.taxValue
         return dic
     }
     

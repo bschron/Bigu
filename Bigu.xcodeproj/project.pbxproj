@@ -5968,6 +5968,7 @@
 				86A425791AEBD0A500C2405B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86A4257D1AEBD0A500C2405B /* Build configuration list for PBXNativeTarget "HistoryTests" */ = {
 			isa = XCConfigurationList;
@@ -5976,6 +5977,7 @@
 				86A4257B1AEBD0A500C2405B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86A4D3331AEACBF900477C07 /* Build configuration list for PBXNativeTarget "BrightFutures" */ = {
 			isa = XCConfigurationList;

@@ -11,7 +11,6 @@ import Extract
 import Collection
 import Ride
 import BrightFutures
-import RootUser
 
 public class History {
     // MARK: -Properties
@@ -50,6 +49,7 @@ public class History {
         self.id = selfId
         self.rideHistory = selfRides
         self.extractHistory = selfExtracts
+        self.registerSelfId()
     }
     
     internal init(fromDictionary dic: [NSString: NSObject]) {
@@ -142,7 +142,11 @@ public class History {
     }
     
     private func registerSelfId() {
-        History.idList.insert(self.id)
+        let result = History.idList.findBy({ $0 == self.id })
+        
+        if result.count == 0 {
+            History.idList.insert(self.id)
+        }
     }
     
     public func registerToPersistence() {
@@ -155,6 +159,13 @@ public class History {
     // MARK: -Class Properties and Functions
     private struct wrap {
         static var shoudLoadIdList: Bool = true
+    }
+    class public var singleton: History {
+        struct wrap {
+            static let history = History(fromId: 0)
+        }
+        
+        return wrap.history
     }
     class private var historyIdListKey: String {
         return "HistoryIdListKey"
@@ -224,10 +235,10 @@ public class History {
         }
         
         return firstAvailableId!
-    }
+    }/*
     class public func registerRide(forUserWithId id: Int, andHistory history: History, withValue value: Float) {
         let ride = Ride(userId: id, value: value)
         history.rideHistory.insertNewRide(ride)
-        RootUser.singleton.history.rideHistory.insertNewRide(ride)
-    }
+        RideListManager.rideListSingleton.insertNewRide(ride)
+    }*/
 }

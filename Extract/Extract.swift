@@ -7,12 +7,10 @@
 //
 
 import Foundation
-import AbstractUser
-import UserList
 
 public class Extract {
     // MARK: -Properties
-    public let user: AbstractUser?
+    public let userId: Int
     public let value: Float
     public let date: NSDate
     public var secondsSinceOcurrence: NSTimeInterval {
@@ -20,8 +18,8 @@ public class Extract {
     }
     
     // MARK: -Methods
-    public init(user: AbstractUser, paidValue value: Float) {
-        self.user = user
+    public init(userId id: Int, paidValue value: Float) {
+        self.userId = id
         self.value = value
         self.date = NSDate()
     }
@@ -32,11 +30,10 @@ public class Extract {
         let optionalDate = dic[Extract.dateKey] as? NSDate
         
         if let id = optionalUserId {
-            let results = UserList.sharedUserList.list.findBy({ $0.id == id })
-            self.user = results.getFirstObject()
+            self.userId = id
         }
         else {
-            self.user = nil
+            self.userId = 0
         }
         self.value = optionalValue != nil ? optionalValue! : 0
         self.date = optionalDate != nil ? optionalDate! : NSDate(timeIntervalSinceReferenceDate: 0)
@@ -45,7 +42,7 @@ public class Extract {
     public func toDictionary() -> [NSString: NSObject] {
         var dic = [NSString: NSObject]()
         
-        dic[Extract.userIdKey] = self.user?.id
+        dic[Extract.userIdKey] = self.userId
         dic[Extract.valueKey] = self.value
         dic[Extract.dateKey] = self.date
         

@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import UserList
-import RootUser
 
 public class Ride {
     // MARK: -Properties
@@ -24,8 +22,6 @@ public class Ride {
         self.time = NSDate()
         self.userId = userId
         self.value = value
-        
-        let user = UserList.sharedUserList.list.findBy({ $0.id == self.userId })
     }
     
     internal init(dictionary: [NSString: NSObject]) {

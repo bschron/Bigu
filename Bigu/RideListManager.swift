@@ -181,6 +181,13 @@ public class RideListManager: DataPersistenceDelegate {
     }
     
     // MARK: -Class Methods and Properties
+    class public var rideListSingleton: RideListManager {
+        struct wrap {
+            static let list = RideListManager(singleton: true)
+        }
+        
+        return wrap.list
+    }
     class var defaultOrder: (Ride, Ride) -> Bool {
         return { $0.timingSinceOcurrence > $1.timingSinceOcurrence }
     }

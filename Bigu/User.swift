@@ -8,10 +8,9 @@
 
 import Foundation
 import UIKit
-import AbstractUser
 import Billing
-import RootUser
 import History
+import AbstractUser
 
 public class User: AbstractUser {
     
@@ -20,26 +19,37 @@ public class User: AbstractUser {
     public var billValue: Float {
         return self.bill.bill
     }
+    public let history: History
     
     // MARK: -Methods
     
     override public init(withid id: Int) {
         self.bill = Bill()
+        self.history = History()
         super.init(withid: id)
+        self.history.registerToPersistence()
     }
     public init(name: String, surName: String?, nickName: String?, handler: BillingHandlerDelegate?) {
         self.bill = Bill()
+        self.history = History()
         super.init(name: name, surName: surName, nickName: nickName)
         if let hand = handler {
             self.bill.registerAsHandler(hand)
         }
         self.userImage = nil
+        self.history.registerToPersistence()
     }
     override public init(fromDictionary dic: [NSString : NSObject]) {
         let optionalBill = dic[User.billKey] as? Float
         self.bill = optionalBill != nil ? Bill(fromBillValue: optionalBill!) : Bill()
         
-        let optionalHistoryId = dic[User.historyKey] as? Int
+        let optionalHistoryId = dic[User.historyIdKey] as? Int
+        if let id = optionalHistoryId {
+            self.history = History(fromId: id)
+        }
+        else {
+            self.history = History()
+        }
         
         super.init(fromDictionary: dic)
     }
@@ -47,15 +57,16 @@ public class User: AbstractUser {
     override public func toDictionary() -> [NSString : NSObject] {
         var dic = super.toDictionary()
         dic[User.billKey] = self.bill.bill
+        dic[User.historyIdKey] = self.history.id
         return dic
     }
     
     public func increaseBill() {
-        let value:Float = RootUser.singleton.taxValue
+        let value:Float = Bill.taxValue
         
         self.bill.increaseBill(value)
         
-        History.registerRide(forUser: self, withValue: value)
+        History.registerRide(forUserWithId: self.id, andHistory: self.history, withValue: value)
     }
     
     public func payBill() {
@@ -73,5 +84,8 @@ public class User: AbstractUser {
     // MARK: -Class Properties and Methods
     class private var billKey: String {
         return "UserBillKey"
+    }
+    class internal var historyIdKey: String {
+        return "UserHistoryIdKey"
     }
 }

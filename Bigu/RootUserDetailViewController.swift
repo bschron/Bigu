@@ -15,6 +15,7 @@ import RideTableViewCell
 import AbstractUser
 import RootUser
 import Ride
+import Billing
 
 public class RootUserDetailViewController: AbstractUserDetailViewController {
     
@@ -55,7 +56,7 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
         
         let newTaxValue = taxValueCell?.getTaxPickerValue()
         if let value = newTaxValue {
-            RootUser.singleton.taxValue = value
+            Bill.taxValue = value
         }
         //persistence
         RootUserPersistenceManager.singleton.save(nil)
@@ -126,7 +127,7 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
         else if section == 2 {
             let newCell = tableView.dequeueReusableCellWithIdentifier(RideTableViewCell.reuseId, forIndexPath: indexPath) as! RideTableViewCell
             
-            let rideHistory = RootUser.singleton.history.rideHistory
+            let rideHistory = RideListManager.rideListSingleton
             let ride = rideHistory.list.getElementAtIndex(row)
             
             newCell.ride = ride
@@ -146,7 +147,7 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
             rows = 3
         }
         else if section == 2 {
-            let rideHistory = RootUser.singleton.history.rideHistory
+            let rideHistory = RideListManager.rideListSingleton
             rows = rideHistory.count
         }
         
@@ -177,7 +178,7 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
         if indexPath.section == 0 && indexPath.row == 1 {
             let newTaxValue = taxValueCell?.getTaxPickerValue()
             if let value = newTaxValue {
-                RootUser.singleton.taxValue = value
+                Bill.taxValue = value
             }
         }
     }

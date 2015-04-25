@@ -11,6 +11,7 @@ import Foundation
 import RGBColor
 import Models
 import RootUser
+import Billing
 
 internal class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataSource, UIPickerViewDelegate {
 
@@ -59,7 +60,7 @@ internal class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataS
     }
     
     internal func setTaxPickerValue() {
-        let taxValue: Float = RootUser.singleton.taxValue
+        let taxValue: Float = Bill.taxValue
         let taxIntValue: Int = Int(taxValue)
         let taxPointValue: Float = taxValue - Float(taxIntValue)
         
