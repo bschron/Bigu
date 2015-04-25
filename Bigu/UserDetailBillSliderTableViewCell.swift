@@ -10,6 +10,7 @@ import UIKit
 import Models
 import AbstractUser
 import Billing
+import UserList
 
 internal class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandlerDelegate {
     
@@ -32,7 +33,7 @@ internal class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandle
     override internal func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        User.usersList.list.getElementAtIndex(self.userIndex)!.registerAsBillHandler(self)
+        UserList.sharedUserList.list.getElementAtIndex(self.userIndex)!.registerAsBillHandler(self)
     }
 
     override internal func setSelected(selected: Bool, animated: Bool) {
@@ -42,7 +43,7 @@ internal class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandle
     }
     
     internal func updateBillingUI() {
-        self.originalBill = User.usersList.list.getElementAtIndex(self.userIndex)!.billValue
+        self.originalBill = UserList.sharedUserList.list.getElementAtIndex(self.userIndex)!.billValue
         self.slider.maximumValue = originalBill
         self.slider.minimumValue = 0
         self.slider.value = originalBill
@@ -82,7 +83,7 @@ internal class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandle
         self.billValueLabel.text = "\(roundedTotalValue)"
     }
     @IBAction private func submitValueDecrease(sender: AnyObject) {
-        User.usersList.list.getElementAtIndex(self.userIndex)!.payPartialBill(payingValue: self.decreasedValue)
+        UserList.sharedUserList.list.getElementAtIndex(self.userIndex)!.payPartialBill(payingValue: self.decreasedValue)
         self.destroy()
     }
     

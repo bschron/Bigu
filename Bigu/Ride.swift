@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UserList
 
 public class Ride {
     // MARK: -Properties
@@ -23,9 +24,9 @@ public class Ride {
         self.userId = userId
         self.value = value
         
-        let user = User.usersList.list.findBy({ $0.id == self.userId })
+        let user = UserList.sharedUserList.list.findBy({ $0.id == self.userId })
         if let usr = user.getFirstObject() {
-            usr.rideHistory?.insertNewRide(self)
+            //usr.rideHistory?.insertNewRide(self)
         }
         
         RideListManager.rideListSingleton.insertNewRide(self)

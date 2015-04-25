@@ -14,6 +14,7 @@ import FakeSeparator
 import RideTableViewCell
 import AbstractUser
 import RootUser
+import Ride
 
 public class RootUserDetailViewController: AbstractUserDetailViewController {
     

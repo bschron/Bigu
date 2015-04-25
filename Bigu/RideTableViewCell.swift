@@ -8,6 +8,8 @@
 
 import UIKit
 import Models
+import Ride
+import UserList
 
 public class RideTableViewCell: UITableViewCell {
 
@@ -38,10 +40,10 @@ public class RideTableViewCell: UITableViewCell {
         
         let findingparameter: (User) -> Bool = { $0.id == self.ride.userId }
         
-        var user = User.usersList.list.findBy(findingparameter)
+        var user = UserList.sharedUserList.list.findBy(findingparameter)
         
         if user.getFirstObject() == nil {
-            let erasedUsers = User.usersList.erasedUsersList.findBy(findingparameter).arrayCopy()
+            let erasedUsers = UserList.sharedUserList.erasedUsersList.findBy(findingparameter).arrayCopy()
             user.insert(erasedUsers)
         }
         

@@ -10,6 +10,7 @@ import UIKit
 import Models
 import UserDetailViewController
 import AbstractUser
+import UserList
 
 public class UsersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UserHandlingDelegate {
 
@@ -43,12 +44,6 @@ public class UsersViewController: UIViewController, UITableViewDataSource, UITab
     override public func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.reloadUsersData()
-    }
-
-    override public func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        UserList.freeSingleton(nil)
     }
     
     func freePopUp() {
@@ -99,7 +94,7 @@ public class UsersViewController: UIViewController, UITableViewDataSource, UITab
             let userName = senderCell.user.nickName != "" ? senderCell.user.nickName : senderCell.user.name
             
             vc.title = userName
-            vc.user = User.usersList.list.getElementAtIndex(senderCell.userIndex)
+            vc.user = UserList.sharedUserList.list.getElementAtIndex(senderCell.userIndex)
         }
     }
     
@@ -138,7 +133,7 @@ public class UsersViewController: UIViewController, UITableViewDataSource, UITab
     public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if tableView === self.usersTableView {
             if editingStyle == .Delete {
-                User.removeUserAtRow(indexPath.row)
+                UserList.sharedUserList.removeUserAtIndex(indexPath.row)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
             }
         }

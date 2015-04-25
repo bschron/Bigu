@@ -12,6 +12,8 @@ import Models
 import FakeSeparator
 import RideTableViewCell
 import AbstractUser
+import UserList
+import UserPersistenceManager
 
 public class UserDetailViewController: AbstractUserDetailViewController {
     
@@ -20,7 +22,7 @@ public class UserDetailViewController: AbstractUserDetailViewController {
         return self.user as! User
     }
     private var expensiveUserIndex: Int {
-        return User.usersList.list.getObjectIndex(indexFor: self.downcastedUser, compareBy: { $0.id == self.user.id })!
+        return UserList.sharedUserList.list.getObjectIndex(indexFor: self.downcastedUser, compareBy: { $0.id == self.user.id })!
     }
     internal var billSlider: Bool = false
     
@@ -104,10 +106,10 @@ public class UserDetailViewController: AbstractUserDetailViewController {
         else if section == 2 {
             let newCell = tableView.dequeueReusableCellWithIdentifier(RideTableViewCell.reuseId, forIndexPath: indexPath) as! RideTableViewCell
             
-            let rideHistory = self.downcastedUser.rideHistory!
-            let ride = rideHistory.list.getElementAtIndex(row)
+            //let rideHistory = self.downcastedUser.rideHistory!
+            //let ride = rideHistory.list.getElementAtIndex(row)
             
-            newCell.ride = ride
+            //newCell.ride = ride
             
             cell = newCell
         }
@@ -124,8 +126,8 @@ public class UserDetailViewController: AbstractUserDetailViewController {
             rows = 3
         }
         else if section == 2 {
-            let rideHistory = self.downcastedUser.rideHistory!
-            rows = rideHistory.count
+            //let rideHistory = self.downcastedUser.rideHistory!
+            //rows = rideHistory.count
         }
         
         return rows

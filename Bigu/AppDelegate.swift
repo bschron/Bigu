@@ -11,6 +11,9 @@ import BrightFutures
 import Models
 import RootUser
 import Persistence
+import UserPersistenceManager
+import UserList
+import Ride
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
