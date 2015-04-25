@@ -38,8 +38,6 @@
 		864AEA411AEACE9B009147D9 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8668D3961ACF3E8500C2CB87 /* UserList.swift */; };
 		864AEA431AEACE9B009147D9 /* UserPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CA24DE1ADD306800EA98E8 /* UserPersistenceManager.swift */; };
 		864AEA441AEACE9B009147D9 /* RootUserPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B39261AE2FB8F00D34896 /* RootUserPersistenceManager.swift */; };
-		864AEA451AEACF2E009147D9 /* BillingHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */; };
-		864AEA461AEACF2E009147D9 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86202E6C1AE2A7D500293B79 /* Bill.swift */; };
 		864AEA471AEACF37009147D9 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B392D1AE32D4500D34896 /* Ride.swift */; };
 		864AEA481AEACF37009147D9 /* RideListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B39381AE3BD3F00D34896 /* RideListManager.swift */; };
 		864AEA491AEACF46009147D9 /* DataPersistenceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */; };
@@ -56,6 +54,13 @@
 		865137771AEADBCF00CB2A63 /* RGBColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 865137601AEADBCF00CB2A63 /* RGBColor.framework */; };
 		865137781AEADBCF00CB2A63 /* RGBColor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 865137601AEADBCF00CB2A63 /* RGBColor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		865137811AEADBE000CB2A63 /* RGBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860058D01AE69928000F1050 /* RGBColor.swift */; };
+		8692A8DE1AEBBC1A0005BCA4 /* Billing.h in Headers */ = {isa = PBXBuildFile; fileRef = 8692A8DD1AEBBC1A0005BCA4 /* Billing.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8692A8E41AEBBC1A0005BCA4 /* Billing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8692A8D91AEBBC190005BCA4 /* Billing.framework */; };
+		8692A8ED1AEBBC1A0005BCA4 /* BillingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8692A8EC1AEBBC1A0005BCA4 /* BillingTests.swift */; };
+		8692A8F01AEBBC1A0005BCA4 /* Billing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8692A8D91AEBBC190005BCA4 /* Billing.framework */; };
+		8692A8F11AEBBC1A0005BCA4 /* Billing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8692A8D91AEBBC190005BCA4 /* Billing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8692A8F81AEBBC260005BCA4 /* BillingHandlerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */; };
+		8692A8F91AEBBC260005BCA4 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86202E6C1AE2A7D500293B79 /* Bill.swift */; };
 		86A4D3191AEACBF900477C07 /* BrightFutures.h in Headers */ = {isa = PBXBuildFile; fileRef = 86A4D3181AEACBF900477C07 /* BrightFutures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86A4D31F1AEACBF900477C07 /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A4D3141AEACBF900477C07 /* BrightFutures.framework */; };
 		86A4D3281AEACBF900477C07 /* BrightFuturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A4D3271AEACBF900477C07 /* BrightFuturesTests.swift */; };
@@ -228,6 +233,27 @@
 			remoteGlobalIDString = 8651375F1AEADBCF00CB2A63;
 			remoteInfo = RGBColor;
 		};
+		8692A8E51AEBBC1A0005BCA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A8D81AEBBC190005BCA4;
+			remoteInfo = Billing;
+		};
+		8692A8E71AEBBC1A0005BCA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A92D981AB863E900B38445;
+			remoteInfo = Bigu;
+		};
+		8692A8EE1AEBBC1A0005BCA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A8D81AEBBC190005BCA4;
+			remoteInfo = Billing;
+		};
 		86A4D3201AEACBF900477C07 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
@@ -354,6 +380,7 @@
 				86CD07A11AEADF65006B6CE1 /* UserDetailViewController.framework in Embed Frameworks */,
 				86CD07531AEADE3A006B6CE1 /* UsersViewController.framework in Embed Frameworks */,
 				8626E33D1AEAED3C003872A2 /* DarkThemedViewController.framework in Embed Frameworks */,
+				8692A8F11AEBBC1A0005BCA4 /* Billing.framework in Embed Frameworks */,
 				864D843E1AEADABB0046C2C0 /* Collection.framework in Embed Frameworks */,
 				86A4D32C1AEACBF900477C07 /* BrightFutures.framework in Embed Frameworks */,
 				860B12001AEBB81C00D80E25 /* AbstractUser.framework in Embed Frameworks */,
@@ -381,7 +408,7 @@
 		860B392D1AE32D4500D34896 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
 		860B39331AE33E7100D34896 /* OrderedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedList.swift; sourceTree = "<group>"; };
 		860B39381AE3BD3F00D34896 /* RideListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideListManager.swift; sourceTree = "<group>"; };
-		86202E6C1AE2A7D500293B79 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		86202E6C1AE2A7D500293B79 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bill.swift; path = ../Bigu/Bill.swift; sourceTree = "<group>"; };
 		8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersistenceDelegate.swift; sourceTree = "<group>"; };
 		8626E3251AEAED3B003872A2 /* DarkThemedViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DarkThemedViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8626E3281AEAED3B003872A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -423,13 +450,19 @@
 		8661BEE61AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailNickNameTableViewCell.xib; sourceTree = "<group>"; };
 		8668D3961ACF3E8500C2CB87 /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
 		86717B851AEA5CAC0028B418 /* FakeSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeSeparator.swift; path = ../Bigu/FakeSeparator.swift; sourceTree = "<group>"; };
+		8692A8D91AEBBC190005BCA4 /* Billing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Billing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8692A8DC1AEBBC1A0005BCA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8692A8DD1AEBBC1A0005BCA4 /* Billing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Billing.h; sourceTree = "<group>"; };
+		8692A8E31AEBBC1A0005BCA4 /* BillingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BillingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8692A8EB1AEBBC1A0005BCA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8692A8EC1AEBBC1A0005BCA4 /* BillingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingTests.swift; sourceTree = "<group>"; };
 		86A4D3141AEACBF900477C07 /* BrightFutures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BrightFutures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A4D3171AEACBF900477C07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A4D3181AEACBF900477C07 /* BrightFutures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrightFutures.h; sourceTree = "<group>"; };
 		86A4D31E1AEACBF900477C07 /* BrightFuturesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrightFuturesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A4D3261AEACBF900477C07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A4D3271AEACBF900477C07 /* BrightFuturesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightFuturesTests.swift; sourceTree = "<group>"; };
-		86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillingHandlerDelegate.swift; sourceTree = "<group>"; };
+		86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BillingHandlerDelegate.swift; path = ../Bigu/BillingHandlerDelegate.swift; sourceTree = "<group>"; };
 		86A88A901AE27F07009A4ABD /* RootUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUser.swift; sourceTree = "<group>"; };
 		86A92D991AB863E900B38445 /* Bigu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bigu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A92D9D1AB863E900B38445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -567,6 +600,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8692A8D51AEBBC190005BCA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A8E01AEBBC1A0005BCA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8692A8E41AEBBC1A0005BCA4 /* Billing.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		86A4D3101AEACBF900477C07 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -591,6 +639,7 @@
 				86CD07A01AEADF65006B6CE1 /* UserDetailViewController.framework in Frameworks */,
 				86CD07521AEADE3A006B6CE1 /* UsersViewController.framework in Frameworks */,
 				8626E33C1AEAED3C003872A2 /* DarkThemedViewController.framework in Frameworks */,
+				8692A8F01AEBBC1A0005BCA4 /* Billing.framework in Frameworks */,
 				864D843D1AEADABB0046C2C0 /* Collection.framework in Frameworks */,
 				86A4D32B1AEACBF900477C07 /* BrightFutures.framework in Frameworks */,
 				860B11FF1AEBB81C00D80E25 /* AbstractUser.framework in Frameworks */,
@@ -797,8 +846,9 @@
 			children = (
 				860B11E91AEBB81C00D80E25 /* AbstractUser */,
 				860B11F81AEBB81C00D80E25 /* AbstractUserTests */,
+				8692A8DA1AEBBC190005BCA4 /* Billing */,
+				8692A8E91AEBBC1A0005BCA4 /* BillingTests */,
 				86A78EEB1ACD86FB009BBF58 /* User */,
-				86A78EE91ACD86C9009BBF58 /* Billing */,
 				860B392C1AE32D3300D34896 /* Ride */,
 				86A78EEA1ACD86DB009BBF58 /* Persistence */,
 				864AEA221AEACD85009147D9 /* Models.h */,
@@ -983,6 +1033,44 @@
 			path = ../Bigu;
 			sourceTree = "<group>";
 		};
+		8692A8DA1AEBBC190005BCA4 /* Billing */ = {
+			isa = PBXGroup;
+			children = (
+				86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */,
+				86202E6C1AE2A7D500293B79 /* Bill.swift */,
+				8692A8DD1AEBBC1A0005BCA4 /* Billing.h */,
+				8692A8DB1AEBBC190005BCA4 /* Supporting Files */,
+			);
+			name = Billing;
+			path = ../Billing;
+			sourceTree = "<group>";
+		};
+		8692A8DB1AEBBC190005BCA4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8692A8DC1AEBBC1A0005BCA4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8692A8E91AEBBC1A0005BCA4 /* BillingTests */ = {
+			isa = PBXGroup;
+			children = (
+				8692A8EC1AEBBC1A0005BCA4 /* BillingTests.swift */,
+				8692A8EA1AEBBC1A0005BCA4 /* Supporting Files */,
+			);
+			name = BillingTests;
+			path = ../BillingTests;
+			sourceTree = "<group>";
+		};
+		8692A8EA1AEBBC1A0005BCA4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8692A8EB1AEBBC1A0005BCA4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		86A4D3151AEACBF900477C07 /* BrightFutures */ = {
 			isa = PBXGroup;
 			children = (
@@ -1023,16 +1111,6 @@
 				86A4D3261AEACBF900477C07 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		86A78EE91ACD86C9009BBF58 /* Billing */ = {
-			isa = PBXGroup;
-			children = (
-				86A78EE71ACD8231009BBF58 /* BillingHandlerDelegate.swift */,
-				86202E6C1AE2A7D500293B79 /* Bill.swift */,
-			);
-			name = Billing;
-			path = ../Bigu;
 			sourceTree = "<group>";
 		};
 		86A78EEA1ACD86DB009BBF58 /* Persistence */ = {
@@ -1102,6 +1180,8 @@
 				8626E32F1AEAED3B003872A2 /* DarkThemedViewControllerTests.xctest */,
 				860B11E81AEBB81C00D80E25 /* AbstractUser.framework */,
 				860B11F21AEBB81C00D80E25 /* AbstractUserTests.xctest */,
+				8692A8D91AEBBC190005BCA4 /* Billing.framework */,
+				8692A8E31AEBBC1A0005BCA4 /* BillingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1358,6 +1438,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8692A8D61AEBBC190005BCA4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8692A8DE1AEBBC1A0005BCA4 /* Billing.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		86A4D3111AEACBF900477C07 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1586,6 +1674,43 @@
 			productReference = 8651376A1AEADBCF00CB2A63 /* RGBColorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8692A8D81AEBBC190005BCA4 /* Billing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8692A8F61AEBBC1A0005BCA4 /* Build configuration list for PBXNativeTarget "Billing" */;
+			buildPhases = (
+				8692A8D41AEBBC190005BCA4 /* Sources */,
+				8692A8D51AEBBC190005BCA4 /* Frameworks */,
+				8692A8D61AEBBC190005BCA4 /* Headers */,
+				8692A8D71AEBBC190005BCA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Billing;
+			productName = Billing;
+			productReference = 8692A8D91AEBBC190005BCA4 /* Billing.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8692A8E21AEBBC1A0005BCA4 /* BillingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8692A8F71AEBBC1A0005BCA4 /* Build configuration list for PBXNativeTarget "BillingTests" */;
+			buildPhases = (
+				8692A8DF1AEBBC1A0005BCA4 /* Sources */,
+				8692A8E01AEBBC1A0005BCA4 /* Frameworks */,
+				8692A8E11AEBBC1A0005BCA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8692A8E61AEBBC1A0005BCA4 /* PBXTargetDependency */,
+				8692A8E81AEBBC1A0005BCA4 /* PBXTargetDependency */,
+			);
+			name = BillingTests;
+			productName = BillingTests;
+			productReference = 8692A8E31AEBBC1A0005BCA4 /* BillingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		86A4D3131AEACBF900477C07 /* BrightFutures */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 86A4D3331AEACBF900477C07 /* Build configuration list for PBXNativeTarget "BrightFutures" */;
@@ -1645,6 +1770,7 @@
 				86CD07D51AEAE161006B6CE1 /* PBXTargetDependency */,
 				8626E33B1AEAED3C003872A2 /* PBXTargetDependency */,
 				860B11FE1AEBB81C00D80E25 /* PBXTargetDependency */,
+				8692A8EF1AEBBC1A0005BCA4 /* PBXTargetDependency */,
 			);
 			name = Bigu;
 			productName = Bigu;
@@ -1866,6 +1992,14 @@
 						CreatedOnToolsVersion = 6.3;
 						TestTargetID = 86A92D981AB863E900B38445;
 					};
+					8692A8D81AEBBC190005BCA4 = {
+						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = LBFUFN3H7E;
+					};
+					8692A8E21AEBBC1A0005BCA4 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 86A92D981AB863E900B38445;
+					};
 					86A4D3131AEACBF900477C07 = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = LBFUFN3H7E;
@@ -1951,6 +2085,8 @@
 				8626E32E1AEAED3B003872A2 /* DarkThemedViewControllerTests */,
 				860B11E71AEBB81C00D80E25 /* AbstractUser */,
 				860B11F11AEBB81C00D80E25 /* AbstractUserTests */,
+				8692A8D81AEBBC190005BCA4 /* Billing */,
+				8692A8E21AEBBC1A0005BCA4 /* BillingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -2020,6 +2156,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		865137681AEADBCF00CB2A63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A8D71AEBBC190005BCA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A8E11AEBBC1A0005BCA4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2179,8 +2329,6 @@
 				864AEA491AEACF46009147D9 /* DataPersistenceDelegate.swift in Sources */,
 				864AEA471AEACF37009147D9 /* Ride.swift in Sources */,
 				864AEA3E1AEACE9B009147D9 /* User.swift in Sources */,
-				864AEA461AEACF2E009147D9 /* Bill.swift in Sources */,
-				864AEA451AEACF2E009147D9 /* BillingHandlerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2221,6 +2369,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				865137741AEADBCF00CB2A63 /* RGBColorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A8D41AEBBC190005BCA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8692A8F91AEBBC260005BCA4 /* Bill.swift in Sources */,
+				8692A8F81AEBBC260005BCA4 /* BillingHandlerDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8692A8DF1AEBBC1A0005BCA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8692A8ED1AEBBC1A0005BCA4 /* BillingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2417,6 +2582,21 @@
 			isa = PBXTargetDependency;
 			target = 8651375F1AEADBCF00CB2A63 /* RGBColor */;
 			targetProxy = 865137751AEADBCF00CB2A63 /* PBXContainerItemProxy */;
+		};
+		8692A8E61AEBBC1A0005BCA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A8D81AEBBC190005BCA4 /* Billing */;
+			targetProxy = 8692A8E51AEBBC1A0005BCA4 /* PBXContainerItemProxy */;
+		};
+		8692A8E81AEBBC1A0005BCA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A92D981AB863E900B38445 /* Bigu */;
+			targetProxy = 8692A8E71AEBBC1A0005BCA4 /* PBXContainerItemProxy */;
+		};
+		8692A8EF1AEBBC1A0005BCA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A8D81AEBBC190005BCA4 /* Billing */;
+			targetProxy = 8692A8EE1AEBBC1A0005BCA4 /* PBXContainerItemProxy */;
 		};
 		86A4D3211AEACBF900477C07 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2953,6 +3133,94 @@
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = RGBColorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
+			};
+			name = Release;
+		};
+		8692A8F21AEBBC1A0005BCA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Billing/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8692A8F31AEBBC1A0005BCA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = Billing/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8692A8F41AEBBC1A0005BCA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BillingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
+			};
+			name = Debug;
+		};
+		8692A8F51AEBBC1A0005BCA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BillingTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3631,6 +3899,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8692A8F61AEBBC1A0005BCA4 /* Build configuration list for PBXNativeTarget "Billing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8692A8F21AEBBC1A0005BCA4 /* Debug */,
+				8692A8F31AEBBC1A0005BCA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8692A8F71AEBBC1A0005BCA4 /* Build configuration list for PBXNativeTarget "BillingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8692A8F41AEBBC1A0005BCA4 /* Debug */,
+				8692A8F51AEBBC1A0005BCA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		86A4D3331AEACBF900477C07 /* Build configuration list for PBXNativeTarget "BrightFutures" */ = {
 			isa = XCConfigurationList;

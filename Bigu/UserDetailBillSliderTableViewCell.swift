@@ -9,6 +9,7 @@
 import UIKit
 import Models
 import AbstractUser
+import Billing
 
 internal class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandlerDelegate {
     

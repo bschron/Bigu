@@ -9,6 +9,7 @@
 import UIKit
 import AbstractUser
 import Models
+import Billing
 
 internal class UserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell, BillingHandlerDelegate {
     

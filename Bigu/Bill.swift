@@ -12,7 +12,7 @@ public class Bill {
     
     // MARK: -Properties
     private var _bill: Float? = nil
-    private(set) var bill: Float {
+    public private(set) var bill: Float {
         get {
             return self._bill != nil ? self._bill! : 0
         }
@@ -30,13 +30,11 @@ public class Bill {
     
     // MARK: -Methods
     public func payBill () {
-        RootUser.singleton.savings += self.bill
         self._bill = 0;
         self.handler?.updateBillingUI()
     }
     
     public func payPartialBill (payingValue value: Float) {
-        RootUser.singleton.savings += value
         self.bill -= value
         self.handler?.updateBillingUI()
     }
