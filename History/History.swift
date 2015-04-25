@@ -27,7 +27,6 @@ public class History {
         
         self.rideHistory.registerToAvailableId()
         self.registerSelfId()
-        History.idList.insert(self.id)
     }
     
     public init(fromId id: Int) {
@@ -50,20 +49,30 @@ public class History {
         self.rideHistory = selfRides
         self.extractHistory = selfExtracts
         self.registerSelfId()
+        
+        // if it's the singleton History
+        if self.id == 0 {
+            self.registerToPersistence()
+        }
     }
     
     internal init(fromDictionary dic: [NSString: NSObject]) {
         
+        let id = dic[History.idKey] as! Int
         let rideHistoryId = dic[History.rideIdKey] as! Int
-        let extractsDateListOptionalArray = dic[History.extractsDateListKey] as? Array<NSDate>
+        let optionalExtractsDateListKey = dic[History.extractsDateListKeyKey] as? String
         
-        self.id = dic[History.idKey] as! Int
+        self.id = id
         self.rideHistory = RideListManager(loadFromId: rideHistoryId)
         self.extractHistory = OrderedList<Extract>(isOrderedBefore: History.extractListDefaultOrder)
         
-        if let dates = extractsDateListOptionalArray {
-            let extracts = loadExtractHistory(extractsForDateLists: dates)
-            self.extractHistory.insert(extracts)
+        if let extractsKey = optionalExtractsDateListKey {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            let extractsDateListOptionalArray = defaults.objectForKey(extractsKey) as? Array<NSDate>
+            if let dates = extractsDateListOptionalArray {
+                let extracts = loadExtractHistory(extractsForDateLists: dates)
+                self.extractHistory.insert(extracts)
+            }
         }
     }
     
@@ -72,7 +81,7 @@ public class History {
         
         dic[History.idKey] = self.id
         dic[History.rideIdKey] = self.rideHistory.id
-        dic[History.extractsDateListKey] = self.makeExtractDatesList()
+        dic[History.extractsDateListKeyKey] = History.extractHistoryKey(extractForHistoryWithId: self.id)
         
         return dic
     }
@@ -163,9 +172,6 @@ public class History {
     }
     
     // MARK: -Class Properties and Functions
-    private struct wrap {
-        static var shoudLoadIdList: Bool = true
-    }
     class public var singleton: History {
         struct wrap {
             static let history = History(fromId: 0)
@@ -182,8 +188,8 @@ public class History {
     class private var rideIdKey: String {
         return "HistoryRideIdKey"
     }
-    class private var extractsDateListKey: String {
-        return "HistoryExtractsDateListKey"
+    class private var extractsDateListKeyKey: String {
+        return "HistoryDateListKeyKey"
     }
     class private func extractKey(extractForDate date: NSDate) -> String {
         return "HistoryExtractKey \(date)"
@@ -191,12 +197,15 @@ public class History {
     class private func historyKey(historyForId id: Int) -> String {
         return "HistoryWithId: \(id)"
     }
+    class private func extractHistoryKey(extractForHistoryWithId id: Int) -> String {
+        return "HistoryExtractListWithId \(id)"
+    }
     class private var extractListDefaultOrder: (Extract, Extract) -> Bool {
         return {$0.secondsSinceOcurrence > $1.secondsSinceOcurrence}
     }
     class private var idList: OrderedList<Int> {
         struct wrap {
-            static var list = OrderedList<Int>(isOrderedBefore: { $0 > $1 })
+            static var list = History.idListLoad()
         }
         return wrap.list
     }
@@ -208,19 +217,17 @@ public class History {
         
         return defaults.synchronize()
     }
-    class internal func idListLoad() {
-        if !History.wrap.shoudLoadIdList {
-            return
-        }
+    class internal func idListLoad() -> OrderedList<Int> {
         
         let defaults = NSUserDefaults.standardUserDefaults()
         let array = defaults.objectForKey(History.historyIdListKey) as? Array<Int>
+        let list = OrderedList<Int>(isOrderedBefore: { $0 < $1 })
         
-        //History.idList.clearList()
         if array != nil {
-            History.idList.insert(array!)
+            list.insert(array!)
         }
-        History.wrap.shoudLoadIdList = false
+        
+        return list
     }
     class private func firstAvailableId() -> Int {
         var firstAvailableId: Int?

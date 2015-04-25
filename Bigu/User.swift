@@ -52,6 +52,7 @@ public class User: AbstractUser {
         }
         
         super.init(fromDictionary: dic)
+        self.history.registerToPersistence()
     }
     
     override public func toDictionary() -> [NSString : NSObject] {

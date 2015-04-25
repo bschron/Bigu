@@ -82,7 +82,7 @@ internal class HistoryPersistenceManager: DataPersistenceDelegate {
         let key: String = HistoryPersistenceManager.historyKey(keyForId: id)
         let history: History?
         
-        let optionalDictionary = defaults.objectForKey(key) as? [NSString: NSDictionary]
+        let optionalDictionary = defaults.objectForKey(key) as? [NSString: NSObject]
         
         if let dictionary = optionalDictionary {
             history = History(fromDictionary: dictionary)
