@@ -26,12 +26,12 @@ internal class UserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell,
     }
     
     // MARK: Outlets
-    @IBOutlet weak var billLabel: UILabel!
-    @IBOutlet weak var decreaseButton: UIButton!
-    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak private var billLabel: UILabel!
+    @IBOutlet weak private var decreaseButton: UIButton!
+    @IBOutlet weak private var resetButton: UIButton!
     
     // MARK: -Methods
-    func updateBillingUI() {
+    internal func updateBillingUI() {
         
         self.billLabel.text = "\(self.downcastedUser.billValue)"
         if self.downcastedUser.billValue <= 0 {
@@ -44,12 +44,12 @@ internal class UserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell,
         }
     }
     
-    func registerAsBillingHandler() {
+    internal func registerAsBillingHandler() {
         self.downcastedUser.registerAsBillHandler(self)
     }
     
     // MARK: Actions
-    @IBAction func decreaseButtonPressed(sender: AnyObject) {
+    @IBAction private func decreaseButtonPressed(sender: AnyObject) {
         let curBill: Float = self.downcastedUser.billValue
         if curBill != 0 && !self.downcastedViewController.billSlider {
             self.downcastedViewController.billSlider = true
@@ -60,14 +60,14 @@ internal class UserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell,
             self.downcastedViewController.billSliderCell?.destroy()
         }
     }
-    @IBAction func resetButtonPressed(sender: AnyObject) {
+    @IBAction private func resetButtonPressed(sender: AnyObject) {
         self.downcastedUser.payBill()
         self.registerAsBillingHandler()
         self.downcastedViewController.billSliderCell?.destroy()
     }
     
     // MARK; -Class Properties and Methods
-    override class var reuseId: String {
+    override internal class var reuseId: String {
         return "UserDetailMainCellIdentifier"
     }
 }

@@ -9,50 +9,50 @@
 import UIKit
 import Models
 
-internal class UserDetailLastNameTableViewCell: UITableViewCell, UserHandlingDelegate {
+public class UserDetailLastNameTableViewCell: UITableViewCell, UserHandlingDelegate {
     
     // MARK: - Properties
-    var user: AbstractUser! {
+    public var user: AbstractUser! {
         didSet {
             self.reloadUsersData()
         }
     }
-    var userDetailViewController: UserHandlingDelegate!
+    public var userDetailViewController: UserHandlingDelegate!
     
     // MARK: Outlets
     @IBOutlet weak var textField: UITextField!
     
     // MARK: - Methods
     
-    override func awakeFromNib() {
+    override public func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override public func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
     }
     
-    func reloadUsersData() {
+    public func reloadUsersData() {
         self.textField.text = self.user.surName
     }
     
     // MARK: Actions
-    @IBAction func editingDidEnd(sender: AnyObject) {
+    @IBAction private func editingDidEnd(sender: AnyObject) {
         let newValue = self.textField.text
         self.user.surName = newValue
         if userDetailViewController != nil {
             userDetailViewController.reloadUsersData()
         }
     }
-    @IBAction func dismissKeyboard(sender: AnyObject) {
+    @IBAction private func dismissKeyboard(sender: AnyObject) {
         sender.resignFirstResponder()
     }
     
     // MARK: -Class Properties and Methods
-    class var reuseId: String {
+    class public var reuseId: String {
         return "UserDetailLastNameIdentifier"
     }
     

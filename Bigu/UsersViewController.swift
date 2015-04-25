@@ -10,7 +10,7 @@ import UIKit
 import Models
 import UserDetailViewController
 
-class UsersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UserHandlingDelegate {
+public class UsersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UserHandlingDelegate {
 
     // MARK: - Proprierties
     private weak var popUp: NewUserPopUp?
@@ -19,7 +19,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var usersTableView: UITableView!
     
     // MARK: - Methods
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -39,12 +39,12 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
             object: app)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override public func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.reloadUsersData()
     }
 
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         UserList.freeSingleton(nil)
@@ -84,14 +84,14 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         })*/
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    override public func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         if let pop = self.popUp {
             pop.transitionToSize(size)
         }
     }
     
     // MARK: Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == UsersViewController.userDetailSegueIdentifier {
             let vc = segue.destinationViewController as! UserDetailViewController
             let senderCell = sender as! UserCell
@@ -105,10 +105,10 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     // MARK: -Protocols
     
     // MARK: TableViewDataSource
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return UserList.sharedUserList.list.count
     }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = usersTableView.dequeueReusableCellWithIdentifier(UserCell.userCellReuseId, forIndexPath: indexPath) as! UserCell
         cell.user = UserList.sharedUserList.list.getElementAtIndex(indexPath.row)!
@@ -119,10 +119,10 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     // MARK: TableViewDelegate
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return CGFloat(80)
     }
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    public func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         var result: Bool!
         
         if tableView === self.usersTableView {
@@ -134,7 +134,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         return result
     }
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if tableView === self.usersTableView {
             if editingStyle == .Delete {
                 User.removeUserAtRow(indexPath.row)
@@ -142,10 +142,10 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
             }
         }
     }
-    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    public func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let row = indexPath.row
         
         let cell = self.usersTableView.cellForRowAtIndexPath(indexPath)
@@ -154,7 +154,7 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     // MARK: UserHandlingDelegate
-    func reloadUsersData() {
+    public func reloadUsersData() {
         self.usersTableView.reloadData()
     }
     

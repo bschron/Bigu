@@ -21,7 +21,7 @@ public class UserDetailViewController: AbstractUserDetailViewController {
     private var expensiveUserIndex: Int {
         return User.usersList.list.getObjectIndex(indexFor: self.downcastedUser, compareBy: { $0.id == self.user.id })!
     }
-    var billSlider: Bool = false
+    internal var billSlider: Bool = false
     
     // MARK: Outlets
     weak var billSliderCell: UserDetailBillSliderTableViewCell?

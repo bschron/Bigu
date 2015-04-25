@@ -16,7 +16,7 @@ public class UserPersistenceManager: DataPersistenceDelegate {
     
     // MARK: - Methods
     
-    init() {
+    public init() {
         PersistenceManager.singleton.registerAsManager(self)
     }
     

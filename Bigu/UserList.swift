@@ -15,19 +15,19 @@ public class UserList {
     // MARK: -Properties
     public private(set) var list: OrderedList<User> = OrderedList<User>(isOrderedBefore: { $0.id < $1.id })
     public private(set) var erasedUsersList: OrderedList<ErasedUser> = OrderedList<ErasedUser>(isOrderedBefore: { $0.erasedAt.timeIntervalSinceNow > $1.erasedAt.timeIntervalSinceNow })
-    var order: ((User,User) -> Bool)! {
+    internal var order: ((User,User) -> Bool)! {
         didSet {
             self.list.order = self.order
         }
     }
-    let defaultOrder: (User, User) -> Bool = { $0.id < $1.id }
-    var isLoading: Bool = false
+    private let defaultOrder: (User, User) -> Bool = { $0.id < $1.id }
+    internal var isLoading: Bool = false
     
     // MARK: -Methods
-    init() {
+    public init() {
         self.order = self.defaultOrder
     }
-    init(userArray: [User]) {
+    public init(userArray: [User]) {
         self.order = self.defaultOrder
         self.list.insert(userArray)
         // if should save to defaults
@@ -36,7 +36,7 @@ public class UserList {
         }
     }
     
-    func insertUser(newUser: User) {
+    public func insertUser(newUser: User) {
         self.list.insert(newUser)
         // if should save to defaults
         if !isLoading && self === UserList.Singleton.list {
@@ -44,11 +44,11 @@ public class UserList {
         }
     }
     
-    func insertErasedUser(erasedUser: ErasedUser) {
+    public func insertErasedUser(erasedUser: ErasedUser) {
         self.erasedUsersList.insert(erasedUser)
     }
     
-    func removeUserAtIndex(index: Int) {
+    public func removeUserAtIndex(index: Int) {
         if index < self.list.count {
             let toErase = self.list.getElementAtIndex(index)!
             toErase.rideHistory?.unregisterSelfId()
@@ -63,7 +63,7 @@ public class UserList {
         }
     }
     
-    func clearList() {
+    public func clearList() {
         self.list.clearList()
     }
     
@@ -94,7 +94,7 @@ public class UserList {
             return .Success(Box(true))
         })
     }
-    class var singletonWasFreed: Bool {
+    class internal var singletonWasFreed: Bool {
         return UserList.freedWrap.freed
     }
 }

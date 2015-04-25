@@ -39,10 +39,10 @@ public class RootUser: AbstractUser {
     
     // MARK: -Methods
     
-    override init() {
+    override internal init() {
         super.init()
     }
-    override init(fromDictionary dic: [NSString : NSObject]) {
+    override internal init(fromDictionary dic: [NSString : NSObject]) {
         super.init(fromDictionary: dic)
         self.name = dic[RootUser.nameKey] != nil ? dic[RootUser.nameKey] as! String : ""
         self._savings = dic[RootUser.savingsValueKey] as? Float

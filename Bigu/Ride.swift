@@ -13,12 +13,12 @@ public class Ride {
     public let time: NSDate
     public let userId: Int
     public let value: Float
-    var timingSinceOcurrence: NSTimeInterval {
+    public var timingSinceOcurrence: NSTimeInterval {
         return self.time.timeIntervalSinceNow
     }
     
     // MARK: -Methods
-    init (userId: Int, value: Float) {
+    public init (userId: Int, value: Float) {
         self.time = NSDate()
         self.userId = userId
         self.value = value
@@ -32,7 +32,7 @@ public class Ride {
         
     }
     
-    init(dictionary: [NSString: NSObject]) {
+    internal init(dictionary: [NSString: NSObject]) {
         let optionalTime = dictionary[Ride.timeKey] as? NSDate
         let optionalUser = dictionary[Ride.userKey] as? Int
         let optionalValue = dictionary[Ride.valueKey] as? Float
@@ -42,7 +42,7 @@ public class Ride {
         self.value = optionalValue != nil ? optionalValue! : 0
     }
     
-    func toDictionary() -> [NSString: NSObject] {
+    public func toDictionary() -> [NSString: NSObject] {
         var dictionary = [NSString: NSObject]()
         dictionary[Ride.userKey] = self.userId
         dictionary[Ride.timeKey] = self.time

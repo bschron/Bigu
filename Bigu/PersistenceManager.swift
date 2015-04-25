@@ -17,7 +17,7 @@ public class PersistenceManager {
     
     // MARK: -Methods
     
-    func registerAsManager(manager: DataPersistenceDelegate) {
+    public func registerAsManager(manager: DataPersistenceDelegate) {
         self.managersList += [manager]
     }
     

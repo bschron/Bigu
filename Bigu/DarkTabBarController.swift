@@ -9,8 +9,8 @@
 import UIKit
 import RGBColor
 
-class DarkTabBarController: UITabBarController {
-    override func viewDidLoad() {
+public class DarkTabBarController: UITabBarController {
+    override public func viewDidLoad() {
         //self.tabBar.barTintColor = UIColor.blackColor()
         self.tabBar.barStyle = UIBarStyle.Black
         self.tabBar.tintColor = RGBColor(r: 76, g: 153, b: 107, alpha: 1)

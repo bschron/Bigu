@@ -9,7 +9,7 @@
 import UIKit
 import Models
 
-class NewUserPopUp: UIView {
+internal class NewUserPopUp: UIView {
 
     // MARK: - Properties
     private var view: UIView!
@@ -31,13 +31,13 @@ class NewUserPopUp: UIView {
     @IBOutlet weak var header: UIView!
     
     
-    var nibName: String {
+    internal var nibName: String {
         return "NewUserPopUp"
     }
     
     // MARK: - Methods
     
-    func xibSetup() {
+    private func xibSetup() {
         view = loadViewFromNib()
         
         // use bounds not frame or it'll be offset
@@ -57,7 +57,7 @@ class NewUserPopUp: UIView {
         addSubview(view)
     }
     
-    func loadViewFromNib() -> UIView {
+    private func loadViewFromNib() -> UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: self.nibName, bundle: bundle)
         
@@ -66,24 +66,24 @@ class NewUserPopUp: UIView {
         return view
     }
     
-    override init(frame: CGRect) {
+    override internal init(frame: CGRect) {
         super.init(frame: frame)
         self.xibSetup()
     }
     
-    init(frame: CGRect, aViewController vc: UsersViewController, aHandler handler: UserHandlingDelegate?) {
+    internal init(frame: CGRect, aViewController vc: UsersViewController, aHandler handler: UserHandlingDelegate?) {
         super.init(frame: frame)
         self.xibSetup()
         self.viewController = vc
         self.usersHandler = handler
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required internal init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.xibSetup()
     }
     
-    func terminate() {
+    internal func terminate() {
         if !self.isBeingTerminated {
             self.isBeingTerminated = true
             UIView.animateWithDuration(0.25
@@ -98,14 +98,14 @@ class NewUserPopUp: UIView {
         }
     }
     
-    func transitionToSize(size: CGSize) {
+    internal func transitionToSize(size: CGSize) {
         self.frame.size = size
         if self.blurView != nil {
             self.blurView!.frame.size = size
         }
     }
     
-    func tryToAddUserWithProvidedInfo() -> Bool {
+    internal func tryToAddUserWithProvidedInfo() -> Bool {
         let result: Bool!
         
         if nameTextField.text != "" {
@@ -141,7 +141,7 @@ class NewUserPopUp: UIView {
     }
     
     // MARK: - Class Methods
-    class func addPopUpToView (aViewController vc: UsersViewController, usersHandler handler: UserHandlingDelegate?) -> UIView {
+    class internal func addPopUpToView (aViewController vc: UsersViewController, usersHandler handler: UserHandlingDelegate?) -> UIView {
 
         let aView = vc.view
         let frame = aView.frame

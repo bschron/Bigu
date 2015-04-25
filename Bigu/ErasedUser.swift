@@ -19,10 +19,10 @@ public class ErasedUser: User {
             super.userImage = nil
         }
     }
-    let erasedAt: NSDate
+    public let erasedAt: NSDate
     
     // MARK: - Methods
-    init(id: Int, name: String, surName: String?, nickName: String?, erasedAt at: NSDate) {
+    internal init(id: Int, name: String, surName: String?, nickName: String?, erasedAt at: NSDate) {
         self.erasedAt = at
         super.init(withid: id)
         self.name = name
@@ -30,7 +30,7 @@ public class ErasedUser: User {
         self.nickName = nickName != nil ? nickName! : ""
     }
     
-    override init(fromDictionary dic: [NSString : NSObject]) {
+    override internal init(fromDictionary dic: [NSString : NSObject]) {
         let optionalErasedAt = dic[ErasedUser.erasedAtKey] as? NSDate
         self.erasedAt = optionalErasedAt != nil ? optionalErasedAt! : NSDate()
         let id = dic[User.userIdKey] as? Int
@@ -62,7 +62,7 @@ public class ErasedUser: User {
     class private var erasedAtKey: String {
         return "ErasingDateKey"
     }
-    class var erasedUserImage: UIImage {
+    class internal var erasedUserImage: UIImage {
         struct wrap {
             static let image: UIImage = UIImage(named: "greenThumbsdown")!
         }

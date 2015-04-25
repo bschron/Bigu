@@ -23,7 +23,7 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
         return self.mainCell as! RootUserDetailMainTableViewCell
     }
     private var firstRun: Bool = true
-    var shouldDisplayTaxValueCell: Bool = false {
+    internal var shouldDisplayTaxValueCell: Bool = false {
         didSet {
             if self.shouldDisplayTaxValueCell {
                 self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
@@ -170,7 +170,7 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
             }
         }
     }
-    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    public func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 && indexPath.row == 1 {
             let newTaxValue = taxValueCell?.getTaxPickerValue()
             if let value = newTaxValue {

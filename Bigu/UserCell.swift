@@ -12,11 +12,11 @@ import Models
 import RGBColor
 import FakeSeparator
 
-class UserCell: UITableViewCell {
+internal class UserCell: UITableViewCell {
 
     // MARK: - Properties
-    var configured: Bool = false
-    var user: User! {
+    internal var configured: Bool = false
+    internal var user: User! {
         didSet {
             if user != nil {
                 self.configured = true
@@ -29,8 +29,8 @@ class UserCell: UITableViewCell {
     private var userImageOriginalPosition: (CGFloat, CGFloat) = (CGFloat(0), CGFloat(0))
     private var userImagePanGestureIsActive: Bool = false
     private var invisibleUserImageViewCover: UIView!
-    var viewController: UIViewController!
-    var userIndex: Int = 0 {
+    internal var viewController: UIViewController!
+    internal var userIndex: Int = 0 {
         didSet {
             self.user = User.usersList.list.getElementAtIndex(self.userIndex)!
         }
@@ -38,17 +38,17 @@ class UserCell: UITableViewCell {
     
     
     //MARK: Outlets
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var fullnameLabel: UILabel!
-    @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak private var nameLabel: UILabel!
+    @IBOutlet weak private var fullnameLabel: UILabel!
+    @IBOutlet weak private var userImageView: UIImageView!
     
     // MARK: - Methods
     
-    required init(coder aDecoder: NSCoder) {
+    required internal init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    override func awakeFromNib() {
+    override internal func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         updateUserInfo()
@@ -74,7 +74,7 @@ class UserCell: UITableViewCell {
         FakeSeparator(forView: self)
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override internal func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
@@ -89,7 +89,7 @@ class UserCell: UITableViewCell {
         }
     }
     
-    func moveUserImage(sender: UIPanGestureRecognizer) {
+    internal func moveUserImage(sender: UIPanGestureRecognizer) {
         if sender.state != .Ended && sender.state != .Failed {
             self.userImagePanGestureIsActive = true
             let location = sender.locationInView(self)
@@ -135,7 +135,7 @@ class UserCell: UITableViewCell {
     }
     
     // MARK: Actions
-    @IBAction func debitButtonPressed(sender: AnyObject) {
+    @IBAction private func debitButtonPressed(sender: AnyObject) {
         User.usersList.list.getElementAtIndex(self.userIndex)!.increaseBill()
         //Animation
         let duration = 0.3
@@ -174,7 +174,7 @@ class UserCell: UITableViewCell {
     }
     
     // MARK: - Class Methods and Properties
-    class var userCellReuseId: String {
+    class internal var userCellReuseId: String {
         return "userCellReuseId"
     }
 }

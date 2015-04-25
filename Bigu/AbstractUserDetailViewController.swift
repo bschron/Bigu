@@ -46,7 +46,7 @@ public class AbstractUserDetailViewController: UIViewController, UserHandlingDel
     }
     
     
-    func displayPhotoLibraryPicker () {
+    internal func displayPhotoLibraryPicker () {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary

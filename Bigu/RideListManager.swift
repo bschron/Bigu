@@ -39,13 +39,13 @@ public class RideListManager: DataPersistenceDelegate {
         }
     }
     
-    init() {
+    public init() {
         self.singleton = false
         self.list = OrderedList<Ride>(isOrderedBefore: RideListManager.defaultOrder)
         PersistenceManager.singleton.registerAsManager(self)
     }
     
-    init(loadFromId id: Int) {
+    public init(loadFromId id: Int) {
         self.singleton = false
         self.id = id
         self.list = OrderedList<Ride>(isOrderedBefore: RideListManager.defaultOrder)
@@ -64,7 +64,7 @@ public class RideListManager: DataPersistenceDelegate {
         return array
     }
     
-    func registerId(id: Int) -> Bool {
+    public func registerId(id: Int) -> Bool {
         let result: Bool!
         
         if id < 0 {
@@ -82,7 +82,7 @@ public class RideListManager: DataPersistenceDelegate {
         return result
     }
     
-    func registerToAvailableId() {
+    public func registerToAvailableId() {
         var firstAvailableId: Int?
         
         var last: Int = 0
@@ -101,7 +101,7 @@ public class RideListManager: DataPersistenceDelegate {
         self.registerId(firstAvailableId!)
     }
     
-    func unregisterSelfId() {
+    public func unregisterSelfId() {
         if self.id != -1 {
             RideListManager.idList.removeObject({ $0 == self.id })
             
@@ -112,7 +112,7 @@ public class RideListManager: DataPersistenceDelegate {
         }
     }
     
-    func insertNewRide(ride: Ride) {
+    public func insertNewRide(ride: Ride) {
         self.list.insert(ride)
     }
     
@@ -226,7 +226,7 @@ public class RideListManager: DataPersistenceDelegate {
             RideListManager.shouldLoadIdListWrap.shouldLoadIdList = false
         }
     }
-    class var greaterId: Int {
+    class internal var greaterId: Int {
         RideListManager.rideListIdsPersistenceLoad()
         let greater = RideListManager.idList.getLastObject()
         return greater != nil ? (greater! + 1) : 1

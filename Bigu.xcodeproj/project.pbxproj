@@ -118,20 +118,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		861C250A1AE0A7090081E9E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 861C25051AE0A7090081E9E8 /* BrightFutures.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E9DF0815194470060083F7F2;
-			remoteInfo = BrightFutures;
-		};
-		861C250C1AE0A7090081E9E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 861C25051AE0A7090081E9E8 /* BrightFutures.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E9DF0820194470060083F7F2;
-			remoteInfo = BrightFuturesTests;
-		};
 		8626E3311AEAED3B003872A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
@@ -362,7 +348,6 @@
 		860B392D1AE32D4500D34896 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
 		860B39331AE33E7100D34896 /* OrderedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedList.swift; sourceTree = "<group>"; };
 		860B39381AE3BD3F00D34896 /* RideListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideListManager.swift; sourceTree = "<group>"; };
-		861C25051AE0A7090081E9E8 /* BrightFutures.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BrightFutures.xcodeproj; path = BrightFutures/BrightFutures.xcodeproj; sourceTree = "<group>"; };
 		86202E6C1AE2A7D500293B79 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		8624B86A1ACD71F600A60985 /* DataPersistenceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersistenceDelegate.swift; sourceTree = "<group>"; };
 		8626E3251AEAED3B003872A2 /* DarkThemedViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DarkThemedViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -652,15 +637,6 @@
 			);
 			name = OrderedList;
 			path = ../Bigu;
-			sourceTree = "<group>";
-		};
-		861C25061AE0A7090081E9E8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				861C250B1AE0A7090081E9E8 /* BrightFutures.framework */,
-				861C250D1AE0A7090081E9E8 /* BrightFuturesTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		8626E3261AEAED3B003872A2 /* DarkThemedViewController */ = {
@@ -999,7 +975,6 @@
 		86A92D901AB863E900B38445 = {
 			isa = PBXGroup;
 			children = (
-				861C25051AE0A7090081E9E8 /* BrightFutures.xcodeproj */,
 				86A92D9B1AB863E900B38445 /* Bigu */,
 				86CD07351AEADDFC006B6CE1 /* ViewsAndControlllers */,
 				864AEA1F1AEACD85009147D9 /* Models */,
@@ -1809,12 +1784,6 @@
 			mainGroup = 86A92D901AB863E900B38445;
 			productRefGroup = 86A92D9A1AB863E900B38445 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 861C25061AE0A7090081E9E8 /* Products */;
-					ProjectRef = 861C25051AE0A7090081E9E8 /* BrightFutures.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				86A92D981AB863E900B38445 /* Bigu */,
@@ -1840,23 +1809,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		861C250B1AE0A7090081E9E8 /* BrightFutures.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = BrightFutures.framework;
-			remoteRef = 861C250A1AE0A7090081E9E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		861C250D1AE0A7090081E9E8 /* BrightFuturesTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = BrightFuturesTests.xctest;
-			remoteRef = 861C250C1AE0A7090081E9E8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8626E3231AEAED3B003872A2 /* Resources */ = {

@@ -17,29 +17,29 @@ internal class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandle
             self.updateBillingUI()
         }
     }
-    var mainCell: UserHandlingDelegate!
-    var viewController: UserDetailViewController!
+    internal var mainCell: UserHandlingDelegate!
+    internal var viewController: UserDetailViewController!
     private var originalBill: Float!
     private var decreasedValue: Float!
     
     // MARK: Outlets
-    @IBOutlet weak var slider: UISlider!
-    @IBOutlet weak var billValueLabel: UILabel!
+    @IBOutlet private weak var slider: UISlider!
+    @IBOutlet private weak var billValueLabel: UILabel!
 
     // MARK: - Methods
-    override func awakeFromNib() {
+    override internal func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         User.usersList.list.getElementAtIndex(self.userIndex)!.registerAsBillHandler(self)
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override internal func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
-    func updateBillingUI() {
+    internal func updateBillingUI() {
         self.originalBill = User.usersList.list.getElementAtIndex(self.userIndex)!.billValue
         self.slider.maximumValue = originalBill
         self.slider.minimumValue = 0
@@ -47,7 +47,7 @@ internal class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandle
         self.billValueLabel.text = "\(self.originalBill)"
     }
     
-    func zeroValue() {
+    internal func zeroValue() {
         let duration = 0.5
         let delay = 0.0 // delay will be 0.0 seconds (e.g. nothing)
         let options = UIViewAnimationOptions.CurveEaseInOut
@@ -58,7 +58,7 @@ internal class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandle
         })
     }
     
-    func destroy() {
+    internal func destroy() {
         if self.viewController.billSlider {
             self.viewController.billSlider = false
             self.viewController.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
@@ -68,7 +68,7 @@ internal class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandle
     }
     
     // MARK: Actions
-    @IBAction func sliderValueChanged(sender: AnyObject) {
+    @IBAction private func sliderValueChanged(sender: AnyObject) {
         
         let sliderValue = self.slider.value
         let intValue: Int = Int(sliderValue)
@@ -79,13 +79,13 @@ internal class UserDetailBillSliderTableViewCell: UITableViewCell, BillingHandle
         self.decreasedValue = self.originalBill - roundedTotalValue
         self.billValueLabel.text = "\(roundedTotalValue)"
     }
-    @IBAction func submitValueDecrease(sender: AnyObject) {
+    @IBAction private func submitValueDecrease(sender: AnyObject) {
         User.usersList.list.getElementAtIndex(self.userIndex)!.payPartialBill(payingValue: self.decreasedValue)
         self.destroy()
     }
     
     // MARK: -Class Properties and Methods
-    class var reuseId: String {
+    class internal var reuseId: String {
         return "UserDetailTaxSliderCellIdentifier"
     }
 

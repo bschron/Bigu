@@ -12,7 +12,7 @@ import Models
 internal class AbstractUserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
 
     // MARK: - Properties
-    var user: AbstractUser! {
+    internal var user: AbstractUser! {
         didSet {
             self.reloadUsersData()
         }
@@ -35,17 +35,17 @@ internal class AbstractUserDetailMainTableViewCell: UITableViewCell, UserHandlin
         // Configure the view for the selected state
     }
     
-    func reloadUsersData() {
+    internal func reloadUsersData() {
         self.userImageView.image = self.user.userImage
     }
     
     // MARK: Actions
-    @IBAction func loadImage(sender: AnyObject) {
+    @IBAction private func loadImage(sender: AnyObject) {
         self.viewController.displayPhotoLibraryPicker()
     }
     
     // MARK: -Class Properties and Methods
-    class var reuseId: String {
+    class internal var reuseId: String {
         return "AbstractUserDetailMainCellIdentifier"
     }
     

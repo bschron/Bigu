@@ -15,10 +15,10 @@ internal class RootUserDetailMainTableViewCell: AbstractUserDetailMainTableViewC
     private var downcastedUser: RootUser! {
         return self.user as! RootUser
     }
-    private var downcastedViewController: RootUserDetailViewController! {
+    internal var downcastedViewController: RootUserDetailViewController! {
         return self.viewController as! RootUserDetailViewController
     }
-    var taxButtonImage: UIImage {
+    internal var taxButtonImage: UIImage {
         get {
             let image: UIImage!
             if self.downcastedViewController.shouldDisplayTaxValueCell {
@@ -32,28 +32,28 @@ internal class RootUserDetailMainTableViewCell: AbstractUserDetailMainTableViewC
     }
     
     // MARK: Outlets
-    @IBOutlet weak var savingsLabel: UILabel!
-    @IBOutlet weak var taxValueButton: UIButton!
+    @IBOutlet private weak var savingsLabel: UILabel!
+    @IBOutlet internal weak var taxValueButton: UIButton!
     
     // MARK: -Methods
-    override func awakeFromNib() {
+    override internal func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    @IBAction func taxButtonPressed(sender: AnyObject) {
+    @IBAction internal func taxButtonPressed(sender: AnyObject) {
         self.downcastedViewController.shouldDisplayTaxValueCell = !self.downcastedViewController.shouldDisplayTaxValueCell
         self.taxValueButton.setImage(self.taxButtonImage, forState: UIControlState.allZeros)
     }
     
     // MARK: -Protocols
     // MARK: UserHandlingDelegate
-    override func reloadUsersData() {
+    override internal func reloadUsersData() {
         super.reloadUsersData()
         self.savingsLabel.text = "\(self.downcastedUser.savings)"
     }
     
     // MARK: -Class Properties and Methods
-    override class var reuseId: String {
+    override class internal var reuseId: String {
         return "RootUserDetailMainCell"
     }
 }

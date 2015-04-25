@@ -13,7 +13,7 @@ import BrightFutures
 public class RootUserPersistenceManager: NSObject, DataPersistenceDelegate {
     
     // MARK: - Methods
-    override init() {
+    override public init() {
         super.init()
         PersistenceManager.singleton.registerAsManager(self)
     }

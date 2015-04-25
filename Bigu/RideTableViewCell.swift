@@ -19,10 +19,10 @@ public class RideTableViewCell: UITableViewCell {
     }
     
     // MARK: -Outlets
-    @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet private weak var userImage: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var valueLabel: UILabel!
     
     // MARK: -Methods
     
@@ -34,7 +34,7 @@ public class RideTableViewCell: UITableViewCell {
         self.userImage.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(CGFloat(0))
     }
     
-    func reloadRideData() {
+    public func reloadRideData() {
         
         let findingparameter: (User) -> Bool = { $0.id == self.ride.userId }
         
