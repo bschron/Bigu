@@ -8,6 +8,7 @@
 
 import Foundation
 import AbstractUser
+import UserList
 
 public class Extract {
     // MARK: -Properties
@@ -27,9 +28,15 @@ public class Extract {
         let optionalValue = dic[Extract.valueKey] as? Float
         let optionalDate = dic[Extract.dateKey] as? NSDate
         
-        self.user = AbstractUser()
-        self.value = 1
-        self.date = NSDate()
+        if let id = optionalUserId {
+            let results = UserList.sharedUserList.list.findBy({ $0.id == id })
+            self.user = results.getFirstObject()
+        }
+        else {
+            self.user = nil
+        }
+        self.value = optionalValue != nil ? optionalValue! : 0
+        self.date = optionalDate != nil ? optionalDate! : NSDate(timeIntervalSinceReferenceDate: 0)
     }
     
     public func toDictionary() -> [NSString: NSObject] {
