@@ -11,7 +11,6 @@ import Extract
 import Collection
 import Ride
 import BrightFutures
-import AbstractUser
 import RootUser
 
 public class History {
@@ -226,9 +225,9 @@ public class History {
         
         return firstAvailableId!
     }
-    class public func registerRide(forUser user: AbstractUser, withValue value: Float) {
-        let ride = Ride(userId: user.id, value: value)
-        user.history.rideHistory.insertNewRide(ride)
+    class public func registerRide(forUserWithId id: Int, andHistory history: History, withValue value: Float) {
+        let ride = Ride(userId: id, value: value)
+        history.rideHistory.insertNewRide(ride)
         RootUser.singleton.history.rideHistory.insertNewRide(ride)
     }
 }
