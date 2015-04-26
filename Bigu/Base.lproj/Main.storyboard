@@ -165,11 +165,30 @@
                     <navigationItem key="navigationItem" id="dED-7M-5Cv"/>
                     <connections>
                         <outlet property="tableView" destination="hLY-hy-htg" id="tsW-Ix-pwL"/>
+                        <segue destination="UJb-TE-VWX" kind="show" identifier="ExtractTableViewControllerSegue" id="NP0-wc-OgF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ify-y2-MaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2253" y="459"/>
+        </scene>
+        <!--Extract Table View Controller-->
+        <scene sceneID="p8G-CL-i8v">
+            <objects>
+                <tableViewController id="UJb-TE-VWX" customClass="ExtractTableViewController" customModule="ExtractViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="izw-1q-eUL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="UJb-TE-VWX" id="YEB-ah-h2U"/>
+                            <outlet property="delegate" destination="UJb-TE-VWX" id="mmf-Yb-EXm"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pnl-xZ-2eb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2964" y="459"/>
         </scene>
         <!--Dark Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

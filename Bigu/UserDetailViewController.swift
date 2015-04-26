@@ -14,6 +14,7 @@ import RideTableViewCell
 import AbstractUser
 import UserList
 import UserPersistenceManager
+import ExtractViewController
 
 public class UserDetailViewController: AbstractUserDetailViewController {
     
@@ -35,12 +36,28 @@ public class UserDetailViewController: AbstractUserDetailViewController {
         
         self.tableView.registerNib(UINib(nibName: "UserDetailMainTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: UserDetailMainTableViewCell.reuseId)
         self.tableView.registerNib(UINib(nibName: "UserDetailBillSliderTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: UserDetailBillSliderTableViewCell.reuseId)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "BillingHistory"), style: UIBarButtonItemStyle.Plain, target: self, action: "billingHistoryButtonTapped:")
     }
     
     override public func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         //persistence
         UserPersistenceManager.singleton.save(nil)
+    }
+    
+    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        
+        if segue.identifier == ExtractTableViewController.segueIdentifier {
+            let vc = segue.destinationViewController as! ExtractTableViewController
+            vc.extractList = self.downcastedUser.history.extractHistory
+            vc.title = "Billing History"
+        }
+    }
+    
+    public func billingHistoryButtonTapped(sender: AnyObject) {
+        self.performSegueWithIdentifier(ExtractTableViewController.segueIdentifier, sender: sender)
     }
     
     // MARK: -Protocols

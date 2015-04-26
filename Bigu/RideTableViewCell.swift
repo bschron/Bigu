@@ -61,7 +61,7 @@ public class RideTableViewCell: UITableViewCell {
 
     private func shortDate(date: NSDate) -> String {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd/MM HH:mm"
+        dateFormatter.dateFormat = "dd/MM/YY HH:mm"
         return dateFormatter.stringFromDate(date)
     }
 
