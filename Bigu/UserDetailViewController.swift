@@ -184,7 +184,7 @@ public class UserDetailViewController: AbstractUserDetailViewController {
     public func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if cell === self.payingCell {
             let value = (cell as! UserDetailPayingValueTableViewCell).getTaxPickerValue()
-            self.downcastedUser.payPartialBill(payingValue: value)
+            self.downcastedUser.pay(payingValue: value)
         }
     }
 }

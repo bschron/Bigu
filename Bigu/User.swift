@@ -62,21 +62,17 @@ public class User: AbstractUser {
         return dic
     }
     
-    public func increaseBill() {
+    public func charge() {
         let value:Float = Bill.taxValue
         
-        self.bill.increaseBill(value)
+        self.bill.charge(chargingValue: value)
         
         self.history.registerRide(userId: self.id, value: value)
     }
     
-    public func payBill() {
-        self.bill.payBill()
-    }
-    
-    public func payPartialBill(payingValue value: Float) {
+    public func pay(payingValue value: Float) {
         if value != 0 {
-            self.bill.payPartialBill(payingValue: value)
+            self.bill.pay(payingValue: value)
             
             self.history.registerExtract(userId: self.id, value: value)
         }

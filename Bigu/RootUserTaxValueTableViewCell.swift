@@ -122,7 +122,9 @@ internal class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataS
             title = NSAttributedString(string: "\(self.intergerValues[row])")
         }
         else {
-            title = NSAttributedString(string: String(format: ".%.2d", self.floatingValues[row]*100))
+            let values = self.floatingValues
+            let value = Int(values[row] * 100)
+            title = NSAttributedString(string: String(format: ".%.2d", value))
         }
         
         return title

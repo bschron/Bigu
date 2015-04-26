@@ -30,17 +30,12 @@ public class Bill {
     }
     
     // MARK: -Methods
-    public func payBill () {
-        self._bill = 0;
-        self.handler?.updateBillingUI()
-    }
-    
-    public func payPartialBill (payingValue value: Float) {
+    public func charge (chargingValue value: Float) {
         self.bill -= value
         self.handler?.updateBillingUI()
     }
     
-    public func increaseBill (value: Float) {
+    public func pay (payingValue value: Float) {
         self.bill += value
         self.handler?.updateBillingUI()
     }

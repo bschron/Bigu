@@ -117,7 +117,7 @@ internal class UserCell: UITableViewCell {
                         if location.x >= self.frame.width / 2 {
                             let newColor = RGBColor.whiteColor().colorWithAlphaComponent(0.1)
                             self.invisibleUserImageViewCover.backgroundColor = newColor
-                            UserList.sharedUserList.list.getElementAtIndex(self.userIndex)!.payBill()
+                            //UserList.sharedUserList.list.getElementAtIndex(self.userIndex)!.payBill()
                         }
                         else {
                             let newColor = UIColor.blackColor().colorWithAlphaComponent(CGFloat(0.75))
@@ -137,7 +137,7 @@ internal class UserCell: UITableViewCell {
     
     // MARK: Actions
     @IBAction private func debitButtonPressed(sender: AnyObject) {
-        UserList.sharedUserList.list.getElementAtIndex(self.userIndex)!.increaseBill()
+        UserList.sharedUserList.list.getElementAtIndex(self.userIndex)!.charge()
         //Animation
         let duration = 0.3
         let delay = 0.0 // delay will be 0.0 seconds (e.g. nothing)
