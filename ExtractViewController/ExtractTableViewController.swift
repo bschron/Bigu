@@ -59,7 +59,6 @@ public class ExtractTableViewController: UITableViewController {
     public override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return CGFloat(60)
     }
-    /*
     override public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row % 2 == 0 {
             cell.backgroundColor = UIColor.whiteColor()
@@ -68,7 +67,6 @@ public class ExtractTableViewController: UITableViewController {
             cell.backgroundColor = RGBColor(r: 122, g: 183, b: 147, alpha: 0.1)
         }
     }
-    */
     // MARK: -Class Properties and Functions
     class public var segueIdentifier: String {
         return "ExtractTableViewControllerSegue"

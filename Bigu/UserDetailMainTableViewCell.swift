@@ -45,7 +45,7 @@ internal class UserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell,
     
     // MARK: -Methods
     internal func updateBillingUI() {
-        self.billLabel.text = "\(self.downcastedUser.billValue)"
+        self.billLabel.text = String(format: "%.2f", self.downcastedUser.billValue)
     }
     
     internal func registerAsBillingHandler() {

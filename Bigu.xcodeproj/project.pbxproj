@@ -1254,6 +1254,10 @@
 				86A78EEB1ACD86FB009BBF58 /* User */,
 				8692A9261AEBBD810005BCA4 /* Persistence */,
 				8692A9351AEBBD810005BCA4 /* PersistenceTests */,
+				8692A9741AEBC0150005BCA4 /* Extract */,
+				8692A9831AEBC0150005BCA4 /* ExtractTests */,
+				86A425601AEBD0A500C2405B /* History */,
+				86A4256F1AEBD0A500C2405B /* HistoryTests */,
 				864AEA221AEACD85009147D9 /* Models.h */,
 				864AEA201AEACD85009147D9 /* Supporting Files */,
 			);
@@ -1557,7 +1561,8 @@
 				8692A9771AEBC0150005BCA4 /* Extract.h */,
 				8692A9751AEBC0150005BCA4 /* Supporting Files */,
 			);
-			path = Extract;
+			name = Extract;
+			path = ../Extract;
 			sourceTree = "<group>";
 		};
 		8692A9751AEBC0150005BCA4 /* Supporting Files */ = {
@@ -1574,7 +1579,8 @@
 				8692A9861AEBC0150005BCA4 /* ExtractTests.swift */,
 				8692A9841AEBC0150005BCA4 /* Supporting Files */,
 			);
-			path = ExtractTests;
+			name = ExtractTests;
+			path = ../ExtractTests;
 			sourceTree = "<group>";
 		};
 		8692A9841AEBC0150005BCA4 /* Supporting Files */ = {
@@ -1705,7 +1711,8 @@
 				86A425631AEBD0A500C2405B /* History.h */,
 				86A425611AEBD0A500C2405B /* Supporting Files */,
 			);
-			path = History;
+			name = History;
+			path = ../History;
 			sourceTree = "<group>";
 		};
 		86A425611AEBD0A500C2405B /* Supporting Files */ = {
@@ -1722,7 +1729,8 @@
 				86A425721AEBD0A500C2405B /* HistoryTests.swift */,
 				86A425701AEBD0A500C2405B /* Supporting Files */,
 			);
-			path = HistoryTests;
+			name = HistoryTests;
+			path = ../HistoryTests;
 			sourceTree = "<group>";
 		};
 		86A425701AEBD0A500C2405B /* Supporting Files */ = {
@@ -1799,12 +1807,6 @@
 				864D84361AEADABB0046C2C0 /* CollectionTests */,
 				865137611AEADBCF00CB2A63 /* RGBColor */,
 				865137701AEADBCF00CB2A63 /* RGBColorTests */,
-				8692A9741AEBC0150005BCA4 /* Extract */,
-				8692A9831AEBC0150005BCA4 /* ExtractTests */,
-				86A425601AEBD0A500C2405B /* History */,
-				86A4256F1AEBD0A500C2405B /* HistoryTests */,
-				86B8D9001AEC69A600B7480C /* ExtractViewController */,
-				86B8D90F1AEC69A600B7480C /* ExtractViewControllerTests */,
 				86A92D9A1AB863E900B38445 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1944,6 +1946,8 @@
 				86CD07CF1AEAE161006B6CE1 /* RideTableViewCellTests */,
 				8626E3261AEAED3B003872A2 /* DarkThemedViewController */,
 				8626E3351AEAED3C003872A2 /* DarkThemedViewControllerTests */,
+				86B8D9001AEC69A600B7480C /* ExtractViewController */,
+				86B8D90F1AEC69A600B7480C /* ExtractViewControllerTests */,
 			);
 			name = ViewsAndControlllers;
 			sourceTree = "<group>";

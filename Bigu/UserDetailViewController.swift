@@ -171,6 +171,8 @@ public class UserDetailViewController: AbstractUserDetailViewController {
         return height
     }
     override public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        super.tableView(tableView, willDisplayCell: cell, forRowAtIndexPath: indexPath)
+        
         if cell === self.payingCell {
             (cell as! UserDetailPayingValueTableViewCell).setTaxPickerValue()
         }

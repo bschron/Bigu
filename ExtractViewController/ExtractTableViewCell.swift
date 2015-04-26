@@ -49,8 +49,8 @@ internal class ExtractTableViewCell: UITableViewCell {
             var name: String?
             
             if let usr = user {
-                if usr.fullName != "" {
-                    name = usr.fullName + usr.nickName != nil ? " (\(usr.nickName))" : ""
+                if usr.nickName == "" {
+                    name = usr.fullName
                 }
                 else {
                     name = usr.nickName
