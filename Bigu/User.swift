@@ -11,6 +11,7 @@ import UIKit
 import Billing
 import History
 import AbstractUser
+import RootUser
 
 public class User: AbstractUser {
     
@@ -75,6 +76,7 @@ public class User: AbstractUser {
             self.bill.pay(payingValue: value)
             
             self.history.registerExtract(userId: self.id, value: value)
+            RootUser.singleton.savings += value
         }
     }
     
