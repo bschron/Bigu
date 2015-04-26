@@ -76,6 +76,8 @@ public class User: AbstractUser {
     
     public func payPartialBill(payingValue value: Float) {
         self.bill.payPartialBill(payingValue: value)
+        
+        self.history.registerExtract(userId: self.id, value: value)
     }
     
     public func registerAsBillHandler(handler: BillingHandlerDelegate) {

@@ -171,6 +171,12 @@ public class History {
         History.singleton.rideHistory.insertNewRide(ride)
     }
     
+    public func registerExtract(userId id: Int, value: Float) {
+        let extract = Extract(userId: id, paidValue: value)
+        self.extractHistory.insert(extract)
+        History.singleton.extractHistory.insert(extract)
+    }
+    
     // MARK: -Class Properties and Functions
     class public var singleton: History {
         struct wrap {
