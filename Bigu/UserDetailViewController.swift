@@ -38,6 +38,10 @@ public class UserDetailViewController: AbstractUserDetailViewController {
         self.tableView.registerNib(UINib(nibName: "UserDetailBillSliderTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: UserDetailBillSliderTableViewCell.reuseId)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "BillingHistory"), style: UIBarButtonItemStyle.Plain, target: self, action: "billingHistoryButtonTapped:")
+        self.navigationItem.rightBarButtonItem!.imageInsets.top += 5
+        self.navigationItem.rightBarButtonItem!.imageInsets.bottom += 5
+        self.navigationItem.rightBarButtonItem!.imageInsets.right += 15
+        self.navigationItem.rightBarButtonItem!.imageInsets.left -= 5
     }
     
     override public func viewWillDisappear(animated: Bool) {

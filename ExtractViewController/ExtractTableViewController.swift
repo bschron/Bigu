@@ -23,7 +23,7 @@ public class ExtractTableViewController: UITableViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        let bundle = NSBundle(identifier: "IC.ExtractTableViewController")
+        let bundle = NSBundle(identifier: "IC.ExtractViewController")
         let extractCellNib = UINib(nibName: "ExtractTableViewCell", bundle: bundle)
         self.tableView.registerNib(extractCellNib, forCellReuseIdentifier: ExtractTableViewCell.reuseId)
 
@@ -54,8 +54,8 @@ public class ExtractTableViewController: UITableViewController {
         return cell
     }
     
-    override public func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Billing History"
+    public override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return CGFloat(60)
     }
     
     // MARK: -Class Properties and Functions

@@ -44,9 +44,11 @@ internal class HistoryPersistenceManager: DataPersistenceDelegate {
             History.idListSave()
             
             for cur in arrayCopy {
-                cur.saveExtractHistory(exec)
                 let dictionary = cur.toDictionary()
                 defaults.setObject(dictionary, forKey: HistoryPersistenceManager.historyKey(keyForId: cur.id))
+                let extractsDatesList: Array<NSDate> = cur.makeExtractDatesList()
+                let extractDatesListKey = dictionary[History.extractsDateListKeyKey] as! String
+                defaults.setObject(extractsDatesList, forKey: extractDatesListKey)
             }
             let result = defaults.synchronize()
             

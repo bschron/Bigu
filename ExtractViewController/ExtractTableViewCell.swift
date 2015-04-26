@@ -25,6 +25,7 @@ internal class ExtractTableViewCell: UITableViewCell {
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var valueLabel: UILabel!
     @IBOutlet weak private var dateLabel: UILabel!
+    @IBOutlet weak var coinImage: UIImageView!
     
     // MARK: -Methods
 
@@ -32,6 +33,7 @@ internal class ExtractTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.loadInfo()
+        self.coinImage.image = UIImage(named: "coin")
     }
     
     private func loadInfo() {
@@ -46,7 +48,12 @@ internal class ExtractTableViewCell: UITableViewCell {
             var name: String?
             
             if let usr = user {
-                name = usr.fullName + usr.nickName != nil ? " \(usr.nickName)" : ""
+                if usr.fullName != "" {
+                    name = usr.fullName + usr.nickName != nil ? " (\(usr.nickName))" : ""
+                }
+                else {
+                    name = usr.nickName
+                }
             }
             else {
                 name = "Name"

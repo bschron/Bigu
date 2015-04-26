@@ -70,7 +70,7 @@ public class History {
             let defaults = NSUserDefaults.standardUserDefaults()
             let extractsDateListOptionalArray = defaults.objectForKey(extractsKey) as? Array<NSDate>
             if let dates = extractsDateListOptionalArray {
-                let extracts = loadExtractHistory(extractsForDateLists: dates)
+                let extracts = self.loadExtractHistory(extractsForDateLists: dates)
                 self.extractHistory.insert(extracts)
             }
         }
@@ -86,7 +86,7 @@ public class History {
         return dic
     }
     
-    private func makeExtractDatesList() -> Array<NSDate> {
+    internal func makeExtractDatesList() -> Array<NSDate> {
         var list = Array<NSDate>()
         
         let extractListArray = self.extractHistory.arrayCopy()
@@ -96,37 +96,6 @@ public class History {
         }
         
         return list
-    }
-    
-    internal func saveExtractHistory(context: ExecutionContext?) -> Future<Bool> {
-        let exec = context != nil ? context! : Queue.global.context
-        
-        let promise = Promise<Bool>()
-        
-        future(context: exec, { () -> Result<Bool> in
-            let list = self.extractHistory.arrayCopy()
-            let defaults = NSUserDefaults.standardUserDefaults()
-            
-            for cur in list {
-                let extractDictionary = cur.toDictionary()
-                defaults.setObject(extractDictionary, forKey: History.extractKey(extractForDate: cur.date))
-            }
-            
-            let result = defaults.synchronize()
-            
-            if result {
-                return .Success(Box(true))
-            }
-            else {
-                return .Failure(NSError())
-            }
-        }).onSuccess(context: exec, callback: {result in
-            promise.success(result)
-        }).onFailure(context: exec, callback: { error in
-            promise.failure(error)
-        })
-        
-        return promise.future
     }
     
     private func loadExtractHistory(extractsForDateLists dates: Array<NSDate>) -> Array<Extract> {
@@ -175,6 +144,7 @@ public class History {
         let extract = Extract(userId: id, paidValue: value)
         self.extractHistory.insert(extract)
         History.singleton.extractHistory.insert(extract)
+        History.saveExtract(extract)
     }
     
     // MARK: -Class Properties and Functions
@@ -194,7 +164,7 @@ public class History {
     class private var rideIdKey: String {
         return "HistoryRideIdKey"
     }
-    class private var extractsDateListKeyKey: String {
+    class internal var extractsDateListKeyKey: String {
         return "HistoryDateListKeyKey"
     }
     class private func extractKey(extractForDate date: NSDate) -> String {
@@ -254,5 +224,12 @@ public class History {
         }
         
         return firstAvailableId!
+    }
+    class private func saveExtract(extract: Extract) {
+        let defaults = NSUserDefaults()
+        let key = History.extractKey(extractForDate: extract.date)
+        let dictionary = extract.toDictionary()
+        defaults.setObject(dictionary, forKey: key)
+        defaults.synchronize()
     }
 }

@@ -171,6 +171,7 @@
 		86CD07D71AEAE161006B6CE1 /* RideTableViewCell.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 86CD07BF1AEAE160006B6CE1 /* RideTableViewCell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		86CD07DE1AEAE186006B6CE1 /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860058C91AE5E1A1000F1050 /* RideTableViewCell.swift */; };
 		86CD07DF1AEAE186006B6CE1 /* RideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860058CD1AE69753000F1050 /* RideTableViewCell.xib */; };
+		86D2D2F01AEC914500E3570D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA71AB863E900B38445 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -3465,6 +3466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86B8D9251AEC6A8D00B7480C /* ExtractTableViewCell.xib in Resources */,
+				86D2D2F01AEC914500E3570D /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6321,6 +6323,7 @@
 				86B8D9191AEC69A700B7480C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86B8D91D1AEC69A700B7480C /* Build configuration list for PBXNativeTarget "ExtractViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -6329,6 +6332,7 @@
 				86B8D91B1AEC69A700B7480C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86CD07541AEADE3A006B6CE1 /* Build configuration list for PBXNativeTarget "UsersViewController" */ = {
 			isa = XCConfigurationList;
