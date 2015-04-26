@@ -194,7 +194,7 @@ public class AbstractUser {
     }
     class private var emptyUserImage: UIImage {
         struct wrap {
-            static let image: UIImage = UIImage(named: "greenThumbsup")!
+            static let image: UIImage = UIImage(named: "whiteUser")!
         }
         
         return wrap.image

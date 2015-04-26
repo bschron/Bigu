@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="UserDetailTaxValueCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserDetailTaxValueCell" id="M81-1L-4OX" customClass="UserDetailPayingValueTableViewCell" customModule="UserDetailViewController">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M81-1L-4OX" id="7jC-71-heq">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r8r-qk-zot">
+                        <rect key="frame" x="0.0" y="-41" width="320" height="162"/>
+                    </pickerView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPE-J1-KxL">
+                        <rect key="frame" x="8" y="29" width="73" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerY" secondItem="r8r-qk-zot" secondAttribute="centerY" constant="-0.5" id="9DI-1H-Pz0"/>
+                    <constraint firstItem="fPE-J1-KxL" firstAttribute="centerY" secondItem="r8r-qk-zot" secondAttribute="centerY" constant="-0.5" id="9r3-qX-zeP"/>
+                    <constraint firstAttribute="trailing" secondItem="r8r-qk-zot" secondAttribute="trailing" id="Uoa-q3-qb1"/>
+                    <constraint firstItem="r8r-qk-zot" firstAttribute="leading" secondItem="7jC-71-heq" secondAttribute="leading" id="oca-fZ-Q1Q"/>
+                    <constraint firstItem="fPE-J1-KxL" firstAttribute="leading" secondItem="r8r-qk-zot" secondAttribute="leading" constant="8" id="wdi-5C-dVw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="label" destination="fPE-J1-KxL" id="1zG-sN-W5p"/>
+                <outlet property="taxValuePickerView" destination="r8r-qk-zot" id="z32-Qh-wCb"/>
+            </connections>
+            <point key="canvasLocation" x="322" y="144"/>
+        </tableViewCell>
+    </objects>
+</document>
