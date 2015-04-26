@@ -9,6 +9,7 @@
 import UIKit
 import Collection
 import Extract
+import RGBColor
 
 public class ExtractTableViewController: UITableViewController {
 
@@ -26,6 +27,7 @@ public class ExtractTableViewController: UITableViewController {
         let bundle = NSBundle(identifier: "IC.ExtractViewController")
         let extractCellNib = UINib(nibName: "ExtractTableViewCell", bundle: bundle)
         self.tableView.registerNib(extractCellNib, forCellReuseIdentifier: ExtractTableViewCell.reuseId)
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
@@ -57,7 +59,16 @@ public class ExtractTableViewController: UITableViewController {
     public override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return CGFloat(60)
     }
-    
+    /*
+    override public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor.whiteColor()
+        }
+        else {
+            cell.backgroundColor = RGBColor(r: 122, g: 183, b: 147, alpha: 0.1)
+        }
+    }
+    */
     // MARK: -Class Properties and Functions
     class public var segueIdentifier: String {
         return "ExtractTableViewControllerSegue"

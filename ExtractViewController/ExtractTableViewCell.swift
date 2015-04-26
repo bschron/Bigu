@@ -11,6 +11,7 @@ import Extract
 import UserList
 import Collection
 import Models
+import FakeSeparator
 
 internal class ExtractTableViewCell: UITableViewCell {
     
