@@ -23,6 +23,7 @@ public class AbstractUserDetailViewController: UIViewController, UserHandlingDel
     
     // MARK: Outlets
     internal(set) weak var mainCell: AbstractUserDetailMainTableViewCell!
+    internal(set) weak var firstNameCell: UserDetailFirstNameTableViewCell?
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Methods
@@ -69,6 +70,9 @@ public class AbstractUserDetailViewController: UIViewController, UserHandlingDel
     // MARK: UserHandlingDelegate
     public func reloadUsersData() {
         self.title = self.user.nickName != "" ? self.user.nickName : self.user.name
+        if self.user.name == "" {
+            self.title = "Profile"
+        }
     }
     // MARK: UITableViewDelegate
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

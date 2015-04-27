@@ -18,10 +18,14 @@ public class UserDetailFirstNameTableViewCell: UITableViewCell, UserHandlingDele
             self.reloadUsersData()
         }
     }
-    public var userDetailViewController: UserHandlingDelegate!
+    public var userDetailViewController: AbstractUserDetailViewController!
+    public var originalFirstName: String?
     
     // MARK: Outlets
     @IBOutlet weak var textField: UITextField!
+    public var firstNameIsEmpty: Bool {
+        return self.textField.text == ""
+    }
     
     // MARK: - Methods
 
@@ -43,10 +47,22 @@ public class UserDetailFirstNameTableViewCell: UITableViewCell, UserHandlingDele
     // MARK: Actions
     @IBAction private func editingDidEnd(sender: AnyObject) {
         let newValue = self.textField.text
-        self.user.name = newValue
+        if newValue != "" {
+            self.user.name = newValue
+        }
+        else {
+            self.textField.text = self.originalFirstName
+            let alert = UIAlertController(title: "First Name Required", message: "You must provide at least your first name", preferredStyle: UIAlertControllerStyle.Alert)
+            let action = UIAlertAction(title: "OK, chill out!", style: UIAlertActionStyle.Default, handler: nil)
+            alert.addAction(action)
+            self.userDetailViewController.presentViewController(alert, animated: true, completion: nil)
+        }
         if userDetailViewController != nil {
             userDetailViewController.reloadUsersData()
         }
+    }
+    @IBAction func FirstNameEditingWillBegin(sender: AnyObject) {
+        self.originalFirstName = self.textField.text
     }
     @IBAction private func dismissKeyboard(sender: AnyObject) {
         sender.resignFirstResponder()

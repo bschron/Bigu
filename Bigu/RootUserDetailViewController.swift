@@ -99,6 +99,7 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
                 
                 newCell.user = self.user
                 newCell.userDetailViewController = self
+                self.firstNameCell = newCell
                 
                 cell = newCell
                 
