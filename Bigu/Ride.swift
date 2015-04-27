@@ -22,14 +22,6 @@ public class Ride {
         self.time = NSDate()
         self.userId = userId
         self.value = value
-        
-        let user = User.usersList.list.findBy({ $0.id == self.userId })
-        if let usr = user.getFirstObject() {
-            usr.rideHistory?.insertNewRide(self)
-        }
-        
-        RideListManager.rideListSingleton.insertNewRide(self)
-        
     }
     
     internal init(dictionary: [NSString: NSObject]) {

@@ -8,9 +8,10 @@
 
 import Foundation
 import UIKit
-import Models
+import User
 import RGBColor
 import FakeSeparator
+import UserList
 
 internal class UserCell: UITableViewCell {
 
@@ -32,7 +33,7 @@ internal class UserCell: UITableViewCell {
     internal var viewController: UIViewController!
     internal var userIndex: Int = 0 {
         didSet {
-            self.user = User.usersList.list.getElementAtIndex(self.userIndex)!
+            self.user = UserList.sharedUserList.list.getElementAtIndex(self.userIndex)!
         }
     }
     
@@ -82,7 +83,7 @@ internal class UserCell: UITableViewCell {
     
     private func updateUserInfo() {
         if configured {
-            let user = User.usersList.list.getElementAtIndex(self.userIndex)!
+            let user = UserList.sharedUserList.list.getElementAtIndex(self.userIndex)!
             self.nameLabel.text = user.nickName != "" ? user.nickName : user.name
             self.fullnameLabel.text = user.fullName
             self.userImageView.image = user.userImage
@@ -116,7 +117,7 @@ internal class UserCell: UITableViewCell {
                         if location.x >= self.frame.width / 2 {
                             let newColor = RGBColor.whiteColor().colorWithAlphaComponent(0.1)
                             self.invisibleUserImageViewCover.backgroundColor = newColor
-                            User.usersList.list.getElementAtIndex(self.userIndex)!.payBill()
+                            //UserList.sharedUserList.list.getElementAtIndex(self.userIndex)!.payBill()
                         }
                         else {
                             let newColor = UIColor.blackColor().colorWithAlphaComponent(CGFloat(0.75))
@@ -136,7 +137,7 @@ internal class UserCell: UITableViewCell {
     
     // MARK: Actions
     @IBAction private func debitButtonPressed(sender: AnyObject) {
-        User.usersList.list.getElementAtIndex(self.userIndex)!.increaseBill()
+        UserList.sharedUserList.list.getElementAtIndex(self.userIndex)!.charge()
         //Animation
         let duration = 0.3
         let delay = 0.0 // delay will be 0.0 seconds (e.g. nothing)

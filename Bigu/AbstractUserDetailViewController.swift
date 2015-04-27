@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import Models
+import User
 import RGBColor
 import RideTableViewCell
+import AbstractUser
 
 public class AbstractUserDetailViewController: UIViewController, UserHandlingDelegate, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -22,6 +23,7 @@ public class AbstractUserDetailViewController: UIViewController, UserHandlingDel
     
     // MARK: Outlets
     internal(set) weak var mainCell: AbstractUserDetailMainTableViewCell!
+    internal(set) weak var firstNameCell: UserDetailFirstNameTableViewCell?
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Methods
@@ -62,20 +64,15 @@ public class AbstractUserDetailViewController: UIViewController, UserHandlingDel
         self.reloadUsersData()
     }
     
-    // MARK: Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    
     // MARK: Actions
     
     // MARK: - Protocols
     // MARK: UserHandlingDelegate
     public func reloadUsersData() {
         self.title = self.user.nickName != "" ? self.user.nickName : self.user.name
+        if self.user.name == "" {
+            self.title = "Profile"
+        }
     }
     // MARK: UITableViewDelegate
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

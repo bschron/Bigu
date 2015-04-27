@@ -8,7 +8,12 @@
 
 import UIKit
 import BrightFutures
-import Models
+import User
+import RootUser
+import Persistence
+import UserPersistenceManager
+import UserList
+import Ride
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userManager = UserPersistenceManager.singleton
         UserList.sharedUserList = userManager.load() as! UserList
         RootUser.singleton
-        RideListManager.rideListSingleton
         return true
     }
 

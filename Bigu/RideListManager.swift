@@ -9,6 +9,7 @@
 import Foundation
 import BrightFutures
 import Collection
+import Persistence
 
 public class RideListManager: DataPersistenceDelegate {
     
@@ -23,7 +24,7 @@ public class RideListManager: DataPersistenceDelegate {
             self._list = newValue
         }
     }
-    private(set) var id: Int = -1
+    public private(set) var id: Int = -1
     public var count: Int {
         return self.list.count
     }
@@ -180,13 +181,6 @@ public class RideListManager: DataPersistenceDelegate {
     }
     
     // MARK: -Class Methods and Properties
-    class public var rideListSingleton: RideListManager {
-        struct wrap {
-            static let list = RideListManager(singleton: true)
-        }
-        
-        return wrap.list
-    }
     class var defaultOrder: (Ride, Ride) -> Bool {
         return { $0.timingSinceOcurrence > $1.timingSinceOcurrence }
     }

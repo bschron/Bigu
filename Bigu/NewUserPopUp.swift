@@ -7,7 +7,9 @@
 //
 
 import UIKit
-import Models
+import User
+import AbstractUser
+import UserList
 
 internal class NewUserPopUp: UIView {
 
@@ -110,7 +112,7 @@ internal class NewUserPopUp: UIView {
         
         if nameTextField.text != "" {
             let newUser = User(name: nameTextField.text, surName: surnameTextField.text, nickName: nicknameTextField.text, handler: nil)
-            newUser.synchronize()
+            UserList.sharedUserList.insertUser(newUser)
             self.terminate()
             
             if let handler = usersHandler {

@@ -8,9 +8,13 @@
 
 import UIKit
 import BrightFutures
-import Models
+import User
 import FakeSeparator
 import RideTableViewCell
+import AbstractUser
+import UserList
+import UserPersistenceManager
+import ExtractViewController
 
 public class UserDetailViewController: AbstractUserDetailViewController {
     
@@ -19,25 +23,56 @@ public class UserDetailViewController: AbstractUserDetailViewController {
         return self.user as! User
     }
     private var expensiveUserIndex: Int {
-        return User.usersList.list.getObjectIndex(indexFor: self.downcastedUser, compareBy: { $0.id == self.user.id })!
+        return UserList.sharedUserList.list.getObjectIndex(indexFor: self.downcastedUser, compareBy: { $0.id == self.user.id })!
     }
-    internal var billSlider: Bool = false
+    private var firstRun: Bool = true
+    internal var payingCellIsActive: Bool = false {
+        didSet {
+            if self.payingCellIsActive {
+                self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
+            }
+            else if !self.firstRun {
+                self.tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
+            }
+            self.firstRun = false
+        }
+    }
     
     // MARK: Outlets
-    weak var billSliderCell: UserDetailBillSliderTableViewCell?
+    weak var payingCell: UserDetailPayingValueTableViewCell?
     
     // MARK: -Methods
     override public func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.registerNib(UINib(nibName: "UserDetailMainTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: UserDetailMainTableViewCell.reuseId)
-        self.tableView.registerNib(UINib(nibName: "UserDetailBillSliderTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: UserDetailBillSliderTableViewCell.reuseId)
+        self.tableView.registerNib(UINib(nibName: "UserDetailPayingValueTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: UserDetailPayingValueTableViewCell.reuseId)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "BillingHistory"), style: UIBarButtonItemStyle.Plain, target: self, action: "billingHistoryButtonTapped:")
+        self.navigationItem.rightBarButtonItem!.imageInsets.top += 5
+        self.navigationItem.rightBarButtonItem!.imageInsets.bottom += 5
+        self.navigationItem.rightBarButtonItem!.imageInsets.right += 15
+        self.navigationItem.rightBarButtonItem!.imageInsets.left -= 5
     }
     
     override public func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         //persistence
         UserPersistenceManager.singleton.save(nil)
+    }
+    
+    override public func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        
+        if segue.identifier == ExtractTableViewController.segueIdentifier {
+            let vc = segue.destinationViewController as! ExtractTableViewController
+            vc.extractList = self.downcastedUser.history.extractHistory
+            vc.title = "Billing History"
+        }
+    }
+    
+    public func billingHistoryButtonTapped(sender: AnyObject) {
+        self.performSegueWithIdentifier(ExtractTableViewController.segueIdentifier, sender: sender)
     }
     
     // MARK: -Protocols
@@ -58,12 +93,9 @@ public class UserDetailViewController: AbstractUserDetailViewController {
                 cell = newCell
             }
             else if row == 1 {
-                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailBillSliderTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailBillSliderTableViewCell
+                let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailPayingValueTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailPayingValueTableViewCell
                 
-                newCell.userIndex = self.expensiveUserIndex
-                newCell.mainCell = mainCell
-                self.billSliderCell = newCell
-                newCell.viewController = self
+                self.payingCell = newCell
                 
                 cell = newCell
             }
@@ -74,6 +106,7 @@ public class UserDetailViewController: AbstractUserDetailViewController {
                 
                 newCell.user = self.user
                 newCell.userDetailViewController = self
+                self.firstNameCell = newCell
                 
                 cell = newCell
                 
@@ -103,7 +136,7 @@ public class UserDetailViewController: AbstractUserDetailViewController {
         else if section == 2 {
             let newCell = tableView.dequeueReusableCellWithIdentifier(RideTableViewCell.reuseId, forIndexPath: indexPath) as! RideTableViewCell
             
-            let rideHistory = self.downcastedUser.rideHistory!
+            let rideHistory = self.downcastedUser.history.rideHistory
             let ride = rideHistory.list.getElementAtIndex(row)
             
             newCell.ride = ride
@@ -117,16 +150,42 @@ public class UserDetailViewController: AbstractUserDetailViewController {
         var rows = 0
         
         if section == 0 {
-            rows = billSlider ? 2 : 1
+            rows = self.payingCellIsActive ? 2 : 1
         }
         else if section == 1 {
             rows = 3
         }
         else if section == 2 {
-            let rideHistory = self.downcastedUser.rideHistory!
+            let rideHistory = self.downcastedUser.history.rideHistory
             rows = rideHistory.count
         }
         
         return rows
+    }
+    override public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        var height = super.tableView(tableView, heightForRowAtIndexPath: indexPath)
+        
+        if  indexPath.section == 0 && indexPath.row == 1 {
+            height = CGFloat(162)
+        }
+        
+        return height
+    }
+    override public func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        super.tableView(tableView, willDisplayCell: cell, forRowAtIndexPath: indexPath)
+        
+        if cell === self.payingCell {
+            (cell as! UserDetailPayingValueTableViewCell).setTaxPickerValue()
+        }
+        else if indexPath.section == 0 && indexPath.row == 0 {
+            let image = (cell as! UserDetailMainTableViewCell).payingButtonImage
+            (cell as! UserDetailMainTableViewCell).payButton.setImage(image, forState: .allZeros)
+        }
+    }
+    public func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if cell === self.payingCell {
+            let value = (cell as! UserDetailPayingValueTableViewCell).getTaxPickerValue()
+            self.downcastedUser.pay(payingValue: value)
+        }
     }
 }

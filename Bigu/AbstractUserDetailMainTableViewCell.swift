@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import Models
+import User
+import AbstractUser
 
 internal class AbstractUserDetailMainTableViewCell: UITableViewCell, UserHandlingDelegate {
 

@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import BrightFutures
 
 public class Bill {
     
     // MARK: -Properties
     private var _bill: Float? = nil
-    private(set) var bill: Float {
+    public private(set) var bill: Float {
         get {
             return self._bill != nil ? self._bill! : 0
         }
@@ -29,19 +30,12 @@ public class Bill {
     }
     
     // MARK: -Methods
-    public func payBill () {
-        RootUser.singleton.savings += self.bill
-        self._bill = 0;
-        self.handler?.updateBillingUI()
-    }
-    
-    public func payPartialBill (payingValue value: Float) {
-        RootUser.singleton.savings += value
+    public func charge (chargingValue value: Float) {
         self.bill -= value
         self.handler?.updateBillingUI()
     }
     
-    public func increaseBill (value: Float) {
+    public func pay (payingValue value: Float) {
         self.bill += value
         self.handler?.updateBillingUI()
     }
@@ -56,4 +50,39 @@ public class Bill {
     }
     
     // MARK: -Class Properties and Methods
+    private struct wrap {
+        static var firstRun: Bool = true
+        static var tax: Float? = Bill.loadTaxValue() {
+            didSet {
+                if !Bill.wrap.firstRun {
+                    Bill.saveTaxValue()
+                }
+                Bill.wrap.firstRun = false
+            }
+        }
+    }
+    class public var taxValue: Float {
+        get {
+            return Bill.wrap.tax != nil ? Bill.wrap.tax! : 0
+        }
+        set {
+            if newValue <= 0 {
+                Bill.wrap.tax = nil
+            }
+            else {
+                Bill.wrap.tax = newValue
+            }
+        }
+    }
+    class private func saveTaxValue() {
+        Queue.global.async({
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject(Bill.wrap.tax, forKey: "BillTaxValueKey")
+            defaults.synchronize()
+        })
+    }
+    class private func loadTaxValue() -> Float? {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        return defaults.objectForKey("BillTaxValueKey") as? Float
+    }
 }

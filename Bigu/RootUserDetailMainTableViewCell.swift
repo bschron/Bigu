@@ -7,7 +7,9 @@
 //
 
 import UIKit
-import Models
+import User
+import AbstractUser
+import RootUser
 
 internal class RootUserDetailMainTableViewCell: AbstractUserDetailMainTableViewCell {
     
@@ -22,10 +24,10 @@ internal class RootUserDetailMainTableViewCell: AbstractUserDetailMainTableViewC
         get {
             let image: UIImage!
             if self.downcastedViewController.shouldDisplayTaxValueCell {
-                image = UIImage(named: "taxValue(highlighted)")
+                image = UIImage(named: "taxValue")
             }
             else {
-                image = UIImage(named: "taxValue")
+                image = UIImage(named: "taxValue(highlighted)")
             }
             return image
         }
@@ -49,7 +51,7 @@ internal class RootUserDetailMainTableViewCell: AbstractUserDetailMainTableViewC
     // MARK: UserHandlingDelegate
     override internal func reloadUsersData() {
         super.reloadUsersData()
-        self.savingsLabel.text = "\(self.downcastedUser.savings)"
+        self.savingsLabel.text = String(format: "%.2f", self.downcastedUser.savings)
     }
     
     // MARK: -Class Properties and Methods

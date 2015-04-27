@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 import BrightFutures
+import Persistence
+import User
+import UserList
 
 public class UserPersistenceManager: DataPersistenceDelegate {
     
@@ -32,7 +35,7 @@ public class UserPersistenceManager: DataPersistenceDelegate {
     // MARK: DataPersistenceDelegate
     public var object: AnyObject? {
         get {
-            return User.usersList
+            return UserList.sharedUserList
         }
         set {}
     }
@@ -89,8 +92,6 @@ public class UserPersistenceManager: DataPersistenceDelegate {
         
         var list = UserList()
         
-        list.isLoading = true
-        
         for cur in storedArray! {
             let newUser = User(fromDictionary: cur)
             list.insertUser(newUser)
@@ -99,8 +100,6 @@ public class UserPersistenceManager: DataPersistenceDelegate {
             let erasedUser = ErasedUser(fromDictionary: cur)
             list.insertErasedUser(erasedUser)
         }
-        
-        list.isLoading = false
         
         return list
     }

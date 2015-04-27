@@ -9,13 +9,15 @@
 import UIKit
 import Foundation
 import RGBColor
-import Models
+import User
+import RootUser
+import Billing
 
 internal class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataSource, UIPickerViewDelegate {
 
     // MARK: -Properties
     private var _intValues: Array<Int>?
-    private var intergerValues: Array<Int> {
+    internal var intergerValues: Array<Int> {
         get {
             if self._intValues == nil {
                 var array: Array<Int> = []
@@ -28,10 +30,22 @@ internal class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataS
             return self._intValues!
         }
     }
-    private var floatingValues: [Float] = [0.0, 0.5]
+    internal var floatingValues: [Float] {
+        get {
+            var array = Array<Float>()
+            for var i: Float = 0; i < 100; i += 5 {
+                array += [i / 100]
+            }
+            return array
+        }
+    }
+    internal var sourceTaxValue: Float {
+        return Bill.taxValue
+    }
     
     // MARK: Outlets
-    @IBOutlet weak private var taxValuePickerView: UIPickerView!
+    @IBOutlet weak internal var taxValuePickerView: UIPickerView!
+    @IBOutlet weak internal var label: UILabel!
     
     // MARK: -Methods
     override internal func awakeFromNib() {
@@ -58,7 +72,7 @@ internal class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataS
     }
     
     internal func setTaxPickerValue() {
-        let taxValue: Float = RootUser.singleton.taxValue
+        let taxValue: Float = self.sourceTaxValue
         let taxIntValue: Int = Int(taxValue)
         let taxPointValue: Float = taxValue - Float(taxIntValue)
         
@@ -108,7 +122,9 @@ internal class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataS
             title = NSAttributedString(string: "\(self.intergerValues[row])")
         }
         else {
-            title = NSAttributedString(string: row == 0 ? ".0" : ".5")
+            let values = self.floatingValues
+            let value = Int(values[row] * 100)
+            title = NSAttributedString(string: String(format: ".%.2d", value))
         }
         
         return title

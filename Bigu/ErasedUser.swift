@@ -22,7 +22,7 @@ public class ErasedUser: User {
     public let erasedAt: NSDate
     
     // MARK: - Methods
-    internal init(id: Int, name: String, surName: String?, nickName: String?, erasedAt at: NSDate) {
+    public init(id: Int, name: String, surName: String?, nickName: String?, erasedAt at: NSDate) {
         self.erasedAt = at
         super.init(withid: id)
         self.name = name
@@ -30,7 +30,7 @@ public class ErasedUser: User {
         self.nickName = nickName != nil ? nickName! : ""
     }
     
-    override internal init(fromDictionary dic: [NSString : NSObject]) {
+    override public init(fromDictionary dic: [NSString : NSObject]) {
         let optionalErasedAt = dic[ErasedUser.erasedAtKey] as? NSDate
         self.erasedAt = optionalErasedAt != nil ? optionalErasedAt! : NSDate()
         let id = dic[User.userIdKey] as? Int

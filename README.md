@@ -30,39 +30,60 @@
   - $ weekly collection
   - basic informations
 
+  
+##External Frameworks:
+- https://github.com/Thomvis/BrightFutures
+
 ##Classes
 **NOTE:** Any class will inherit from the `NSOBject` Swift/ObjectiveC class
 ###Models
  - `AbstractUser`
   - `RootUser`
   - `User`
+  	*-* `ErasedUser`
  - `UserList`
  - `UsersPersistenceManager`
+ - `Bill`
+ - `Ride`
+ - `RideListManager`
+ - `DataPersistenceDelegate`
+ - `PersistenceManager`
+ - `Extract`
+ - `History`
+ - `HistoryPersistenceManager`
+ - `Collection`
+ - `RGBColor`
 
 ###Views
 **NOTE:** Any view will inherit from CocoaTouch's `UIView`
 
-- `TaxCell`
- - `DefaultTaxCell`
- - `PickerTaxCell`
 - `NewUserPopUp`
 - `UserCell`
-- *UserDetailViewController's Cells*
- - `UserDetailMainTableViewCell`
+- *AbstractUserDetailViewController's Cells*
+ - `AbstractUserDetailMainTableViewCell`
  - `UserDetailBillSliderTableViewCell`
  - `UserDetailFirstNameTableViewCell`
  - `UserDetailLastNameTableViewCell`
  - `UserDetailNickNameTableViewCell`
-
+- *RootUserDetailViewController's Cells*
+	- `RootUserDetailMainTableViewCell`
+	- `RootUserTaxValueTableViewCell`
+- *UserDetailViewController's Cells*
+	- `UserDetailMainTableViewCell`
+	- `UserDetailPayingValueTableViewCell`
+- RideTableViewCell
+- FakeSeparator
+	
+	
 ###Controllers
 **NOTE:** AnyController will inherit form the CocoaTouch's `UIViewController`
 
 - `UsersViewController`
 - `UserDetailViewController`
+- `DarkThemedViewController`
+- `ExtractViewController`
 
 ##Protocols (*Interfaces*)
 - `UserHandlingDelegate`
-- `BillingProtocol`
 - `BillingHandlerDelegate`
 - `DataPersistenceDelegate`
-- `TaxHandlingDelegate`

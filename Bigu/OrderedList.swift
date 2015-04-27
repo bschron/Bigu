@@ -15,7 +15,7 @@ public class OrderedList<T> {
             self.list.sort(self.order)
         }
     }
-    private var list: Array<T> = []
+    private var list: Array<T> = Array<T>()
     public var count: Int {
         return self.list.count
     }
@@ -27,7 +27,8 @@ public class OrderedList<T> {
     
     public func insert(object: T) {
         var i = 0
-        for cur in self.list {
+        let array = self.list
+        for cur in array {
             if order(object, cur) {
                 break;
             }
