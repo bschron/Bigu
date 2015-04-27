@@ -8,7 +8,7 @@
 
 import UIKit
 import BrightFutures
-import Models
+import User
 import RootUser
 import Persistence
 import UserPersistenceManager

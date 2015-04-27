@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 import RGBColor
-import Models
+import User
 import RootUser
 import Billing
 

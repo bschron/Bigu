@@ -10,7 +10,7 @@ import UIKit
 import Extract
 import UserList
 import Collection
-import Models
+import User
 import FakeSeparator
 
 internal class ExtractTableViewCell: UITableViewCell {

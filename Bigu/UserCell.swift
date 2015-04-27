@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import Models
+import User
 import RGBColor
 import FakeSeparator
 import UserList

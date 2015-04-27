@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Models
+import User
 import AbstractUser
 
 public class UserDetailFirstNameTableViewCell: UITableViewCell, UserHandlingDelegate {

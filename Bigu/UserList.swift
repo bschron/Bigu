@@ -9,7 +9,7 @@
 import Foundation
 import BrightFutures
 import Collection
-import Models
+import User
 
 public class UserList {
     

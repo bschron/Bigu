@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import BrightFutures
 import Persistence
-import Models
+import User
 import UserList
 
 public class UserPersistenceManager: DataPersistenceDelegate {

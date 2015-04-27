@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Models
+import User
 import UserDetailViewController
 import AbstractUser
 import UserList

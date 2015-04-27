@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Models
+import User
 import RGBColor
 import RideTableViewCell
 import AbstractUser

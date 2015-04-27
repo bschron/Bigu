@@ -28,10 +28,10 @@
 		863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D5E931ACF7185007D9235 /* CustomPopUp.swift */; };
 		863D5E961ACF7277007D9235 /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863D5E951ACF7277007D9235 /* CustomPopUp.xib */; };
 		864AEA231AEACD85009147D9 /* Models.h in Headers */ = {isa = PBXBuildFile; fileRef = 864AEA221AEACD85009147D9 /* Models.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		864AEA291AEACD85009147D9 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 864AEA1E1AEACD85009147D9 /* Models.framework */; };
+		864AEA291AEACD85009147D9 /* User.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 864AEA1E1AEACD85009147D9 /* User.framework */; };
 		864AEA321AEACD85009147D9 /* ModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864AEA311AEACD85009147D9 /* ModelsTests.swift */; };
-		864AEA351AEACD85009147D9 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 864AEA1E1AEACD85009147D9 /* Models.framework */; };
-		864AEA361AEACD85009147D9 /* Models.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 864AEA1E1AEACD85009147D9 /* Models.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		864AEA351AEACD85009147D9 /* User.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 864AEA1E1AEACD85009147D9 /* User.framework */; };
+		864AEA361AEACD85009147D9 /* User.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 864AEA1E1AEACD85009147D9 /* User.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		864AEA3E1AEACE9B009147D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A92DCA1AB86A5800B38445 /* User.swift */; };
 		864AEA3F1AEACE9B009147D9 /* ErasedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860058CB1AE66FAF000F1050 /* ErasedUser.swift */; };
 		864D842B1AEADABB0046C2C0 /* Collection.h in Headers */ = {isa = PBXBuildFile; fileRef = 864D842A1AEADABB0046C2C0 /* Collection.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -195,6 +195,370 @@
 			proxyType = 1;
 			remoteGlobalIDString = 860B11E71AEBB81C00D80E25;
 			remoteInfo = AbstractUser;
+		};
+		861412311AEE4AC800A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A8D81AEBBC190005BCA4;
+			remoteInfo = Billing;
+		};
+		861412331AEE4AD200A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A4255E1AEBD0A500C2405B;
+			remoteInfo = History;
+		};
+		861412351AEE4AE900A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 860B11E71AEBB81C00D80E25;
+			remoteInfo = AbstractUser;
+		};
+		861412371AEE4AF100A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A8FE1AEBBD300005BCA4;
+			remoteInfo = RootUser;
+		};
+		861412391AEE4B3200A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 864AEA1D1AEACD85009147D9;
+			remoteInfo = User;
+		};
+		8614123B1AEE4B3C00A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86CD07881AEADF65006B6CE1;
+			remoteInfo = UserDetailViewController;
+		};
+		8614123D1AEE4B4500A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 860B11E71AEBB81C00D80E25;
+			remoteInfo = AbstractUser;
+		};
+		8614123F1AEE4B4D00A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A9981AEBC69A0005BCA4;
+			remoteInfo = UserList;
+		};
+		861412411AEE4B6C00A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8651375F1AEADBCF00CB2A63;
+			remoteInfo = RGBColor;
+		};
+		861412431AEE4B6C00A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86CD07631AEADEEC006B6CE1;
+			remoteInfo = FakeSeparator;
+		};
+		861412451AEE4BA500A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A4D3131AEACBF900477C07;
+			remoteInfo = BrightFutures;
+		};
+		861412471AEE4BA500A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 864AEA1D1AEACD85009147D9;
+			remoteInfo = User;
+		};
+		861412491AEE4BA500A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86CD07631AEADEEC006B6CE1;
+			remoteInfo = FakeSeparator;
+		};
+		8614124B1AEE4BA500A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86CD07BE1AEAE160006B6CE1;
+			remoteInfo = RideTableViewCell;
+		};
+		8614124D1AEE4BA500A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 860B11E71AEBB81C00D80E25;
+			remoteInfo = AbstractUser;
+		};
+		8614124F1AEE4BA500A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A9981AEBC69A0005BCA4;
+			remoteInfo = UserList;
+		};
+		861412511AEE4BA500A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A9BD1AEBC77E0005BCA4;
+			remoteInfo = UserPersistenceManager;
+		};
+		861412531AEE4BA500A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86B8D8FE1AEC69A600B7480C;
+			remoteInfo = ExtractViewController;
+		};
+		861412551AEE4BB500A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8651375F1AEADBCF00CB2A63;
+			remoteInfo = RGBColor;
+		};
+		861412571AEE4BCD00A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A8D81AEBBC190005BCA4;
+			remoteInfo = Billing;
+		};
+		861412591AEE4BCD00A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A9E21AEBC8520005BCA4;
+			remoteInfo = Ride;
+		};
+		8614125B1AEE4BCD00A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A4255E1AEBD0A500C2405B;
+			remoteInfo = History;
+		};
+		8614125D1AEE4BE700A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 864AEA1D1AEACD85009147D9;
+			remoteInfo = User;
+		};
+		8614125F1AEE4BE700A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A9981AEBC69A0005BCA4;
+			remoteInfo = UserList;
+		};
+		861412611AEE4BE700A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A9E21AEBC8520005BCA4;
+			remoteInfo = Ride;
+		};
+		861412631AEE4C0500A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8651375F1AEADBCF00CB2A63;
+			remoteInfo = RGBColor;
+		};
+		861412651AEE4C2600A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A4D3131AEACBF900477C07;
+			remoteInfo = BrightFutures;
+		};
+		861412671AEE4C4100A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A4D3131AEACBF900477C07;
+			remoteInfo = BrightFutures;
+		};
+		861412691AEE4C4100A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 860B11E71AEBB81C00D80E25;
+			remoteInfo = AbstractUser;
+		};
+		8614126B1AEE4C4100A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A9241AEBBD810005BCA4;
+			remoteInfo = Persistence;
+		};
+		8614126D1AEE4C5100A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A4D3131AEACBF900477C07;
+			remoteInfo = BrightFutures;
+		};
+		8614126F1AEE4C7900A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A4D3131AEACBF900477C07;
+			remoteInfo = BrightFutures;
+		};
+		861412711AEE4C7900A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 864AEA1D1AEACD85009147D9;
+			remoteInfo = User;
+		};
+		861412731AEE4C7900A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 864D84251AEADABB0046C2C0;
+			remoteInfo = Collection;
+		};
+		861412751AEE4CA800A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A4D3131AEACBF900477C07;
+			remoteInfo = BrightFutures;
+		};
+		861412771AEE4CA800A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 864AEA1D1AEACD85009147D9;
+			remoteInfo = User;
+		};
+		861412791AEE4CA800A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A9241AEBBD810005BCA4;
+			remoteInfo = Persistence;
+		};
+		8614127B1AEE4CA800A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A9981AEBC69A0005BCA4;
+			remoteInfo = UserList;
+		};
+		8614127D1AEE4CC400A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A4D3131AEACBF900477C07;
+			remoteInfo = BrightFutures;
+		};
+		8614127F1AEE4CC400A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 864D84251AEADABB0046C2C0;
+			remoteInfo = Collection;
+		};
+		861412811AEE4CC400A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A9241AEBBD810005BCA4;
+			remoteInfo = Persistence;
+		};
+		861412831AEE4CE500A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A4D3131AEACBF900477C07;
+			remoteInfo = BrightFutures;
+		};
+		861412851AEE4CE500A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 864D84251AEADABB0046C2C0;
+			remoteInfo = Collection;
+		};
+		861412871AEE4CE500A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A9721AEBC0150005BCA4;
+			remoteInfo = Extract;
+		};
+		861412891AEE4CE500A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A9E21AEBC8520005BCA4;
+			remoteInfo = Ride;
+		};
+		8614128B1AEE4D1000A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 864AEA1D1AEACD85009147D9;
+			remoteInfo = User;
+		};
+		8614128D1AEE4D1000A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 864D84251AEADABB0046C2C0;
+			remoteInfo = Collection;
+		};
+		8614128F1AEE4D1000A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8651375F1AEADBCF00CB2A63;
+			remoteInfo = RGBColor;
+		};
+		861412911AEE4D1000A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86CD07631AEADEEC006B6CE1;
+			remoteInfo = FakeSeparator;
+		};
+		861412931AEE4D1000A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A9721AEBC0150005BCA4;
+			remoteInfo = Extract;
+		};
+		861412951AEE4D1000A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8692A9981AEBC69A0005BCA4;
+			remoteInfo = UserList;
+		};
+		861412971AEE4D2E00A1E8E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8651375F1AEADBCF00CB2A63;
+			remoteInfo = RGBColor;
 		};
 		8626E3311AEAED3B003872A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -594,7 +958,7 @@
 				8692A9FB1AEBC8520005BCA4 /* Ride.framework in Embed Frameworks */,
 				865137781AEADBCF00CB2A63 /* RGBColor.framework in Embed Frameworks */,
 				8692A98B1AEBC0150005BCA4 /* Extract.framework in Embed Frameworks */,
-				864AEA361AEACD85009147D9 /* Models.framework in Embed Frameworks */,
+				864AEA361AEACD85009147D9 /* User.framework in Embed Frameworks */,
 				86CD07A11AEADF65006B6CE1 /* UserDetailViewController.framework in Embed Frameworks */,
 				86CD07531AEADE3A006B6CE1 /* UsersViewController.framework in Embed Frameworks */,
 				8692A9D61AEBC77F0005BCA4 /* UserPersistenceManager.framework in Embed Frameworks */,
@@ -644,10 +1008,10 @@
 		863D5E981ACF75F8007D9235 /* NewUserPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserPopUp.xib; sourceTree = "<group>"; };
 		86417A941AE967B700087702 /* RootUserDetailMainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootUserDetailMainTableViewCell.swift; sourceTree = "<group>"; };
 		86417A961AE967ED00087702 /* RootUserDetailMainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootUserDetailMainTableViewCell.xib; sourceTree = "<group>"; };
-		864AEA1E1AEACD85009147D9 /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		864AEA1E1AEACD85009147D9 /* User.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = User.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		864AEA211AEACD85009147D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		864AEA221AEACD85009147D9 /* Models.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
-		864AEA281AEACD85009147D9 /* ModelsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		864AEA281AEACD85009147D9 /* UserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		864AEA301AEACD85009147D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		864AEA311AEACD85009147D9 /* ModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsTests.swift; sourceTree = "<group>"; };
 		864D84261AEADABB0046C2C0 /* Collection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Collection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -843,7 +1207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				864AEA291AEACD85009147D9 /* Models.framework in Frameworks */,
+				864AEA291AEACD85009147D9 /* User.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1020,7 +1384,7 @@
 				8692A9FA1AEBC8520005BCA4 /* Ride.framework in Frameworks */,
 				865137771AEADBCF00CB2A63 /* RGBColor.framework in Frameworks */,
 				8692A98A1AEBC0150005BCA4 /* Extract.framework in Frameworks */,
-				864AEA351AEACD85009147D9 /* Models.framework in Frameworks */,
+				864AEA351AEACD85009147D9 /* User.framework in Frameworks */,
 				86CD07A01AEADF65006B6CE1 /* UserDetailViewController.framework in Frameworks */,
 				86CD07521AEADE3A006B6CE1 /* UsersViewController.framework in Frameworks */,
 				8692A9D51AEBC77F0005BCA4 /* UserPersistenceManager.framework in Frameworks */,
@@ -1818,8 +2182,8 @@
 				86A92DB01AB863E900B38445 /* BiguTests.xctest */,
 				86A4D3141AEACBF900477C07 /* BrightFutures.framework */,
 				86A4D31E1AEACBF900477C07 /* BrightFuturesTests.xctest */,
-				864AEA1E1AEACD85009147D9 /* Models.framework */,
-				864AEA281AEACD85009147D9 /* ModelsTests.xctest */,
+				864AEA1E1AEACD85009147D9 /* User.framework */,
+				864AEA281AEACD85009147D9 /* UserTests.xctest */,
 				864D84261AEADABB0046C2C0 /* Collection.framework */,
 				864D84301AEADABB0046C2C0 /* CollectionTests.xctest */,
 				865137601AEADBCF00CB2A63 /* RGBColor.framework */,
@@ -2313,6 +2677,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				861412641AEE4C0500A1E8E5 /* PBXTargetDependency */,
 			);
 			name = DarkThemedViewController;
 			productName = DarkThemedViewController;
@@ -2338,9 +2703,9 @@
 			productReference = 8626E32F1AEAED3B003872A2 /* DarkThemedViewControllerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		864AEA1D1AEACD85009147D9 /* Models */ = {
+		864AEA1D1AEACD85009147D9 /* User */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 864AEA371AEACD85009147D9 /* Build configuration list for PBXNativeTarget "Models" */;
+			buildConfigurationList = 864AEA371AEACD85009147D9 /* Build configuration list for PBXNativeTarget "User" */;
 			buildPhases = (
 				864AEA191AEACD85009147D9 /* Sources */,
 				864AEA1A1AEACD85009147D9 /* Frameworks */,
@@ -2350,15 +2715,19 @@
 			buildRules = (
 			);
 			dependencies = (
+				861412381AEE4AF100A1E8E5 /* PBXTargetDependency */,
+				861412361AEE4AE900A1E8E5 /* PBXTargetDependency */,
+				861412341AEE4AD200A1E8E5 /* PBXTargetDependency */,
+				861412321AEE4AC800A1E8E5 /* PBXTargetDependency */,
 			);
-			name = Models;
+			name = User;
 			productName = Models;
-			productReference = 864AEA1E1AEACD85009147D9 /* Models.framework */;
+			productReference = 864AEA1E1AEACD85009147D9 /* User.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		864AEA271AEACD85009147D9 /* ModelsTests */ = {
+		864AEA271AEACD85009147D9 /* UserTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 864AEA3A1AEACD85009147D9 /* Build configuration list for PBXNativeTarget "ModelsTests" */;
+			buildConfigurationList = 864AEA3A1AEACD85009147D9 /* Build configuration list for PBXNativeTarget "UserTests" */;
 			buildPhases = (
 				864AEA241AEACD85009147D9 /* Sources */,
 				864AEA251AEACD85009147D9 /* Frameworks */,
@@ -2370,9 +2739,9 @@
 				864AEA2B1AEACD85009147D9 /* PBXTargetDependency */,
 				864AEA2D1AEACD85009147D9 /* PBXTargetDependency */,
 			);
-			name = ModelsTests;
+			name = UserTests;
 			productName = ModelsTests;
-			productReference = 864AEA281AEACD85009147D9 /* ModelsTests.xctest */;
+			productReference = 864AEA281AEACD85009147D9 /* UserTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		864D84251AEADABB0046C2C0 /* Collection */ = {
@@ -2461,6 +2830,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				861412661AEE4C2600A1E8E5 /* PBXTargetDependency */,
 			);
 			name = Billing;
 			productName = Billing;
@@ -2498,6 +2868,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				861412681AEE4C4100A1E8E5 /* PBXTargetDependency */,
+				8614126A1AEE4C4100A1E8E5 /* PBXTargetDependency */,
+				8614126C1AEE4C4100A1E8E5 /* PBXTargetDependency */,
 			);
 			name = RootUser;
 			productName = RootUser;
@@ -2535,6 +2908,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8614126E1AEE4C5100A1E8E5 /* PBXTargetDependency */,
 			);
 			name = Persistence;
 			productName = Persistence;
@@ -2609,6 +2983,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				861412701AEE4C7900A1E8E5 /* PBXTargetDependency */,
+				861412721AEE4C7900A1E8E5 /* PBXTargetDependency */,
+				861412741AEE4C7900A1E8E5 /* PBXTargetDependency */,
 			);
 			name = UserList;
 			productName = UserList;
@@ -2646,6 +3023,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				861412761AEE4CA800A1E8E5 /* PBXTargetDependency */,
+				861412781AEE4CA800A1E8E5 /* PBXTargetDependency */,
+				8614127A1AEE4CA800A1E8E5 /* PBXTargetDependency */,
+				8614127C1AEE4CA800A1E8E5 /* PBXTargetDependency */,
 			);
 			name = UserPersistenceManager;
 			productName = UserPersistenceManager;
@@ -2683,6 +3064,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				8614127E1AEE4CC400A1E8E5 /* PBXTargetDependency */,
+				861412801AEE4CC400A1E8E5 /* PBXTargetDependency */,
+				861412821AEE4CC400A1E8E5 /* PBXTargetDependency */,
 			);
 			name = Ride;
 			productName = Ride;
@@ -2720,6 +3104,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				861412841AEE4CE500A1E8E5 /* PBXTargetDependency */,
+				861412861AEE4CE500A1E8E5 /* PBXTargetDependency */,
+				861412881AEE4CE500A1E8E5 /* PBXTargetDependency */,
+				8614128A1AEE4CE500A1E8E5 /* PBXTargetDependency */,
 			);
 			name = History;
 			productName = History;
@@ -2849,6 +3237,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				8614128C1AEE4D1000A1E8E5 /* PBXTargetDependency */,
+				8614128E1AEE4D1000A1E8E5 /* PBXTargetDependency */,
+				861412901AEE4D1000A1E8E5 /* PBXTargetDependency */,
+				861412921AEE4D1000A1E8E5 /* PBXTargetDependency */,
+				861412941AEE4D1000A1E8E5 /* PBXTargetDependency */,
+				861412961AEE4D1000A1E8E5 /* PBXTargetDependency */,
 			);
 			name = ExtractViewController;
 			productName = ExtractViewController;
@@ -2886,6 +3280,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				861412421AEE4B6C00A1E8E5 /* PBXTargetDependency */,
+				861412441AEE4B6C00A1E8E5 /* PBXTargetDependency */,
+				861412401AEE4B4D00A1E8E5 /* PBXTargetDependency */,
+				8614123E1AEE4B4500A1E8E5 /* PBXTargetDependency */,
+				8614123C1AEE4B3C00A1E8E5 /* PBXTargetDependency */,
+				8614123A1AEE4B3200A1E8E5 /* PBXTargetDependency */,
 			);
 			name = UsersViewController;
 			productName = UsersViewController;
@@ -2923,6 +3323,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				861412981AEE4D2E00A1E8E5 /* PBXTargetDependency */,
 			);
 			name = FakeSeparator;
 			productName = FakeSeparator;
@@ -2960,6 +3361,18 @@
 			buildRules = (
 			);
 			dependencies = (
+				861412581AEE4BCD00A1E8E5 /* PBXTargetDependency */,
+				8614125A1AEE4BCD00A1E8E5 /* PBXTargetDependency */,
+				8614125C1AEE4BCD00A1E8E5 /* PBXTargetDependency */,
+				861412561AEE4BB500A1E8E5 /* PBXTargetDependency */,
+				861412461AEE4BA500A1E8E5 /* PBXTargetDependency */,
+				861412481AEE4BA500A1E8E5 /* PBXTargetDependency */,
+				8614124A1AEE4BA500A1E8E5 /* PBXTargetDependency */,
+				8614124C1AEE4BA500A1E8E5 /* PBXTargetDependency */,
+				8614124E1AEE4BA500A1E8E5 /* PBXTargetDependency */,
+				861412501AEE4BA500A1E8E5 /* PBXTargetDependency */,
+				861412521AEE4BA500A1E8E5 /* PBXTargetDependency */,
+				861412541AEE4BA500A1E8E5 /* PBXTargetDependency */,
 			);
 			name = UserDetailViewController;
 			productName = UserDetailViewController;
@@ -2997,6 +3410,9 @@
 			buildRules = (
 			);
 			dependencies = (
+				8614125E1AEE4BE700A1E8E5 /* PBXTargetDependency */,
+				861412601AEE4BE700A1E8E5 /* PBXTargetDependency */,
+				861412621AEE4BE700A1E8E5 /* PBXTargetDependency */,
 			);
 			name = RideTableViewCell;
 			productName = RideTableViewCell;
@@ -3210,8 +3626,8 @@
 				86A92DAF1AB863E900B38445 /* BiguTests */,
 				86A4D3131AEACBF900477C07 /* BrightFutures */,
 				86A4D31D1AEACBF900477C07 /* BrightFuturesTests */,
-				864AEA1D1AEACD85009147D9 /* Models */,
-				864AEA271AEACD85009147D9 /* ModelsTests */,
+				864AEA1D1AEACD85009147D9 /* User */,
+				864AEA271AEACD85009147D9 /* UserTests */,
 				864D84251AEADABB0046C2C0 /* Collection */,
 				864D842F1AEADABB0046C2C0 /* CollectionTests */,
 				8651375F1AEADBCF00CB2A63 /* RGBColor */,
@@ -3921,6 +4337,266 @@
 			target = 860B11E71AEBB81C00D80E25 /* AbstractUser */;
 			targetProxy = 860B11FD1AEBB81C00D80E25 /* PBXContainerItemProxy */;
 		};
+		861412321AEE4AC800A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A8D81AEBBC190005BCA4 /* Billing */;
+			targetProxy = 861412311AEE4AC800A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412341AEE4AD200A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A4255E1AEBD0A500C2405B /* History */;
+			targetProxy = 861412331AEE4AD200A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412361AEE4AE900A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 860B11E71AEBB81C00D80E25 /* AbstractUser */;
+			targetProxy = 861412351AEE4AE900A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412381AEE4AF100A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A8FE1AEBBD300005BCA4 /* RootUser */;
+			targetProxy = 861412371AEE4AF100A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614123A1AEE4B3200A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 864AEA1D1AEACD85009147D9 /* User */;
+			targetProxy = 861412391AEE4B3200A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614123C1AEE4B3C00A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86CD07881AEADF65006B6CE1 /* UserDetailViewController */;
+			targetProxy = 8614123B1AEE4B3C00A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614123E1AEE4B4500A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 860B11E71AEBB81C00D80E25 /* AbstractUser */;
+			targetProxy = 8614123D1AEE4B4500A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412401AEE4B4D00A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A9981AEBC69A0005BCA4 /* UserList */;
+			targetProxy = 8614123F1AEE4B4D00A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412421AEE4B6C00A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8651375F1AEADBCF00CB2A63 /* RGBColor */;
+			targetProxy = 861412411AEE4B6C00A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412441AEE4B6C00A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86CD07631AEADEEC006B6CE1 /* FakeSeparator */;
+			targetProxy = 861412431AEE4B6C00A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412461AEE4BA500A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A4D3131AEACBF900477C07 /* BrightFutures */;
+			targetProxy = 861412451AEE4BA500A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412481AEE4BA500A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 864AEA1D1AEACD85009147D9 /* User */;
+			targetProxy = 861412471AEE4BA500A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614124A1AEE4BA500A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86CD07631AEADEEC006B6CE1 /* FakeSeparator */;
+			targetProxy = 861412491AEE4BA500A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614124C1AEE4BA500A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86CD07BE1AEAE160006B6CE1 /* RideTableViewCell */;
+			targetProxy = 8614124B1AEE4BA500A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614124E1AEE4BA500A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 860B11E71AEBB81C00D80E25 /* AbstractUser */;
+			targetProxy = 8614124D1AEE4BA500A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412501AEE4BA500A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A9981AEBC69A0005BCA4 /* UserList */;
+			targetProxy = 8614124F1AEE4BA500A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412521AEE4BA500A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A9BD1AEBC77E0005BCA4 /* UserPersistenceManager */;
+			targetProxy = 861412511AEE4BA500A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412541AEE4BA500A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86B8D8FE1AEC69A600B7480C /* ExtractViewController */;
+			targetProxy = 861412531AEE4BA500A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412561AEE4BB500A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8651375F1AEADBCF00CB2A63 /* RGBColor */;
+			targetProxy = 861412551AEE4BB500A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412581AEE4BCD00A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A8D81AEBBC190005BCA4 /* Billing */;
+			targetProxy = 861412571AEE4BCD00A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614125A1AEE4BCD00A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A9E21AEBC8520005BCA4 /* Ride */;
+			targetProxy = 861412591AEE4BCD00A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614125C1AEE4BCD00A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A4255E1AEBD0A500C2405B /* History */;
+			targetProxy = 8614125B1AEE4BCD00A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614125E1AEE4BE700A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 864AEA1D1AEACD85009147D9 /* User */;
+			targetProxy = 8614125D1AEE4BE700A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412601AEE4BE700A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A9981AEBC69A0005BCA4 /* UserList */;
+			targetProxy = 8614125F1AEE4BE700A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412621AEE4BE700A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A9E21AEBC8520005BCA4 /* Ride */;
+			targetProxy = 861412611AEE4BE700A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412641AEE4C0500A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8651375F1AEADBCF00CB2A63 /* RGBColor */;
+			targetProxy = 861412631AEE4C0500A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412661AEE4C2600A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A4D3131AEACBF900477C07 /* BrightFutures */;
+			targetProxy = 861412651AEE4C2600A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412681AEE4C4100A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A4D3131AEACBF900477C07 /* BrightFutures */;
+			targetProxy = 861412671AEE4C4100A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614126A1AEE4C4100A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 860B11E71AEBB81C00D80E25 /* AbstractUser */;
+			targetProxy = 861412691AEE4C4100A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614126C1AEE4C4100A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A9241AEBBD810005BCA4 /* Persistence */;
+			targetProxy = 8614126B1AEE4C4100A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614126E1AEE4C5100A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A4D3131AEACBF900477C07 /* BrightFutures */;
+			targetProxy = 8614126D1AEE4C5100A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412701AEE4C7900A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A4D3131AEACBF900477C07 /* BrightFutures */;
+			targetProxy = 8614126F1AEE4C7900A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412721AEE4C7900A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 864AEA1D1AEACD85009147D9 /* User */;
+			targetProxy = 861412711AEE4C7900A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412741AEE4C7900A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 864D84251AEADABB0046C2C0 /* Collection */;
+			targetProxy = 861412731AEE4C7900A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412761AEE4CA800A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A4D3131AEACBF900477C07 /* BrightFutures */;
+			targetProxy = 861412751AEE4CA800A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412781AEE4CA800A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 864AEA1D1AEACD85009147D9 /* User */;
+			targetProxy = 861412771AEE4CA800A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614127A1AEE4CA800A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A9241AEBBD810005BCA4 /* Persistence */;
+			targetProxy = 861412791AEE4CA800A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614127C1AEE4CA800A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A9981AEBC69A0005BCA4 /* UserList */;
+			targetProxy = 8614127B1AEE4CA800A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614127E1AEE4CC400A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A4D3131AEACBF900477C07 /* BrightFutures */;
+			targetProxy = 8614127D1AEE4CC400A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412801AEE4CC400A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 864D84251AEADABB0046C2C0 /* Collection */;
+			targetProxy = 8614127F1AEE4CC400A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412821AEE4CC400A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A9241AEBBD810005BCA4 /* Persistence */;
+			targetProxy = 861412811AEE4CC400A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412841AEE4CE500A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A4D3131AEACBF900477C07 /* BrightFutures */;
+			targetProxy = 861412831AEE4CE500A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412861AEE4CE500A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 864D84251AEADABB0046C2C0 /* Collection */;
+			targetProxy = 861412851AEE4CE500A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412881AEE4CE500A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A9721AEBC0150005BCA4 /* Extract */;
+			targetProxy = 861412871AEE4CE500A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614128A1AEE4CE500A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A9E21AEBC8520005BCA4 /* Ride */;
+			targetProxy = 861412891AEE4CE500A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614128C1AEE4D1000A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 864AEA1D1AEACD85009147D9 /* User */;
+			targetProxy = 8614128B1AEE4D1000A1E8E5 /* PBXContainerItemProxy */;
+		};
+		8614128E1AEE4D1000A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 864D84251AEADABB0046C2C0 /* Collection */;
+			targetProxy = 8614128D1AEE4D1000A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412901AEE4D1000A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8651375F1AEADBCF00CB2A63 /* RGBColor */;
+			targetProxy = 8614128F1AEE4D1000A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412921AEE4D1000A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86CD07631AEADEEC006B6CE1 /* FakeSeparator */;
+			targetProxy = 861412911AEE4D1000A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412941AEE4D1000A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A9721AEBC0150005BCA4 /* Extract */;
+			targetProxy = 861412931AEE4D1000A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412961AEE4D1000A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8692A9981AEBC69A0005BCA4 /* UserList */;
+			targetProxy = 861412951AEE4D1000A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861412981AEE4D2E00A1E8E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8651375F1AEADBCF00CB2A63 /* RGBColor */;
+			targetProxy = 861412971AEE4D2E00A1E8E5 /* PBXContainerItemProxy */;
+		};
 		8626E3321AEAED3B003872A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8626E3241AEAED3B003872A2 /* DarkThemedViewController */;
@@ -3938,7 +4614,7 @@
 		};
 		864AEA2B1AEACD85009147D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 864AEA1D1AEACD85009147D9 /* Models */;
+			target = 864AEA1D1AEACD85009147D9 /* User */;
 			targetProxy = 864AEA2A1AEACD85009147D9 /* PBXContainerItemProxy */;
 		};
 		864AEA2D1AEACD85009147D9 /* PBXTargetDependency */ = {
@@ -3948,7 +4624,7 @@
 		};
 		864AEA341AEACD85009147D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 864AEA1D1AEACD85009147D9 /* Models */;
+			target = 864AEA1D1AEACD85009147D9 /* User */;
 			targetProxy = 864AEA331AEACD85009147D9 /* PBXContainerItemProxy */;
 		};
 		864D84331AEADABB0046C2C0 /* PBXTargetDependency */ = {
@@ -6077,7 +6753,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		864AEA371AEACD85009147D9 /* Build configuration list for PBXNativeTarget "Models" */ = {
+		864AEA371AEACD85009147D9 /* Build configuration list for PBXNativeTarget "User" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				864AEA381AEACD85009147D9 /* Debug */,
@@ -6086,7 +6762,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		864AEA3A1AEACD85009147D9 /* Build configuration list for PBXNativeTarget "ModelsTests" */ = {
+		864AEA3A1AEACD85009147D9 /* Build configuration list for PBXNativeTarget "UserTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				864AEA3B1AEACD85009147D9 /* Debug */,
