@@ -28,6 +28,9 @@ public class RootUser: AbstractUser {
     
     override internal init() {
         super.init()
+        if self.name == "" {
+            self.name = "You"
+        }
     }
     override internal init(fromDictionary dic: [NSString : NSObject]) {
         super.init(fromDictionary: dic)
