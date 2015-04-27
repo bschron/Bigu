@@ -31,11 +31,6 @@ internal class UserCell: UITableViewCell {
     private var userImagePanGestureIsActive: Bool = false
     private var invisibleUserImageViewCover: UIView!
     internal var viewController: UIViewController!
-    internal var userIndex: Int = 0 {
-        didSet {
-            self.user = UserList.sharedUserList.list.getElementAtIndex(self.userIndex)!
-        }
-    }
     
     
     //MARK: Outlets
@@ -83,7 +78,7 @@ internal class UserCell: UITableViewCell {
     
     private func updateUserInfo() {
         if configured {
-            let user = UserList.sharedUserList.list.getElementAtIndex(self.userIndex)!
+            let user = self.user
             self.nameLabel.text = user.nickName != "" ? user.nickName : user.name
             self.fullnameLabel.text = user.fullName
             self.userImageView.image = user.userImage
@@ -137,7 +132,7 @@ internal class UserCell: UITableViewCell {
     
     // MARK: Actions
     @IBAction private func debitButtonPressed(sender: AnyObject) {
-        UserList.sharedUserList.list.getElementAtIndex(self.userIndex)!.charge()
+        self.user.charge()
         //Animation
         let duration = 0.3
         let delay = 0.0 // delay will be 0.0 seconds (e.g. nothing)

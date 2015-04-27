@@ -43,6 +43,7 @@ public class UsersViewController: UIViewController, UITableViewDataSource, UITab
     
     override public func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.usersTableView.reloadData()
         self.reloadUsersData()
     }
     
@@ -94,7 +95,7 @@ public class UsersViewController: UIViewController, UITableViewDataSource, UITab
             let userName = senderCell.user.nickName != "" ? senderCell.user.nickName : senderCell.user.name
             
             vc.title = userName
-            vc.user = UserList.sharedUserList.list.getElementAtIndex(senderCell.userIndex)
+            vc.user = senderCell.user
         }
     }
     
@@ -108,7 +109,6 @@ public class UsersViewController: UIViewController, UITableViewDataSource, UITab
         
         let cell = usersTableView.dequeueReusableCellWithIdentifier(UserCell.userCellReuseId, forIndexPath: indexPath) as! UserCell
         cell.user = UserList.sharedUserList.list.getElementAtIndex(indexPath.row)!
-        cell.userIndex = indexPath.row
         cell.viewController = self
         
         return cell
