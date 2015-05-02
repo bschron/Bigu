@@ -58,7 +58,7 @@ public class OrderedList<T> {
     }
     
     public func getElementAtIndex(index: Int) -> T? {
-        return index < self.count ? self.list[index] : nil
+        return index <= self.count ? self.list[index] : nil
     }
     
     public func removeAtIndex(index: Int) {
