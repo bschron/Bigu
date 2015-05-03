@@ -125,6 +125,13 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
                 
                 cell = newCell
             }
+            else if row == 3 {
+                let newCell = tableView.dequeueReusableCellWithIdentifier(MapPinTableViewCell.reuseId, forIndexPath: indexPath) as! MapPinTableViewCell
+                
+                newCell.pin = self.user.homePin
+                
+                cell = newCell
+            }
         }
         else if section == 2 {
             let newCell = tableView.dequeueReusableCellWithIdentifier(RideTableViewCell.reuseId, forIndexPath: indexPath) as! RideTableViewCell
@@ -146,7 +153,7 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
             rows = self.shouldDisplayTaxValueCell ? 2 : 1
         }
         else if section == 1 {
-            rows = 3
+            rows = 4
         }
         else if section == 2 {
             let rideHistory = History.singleton.rideHistory
@@ -161,6 +168,9 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
         
         if indexPath.section == 0 && indexPath.row == 1 {
             height = CGFloat(162)
+        }
+        else if indexPath.section == 1 && indexPath.row == 3 {
+            height = CGFloat(160)
         }
         
         return height

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 public class AbstractUser {
     // MARK: -Properties
@@ -73,6 +74,27 @@ public class AbstractUser {
     }
     public var handler: UserHandlingDelegate? = nil
     public let id: Int
+    private var _homeLocation: CLLocationCoordinate2D? = nil
+    public var homeLocation: CLLocationCoordinate2D {
+        get {
+            if self._homeLocation == nil {
+                self._homeLocation = CLLocationCoordinate2DMake(0, 0)
+            }
+            
+            return self._homeLocation!
+        }
+        set {
+            self._homeLocation = newValue
+        }
+    }
+    public var homePin: MKPointAnnotation {
+        let pin = MKPointAnnotation()
+        pin.coordinate = self.homeLocation
+        pin.title = self.nickName != "" ? self.nickName : self.fullName
+        pin.subtitle = (self.nickName != "" ? self.nickName : self.fullName) + "'s home"
+        
+        return pin
+    }
     
     // MARK: -Methods
     public init() {
@@ -132,11 +154,22 @@ public class AbstractUser {
         let optionalSurname = dic[AbstractUser.surNameKey] as? String
         let optionalNickname = dic[AbstractUser.nickNameKey] as? String
         var optionalImage = dic[AbstractUser.userImageKey] as? NSData
+        let optionalLongitude = dic[AbstractUser.homeLongitudeKey] as? Float
+        let optionalLatitude = dic[AbstractUser.homeLatitudeKey] as? Float
         
         if let image = optionalImage {
             if image == UIImagePNGRepresentation(AbstractUser.emptyUserImage) {
                 optionalImage = nil
             }
+        }
+        
+        let coordinate: CLLocationCoordinate2D!
+        
+        if optionalLongitude != nil && optionalLatitude != nil {
+            coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(optionalLatitude!), CLLocationDegrees(optionalLongitude!))
+        }
+        else {
+            coordinate = CLLocationCoordinate2DMake(0, 0)
         }
         
         self.id = optionalId != nil ? optionalId! : AbstractUser.greaterId++
@@ -153,11 +186,16 @@ public class AbstractUser {
     public func toDictionary() -> [NSString: NSObject] {
         var dictionary = [NSString: NSObject]()
         
+        let homeLatitude = Float(self.homeLocation.latitude)
+        let homeLongitude = Float(self.homeLocation.longitude)
+        
         dictionary[AbstractUser.nameKey] = self.name
         dictionary[AbstractUser.surNameKey] = self.surName
         dictionary[AbstractUser.nickNameKey] = self.nickName
         dictionary[AbstractUser.userImageKey] = UIImagePNGRepresentation(self.userImage)
         dictionary[AbstractUser.userIdKey] = self.id
+        dictionary[AbstractUser.homeLatitudeKey] = homeLatitude
+        dictionary[AbstractUser.homeLongitudeKey] = homeLongitude
         
         return dictionary
     }
@@ -191,6 +229,12 @@ public class AbstractUser {
     }
     class public var userIdKey: String {
         return "UserIDKey"
+    }
+    class public var homeLongitudeKey: String {
+        return "UserHomeLongitudeKey"
+    }
+    class public var homeLatitudeKey: String {
+        return "UserHomeLatitudeKey"
     }
     class private var emptyUserImage: UIImage {
         struct wrap {

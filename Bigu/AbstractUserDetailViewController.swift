@@ -37,6 +37,7 @@ public class AbstractUserDetailViewController: UIViewController, UserHandlingDel
         self.tableView.registerNib(UINib(nibName: "UserDetailFirstNameTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: UserDetailFirstNameTableViewCell.reuseId)
         self.tableView.registerNib(UINib(nibName: "UserDetailLastNameTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: UserDetailLastNameTableViewCell.reuseId)
         self.tableView.registerNib(UINib(nibName: "UserDetailNickNameTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: UserDetailNickNameTableViewCell.reuseId)
+        self.tableView.registerNib(UINib(nibName: "MapPinTableViewCell", bundle: NSBundle(identifier: "IC.UserDetailViewController")), forCellReuseIdentifier: MapPinTableViewCell.reuseId)
         
         self.tableView.backgroundColor = UIColor.whiteColor()
         self.tableView.separatorStyle = .None
