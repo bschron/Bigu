@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -46,6 +46,9 @@
 		865137771AEADBCF00CB2A63 /* RGBColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 865137601AEADBCF00CB2A63 /* RGBColor.framework */; };
 		865137781AEADBCF00CB2A63 /* RGBColor.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 865137601AEADBCF00CB2A63 /* RGBColor.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		865137811AEADBE000CB2A63 /* RGBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860058D01AE69928000F1050 /* RGBColor.swift */; };
+		866337BB1AF5A45000759872 /* MapPinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866337B91AF5A45000759872 /* MapPinTableViewCell.swift */; };
+		866337BC1AF5A45000759872 /* MapPinTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 866337BA1AF5A45000759872 /* MapPinTableViewCell.xib */; };
+		866337BE1AF5A50D00759872 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866337BD1AF5A50D00759872 /* MapKit.framework */; };
 		8676D3671AED05B100976AE6 /* UserDetailPayingValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8676D3651AED046800976AE6 /* UserDetailPayingValueTableViewCell.swift */; };
 		8676D36A1AED163500976AE6 /* UserDetailPayingValueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8676D3681AED159000976AE6 /* UserDetailPayingValueTableViewCell.xib */; };
 		8692A8DE1AEBBC1A0005BCA4 /* Billing.h in Headers */ = {isa = PBXBuildFile; fileRef = 8692A8DD1AEBBC1A0005BCA4 /* Billing.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1034,6 +1037,9 @@
 		8661BEE21AE6CAC700BBBF4E /* UserDetailFirstNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailFirstNameTableViewCell.xib; sourceTree = "<group>"; };
 		8661BEE41AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailLastNameTableViewCell.xib; sourceTree = "<group>"; };
 		8661BEE61AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailNickNameTableViewCell.xib; sourceTree = "<group>"; };
+		866337B91AF5A45000759872 /* MapPinTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPinTableViewCell.swift; sourceTree = "<group>"; };
+		866337BA1AF5A45000759872 /* MapPinTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapPinTableViewCell.xib; sourceTree = "<group>"; };
+		866337BD1AF5A50D00759872 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8668D3961ACF3E8500C2CB87 /* UserList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserList.swift; path = ../Bigu/UserList.swift; sourceTree = "<group>"; };
 		86717B851AEA5CAC0028B418 /* FakeSeparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FakeSeparator.swift; path = ../Bigu/FakeSeparator.swift; sourceTree = "<group>"; };
 		8676D3651AED046800976AE6 /* UserDetailPayingValueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailPayingValueTableViewCell.swift; sourceTree = "<group>"; };
@@ -1380,6 +1386,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				866337BE1AF5A50D00759872 /* MapKit.framework in Frameworks */,
 				8692A93C1AEBBD810005BCA4 /* Persistence.framework in Frameworks */,
 				8692A9FA1AEBC8520005BCA4 /* Ride.framework in Frameworks */,
 				865137771AEADBCF00CB2A63 /* RGBColor.framework in Frameworks */,
@@ -1605,6 +1612,7 @@
 			children = (
 				860B11E91AEBB81C00D80E25 /* AbstractUser */,
 				860B11F81AEBB81C00D80E25 /* AbstractUserTests */,
+				86A78EEB1ACD86FB009BBF58 /* User */,
 				8692A9001AEBBD300005BCA4 /* RootUser */,
 				8692A90F1AEBBD300005BCA4 /* RootUserTests */,
 				8692A8DA1AEBBC190005BCA4 /* Billing */,
@@ -1615,7 +1623,6 @@
 				8692A9CE1AEBC77F0005BCA4 /* UserPersistenceManagerTests */,
 				8692A9E41AEBC8520005BCA4 /* Ride */,
 				8692A9F31AEBC8520005BCA4 /* RideTests */,
-				86A78EEB1ACD86FB009BBF58 /* User */,
 				8692A9261AEBBD810005BCA4 /* Persistence */,
 				8692A9351AEBBD810005BCA4 /* PersistenceTests */,
 				8692A9741AEBC0150005BCA4 /* Extract */,
@@ -1763,6 +1770,8 @@
 				8661BEE41AE6CAD800BBBF4E /* UserDetailLastNameTableViewCell.xib */,
 				86C23CA31AD3632C00FE9D63 /* UserDetailNickNameTableViewCell.swift */,
 				8661BEE61AE6CAE700BBBF4E /* UserDetailNickNameTableViewCell.xib */,
+				866337B91AF5A45000759872 /* MapPinTableViewCell.swift */,
+				866337BA1AF5A45000759872 /* MapPinTableViewCell.xib */,
 			);
 			name = "Global Cells";
 			sourceTree = "<group>";
@@ -2160,6 +2169,7 @@
 		86A92D901AB863E900B38445 = {
 			isa = PBXGroup;
 			children = (
+				866337BD1AF5A50D00759872 /* MapKit.framework */,
 				86A92D9B1AB863E900B38445 /* Bigu */,
 				86CD07351AEADDFC006B6CE1 /* ViewsAndControlllers */,
 				864AEA1F1AEACD85009147D9 /* Models */,
@@ -3610,7 +3620,7 @@
 				};
 			};
 			buildConfigurationList = 86A92D941AB863E900B38445 /* Build configuration list for PBXProject "Bigu" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -3937,6 +3947,7 @@
 				8676D36A1AED163500976AE6 /* UserDetailPayingValueTableViewCell.xib in Resources */,
 				8626E31E1AEAECA7003872A2 /* Images.xcassets in Resources */,
 				86CD07B71AEADFCC006B6CE1 /* UserDetailLastNameTableViewCell.xib in Resources */,
+				866337BC1AF5A45000759872 /* MapPinTableViewCell.xib in Resources */,
 				86CD07B51AEADFCC006B6CE1 /* UserDetailFirstNameTableViewCell.xib in Resources */,
 				86CD07B31AEADFC2006B6CE1 /* RootUserTaxValueTableViewCell.xib in Resources */,
 				86CD07B91AEADFCC006B6CE1 /* UserDetailNickNameTableViewCell.xib in Resources */,
@@ -4285,6 +4296,7 @@
 				86CD07A91AEADFA7006B6CE1 /* AbstractUserDetailViewController.swift in Sources */,
 				86CD07A81AEADFA7006B6CE1 /* UserDetailViewController.swift in Sources */,
 				86CD07AB1AEADFB1006B6CE1 /* AbstractUserDetailMainTableViewCell.swift in Sources */,
+				866337BB1AF5A45000759872 /* MapPinTableViewCell.swift in Sources */,
 				86CD07B61AEADFCC006B6CE1 /* UserDetailLastNameTableViewCell.swift in Sources */,
 				8676D3671AED05B100976AE6 /* UserDetailPayingValueTableViewCell.swift in Sources */,
 				86CD07B81AEADFCC006B6CE1 /* UserDetailNickNameTableViewCell.swift in Sources */,
@@ -6171,6 +6183,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -6206,6 +6219,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -6221,6 +6235,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
 			};
 			name = Debug;
 		};
@@ -6234,6 +6249,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_WHOLE_MODULE_OPTIMIZATION = YES;
 			};
 			name = Release;
 		};
