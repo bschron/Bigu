@@ -12,6 +12,8 @@ import Billing
 import History
 import AbstractUser
 import RootUser
+import AddressBook
+import BrightFutures
 
 public class User: AbstractUser {
     
@@ -90,5 +92,23 @@ public class User: AbstractUser {
     }
     class internal var historyIdKey: String {
         return "UserHistoryIdKey"
+    }
+    override class public func loadUserFromAddressBook(viewController vc: UIViewController, person: ABRecord!) -> Future<AbstractUser> {
+        let promise = Promise<AbstractUser>()
+        
+        let futureAbsUsr = super.loadUserFromAddressBook(viewController: vc, person: person)
+        
+        futureAbsUsr.onSuccess { absUsr in
+            let usr = User(withid: absUsr.id)
+            usr.userImage = absUsr.userImage
+            usr.name = absUsr.name
+            usr.surName = absUsr.surName
+            usr.homeLocation = absUsr.homeLocation
+            promise.success(usr)
+        }.onFailure{ error in
+            promise.failure(error)
+        }
+        
+        return promise.future
     }
 }

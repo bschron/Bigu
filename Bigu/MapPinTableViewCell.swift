@@ -31,15 +31,6 @@ public class MapPinTableViewCell: UITableViewCell, MKMapViewDelegate {
     
     override public func awakeFromNib() {
         super.awakeFromNib()
-        
-        var latitude: CLLocationDegrees = 48.399193
-        var longitude: CLLocationDegrees = 9.993341
-        
-        let pin = MKPointAnnotation()
-        pin.coordinate = CLLocationCoordinate2DMake(latitude, longitude)
-        pin.title = "Ulm Church"
-        pin.subtitle = "A Famous Church in Germany"
-        self.pin = pin
     }
 
     override public func setSelected(selected: Bool, animated: Bool) {
