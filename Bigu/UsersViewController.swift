@@ -16,12 +16,14 @@ import AddressBookUI
 import MapKit
 import BrightFutures
 import ExpectedError
+import ABImportAgent
 
 public class UsersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UserHandlingDelegate, ABPeoplePickerNavigationControllerDelegate {
 
     // MARK: - Proprierties
     private weak var popUp: NewUserPopUp?
     internal var peoplePicker: ABPeoplePickerNavigationController?
+    private var agent: ABImportAgent?
     
     //MARK: Outlets
     @IBOutlet weak var usersTableView: UITableView!
@@ -54,11 +56,17 @@ public class UsersViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     internal func displayPeoplePicker() {
-        if self.peoplePicker == nil {
-            self.peoplePicker = ABPeoplePickerNavigationController()
-            self.peoplePicker!.peoplePickerDelegate = self
-        }
-        self.presentViewController(self.peoplePicker!, animated: true, completion: nil)
+        self.agent = ABImportAgent()
+        self.agent?.displayPeoplePicker(viewController: self, onKill: {}, completion: {
+            self.freePopUp()
+        })
+    }
+    
+    public func didRegisterUser() {
+        let rows = UserList.sharedUserList.list.count - 1
+        let index = NSIndexPath(forRow: rows, inSection: 0)
+        self.usersTableView.insertRowsAtIndexPaths([index], withRowAnimation: .Automatic)
+        self.usersTableView.reloadData()
     }
     
     // MARK: Actions

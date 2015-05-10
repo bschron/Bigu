@@ -8,6 +8,7 @@
 
 import Foundation
 
-public protocol UserHandlingDelegate {
+@objc public protocol UserHandlingDelegate {
     func reloadUsersData()
+    optional func didRegisterUser()
 }
