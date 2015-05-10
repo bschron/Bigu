@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 47;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,12 +32,6 @@
 		862D11901AFEAE9F00856482 /* ExpectedError.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 862D11781AFEAE9F00856482 /* ExpectedError.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		862D11981AFEAEB400856482 /* ExpectedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D11971AFEAEB400856482 /* ExpectedError.swift */; };
 		862D119A1AFEB18700856482 /* NewUserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D11991AFEB18700856482 /* NewUserError.swift */; };
-		862D11A91AFED7C800856482 /* AddressBookImportAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = 862D11A81AFED7C800856482 /* AddressBookImportAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		862D11AF1AFED7C800856482 /* AddressBookImportAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862D11A41AFED7C800856482 /* AddressBookImportAgent.framework */; };
-		862D11B81AFED7C900856482 /* AddressBookImportAgentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D11B71AFED7C900856482 /* AddressBookImportAgentTests.swift */; };
-		862D11BB1AFED7C900856482 /* AddressBookImportAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862D11A41AFED7C800856482 /* AddressBookImportAgent.framework */; };
-		862D11BC1AFED7C900856482 /* AddressBookImportAgent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 862D11A41AFED7C800856482 /* AddressBookImportAgent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		862D11C41AFED7F200856482 /* AddressBookImportAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D11C31AFED7F200856482 /* AddressBookImportAgent.swift */; };
 		863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D5E931ACF7185007D9235 /* CustomPopUp.swift */; };
 		863D5E961ACF7277007D9235 /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863D5E951ACF7277007D9235 /* CustomPopUp.xib */; };
 		864AEA231AEACD85009147D9 /* Models.h in Headers */ = {isa = PBXBuildFile; fileRef = 864AEA221AEACD85009147D9 /* Models.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -117,6 +111,8 @@
 		86A425771AEBD0A500C2405B /* History.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 86A4255F1AEBD0A500C2405B /* History.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		86A4257F1AEBD0B400C2405B /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A4257E1AEBD0B400C2405B /* History.swift */; };
 		86A425811AEBE46000C2405B /* HistoryPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A425801AEBE46000C2405B /* HistoryPersistenceManager.swift */; };
+		86A4C34C1AFEF32A002BF05E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A4C34A1AFEF32A002BF05E /* AddressBook.framework */; };
+		86A4C34D1AFEF32A002BF05E /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A4C34B1AFEF32A002BF05E /* AddressBookUI.framework */; };
 		86A4D3191AEACBF900477C07 /* BrightFutures.h in Headers */ = {isa = PBXBuildFile; fileRef = 86A4D3181AEACBF900477C07 /* BrightFutures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		86A4D31F1AEACBF900477C07 /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A4D3141AEACBF900477C07 /* BrightFutures.framework */; };
 		86A4D3281AEACBF900477C07 /* BrightFuturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A4D3271AEACBF900477C07 /* BrightFuturesTests.swift */; };
@@ -618,27 +614,6 @@
 			remoteGlobalIDString = 862D11771AFEAE9F00856482;
 			remoteInfo = ExpectedError;
 		};
-		862D11B01AFED7C800856482 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 862D11A31AFED7C800856482;
-			remoteInfo = AddressBookImportAgent;
-		};
-		862D11B21AFED7C900856482 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 86A92D981AB863E900B38445;
-			remoteInfo = Bigu;
-		};
-		862D11B91AFED7C900856482 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 862D11A31AFED7C800856482;
-			remoteInfo = AddressBookImportAgent;
-		};
 		864AEA2A1AEACD85009147D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
@@ -870,6 +845,41 @@
 			remoteGlobalIDString = 86A4255E1AEBD0A500C2405B;
 			remoteInfo = History;
 		};
+		86A4C3401AFEF2A3002BF05E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 862D11771AFEAE9F00856482;
+			remoteInfo = ExpectedError;
+		};
+		86A4C3421AFEF2AC002BF05E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 862D11771AFEAE9F00856482;
+			remoteInfo = ExpectedError;
+		};
+		86A4C3441AFEF2BC002BF05E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 862D11771AFEAE9F00856482;
+			remoteInfo = ExpectedError;
+		};
+		86A4C3461AFEF2C0002BF05E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A4D3131AEACBF900477C07;
+			remoteInfo = BrightFutures;
+		};
+		86A4C3481AFEF2C8002BF05E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A4D3131AEACBF900477C07;
+			remoteInfo = BrightFutures;
+		};
 		86A4D3201AEACBF900477C07 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
@@ -1012,7 +1022,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				862D11BC1AFED7C900856482 /* AddressBookImportAgent.framework in Embed Frameworks */,
 				8692A93D1AEBBD810005BCA4 /* Persistence.framework in Embed Frameworks */,
 				8692A9FB1AEBC8520005BCA4 /* Ride.framework in Embed Frameworks */,
 				865137781AEADBCF00CB2A63 /* RGBColor.framework in Embed Frameworks */,
@@ -1071,13 +1080,6 @@
 		862D118B1AFEAE9F00856482 /* ExpectedErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedErrorTests.swift; sourceTree = "<group>"; };
 		862D11971AFEAEB400856482 /* ExpectedError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpectedError.swift; sourceTree = "<group>"; };
 		862D11991AFEB18700856482 /* NewUserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserError.swift; sourceTree = "<group>"; };
-		862D11A41AFED7C800856482 /* AddressBookImportAgent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AddressBookImportAgent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		862D11A71AFED7C800856482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		862D11A81AFED7C800856482 /* AddressBookImportAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressBookImportAgent.h; sourceTree = "<group>"; };
-		862D11AE1AFED7C800856482 /* AddressBookImportAgentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressBookImportAgentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		862D11B61AFED7C900856482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		862D11B71AFED7C900856482 /* AddressBookImportAgentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookImportAgentTests.swift; sourceTree = "<group>"; };
-		862D11C31AFED7F200856482 /* AddressBookImportAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookImportAgent.swift; sourceTree = "<group>"; };
 		863D5E931ACF7185007D9235 /* CustomPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		863D5E951ACF7277007D9235 /* CustomPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPopUp.xib; sourceTree = "<group>"; };
 		863D5E981ACF75F8007D9235 /* NewUserPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserPopUp.xib; sourceTree = "<group>"; };
@@ -1167,6 +1169,8 @@
 		86A425721AEBD0A500C2405B /* HistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
 		86A4257E1AEBD0B400C2405B /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		86A425801AEBE46000C2405B /* HistoryPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryPersistenceManager.swift; sourceTree = "<group>"; };
+		86A4C34A1AFEF32A002BF05E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		86A4C34B1AFEF32A002BF05E /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		86A4D3141AEACBF900477C07 /* BrightFutures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BrightFutures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A4D3171AEACBF900477C07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A4D3181AEACBF900477C07 /* BrightFutures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrightFutures.h; sourceTree = "<group>"; };
@@ -1286,21 +1290,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				862D11831AFEAE9F00856482 /* ExpectedError.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		862D11A01AFED7C800856482 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		862D11AB1AFED7C800856482 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				862D11AF1AFED7C800856482 /* AddressBookImportAgent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1488,6 +1477,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86A4C34C1AFEF32A002BF05E /* AddressBook.framework in Frameworks */,
+				86A4C34D1AFEF32A002BF05E /* AddressBookUI.framework in Frameworks */,
 				866337BE1AF5A50D00759872 /* MapKit.framework in Frameworks */,
 				8692A93C1AEBBD810005BCA4 /* Persistence.framework in Frameworks */,
 				8692A9FA1AEBC8520005BCA4 /* Ride.framework in Frameworks */,
@@ -1506,7 +1497,6 @@
 				86B8D9161AEC69A700B7480C /* ExtractViewController.framework in Frameworks */,
 				86A4D32B1AEACBF900477C07 /* BrightFutures.framework in Frameworks */,
 				860B11FF1AEBB81C00D80E25 /* AbstractUser.framework in Frameworks */,
-				862D11BB1AFED7C900856482 /* AddressBookImportAgent.framework in Frameworks */,
 				86A425761AEBD0A500C2405B /* History.framework in Frameworks */,
 				86CD07D61AEAE161006B6CE1 /* RideTableViewCell.framework in Frameworks */,
 				86CD077B1AEADEED006B6CE1 /* FakeSeparator.framework in Frameworks */,
@@ -1715,41 +1705,6 @@
 			isa = PBXGroup;
 			children = (
 				862D118A1AFEAE9F00856482 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		862D11A51AFED7C800856482 /* AddressBookImportAgent */ = {
-			isa = PBXGroup;
-			children = (
-				862D11A81AFED7C800856482 /* AddressBookImportAgent.h */,
-				862D11C31AFED7F200856482 /* AddressBookImportAgent.swift */,
-				862D11A61AFED7C800856482 /* Supporting Files */,
-			);
-			path = AddressBookImportAgent;
-			sourceTree = "<group>";
-		};
-		862D11A61AFED7C800856482 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				862D11A71AFED7C800856482 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		862D11B41AFED7C900856482 /* AddressBookImportAgentTests */ = {
-			isa = PBXGroup;
-			children = (
-				862D11B71AFED7C900856482 /* AddressBookImportAgentTests.swift */,
-				862D11B51AFED7C900856482 /* Supporting Files */,
-			);
-			path = AddressBookImportAgentTests;
-			sourceTree = "<group>";
-		};
-		862D11B51AFED7C900856482 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				862D11B61AFED7C900856482 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2348,6 +2303,8 @@
 		86A92D901AB863E900B38445 = {
 			isa = PBXGroup;
 			children = (
+				86A4C34A1AFEF32A002BF05E /* AddressBook.framework */,
+				86A4C34B1AFEF32A002BF05E /* AddressBookUI.framework */,
 				866337BD1AF5A50D00759872 /* MapKit.framework */,
 				86A92D9B1AB863E900B38445 /* Bigu */,
 				86CD07351AEADDFC006B6CE1 /* ViewsAndControlllers */,
@@ -2360,8 +2317,6 @@
 				864D84361AEADABB0046C2C0 /* CollectionTests */,
 				865137611AEADBCF00CB2A63 /* RGBColor */,
 				865137701AEADBCF00CB2A63 /* RGBColorTests */,
-				862D11A51AFED7C800856482 /* AddressBookImportAgent */,
-				862D11B41AFED7C900856482 /* AddressBookImportAgentTests */,
 				86A92D9A1AB863E900B38445 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -2411,8 +2366,6 @@
 				86B8D9091AEC69A600B7480C /* ExtractViewControllerTests.xctest */,
 				862D11781AFEAE9F00856482 /* ExpectedError.framework */,
 				862D11821AFEAE9F00856482 /* ExpectedErrorTests.xctest */,
-				862D11A41AFED7C800856482 /* AddressBookImportAgent.framework */,
-				862D11AE1AFED7C800856482 /* AddressBookImportAgentTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2692,14 +2645,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		862D11A11AFED7C800856482 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				862D11A91AFED7C800856482 /* AddressBookImportAgent.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		864AEA1B1AEACD85009147D9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -2851,6 +2796,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				86A4C3471AFEF2C0002BF05E /* PBXTargetDependency */,
+				86A4C3451AFEF2BC002BF05E /* PBXTargetDependency */,
 			);
 			name = AbstractUser;
 			productName = AbstractUser;
@@ -2951,43 +2898,6 @@
 			productReference = 862D11821AFEAE9F00856482 /* ExpectedErrorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		862D11A31AFED7C800856482 /* AddressBookImportAgent */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 862D11BD1AFED7CA00856482 /* Build configuration list for PBXNativeTarget "AddressBookImportAgent" */;
-			buildPhases = (
-				862D119F1AFED7C800856482 /* Sources */,
-				862D11A01AFED7C800856482 /* Frameworks */,
-				862D11A11AFED7C800856482 /* Headers */,
-				862D11A21AFED7C800856482 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AddressBookImportAgent;
-			productName = AddressBookImportAgent;
-			productReference = 862D11A41AFED7C800856482 /* AddressBookImportAgent.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		862D11AD1AFED7C800856482 /* AddressBookImportAgentTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 862D11C01AFED7CA00856482 /* Build configuration list for PBXNativeTarget "AddressBookImportAgentTests" */;
-			buildPhases = (
-				862D11AA1AFED7C800856482 /* Sources */,
-				862D11AB1AFED7C800856482 /* Frameworks */,
-				862D11AC1AFED7C800856482 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				862D11B11AFED7C800856482 /* PBXTargetDependency */,
-				862D11B31AFED7C900856482 /* PBXTargetDependency */,
-			);
-			name = AddressBookImportAgentTests;
-			productName = AddressBookImportAgentTests;
-			productReference = 862D11AE1AFED7C800856482 /* AddressBookImportAgentTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		864AEA1D1AEACD85009147D9 /* User */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 864AEA371AEACD85009147D9 /* Build configuration list for PBXNativeTarget "User" */;
@@ -3000,6 +2910,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				86A4C3491AFEF2C8002BF05E /* PBXTargetDependency */,
+				86A4C3431AFEF2AC002BF05E /* PBXTargetDependency */,
 				861412381AEE4AF100A1E8E5 /* PBXTargetDependency */,
 				861412361AEE4AE900A1E8E5 /* PBXTargetDependency */,
 				861412341AEE4AD200A1E8E5 /* PBXTargetDependency */,
@@ -3487,7 +3399,6 @@
 				86A425751AEBD0A500C2405B /* PBXTargetDependency */,
 				86B8D9151AEC69A700B7480C /* PBXTargetDependency */,
 				862D118E1AFEAE9F00856482 /* PBXTargetDependency */,
-				862D11BA1AFED7C900856482 /* PBXTargetDependency */,
 			);
 			name = Bigu;
 			productName = Bigu;
@@ -3567,6 +3478,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				86A4C3411AFEF2A3002BF05E /* PBXTargetDependency */,
 				861412421AEE4B6C00A1E8E5 /* PBXTargetDependency */,
 				861412441AEE4B6C00A1E8E5 /* PBXTargetDependency */,
 				861412401AEE4B4D00A1E8E5 /* PBXTargetDependency */,
@@ -3731,7 +3643,7 @@
 		86A92D911AB863E900B38445 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Universidade Federal De Alagoas";
 				TargetAttributes = {
 					860B11E71AEBB81C00D80E25 = {
@@ -3755,14 +3667,6 @@
 						DevelopmentTeam = LBFUFN3H7E;
 					};
 					862D11811AFEAE9F00856482 = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = 86A92D981AB863E900B38445;
-					};
-					862D11A31AFED7C800856482 = {
-						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = LBFUFN3H7E;
-					};
-					862D11AD1AFED7C800856482 = {
 						CreatedOnToolsVersion = 6.3.1;
 						TestTargetID = 86A92D981AB863E900B38445;
 					};
@@ -3913,7 +3817,7 @@
 				};
 			};
 			buildConfigurationList = 86A92D941AB863E900B38445 /* Build configuration list for PBXProject "Bigu" */;
-			compatibilityVersion = "Xcode 6.3";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -3967,8 +3871,6 @@
 				86B8D9081AEC69A600B7480C /* ExtractViewControllerTests */,
 				862D11771AFEAE9F00856482 /* ExpectedError */,
 				862D11811AFEAE9F00856482 /* ExpectedErrorTests */,
-				862D11A31AFED7C800856482 /* AddressBookImportAgent */,
-				862D11AD1AFED7C800856482 /* AddressBookImportAgentTests */,
 			);
 		};
 /* End PBXProject section */
@@ -4010,20 +3912,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		862D11801AFEAE9F00856482 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		862D11A21AFED7C800856482 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		862D11AC1AFED7C800856482 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -4354,22 +4242,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				862D118C1AFEAE9F00856482 /* ExpectedErrorTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		862D119F1AFED7C800856482 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				862D11C41AFED7F200856482 /* AddressBookImportAgent.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		862D11AA1AFED7C800856482 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				862D11B81AFED7C900856482 /* AddressBookImportAgentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4997,21 +4869,6 @@
 			target = 862D11771AFEAE9F00856482 /* ExpectedError */;
 			targetProxy = 862D118D1AFEAE9F00856482 /* PBXContainerItemProxy */;
 		};
-		862D11B11AFED7C800856482 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 862D11A31AFED7C800856482 /* AddressBookImportAgent */;
-			targetProxy = 862D11B01AFED7C800856482 /* PBXContainerItemProxy */;
-		};
-		862D11B31AFED7C900856482 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 86A92D981AB863E900B38445 /* Bigu */;
-			targetProxy = 862D11B21AFED7C900856482 /* PBXContainerItemProxy */;
-		};
-		862D11BA1AFED7C900856482 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 862D11A31AFED7C800856482 /* AddressBookImportAgent */;
-			targetProxy = 862D11B91AFED7C900856482 /* PBXContainerItemProxy */;
-		};
 		864AEA2B1AEACD85009147D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 864AEA1D1AEACD85009147D9 /* User */;
@@ -5176,6 +5033,31 @@
 			isa = PBXTargetDependency;
 			target = 86A4255E1AEBD0A500C2405B /* History */;
 			targetProxy = 86A425741AEBD0A500C2405B /* PBXContainerItemProxy */;
+		};
+		86A4C3411AFEF2A3002BF05E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 862D11771AFEAE9F00856482 /* ExpectedError */;
+			targetProxy = 86A4C3401AFEF2A3002BF05E /* PBXContainerItemProxy */;
+		};
+		86A4C3431AFEF2AC002BF05E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 862D11771AFEAE9F00856482 /* ExpectedError */;
+			targetProxy = 86A4C3421AFEF2AC002BF05E /* PBXContainerItemProxy */;
+		};
+		86A4C3451AFEF2BC002BF05E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 862D11771AFEAE9F00856482 /* ExpectedError */;
+			targetProxy = 86A4C3441AFEF2BC002BF05E /* PBXContainerItemProxy */;
+		};
+		86A4C3471AFEF2C0002BF05E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A4D3131AEACBF900477C07 /* BrightFutures */;
+			targetProxy = 86A4C3461AFEF2C0002BF05E /* PBXContainerItemProxy */;
+		};
+		86A4C3491AFEF2C8002BF05E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A4D3131AEACBF900477C07 /* BrightFutures */;
+			targetProxy = 86A4C3481AFEF2C8002BF05E /* PBXContainerItemProxy */;
 		};
 		86A4D3211AEACBF900477C07 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -5554,97 +5436,6 @@
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ExpectedErrorTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
-			};
-			name = Release;
-		};
-		862D11BE1AFED7CA00856482 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AddressBookImportAgent/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		862D11BF1AFED7CA00856482 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = AddressBookImportAgent/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		862D11C11AFED7CA00856482 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = AddressBookImportAgentTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
-			};
-			name = Debug;
-		};
-		862D11C21AFED7CA00856482 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = AddressBookImportAgentTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -7346,6 +7137,7 @@
 				862D11921AFEAEA000856482 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		862D11961AFEAEA000856482 /* Build configuration list for PBXNativeTarget "ExpectedErrorTests" */ = {
 			isa = XCConfigurationList;
@@ -7354,22 +7146,7 @@
 				862D11941AFEAEA000856482 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		862D11BD1AFED7CA00856482 /* Build configuration list for PBXNativeTarget "AddressBookImportAgent" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				862D11BE1AFED7CA00856482 /* Debug */,
-				862D11BF1AFED7CA00856482 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		862D11C01AFED7CA00856482 /* Build configuration list for PBXNativeTarget "AddressBookImportAgentTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				862D11C11AFED7CA00856482 /* Debug */,
-				862D11C21AFED7CA00856482 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		864AEA371AEACD85009147D9 /* Build configuration list for PBXNativeTarget "User" */ = {
 			isa = XCConfigurationList;
