@@ -11,6 +11,7 @@ import UIKit
 import MapKit
 import AddressBook
 import BrightFutures
+import ExpectedError
 
 public class AbstractUser {
     // MARK: -Properties
@@ -239,71 +240,7 @@ public class AbstractUser {
         case multiple
         case notFound
     }
-    class public func loadUserFromAddressBook(viewController vc: UIViewController, person: ABRecord!) -> Future<AbstractUser> {
-        
-        func peekAddress(count: Int, addresses: ABMultiValueRef) -> Future<NSDictionary> {
-            let promise = Promise<NSDictionary>()
-            
-            if count == 0 {
-                promise.failure(NSError())
-                return promise.future
-            }
-            
-            let alert = UIAlertController(title: "Select a home address", message: "Select the address to attribute to this profile", preferredStyle: UIAlertControllerStyle.ActionSheet)
-            
-            for var i = 0; i < count; i++ {
-                let add: NSDictionary! = ABMultiValueCopyValueAtIndex(addresses, i).takeRetainedValue() as? NSDictionary
-                
-                if add == nil {
-                    promise.failure(NSError())
-                    return promise.future
-                }
-                
-                let optionalCountry = add[kABPersonAddressCountryKey as! String] as? String
-                let optionalCity = add[kABPersonAddressCityKey as! String] as? String
-                let optionalState = add[kABPersonAddressStateKey as! String] as? String
-                let optionalZip = add[kABPersonAddressZIPKey as! String] as? String
-                let optionalStreet = add[kABPersonAddressStreetKey as! String] as? String
-                
-                var addressPresentation = ""
-                
-                if let cur = optionalStreet {
-                    addressPresentation += " " + cur
-                }
-                else if let cur = optionalCity {
-                    addressPresentation += " " + cur
-                }
-                else if let cur = optionalZip {
-                    addressPresentation += " " + cur
-                }
-                else if let cur = optionalState {
-                    addressPresentation += " " + cur
-                }
-                else if let cur = optionalCountry {
-                    addressPresentation += " " + cur
-                }
-                
-                let action = UIAlertAction(title: addressPresentation, style: UIAlertActionStyle.Default, handler: {action in
-                    promise.success(add!)
-                })
-                
-                alert.addAction(action)
-            }
-            
-            let cancelAction = UIAlertAction(title: "Don't Attribute a Address", style: UIAlertActionStyle.Cancel, handler: { action in
-                promise.failure(NSError(domain: "user chose to don't attribute a address", code: -1, userInfo: nil))
-            })
-            
-            alert.addAction(cancelAction)
-            
-            let delayTime = dispatch_time(DISPATCH_TIME_NOW,
-                Int64(1 * Double(NSEC_PER_SEC)))
-            dispatch_after(delayTime, dispatch_get_main_queue(), {
-                vc.presentViewController(alert, animated: true, completion: nil)
-            })
-            
-            return promise.future
-        }
+    class public func loadUserFromAddressBook(viewController vc: UIViewController, person: ABRecord!, address add: Future<NSDictionary>) -> Future<AbstractUser> {
         
         let promise = Promise<AbstractUser>()
         
@@ -325,7 +262,7 @@ public class AbstractUser {
         let promisedAddress = Promise<String>()
         if count >= 1 {
             
-            let futureAddress = peekAddress(count, addresses!)
+            let futureAddress = add
             
             futureAddress.onSuccess{ add in
                 
@@ -357,7 +294,7 @@ public class AbstractUser {
             }
         }
         else {
-            promisedAddress.failure(NSError());
+            promisedAddress.failure(NewUserError(description: "user has no address", id: NewUserError.codeSet.hasNoAddress.rawValue))
         }
         
         if let data = imageData {
@@ -386,15 +323,17 @@ public class AbstractUser {
                 
                 }
                 else {
-                let alert = UIAlertController(title: "Could not find location", message: "Was unable to find the contact's home address", preferredStyle: UIAlertControllerStyle.Alert)
-                let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-                alert.addAction(action)
-                vc.presentViewController(alert, animated: true, completion: nil)
-                promise.success(newUser)
+                    let error = NewUserError(description: "could not find location", id: NewUserError.codeSet.couldNotFindLocation.rawValue)
+                    error.setValue(newUser, forKey: "newUser")
+                    promise.failure(error)
                 }
                 })
-        }.onFailure{ error in
-            promise.success(newUser)
+            }.onFailure{ error in
+                let err = error as! ExpectedError
+                if err.id == NewUserError.codeSet.hasNoAddress.rawValue || err.id == NewUserError.codeSet.choseNoAddress.rawValue {
+                    error.setValue(newUser, forKey: "newUser")
+                    promise.failure(error)
+                }
         }
         
         return promise.future

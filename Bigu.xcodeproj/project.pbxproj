@@ -25,6 +25,19 @@
 		8626E33D1AEAED3C003872A2 /* DarkThemedViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8626E3251AEAED3B003872A2 /* DarkThemedViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8626E3441AEAED75003872A2 /* DarkTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661BED81AE6A1EC00BBBF4E /* DarkTabBarController.swift */; };
 		8626E3451AEAED75003872A2 /* DarkNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661BEDB1AE6A62D00BBBF4E /* DarkNavigationController.swift */; };
+		862D117D1AFEAE9F00856482 /* ExpectedError.h in Headers */ = {isa = PBXBuildFile; fileRef = 862D117C1AFEAE9F00856482 /* ExpectedError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		862D11831AFEAE9F00856482 /* ExpectedError.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862D11781AFEAE9F00856482 /* ExpectedError.framework */; };
+		862D118C1AFEAE9F00856482 /* ExpectedErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D118B1AFEAE9F00856482 /* ExpectedErrorTests.swift */; };
+		862D118F1AFEAE9F00856482 /* ExpectedError.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862D11781AFEAE9F00856482 /* ExpectedError.framework */; };
+		862D11901AFEAE9F00856482 /* ExpectedError.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 862D11781AFEAE9F00856482 /* ExpectedError.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		862D11981AFEAEB400856482 /* ExpectedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D11971AFEAEB400856482 /* ExpectedError.swift */; };
+		862D119A1AFEB18700856482 /* NewUserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D11991AFEB18700856482 /* NewUserError.swift */; };
+		862D11A91AFED7C800856482 /* AddressBookImportAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = 862D11A81AFED7C800856482 /* AddressBookImportAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		862D11AF1AFED7C800856482 /* AddressBookImportAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862D11A41AFED7C800856482 /* AddressBookImportAgent.framework */; };
+		862D11B81AFED7C900856482 /* AddressBookImportAgentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D11B71AFED7C900856482 /* AddressBookImportAgentTests.swift */; };
+		862D11BB1AFED7C900856482 /* AddressBookImportAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862D11A41AFED7C800856482 /* AddressBookImportAgent.framework */; };
+		862D11BC1AFED7C900856482 /* AddressBookImportAgent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 862D11A41AFED7C800856482 /* AddressBookImportAgent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		862D11C41AFED7F200856482 /* AddressBookImportAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D11C31AFED7F200856482 /* AddressBookImportAgent.swift */; };
 		863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D5E931ACF7185007D9235 /* CustomPopUp.swift */; };
 		863D5E961ACF7277007D9235 /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863D5E951ACF7277007D9235 /* CustomPopUp.xib */; };
 		864AEA231AEACD85009147D9 /* Models.h in Headers */ = {isa = PBXBuildFile; fileRef = 864AEA221AEACD85009147D9 /* Models.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -584,6 +597,48 @@
 			remoteGlobalIDString = 8626E3241AEAED3B003872A2;
 			remoteInfo = DarkThemedViewController;
 		};
+		862D11841AFEAE9F00856482 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 862D11771AFEAE9F00856482;
+			remoteInfo = ExpectedError;
+		};
+		862D11861AFEAE9F00856482 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A92D981AB863E900B38445;
+			remoteInfo = Bigu;
+		};
+		862D118D1AFEAE9F00856482 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 862D11771AFEAE9F00856482;
+			remoteInfo = ExpectedError;
+		};
+		862D11B01AFED7C800856482 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 862D11A31AFED7C800856482;
+			remoteInfo = AddressBookImportAgent;
+		};
+		862D11B21AFED7C900856482 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A92D981AB863E900B38445;
+			remoteInfo = Bigu;
+		};
+		862D11B91AFED7C900856482 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 862D11A31AFED7C800856482;
+			remoteInfo = AddressBookImportAgent;
+		};
 		864AEA2A1AEACD85009147D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
@@ -957,6 +1012,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				862D11BC1AFED7C900856482 /* AddressBookImportAgent.framework in Embed Frameworks */,
 				8692A93D1AEBBD810005BCA4 /* Persistence.framework in Embed Frameworks */,
 				8692A9FB1AEBC8520005BCA4 /* Ride.framework in Embed Frameworks */,
 				865137781AEADBCF00CB2A63 /* RGBColor.framework in Embed Frameworks */,
@@ -972,6 +1028,7 @@
 				864D843E1AEADABB0046C2C0 /* Collection.framework in Embed Frameworks */,
 				86B8D9171AEC69A700B7480C /* ExtractViewController.framework in Embed Frameworks */,
 				86A4D32C1AEACBF900477C07 /* BrightFutures.framework in Embed Frameworks */,
+				862D11901AFEAE9F00856482 /* ExpectedError.framework in Embed Frameworks */,
 				860B12001AEBB81C00D80E25 /* AbstractUser.framework in Embed Frameworks */,
 				86A425771AEBD0A500C2405B /* History.framework in Embed Frameworks */,
 				86CD07D71AEAE161006B6CE1 /* RideTableViewCell.framework in Embed Frameworks */,
@@ -1006,6 +1063,21 @@
 		8626E32F1AEAED3B003872A2 /* DarkThemedViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkThemedViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8626E3371AEAED3C003872A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8626E3381AEAED3C003872A2 /* DarkThemedViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkThemedViewControllerTests.swift; sourceTree = "<group>"; };
+		862D11781AFEAE9F00856482 /* ExpectedError.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExpectedError.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		862D117B1AFEAE9F00856482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		862D117C1AFEAE9F00856482 /* ExpectedError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExpectedError.h; sourceTree = "<group>"; };
+		862D11821AFEAE9F00856482 /* ExpectedErrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpectedErrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		862D118A1AFEAE9F00856482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		862D118B1AFEAE9F00856482 /* ExpectedErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedErrorTests.swift; sourceTree = "<group>"; };
+		862D11971AFEAEB400856482 /* ExpectedError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpectedError.swift; sourceTree = "<group>"; };
+		862D11991AFEB18700856482 /* NewUserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserError.swift; sourceTree = "<group>"; };
+		862D11A41AFED7C800856482 /* AddressBookImportAgent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AddressBookImportAgent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		862D11A71AFED7C800856482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		862D11A81AFED7C800856482 /* AddressBookImportAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddressBookImportAgent.h; sourceTree = "<group>"; };
+		862D11AE1AFED7C800856482 /* AddressBookImportAgentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressBookImportAgentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		862D11B61AFED7C900856482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		862D11B71AFED7C900856482 /* AddressBookImportAgentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookImportAgentTests.swift; sourceTree = "<group>"; };
+		862D11C31AFED7F200856482 /* AddressBookImportAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookImportAgent.swift; sourceTree = "<group>"; };
 		863D5E931ACF7185007D9235 /* CustomPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		863D5E951ACF7277007D9235 /* CustomPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPopUp.xib; sourceTree = "<group>"; };
 		863D5E981ACF75F8007D9235 /* NewUserPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserPopUp.xib; sourceTree = "<group>"; };
@@ -1199,6 +1271,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				8626E3301AEAED3B003872A2 /* DarkThemedViewController.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862D11741AFEAE9F00856482 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862D117F1AFEAE9F00856482 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				862D11831AFEAE9F00856482 /* ExpectedError.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862D11A01AFED7C800856482 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862D11AB1AFED7C800856482 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				862D11AF1AFED7C800856482 /* AddressBookImportAgent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1400,9 +1502,11 @@
 				8692A8F01AEBBC1A0005BCA4 /* Billing.framework in Frameworks */,
 				8692A9B01AEBC69A0005BCA4 /* UserList.framework in Frameworks */,
 				864D843D1AEADABB0046C2C0 /* Collection.framework in Frameworks */,
+				862D118F1AFEAE9F00856482 /* ExpectedError.framework in Frameworks */,
 				86B8D9161AEC69A700B7480C /* ExtractViewController.framework in Frameworks */,
 				86A4D32B1AEACBF900477C07 /* BrightFutures.framework in Frameworks */,
 				860B11FF1AEBB81C00D80E25 /* AbstractUser.framework in Frameworks */,
+				862D11BB1AFED7C900856482 /* AddressBookImportAgent.framework in Frameworks */,
 				86A425761AEBD0A500C2405B /* History.framework in Frameworks */,
 				86CD07D61AEAE161006B6CE1 /* RideTableViewCell.framework in Frameworks */,
 				86CD077B1AEADEED006B6CE1 /* FakeSeparator.framework in Frameworks */,
@@ -1577,6 +1681,79 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		862D11791AFEAE9F00856482 /* ExpectedError */ = {
+			isa = PBXGroup;
+			children = (
+				862D117C1AFEAE9F00856482 /* ExpectedError.h */,
+				862D11971AFEAEB400856482 /* ExpectedError.swift */,
+				862D11991AFEB18700856482 /* NewUserError.swift */,
+				862D117A1AFEAE9F00856482 /* Supporting Files */,
+			);
+			name = ExpectedError;
+			path = ../ExpectedError;
+			sourceTree = "<group>";
+		};
+		862D117A1AFEAE9F00856482 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				862D117B1AFEAE9F00856482 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		862D11881AFEAE9F00856482 /* ExpectedErrorTests */ = {
+			isa = PBXGroup;
+			children = (
+				862D118B1AFEAE9F00856482 /* ExpectedErrorTests.swift */,
+				862D11891AFEAE9F00856482 /* Supporting Files */,
+			);
+			name = ExpectedErrorTests;
+			path = ../ExpectedErrorTests;
+			sourceTree = "<group>";
+		};
+		862D11891AFEAE9F00856482 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				862D118A1AFEAE9F00856482 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		862D11A51AFED7C800856482 /* AddressBookImportAgent */ = {
+			isa = PBXGroup;
+			children = (
+				862D11A81AFED7C800856482 /* AddressBookImportAgent.h */,
+				862D11C31AFED7F200856482 /* AddressBookImportAgent.swift */,
+				862D11A61AFED7C800856482 /* Supporting Files */,
+			);
+			path = AddressBookImportAgent;
+			sourceTree = "<group>";
+		};
+		862D11A61AFED7C800856482 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				862D11A71AFED7C800856482 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		862D11B41AFED7C900856482 /* AddressBookImportAgentTests */ = {
+			isa = PBXGroup;
+			children = (
+				862D11B71AFED7C900856482 /* AddressBookImportAgentTests.swift */,
+				862D11B51AFED7C900856482 /* Supporting Files */,
+			);
+			path = AddressBookImportAgentTests;
+			sourceTree = "<group>";
+		};
+		862D11B51AFED7C900856482 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				862D11B61AFED7C900856482 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		863D5E901ACF7135007D9235 /* CustomPopUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -1629,6 +1806,8 @@
 				8692A9831AEBC0150005BCA4 /* ExtractTests */,
 				86A425601AEBD0A500C2405B /* History */,
 				86A4256F1AEBD0A500C2405B /* HistoryTests */,
+				862D11791AFEAE9F00856482 /* ExpectedError */,
+				862D11881AFEAE9F00856482 /* ExpectedErrorTests */,
 				864AEA221AEACD85009147D9 /* Models.h */,
 				864AEA201AEACD85009147D9 /* Supporting Files */,
 			);
@@ -2181,6 +2360,8 @@
 				864D84361AEADABB0046C2C0 /* CollectionTests */,
 				865137611AEADBCF00CB2A63 /* RGBColor */,
 				865137701AEADBCF00CB2A63 /* RGBColorTests */,
+				862D11A51AFED7C800856482 /* AddressBookImportAgent */,
+				862D11B41AFED7C900856482 /* AddressBookImportAgentTests */,
 				86A92D9A1AB863E900B38445 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -2228,6 +2409,10 @@
 				86A425691AEBD0A500C2405B /* HistoryTests.xctest */,
 				86B8D8FF1AEC69A600B7480C /* ExtractViewController.framework */,
 				86B8D9091AEC69A600B7480C /* ExtractViewControllerTests.xctest */,
+				862D11781AFEAE9F00856482 /* ExpectedError.framework */,
+				862D11821AFEAE9F00856482 /* ExpectedErrorTests.xctest */,
+				862D11A41AFED7C800856482 /* AddressBookImportAgent.framework */,
+				862D11AE1AFED7C800856482 /* AddressBookImportAgentTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2499,6 +2684,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		862D11751AFEAE9F00856482 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				862D117D1AFEAE9F00856482 /* ExpectedError.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862D11A11AFED7C800856482 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				862D11A91AFED7C800856482 /* AddressBookImportAgent.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		864AEA1B1AEACD85009147D9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -2711,6 +2912,80 @@
 			name = DarkThemedViewControllerTests;
 			productName = DarkThemedViewControllerTests;
 			productReference = 8626E32F1AEAED3B003872A2 /* DarkThemedViewControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		862D11771AFEAE9F00856482 /* ExpectedError */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 862D11951AFEAEA000856482 /* Build configuration list for PBXNativeTarget "ExpectedError" */;
+			buildPhases = (
+				862D11731AFEAE9F00856482 /* Sources */,
+				862D11741AFEAE9F00856482 /* Frameworks */,
+				862D11751AFEAE9F00856482 /* Headers */,
+				862D11761AFEAE9F00856482 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExpectedError;
+			productName = ExpectedError;
+			productReference = 862D11781AFEAE9F00856482 /* ExpectedError.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		862D11811AFEAE9F00856482 /* ExpectedErrorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 862D11961AFEAEA000856482 /* Build configuration list for PBXNativeTarget "ExpectedErrorTests" */;
+			buildPhases = (
+				862D117E1AFEAE9F00856482 /* Sources */,
+				862D117F1AFEAE9F00856482 /* Frameworks */,
+				862D11801AFEAE9F00856482 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				862D11851AFEAE9F00856482 /* PBXTargetDependency */,
+				862D11871AFEAE9F00856482 /* PBXTargetDependency */,
+			);
+			name = ExpectedErrorTests;
+			productName = ExpectedErrorTests;
+			productReference = 862D11821AFEAE9F00856482 /* ExpectedErrorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		862D11A31AFED7C800856482 /* AddressBookImportAgent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 862D11BD1AFED7CA00856482 /* Build configuration list for PBXNativeTarget "AddressBookImportAgent" */;
+			buildPhases = (
+				862D119F1AFED7C800856482 /* Sources */,
+				862D11A01AFED7C800856482 /* Frameworks */,
+				862D11A11AFED7C800856482 /* Headers */,
+				862D11A21AFED7C800856482 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AddressBookImportAgent;
+			productName = AddressBookImportAgent;
+			productReference = 862D11A41AFED7C800856482 /* AddressBookImportAgent.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		862D11AD1AFED7C800856482 /* AddressBookImportAgentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 862D11C01AFED7CA00856482 /* Build configuration list for PBXNativeTarget "AddressBookImportAgentTests" */;
+			buildPhases = (
+				862D11AA1AFED7C800856482 /* Sources */,
+				862D11AB1AFED7C800856482 /* Frameworks */,
+				862D11AC1AFED7C800856482 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				862D11B11AFED7C800856482 /* PBXTargetDependency */,
+				862D11B31AFED7C900856482 /* PBXTargetDependency */,
+			);
+			name = AddressBookImportAgentTests;
+			productName = AddressBookImportAgentTests;
+			productReference = 862D11AE1AFED7C800856482 /* AddressBookImportAgentTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		864AEA1D1AEACD85009147D9 /* User */ = {
@@ -3211,6 +3486,8 @@
 				8692A9F91AEBC8520005BCA4 /* PBXTargetDependency */,
 				86A425751AEBD0A500C2405B /* PBXTargetDependency */,
 				86B8D9151AEC69A700B7480C /* PBXTargetDependency */,
+				862D118E1AFEAE9F00856482 /* PBXTargetDependency */,
+				862D11BA1AFED7C900856482 /* PBXTargetDependency */,
 			);
 			name = Bigu;
 			productName = Bigu;
@@ -3473,6 +3750,22 @@
 						CreatedOnToolsVersion = 6.3;
 						TestTargetID = 86A92D981AB863E900B38445;
 					};
+					862D11771AFEAE9F00856482 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = LBFUFN3H7E;
+					};
+					862D11811AFEAE9F00856482 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 86A92D981AB863E900B38445;
+					};
+					862D11A31AFED7C800856482 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = LBFUFN3H7E;
+					};
+					862D11AD1AFED7C800856482 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 86A92D981AB863E900B38445;
+					};
 					864AEA1D1AEACD85009147D9 = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = LBFUFN3H7E;
@@ -3672,6 +3965,10 @@
 				86A425681AEBD0A500C2405B /* HistoryTests */,
 				86B8D8FE1AEC69A600B7480C /* ExtractViewController */,
 				86B8D9081AEC69A600B7480C /* ExtractViewControllerTests */,
+				862D11771AFEAE9F00856482 /* ExpectedError */,
+				862D11811AFEAE9F00856482 /* ExpectedErrorTests */,
+				862D11A31AFED7C800856482 /* AddressBookImportAgent */,
+				862D11AD1AFED7C800856482 /* AddressBookImportAgentTests */,
 			);
 		};
 /* End PBXProject section */
@@ -3699,6 +3996,34 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8626E32D1AEAED3B003872A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862D11761AFEAE9F00856482 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862D11801AFEAE9F00856482 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862D11A21AFED7C800856482 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862D11AC1AFED7C800856482 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -4012,6 +4337,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				8626E3391AEAED3C003872A2 /* DarkThemedViewControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862D11731AFEAE9F00856482 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				862D119A1AFEB18700856482 /* NewUserError.swift in Sources */,
+				862D11981AFEAEB400856482 /* ExpectedError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862D117E1AFEAE9F00856482 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				862D118C1AFEAE9F00856482 /* ExpectedErrorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862D119F1AFED7C800856482 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				862D11C41AFED7F200856482 /* AddressBookImportAgent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862D11AA1AFED7C800856482 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				862D11B81AFED7C900856482 /* AddressBookImportAgentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4624,6 +4982,36 @@
 			target = 8626E3241AEAED3B003872A2 /* DarkThemedViewController */;
 			targetProxy = 8626E33A1AEAED3C003872A2 /* PBXContainerItemProxy */;
 		};
+		862D11851AFEAE9F00856482 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 862D11771AFEAE9F00856482 /* ExpectedError */;
+			targetProxy = 862D11841AFEAE9F00856482 /* PBXContainerItemProxy */;
+		};
+		862D11871AFEAE9F00856482 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A92D981AB863E900B38445 /* Bigu */;
+			targetProxy = 862D11861AFEAE9F00856482 /* PBXContainerItemProxy */;
+		};
+		862D118E1AFEAE9F00856482 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 862D11771AFEAE9F00856482 /* ExpectedError */;
+			targetProxy = 862D118D1AFEAE9F00856482 /* PBXContainerItemProxy */;
+		};
+		862D11B11AFED7C800856482 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 862D11A31AFED7C800856482 /* AddressBookImportAgent */;
+			targetProxy = 862D11B01AFED7C800856482 /* PBXContainerItemProxy */;
+		};
+		862D11B31AFED7C900856482 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A92D981AB863E900B38445 /* Bigu */;
+			targetProxy = 862D11B21AFED7C900856482 /* PBXContainerItemProxy */;
+		};
+		862D11BA1AFED7C900856482 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 862D11A31AFED7C800856482 /* AddressBookImportAgent */;
+			targetProxy = 862D11B91AFED7C900856482 /* PBXContainerItemProxy */;
+		};
 		864AEA2B1AEACD85009147D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 864AEA1D1AEACD85009147D9 /* User */;
@@ -5075,6 +5463,188 @@
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = DarkThemedViewControllerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
+			};
+			name = Release;
+		};
+		862D11911AFEAEA000856482 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ExpectedError/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		862D11921AFEAEA000856482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = ExpectedError/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		862D11931AFEAEA000856482 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ExpectedErrorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
+			};
+			name = Debug;
+		};
+		862D11941AFEAEA000856482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = ExpectedErrorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
+			};
+			name = Release;
+		};
+		862D11BE1AFED7CA00856482 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AddressBookImportAgent/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		862D11BF1AFED7CA00856482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = AddressBookImportAgent/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		862D11C11AFED7CA00856482 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AddressBookImportAgentTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
+			};
+			name = Debug;
+		};
+		862D11C21AFED7CA00856482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = AddressBookImportAgentTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -6768,6 +7338,38 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		862D11951AFEAEA000856482 /* Build configuration list for PBXNativeTarget "ExpectedError" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				862D11911AFEAEA000856482 /* Debug */,
+				862D11921AFEAEA000856482 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		862D11961AFEAEA000856482 /* Build configuration list for PBXNativeTarget "ExpectedErrorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				862D11931AFEAEA000856482 /* Debug */,
+				862D11941AFEAEA000856482 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		862D11BD1AFED7CA00856482 /* Build configuration list for PBXNativeTarget "AddressBookImportAgent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				862D11BE1AFED7CA00856482 /* Debug */,
+				862D11BF1AFED7CA00856482 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		862D11C01AFED7CA00856482 /* Build configuration list for PBXNativeTarget "AddressBookImportAgentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				862D11C11AFED7CA00856482 /* Debug */,
+				862D11C21AFED7CA00856482 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		864AEA371AEACD85009147D9 /* Build configuration list for PBXNativeTarget "User" */ = {
 			isa = XCConfigurationList;

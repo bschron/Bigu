@@ -14,6 +14,7 @@ import AbstractUser
 import RootUser
 import AddressBook
 import BrightFutures
+import ExpectedError
 
 public class User: AbstractUser {
     
@@ -57,6 +58,18 @@ public class User: AbstractUser {
         super.init(fromDictionary: dic)
         self.history.registerToPersistence()
     }
+    private init(fromAbstractUser absUsr: AbstractUser) {
+        
+        self.bill = Bill()
+        self.history = History()
+        super.init(withid: absUsr.id)
+        self.history.registerToPersistence()
+        
+        self.userImage = absUsr.userImage
+        self.name = absUsr.name
+        self.surName = absUsr.surName
+        self.homeLocation = absUsr.homeLocation
+    }
     
     override public func toDictionary() -> [NSString : NSObject] {
         var dic = super.toDictionary()
@@ -93,19 +106,23 @@ public class User: AbstractUser {
     class internal var historyIdKey: String {
         return "UserHistoryIdKey"
     }
-    override class public func loadUserFromAddressBook(viewController vc: UIViewController, person: ABRecord!) -> Future<AbstractUser> {
+    override class public func loadUserFromAddressBook(viewController vc: UIViewController, person: ABRecord!, address add: Future<NSDictionary>) -> Future<AbstractUser> {
+        
         let promise = Promise<AbstractUser>()
         
-        let futureAbsUsr = super.loadUserFromAddressBook(viewController: vc, person: person)
+        let futureAbsUsr = super.loadUserFromAddressBook(viewController: vc, person: person, address: add)
         
         futureAbsUsr.onSuccess { absUsr in
-            let usr = User(withid: absUsr.id)
-            usr.userImage = absUsr.userImage
-            usr.name = absUsr.name
-            usr.surName = absUsr.surName
-            usr.homeLocation = absUsr.homeLocation
-            promise.success(usr)
+            promise.success(User(fromAbstractUser: absUsr))
         }.onFailure{ error in
+            let err = error as! ExpectedError
+            if err.id == NewUserError.codeSet.choseNoAddress.rawValue ||
+                err.id == NewUserError.codeSet.couldNotFindLocation.rawValue ||
+                 err.id == NewUserError.codeSet.hasNoAddress.rawValue {
+                let usr = error.valueForKey("newUser") as! AbstractUser
+                err.setValue(User(fromAbstractUser: usr), forKey: "newUser")
+            }
+            
             promise.failure(error)
         }
         
