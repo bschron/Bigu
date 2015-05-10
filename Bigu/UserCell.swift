@@ -37,6 +37,7 @@ internal class UserCell: UITableViewCell {
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var fullnameLabel: UILabel!
     @IBOutlet weak private var userImageView: UIImageView!
+    private var separator: UIView!
     
     // MARK: - Methods
     
@@ -67,7 +68,12 @@ internal class UserCell: UITableViewCell {
         
         // set background color
         self.backgroundColor = RGBColor.whiteColor()
-        FakeSeparator(forView: self)
+        self.separator = FakeSeparator(forView: self)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.separator.layoutIfNeeded()
     }
 
     override internal func setSelected(selected: Bool, animated: Bool) {

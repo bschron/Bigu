@@ -10,7 +10,8 @@ import UIKit
 import RGBColor
 
 public class FakeSeparator: UIView {
-
+    
+    private var cell: UITableViewCell!
     
     // MARK: -Methods
     
@@ -18,7 +19,7 @@ public class FakeSeparator: UIView {
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func drawRect(rect: CGRect) {
-        // Drawing code
+    // Drawing code
     }
     */
     
@@ -26,15 +27,19 @@ public class FakeSeparator: UIView {
         super.init(coder: aDecoder)
     }
     
-    public init(forView view: UIView) {
-        let frame = view.frame
-        super.init(frame: frame)
+    public init(forView view: UITableViewCell) {
+        super.init(frame: CGRectZero)
+        self.cell = view
         
-        view.addSubview(self)
-        self.frame.size.width = frame.size.width * 2
-        self.frame.size.height = CGFloat(1)
-        self.center.x = frame.width + frame.width / 30
-        self.center.y = frame.size.height
+        let ratio = CGFloat(1)
         self.backgroundColor = RGBColor(r: 230, g: 230, b: 230, alpha: 1)
+        view.contentView.addSubview(self)
+        
+        self.layoutIfNeeded()
+    }
+    
+    public override func layoutIfNeeded() {
+        super.layoutIfNeeded()
+        self.frame = CGRectMake(40, cell.frame.height - 1, cell.frame.width, 1)
     }
 }

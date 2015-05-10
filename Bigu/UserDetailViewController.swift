@@ -9,7 +9,6 @@
 import UIKit
 import BrightFutures
 import User
-import FakeSeparator
 import RideTableViewCell
 import AbstractUser
 import UserList
@@ -109,9 +108,6 @@ public class UserDetailViewController: AbstractUserDetailViewController {
                 self.firstNameCell = newCell
                 
                 cell = newCell
-                
-                let separator = FakeSeparator(forView: cell)
-                separator.center.x = 0
             }
             else if row == 1 {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailLastNameTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailLastNameTableViewCell
@@ -120,9 +116,6 @@ public class UserDetailViewController: AbstractUserDetailViewController {
                 newCell.userDetailViewController = self
                 
                 cell = newCell
-                
-                let separator = FakeSeparator(forView: cell)
-                separator.center.x = 0
             }
             else if row == 2 {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailNickNameTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailNickNameTableViewCell
