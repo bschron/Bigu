@@ -141,6 +141,9 @@ internal class NewUserPopUp: UIView {
     @IBAction private func tappedOutside(sender: AnyObject) {
         self.terminate()
     }
+    @IBAction func addressBookButtonTapped(sender: AnyObject) {
+        self.viewController?.displayPeoplePicker()
+    }
     
     // MARK: - Class Methods
     class internal func addPopUpToView (aViewController vc: UsersViewController, usersHandler handler: UserHandlingDelegate?) -> UIView {

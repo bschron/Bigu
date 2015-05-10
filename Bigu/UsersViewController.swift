@@ -11,11 +11,18 @@ import User
 import UserDetailViewController
 import AbstractUser
 import UserList
+import AddressBook
+import AddressBookUI
+import MapKit
+import BrightFutures
+import ExpectedError
+import ABImportAgent
 
 public class UsersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UserHandlingDelegate {
 
     // MARK: - Proprierties
     private weak var popUp: NewUserPopUp?
+    private var agent: ABImportAgent?
     
     //MARK: Outlets
     @IBOutlet weak var usersTableView: UITableView!
@@ -32,13 +39,6 @@ public class UsersViewController: UIViewController, UITableViewDataSource, UITab
         /* register user cells nibs */
         let userCellNib = UINib(nibName: "UserCell", bundle: NSBundle(identifier: "IC.UsersViewController"))
         self.usersTableView.registerNib(userCellNib, forCellReuseIdentifier: UserCell.userCellReuseId)
-        
-        // persistence call
-        let app = UIApplication.sharedApplication()
-        NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "applicationWillResignActive:",
-            name: UIApplicationWillResignActiveNotification,
-            object: app)
     }
     
     override public func viewWillAppear(animated: Bool) {
@@ -52,6 +52,13 @@ public class UsersViewController: UIViewController, UITableViewDataSource, UITab
             self.popUp!.terminate()
             self.popUp = nil
         }
+    }
+    
+    internal func displayPeoplePicker() {
+        self.agent = ABImportAgent()
+        self.agent?.displayPeoplePicker(viewController: self, onKill: {}, completion: {
+            self.freePopUp()
+        })
     }
     
     // MARK: Actions
@@ -71,14 +78,6 @@ public class UsersViewController: UIViewController, UITableViewDataSource, UITab
                 self.popUp!.alpha = CGFloat(1)
                 self.popUp!.blurView?.alpha = CGFloat(1)
             }, completion: {result in})
-    }
-    
-    func applicationWillResignActive(notification:NSNotification) {
-        /*let userManager = UserPersistenceManager()
-        let futureResult = userManager.save(ImmediateExecutionContext)
-        futureResult.onFailure(context: ImmediateExecutionContext, callback: { error in
-            userManager.save(ImmediateExecutionContext)
-        })*/
     }
     
     override public func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
@@ -152,6 +151,12 @@ public class UsersViewController: UIViewController, UITableViewDataSource, UITab
     // MARK: UserHandlingDelegate
     public func reloadUsersData() {
         self.usersTableView.reloadData()
+    }
+    
+    public func didRegisterUser() {
+        let rows = UserList.sharedUserList.list.count - 1
+        let index = NSIndexPath(forRow: rows, inSection: 0)
+        self.usersTableView.insertRowsAtIndexPaths([index], withRowAnimation: .Automatic)
     }
     
     // MARK: - Class Properties
