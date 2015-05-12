@@ -32,6 +32,13 @@
 		862D11901AFEAE9F00856482 /* ExpectedError.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 862D11781AFEAE9F00856482 /* ExpectedError.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		862D11981AFEAEB400856482 /* ExpectedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D11971AFEAEB400856482 /* ExpectedError.swift */; };
 		862D119A1AFEB18700856482 /* NewUserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862D11991AFEB18700856482 /* NewUserError.swift */; };
+		862FB2211AFF85470054764E /* SwipeOptionsTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 862FB2201AFF85470054764E /* SwipeOptionsTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		862FB2271AFF85470054764E /* SwipeOptionsTableViewCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862FB21C1AFF85470054764E /* SwipeOptionsTableViewCell.framework */; };
+		862FB2301AFF85470054764E /* SwipeOptionsTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862FB22F1AFF85470054764E /* SwipeOptionsTableViewCellTests.swift */; };
+		862FB2331AFF85470054764E /* SwipeOptionsTableViewCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 862FB21C1AFF85470054764E /* SwipeOptionsTableViewCell.framework */; };
+		862FB2341AFF85470054764E /* SwipeOptionsTableViewCell.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 862FB21C1AFF85470054764E /* SwipeOptionsTableViewCell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		862FB23E1AFF85CB0054764E /* SwipeOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862FB23D1AFF85CB0054764E /* SwipeOptionsTableViewCell.swift */; };
+		862FB2401AFF86520054764E /* SwipeOptionsButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862FB23F1AFF86520054764E /* SwipeOptionsButtonItem.swift */; };
 		863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D5E931ACF7185007D9235 /* CustomPopUp.swift */; };
 		863D5E961ACF7277007D9235 /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863D5E951ACF7277007D9235 /* CustomPopUp.xib */; };
 		864AEA231AEACD85009147D9 /* Models.h in Headers */ = {isa = PBXBuildFile; fileRef = 864AEA221AEACD85009147D9 /* Models.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -620,6 +627,27 @@
 			remoteGlobalIDString = 862D11771AFEAE9F00856482;
 			remoteInfo = ExpectedError;
 		};
+		862FB2281AFF85470054764E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 862FB21B1AFF85470054764E;
+			remoteInfo = SwipeOptionsTableViewCell;
+		};
+		862FB22A1AFF85470054764E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 86A92D981AB863E900B38445;
+			remoteInfo = Bigu;
+		};
+		862FB2311AFF85470054764E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 862FB21B1AFF85470054764E;
+			remoteInfo = SwipeOptionsTableViewCell;
+		};
 		864AEA2A1AEACD85009147D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
@@ -1103,6 +1131,7 @@
 				8692A9171AEBBD300005BCA4 /* RootUser.framework in Embed Frameworks */,
 				8692A8F11AEBBC1A0005BCA4 /* Billing.framework in Embed Frameworks */,
 				86A7DFA41AFEF4B4008D8C27 /* ABImportAgent.framework in Embed Frameworks */,
+				862FB2341AFF85470054764E /* SwipeOptionsTableViewCell.framework in Embed Frameworks */,
 				8692A9B11AEBC69A0005BCA4 /* UserList.framework in Embed Frameworks */,
 				864D843E1AEADABB0046C2C0 /* Collection.framework in Embed Frameworks */,
 				86B8D9171AEC69A700B7480C /* ExtractViewController.framework in Embed Frameworks */,
@@ -1150,6 +1179,14 @@
 		862D118B1AFEAE9F00856482 /* ExpectedErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectedErrorTests.swift; sourceTree = "<group>"; };
 		862D11971AFEAEB400856482 /* ExpectedError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpectedError.swift; sourceTree = "<group>"; };
 		862D11991AFEB18700856482 /* NewUserError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserError.swift; sourceTree = "<group>"; };
+		862FB21C1AFF85470054764E /* SwipeOptionsTableViewCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwipeOptionsTableViewCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		862FB21F1AFF85470054764E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		862FB2201AFF85470054764E /* SwipeOptionsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipeOptionsTableViewCell.h; sourceTree = "<group>"; };
+		862FB2261AFF85470054764E /* SwipeOptionsTableViewCellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwipeOptionsTableViewCellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		862FB22E1AFF85470054764E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		862FB22F1AFF85470054764E /* SwipeOptionsTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeOptionsTableViewCellTests.swift; sourceTree = "<group>"; };
+		862FB23D1AFF85CB0054764E /* SwipeOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeOptionsTableViewCell.swift; sourceTree = "<group>"; };
+		862FB23F1AFF86520054764E /* SwipeOptionsButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeOptionsButtonItem.swift; sourceTree = "<group>"; };
 		863D5E931ACF7185007D9235 /* CustomPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		863D5E951ACF7277007D9235 /* CustomPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPopUp.xib; sourceTree = "<group>"; };
 		863D5E981ACF75F8007D9235 /* NewUserPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserPopUp.xib; sourceTree = "<group>"; };
@@ -1370,6 +1407,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		862FB2181AFF85470054764E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862FB2231AFF85470054764E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				862FB2271AFF85470054764E /* SwipeOptionsTableViewCell.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		864AEA1A1AEACD85009147D9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1572,6 +1624,7 @@
 				86A4C34C1AFEF32A002BF05E /* AddressBook.framework in Frameworks */,
 				86A4C34D1AFEF32A002BF05E /* AddressBookUI.framework in Frameworks */,
 				866337BE1AF5A50D00759872 /* MapKit.framework in Frameworks */,
+				862FB2331AFF85470054764E /* SwipeOptionsTableViewCell.framework in Frameworks */,
 				8692A93C1AEBBD810005BCA4 /* Persistence.framework in Frameworks */,
 				8692A9FA1AEBC8520005BCA4 /* Ride.framework in Frameworks */,
 				865137771AEADBCF00CB2A63 /* RGBColor.framework in Frameworks */,
@@ -1798,6 +1851,42 @@
 			isa = PBXGroup;
 			children = (
 				862D118A1AFEAE9F00856482 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		862FB21D1AFF85470054764E /* SwipeOptionsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				862FB2201AFF85470054764E /* SwipeOptionsTableViewCell.h */,
+				862FB23D1AFF85CB0054764E /* SwipeOptionsTableViewCell.swift */,
+				862FB23F1AFF86520054764E /* SwipeOptionsButtonItem.swift */,
+				862FB21E1AFF85470054764E /* Supporting Files */,
+			);
+			path = SwipeOptionsTableViewCell;
+			sourceTree = "<group>";
+		};
+		862FB21E1AFF85470054764E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				862FB21F1AFF85470054764E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		862FB22C1AFF85470054764E /* SwipeOptionsTableViewCellTests */ = {
+			isa = PBXGroup;
+			children = (
+				862FB22F1AFF85470054764E /* SwipeOptionsTableViewCellTests.swift */,
+				862FB22D1AFF85470054764E /* Supporting Files */,
+			);
+			path = SwipeOptionsTableViewCellTests;
+			sourceTree = "<group>";
+		};
+		862FB22D1AFF85470054764E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				862FB22E1AFF85470054764E /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2447,6 +2536,8 @@
 				865137701AEADBCF00CB2A63 /* RGBColorTests */,
 				86A7DF8D1AFEF4B4008D8C27 /* ABImportAgent */,
 				86A7DF9C1AFEF4B4008D8C27 /* ABImportAgentTests */,
+				862FB21D1AFF85470054764E /* SwipeOptionsTableViewCell */,
+				862FB22C1AFF85470054764E /* SwipeOptionsTableViewCellTests */,
 				86A92D9A1AB863E900B38445 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -2498,6 +2589,8 @@
 				862D11821AFEAE9F00856482 /* ExpectedErrorTests.xctest */,
 				86A7DF8C1AFEF4B4008D8C27 /* ABImportAgent.framework */,
 				86A7DF961AFEF4B4008D8C27 /* ABImportAgentTests.xctest */,
+				862FB21C1AFF85470054764E /* SwipeOptionsTableViewCell.framework */,
+				862FB2261AFF85470054764E /* SwipeOptionsTableViewCellTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2777,6 +2870,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		862FB2191AFF85470054764E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				862FB2211AFF85470054764E /* SwipeOptionsTableViewCell.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		864AEA1B1AEACD85009147D9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -3036,6 +3137,43 @@
 			name = ExpectedErrorTests;
 			productName = ExpectedErrorTests;
 			productReference = 862D11821AFEAE9F00856482 /* ExpectedErrorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		862FB21B1AFF85470054764E /* SwipeOptionsTableViewCell */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 862FB2391AFF85470054764E /* Build configuration list for PBXNativeTarget "SwipeOptionsTableViewCell" */;
+			buildPhases = (
+				862FB2171AFF85470054764E /* Sources */,
+				862FB2181AFF85470054764E /* Frameworks */,
+				862FB2191AFF85470054764E /* Headers */,
+				862FB21A1AFF85470054764E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwipeOptionsTableViewCell;
+			productName = SwipeOptionsTableViewCell;
+			productReference = 862FB21C1AFF85470054764E /* SwipeOptionsTableViewCell.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		862FB2251AFF85470054764E /* SwipeOptionsTableViewCellTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 862FB23A1AFF85470054764E /* Build configuration list for PBXNativeTarget "SwipeOptionsTableViewCellTests" */;
+			buildPhases = (
+				862FB2221AFF85470054764E /* Sources */,
+				862FB2231AFF85470054764E /* Frameworks */,
+				862FB2241AFF85470054764E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				862FB2291AFF85470054764E /* PBXTargetDependency */,
+				862FB22B1AFF85470054764E /* PBXTargetDependency */,
+			);
+			name = SwipeOptionsTableViewCellTests;
+			productName = SwipeOptionsTableViewCellTests;
+			productReference = 862FB2261AFF85470054764E /* SwipeOptionsTableViewCellTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		864AEA1D1AEACD85009147D9 /* User */ = {
@@ -3582,6 +3720,7 @@
 				86B8D9151AEC69A700B7480C /* PBXTargetDependency */,
 				862D118E1AFEAE9F00856482 /* PBXTargetDependency */,
 				86A7DFA21AFEF4B4008D8C27 /* PBXTargetDependency */,
+				862FB2321AFF85470054764E /* PBXTargetDependency */,
 			);
 			name = Bigu;
 			productName = Bigu;
@@ -3854,6 +3993,14 @@
 						CreatedOnToolsVersion = 6.3.1;
 						TestTargetID = 86A92D981AB863E900B38445;
 					};
+					862FB21B1AFF85470054764E = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = LBFUFN3H7E;
+					};
+					862FB2251AFF85470054764E = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 86A92D981AB863E900B38445;
+					};
 					864AEA1D1AEACD85009147D9 = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = LBFUFN3H7E;
@@ -4065,6 +4212,8 @@
 				862D11811AFEAE9F00856482 /* ExpectedErrorTests */,
 				86A7DF8B1AFEF4B4008D8C27 /* ABImportAgent */,
 				86A7DF951AFEF4B4008D8C27 /* ABImportAgentTests */,
+				862FB21B1AFF85470054764E /* SwipeOptionsTableViewCell */,
+				862FB2251AFF85470054764E /* SwipeOptionsTableViewCellTests */,
 			);
 		};
 /* End PBXProject section */
@@ -4106,6 +4255,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		862D11801AFEAE9F00856482 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862FB21A1AFF85470054764E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862FB2241AFF85470054764E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -4450,6 +4613,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				862D118C1AFEAE9F00856482 /* ExpectedErrorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862FB2171AFF85470054764E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				862FB2401AFF86520054764E /* SwipeOptionsButtonItem.swift in Sources */,
+				862FB23E1AFF85CB0054764E /* SwipeOptionsTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		862FB2221AFF85470054764E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				862FB2301AFF85470054764E /* SwipeOptionsTableViewCellTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5093,6 +5273,21 @@
 			target = 862D11771AFEAE9F00856482 /* ExpectedError */;
 			targetProxy = 862D118D1AFEAE9F00856482 /* PBXContainerItemProxy */;
 		};
+		862FB2291AFF85470054764E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 862FB21B1AFF85470054764E /* SwipeOptionsTableViewCell */;
+			targetProxy = 862FB2281AFF85470054764E /* PBXContainerItemProxy */;
+		};
+		862FB22B1AFF85470054764E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 86A92D981AB863E900B38445 /* Bigu */;
+			targetProxy = 862FB22A1AFF85470054764E /* PBXContainerItemProxy */;
+		};
+		862FB2321AFF85470054764E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 862FB21B1AFF85470054764E /* SwipeOptionsTableViewCell */;
+			targetProxy = 862FB2311AFF85470054764E /* PBXContainerItemProxy */;
+		};
 		864AEA2B1AEACD85009147D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 864AEA1D1AEACD85009147D9 /* User */;
@@ -5705,6 +5900,97 @@
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ExpectedErrorTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
+			};
+			name = Release;
+		};
+		862FB2351AFF85470054764E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SwipeOptionsTableViewCell/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		862FB2361AFF85470054764E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = SwipeOptionsTableViewCell/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		862FB2371AFF85470054764E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SwipeOptionsTableViewCellTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bigu.app/Bigu";
+			};
+			name = Debug;
+		};
+		862FB2381AFF85470054764E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = SwipeOptionsTableViewCellTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -7508,6 +7794,22 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		862FB2391AFF85470054764E /* Build configuration list for PBXNativeTarget "SwipeOptionsTableViewCell" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				862FB2351AFF85470054764E /* Debug */,
+				862FB2361AFF85470054764E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		862FB23A1AFF85470054764E /* Build configuration list for PBXNativeTarget "SwipeOptionsTableViewCellTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				862FB2371AFF85470054764E /* Debug */,
+				862FB2381AFF85470054764E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		864AEA371AEACD85009147D9 /* Build configuration list for PBXNativeTarget "User" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -7731,6 +8033,7 @@
 				86A7DFA61AFEF4B4008D8C27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86A7DFAA1AFEF4B4008D8C27 /* Build configuration list for PBXNativeTarget "ABImportAgentTests" */ = {
 			isa = XCConfigurationList;
@@ -7739,6 +8042,7 @@
 				86A7DFA81AFEF4B4008D8C27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86A92D941AB863E900B38445 /* Build configuration list for PBXProject "Bigu" */ = {
 			isa = XCConfigurationList;
