@@ -139,6 +139,7 @@
 		86A7DFA31AFEF4B4008D8C27 /* ABImportAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A7DF8C1AFEF4B4008D8C27 /* ABImportAgent.framework */; };
 		86A7DFA41AFEF4B4008D8C27 /* ABImportAgent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 86A7DF8C1AFEF4B4008D8C27 /* ABImportAgent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		86A7DFAC1AFEF4C6008D8C27 /* ABImportAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A7DFAB1AFEF4C6008D8C27 /* ABImportAgent.swift */; };
+		86A845C11B0553590046277E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA71AB863E900B38445 /* Images.xcassets */; };
 		86A92D9F1AB863E900B38445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A92D9E1AB863E900B38445 /* AppDelegate.swift */; };
 		86A92DA61AB863E900B38445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA41AB863E900B38445 /* Main.storyboard */; };
 		86A92DA81AB863E900B38445 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A92DA71AB863E900B38445 /* Images.xcassets */; };
@@ -4273,6 +4274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86A845C11B0553590046277E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

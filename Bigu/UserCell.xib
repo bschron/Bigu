@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -31,45 +31,24 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="149" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6f-a1-75e">
-                        <rect key="frame" x="561" y="20" width="35" height="39"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="b6f-a1-75e" secondAttribute="height" multiplier="100:110" id="Nqm-9o-tk4"/>
-                        </constraints>
-                        <state key="normal" image="greenThumbsup">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="debitButtonPressed:" destination="kmb-SO-f32" eventType="touchUpInside" id="gYw-0O-xeL"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Lgv-E3-8j9" firstAttribute="leading" secondItem="aKF-F6-P5o" secondAttribute="leading" constant="5" id="9KL-Nd-02U"/>
                     <constraint firstItem="Bx1-4x-714" firstAttribute="leading" secondItem="Lgv-E3-8j9" secondAttribute="trailing" constant="8" id="Ao0-fM-kG2"/>
-                    <constraint firstAttribute="trailing" secondItem="b6f-a1-75e" secondAttribute="trailing" constant="4" id="FAM-6u-u0Y"/>
                     <constraint firstItem="Bx1-4x-714" firstAttribute="leading" secondItem="WbL-dH-8cl" secondAttribute="leading" id="G0S-K2-cyq"/>
                     <constraint firstAttribute="centerY" secondItem="Lgv-E3-8j9" secondAttribute="centerY" constant="0.25" id="LV7-CA-Dny"/>
-                    <constraint firstAttribute="centerY" secondItem="b6f-a1-75e" secondAttribute="centerY" constant="-0.25" id="Pwk-F5-EMY"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="b6f-a1-75e" secondAttribute="bottom" constant="12" id="QKG-0R-fjQ"/>
                     <constraint firstAttribute="bottom" secondItem="Lgv-E3-8j9" secondAttribute="bottom" constant="8" id="ant-oM-kTn"/>
-                    <constraint firstItem="b6f-a1-75e" firstAttribute="leading" secondItem="aKF-F6-P5o" secondAttribute="leadingMargin" constant="282" id="kSu-wv-zNp"/>
-                    <constraint firstItem="b6f-a1-75e" firstAttribute="top" secondItem="aKF-F6-P5o" secondAttribute="topMargin" constant="12" id="o4O-KZ-DyQ"/>
                     <constraint firstItem="WbL-dH-8cl" firstAttribute="top" secondItem="Bx1-4x-714" secondAttribute="bottom" id="oW5-tc-coa"/>
                     <constraint firstItem="Lgv-E3-8j9" firstAttribute="top" secondItem="aKF-F6-P5o" secondAttribute="top" constant="8" id="ogd-MI-trI"/>
                     <constraint firstItem="Lgv-E3-8j9" firstAttribute="leading" secondItem="aKF-F6-P5o" secondAttribute="leadingMargin" id="tmN-uX-BRS"/>
                     <constraint firstAttribute="centerY" secondItem="Bx1-4x-714" secondAttribute="centerY" constant="0.25" id="trs-Ij-Cdv"/>
                     <constraint firstItem="Bx1-4x-714" firstAttribute="leading" secondItem="aKF-F6-P5o" secondAttribute="leadingMargin" constant="45" id="yM4-pB-eeY"/>
-                    <constraint firstItem="b6f-a1-75e" firstAttribute="trailing" secondItem="aKF-F6-P5o" secondAttribute="trailingMargin" id="z6D-G6-bH3"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="LV7-CA-Dny"/>
                         <exclude reference="tmN-uX-BRS"/>
                         <exclude reference="yM4-pB-eeY"/>
-                        <exclude reference="Pwk-F5-EMY"/>
-                        <exclude reference="kSu-wv-zNp"/>
-                        <exclude reference="z6D-G6-bH3"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
@@ -82,7 +61,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="greenThumbsup" width="2933" height="3422"/>
         <image name="whiteUser" width="630" height="733"/>
     </resources>
 </document>

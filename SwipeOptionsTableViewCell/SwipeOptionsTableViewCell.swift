@@ -14,9 +14,15 @@ private enum cellState {
     case Triggered
 }
 
+enum Direction {
+    case toRight
+    case toLeft
+}
+
 public class SwipeOptionsTableViewCell: UITableViewCell {
     // MARK: -Properties
     private var leftButtonItems: [SwipeOptionsButtonItem] = []
+    private var leftHiddenButtonsOriginalFrame: [CGRect]!
     private var panGesture: UIPanGestureRecognizer!
     private var originalPosition: CGFloat!
     private var startingTouchePosition: CGPoint = CGPoint(x: 0, y: 0)
@@ -30,6 +36,8 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
     }
     private var state: cellState = .Unlocked
     private var secondaryButtonsAreHidden: Bool = false
+    private var currentDirection: Direction = .toRight
+    private var shouldFlashConfirmation: Bool = false
     
     // MARK: -Methods
     public required init(coder aDecoder: NSCoder) {
@@ -38,6 +46,7 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
         self.panGesture.minimumNumberOfTouches = 1
         self.panGesture.maximumNumberOfTouches = 1
         self.contentView.addGestureRecognizer(self.panGesture)
+        self.contentView.backgroundColor = UIColor.whiteColor()
     }
     
     override public func awakeFromNib() {
@@ -71,30 +80,57 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
         self.lockedPostion = result
     }
     
-    private func hideSecondaryLeftButtons() {
+    private func hideSecondaryLeftButtons(animated: Bool) {
         if self.secondaryButtonsAreHidden || self.leftButtonItems.count == 1 {
             return
         }
         
-        for cur in self.leftButtonItems {
-            if cur !== self.firstButton! {
-                cur.hidden = true
+        let action: () -> () = {
+            self.leftHiddenButtonsOriginalFrame = []
+            for cur in self.leftButtonItems {
+                if cur !== self.firstButton! {
+                    self.leftHiddenButtonsOriginalFrame! += [CGRectMake(cur.frame.origin.x, cur.frame.origin.y, cur.frame.width, cur.frame.height)]
+                    cur.frame.origin.x = self.contentView.frame.width
+                }
             }
+            self.secondaryButtonsAreHidden = true
         }
-        self.secondaryButtonsAreHidden = true
+        
+        if animated {
+            UIView.animateWithDuration(0.3, animations: {
+                action()
+            })
+        }
+        else {
+            action()
+        }
     }
     
-    private func revealSecondaryLeftButtons() {
+    private func revealSecondaryLeftButtons(animated: Bool) {
         if !self.secondaryButtonsAreHidden || self.leftButtonItems.count == 1 {
             return
         }
+        var i = 0
         
-        for cur in self.leftButtonItems {
-            if cur !== self.firstButton! {
-                cur.hidden = false
+        let action: () -> () = {
+            for cur in self.leftButtonItems {
+                if cur !== self.firstButton! {
+                    cur.frame = self.leftHiddenButtonsOriginalFrame![i]
+                    i++
+                }
             }
+            self.leftHiddenButtonsOriginalFrame = nil
+            self.secondaryButtonsAreHidden = false
         }
-        self.secondaryButtonsAreHidden = false
+        
+        if animated {
+            UIView.animateWithDuration(0.3, animations: {
+                action()
+            })
+        }
+        else {
+            action()
+        }
     }
 }
 
@@ -121,6 +157,12 @@ extension SwipeOptionsTableViewCell {
         if self.shouldTrigger {
             self.state = .Triggered
         }
+        else if currentDirection == .toRight {
+            self.state = .Locked
+        }
+        else if currentDirection == .toLeft {
+            self.state = .Unlocked
+        }
         
         self.startingTouchePosition = CGPoint(x: 0, y: 0)
         switch self.state {
@@ -136,12 +178,6 @@ extension SwipeOptionsTableViewCell {
     }
     
     private func proceedPanning(sender: UIPanGestureRecognizer) {
-        enum Direction {
-            case toRight
-            case toLeft
-        }
-        
-        var currentDirection: Direction = .toRight
         
         let toucheTransition = sender.locationInView(self.contentView).x - self.startingTouchePosition.x
         
@@ -164,13 +200,7 @@ extension SwipeOptionsTableViewCell {
         if self.shouldTrigger {
             self.state = .Triggered
         }
-        else if currentDirection == .toLeft {
-            self.state = .Unlocked
-        }
         else if self.contentView.frame.origin.x >= self.lockedPostion {
-            self.state = .Locked
-        }
-        else if currentDirection == .toRight {
             self.state = .Locked
         }
         else {
@@ -180,12 +210,13 @@ extension SwipeOptionsTableViewCell {
         if self.state == .Locked || self.state == .Triggered {
             if self.contentView.frame.origin.x > self.lockedPostion {
                 self.firstButton!.center.x = self.contentView.frame.origin.x / 2
-                self.hideSecondaryLeftButtons()
+                self.hideSecondaryLeftButtons(true)
             }
         }
     }
     
     private func triggerAction() {
+        self.shouldFlashConfirmation = true
         self.leftButtonItems.first?.triggerAction(self.panGesture)
         self.state = .Unlocked
     }
@@ -199,9 +230,9 @@ extension SwipeOptionsTableViewCell {
         var function: () -> () = action
         
         if animated {
-            UIView.animateWithDuration(0.2, animations: {
+            UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.AllowAnimatedContent, animations: {
                 function()
-            })
+            }, completion: nil)
         }
         else {
             function()
@@ -226,17 +257,26 @@ extension SwipeOptionsTableViewCell {
         }
     }
     
-    private func restoreCell(animated: Bool) {
+    public func restoreCell(animated: Bool) {
+        var completion: () -> () = {}
+        
         let function: () -> () = {
             self.contentView.frame.origin.x = self.originalPosition
             self.restoreLeftFirstButton(false)
-            self.revealSecondaryLeftButtons()
+            self.revealSecondaryLeftButtons(false)
+            
+            if self.shouldFlashConfirmation {
+                completion = self.firstButton!.flashActionMark(animated: false)!
+                self.shouldFlashConfirmation = false
+            }
         }
         
         if animated {
-            UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            UIView.animateWithDuration(1, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut | .AllowAnimatedContent, animations: {
                 function()
-                }, completion: nil)
+                }, completion: { result in
+                    completion()
+            })
         }
         else {
             function()
@@ -250,7 +290,7 @@ extension SwipeOptionsTableViewCell {
         }
         
         if animated {
-            UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut | UIViewAnimationOptions.AllowUserInteraction, animations: {
+            UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut | UIViewAnimationOptions.AllowUserInteraction | .AllowAnimatedContent, animations: {
                 function()
                 }, completion: nil)
         }
