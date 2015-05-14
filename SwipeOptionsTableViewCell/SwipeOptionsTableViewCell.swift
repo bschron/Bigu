@@ -22,13 +22,14 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
     private var startingTouchePosition: CGPoint = CGPoint(x: 0, y: 0)
     private var originalLeftFirstButtonWidth: CGFloat!
     private var lockedPostion: CGFloat = 0
-    private var triggerMinimumPosition: CGFloat {
-        return self.lockedPostion + self.firstButton!.center.x
+    private var shouldTrigger: Bool {
+        return self.contentView.frame.origin.x >= self.lockedPostion + 100
     }
     private var firstButton: SwipeOptionsButtonItem? {
         return self.leftButtonItems.first
     }
     private var state: cellState = .Unlocked
+    private var secondaryButtonsAreHidden: Bool = false
     
     // MARK: -Methods
     public required init(coder aDecoder: NSCoder) {
@@ -41,7 +42,7 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
     
     override public func awakeFromNib() {
         super.awakeFromNib()
-        self.originalPosition = 0
+        self.originalPosition = self.contentView.frame.origin.x
         // Initialization code
     }
 
@@ -56,6 +57,10 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
         button.frame = CGRectMake(lockedPostion, 0, button.frame.width, button.frame.height)
         self.leftButtonItems.append(button)
         self.setLockedPositionValue()
+        
+        if self.leftButtonItems.count == 1 {
+            self.backgroundColor = self.firstButton!.backgroundColor
+        }
     }
     
     private func setLockedPositionValue() {
@@ -64,6 +69,32 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
             result += cur.frame.width
         }
         self.lockedPostion = result
+    }
+    
+    private func hideSecondaryLeftButtons() {
+        if self.secondaryButtonsAreHidden || self.leftButtonItems.count == 1 {
+            return
+        }
+        
+        for cur in self.leftButtonItems {
+            if cur !== self.firstButton! {
+                cur.hidden = true
+            }
+        }
+        self.secondaryButtonsAreHidden = true
+    }
+    
+    private func revealSecondaryLeftButtons() {
+        if !self.secondaryButtonsAreHidden || self.leftButtonItems.count == 1 {
+            return
+        }
+        
+        for cur in self.leftButtonItems {
+            if cur !== self.firstButton! {
+                cur.hidden = false
+            }
+        }
+        self.secondaryButtonsAreHidden = false
     }
 }
 
@@ -87,7 +118,7 @@ extension SwipeOptionsTableViewCell {
     }
     
     private func finishPanning(sender: UIPanGestureRecognizer) {
-        if self.contentView.center.x > self.triggerMinimumPosition {
+        if self.shouldTrigger {
             self.state = .Triggered
         }
         
@@ -99,69 +130,76 @@ extension SwipeOptionsTableViewCell {
             self.lockCell(true)
         case .Triggered:
             self.triggerAction()
+            self.restoreCell(true)
             self.state = .Unlocked
         }
-        
-        //self.bringSubviewToFront(self.contentView)
     }
     
     private func proceedPanning(sender: UIPanGestureRecognizer) {
+        enum Direction {
+            case toRight
+            case toLeft
+        }
+        
+        var currentDirection: Direction = .toRight
+        
         let toucheTransition = sender.locationInView(self.contentView).x - self.startingTouchePosition.x
-        let position = self.contentView.center.x + toucheTransition
-        let translation = self.originalPosition + toucheTransition
         
-        self.contentView.center.x = position
+        if toucheTransition >= 0 {
+            currentDirection = .toRight
+        }
+        else {
+            currentDirection = .toLeft
+        }
         
-        if position >= self.triggerMinimumPosition + self.originalPosition  && self.state != .Triggered {
+        let position = self.contentView.frame.origin.x + toucheTransition
+        
+        if position < 0 {
+            return
+        }
+        
+        
+        self.contentView.frame.origin.x = position
+        
+        if self.shouldTrigger {
             self.state = .Triggered
         }
-        else if translation >= self.lockedPostion + self.originalPosition && self.state != .Locked {
-            self.state = .Locked
-            //self.bringSubviewToFront(self.leftButtonItems.first!)
-        }
-        else if self.state != .Unlocked {
+        else if currentDirection == .toLeft {
             self.state = .Unlocked
-            //self.bringSubviewToFront(self.contentView)
+        }
+        else if self.contentView.frame.origin.x >= self.lockedPostion {
+            self.state = .Locked
+        }
+        else if currentDirection == .toRight {
+            self.state = .Locked
+        }
+        else {
+            self.state = .Unlocked
         }
         
-        switch self.state {
-        case .Locked:
-            if position > self.lockedPostion {
-                self.setFirstButtonWidth(self.contentView.center.x - self.firstButton!.frame.width, animated: false)
+        if self.state == .Locked || self.state == .Triggered {
+            if self.contentView.frame.origin.x > self.lockedPostion {
+                self.firstButton!.center.x = self.contentView.frame.origin.x / 2
+                self.hideSecondaryLeftButtons()
             }
-            else {
-                self.restoreLeftFirstButton(true)
-            }
-            
-        default:
-            let nothing = 0
         }
     }
     
     private func triggerAction() {
-        UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut | UIViewAnimationOptions.AllowUserInteraction, animations: {
-            self.contentView.center.x = self.frame.width
-            self.setFirstButtonWidth(self.frame.width, animated: false)
-            }, completion: { result in
-                UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
-                    self.contentView.center.x = self.originalPosition
-                    self.restoreLeftFirstButton(false)
-                    }, completion: { result in
-                        self.leftButtonItems.first?.triggerAction(self.panGesture)
-                        self.state = .Unlocked
-                })
-        })
+        self.leftButtonItems.first?.triggerAction(self.panGesture)
+        self.state = .Unlocked
     }
     
     private func restoreLeftFirstButton(animated: Bool) {
         func action() {
             self.setFirstButtonWidth(self.originalLeftFirstButtonWidth, animated: false)
+            self.firstButton!.frame.origin.x = 0
         }
         
         var function: () -> () = action
         
         if animated {
-            UIView.animateWithDuration(0.5, animations: {
+            UIView.animateWithDuration(0.2, animations: {
                 function()
             })
         }
@@ -190,13 +228,13 @@ extension SwipeOptionsTableViewCell {
     
     private func restoreCell(animated: Bool) {
         let function: () -> () = {
-            //self.contentView.center.x = self.originalPosition
-            self.contentView.frame = CGRectMake(self.originalPosition, 0, self.frame.width, self.frame.height)
+            self.contentView.frame.origin.x = self.originalPosition
             self.restoreLeftFirstButton(false)
+            self.revealSecondaryLeftButtons()
         }
         
         if animated {
-            UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut | UIViewAnimationOptions.AllowUserInteraction, animations: {
+            UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
                 function()
                 }, completion: nil)
         }
@@ -207,8 +245,8 @@ extension SwipeOptionsTableViewCell {
     
     private func lockCell(animated: Bool) {
         let function: () -> () = {
-            self.contentView.center.x = self.lockedPostion + self.originalPosition
-            self.restoreLeftFirstButton(false)
+            self.restoreCell(false)
+            self.contentView.frame = CGRectOffset(self.contentView.frame, self.lockedPostion, 0)
         }
         
         if animated {

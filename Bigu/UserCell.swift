@@ -44,11 +44,10 @@ internal class UserCell: SwipeOptionsTableViewCell {
         super.init(coder: aDecoder)
         
         let button = SwipeOptionsButtonItem(frame: SwipeOptionsButtonItem.frame(forCell: self))
-        button.action = { sender in
-            println("detail button pressed")
-        }
+        button.action = self.debitButtonPressed
         button.setTitle("cash in", forState: UIControlState.allZeros)
-        button.backgroundColor = RGBColor(r: 33, g: 33, b: 33, alpha: 1)
+        //105 170 129
+        button.backgroundColor = RGBColor(r: 105, g: 170, b: 129, alpha: 1)
         
         self.insertLeftButton(button)
     }

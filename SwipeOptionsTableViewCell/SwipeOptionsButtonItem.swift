@@ -11,7 +11,7 @@ import UIKit
 public class SwipeOptionsButtonItem: UIButton {
     
     // MARK: -Properties
-    public var action: (sender: AnyObject!) -> () = {sender in}
+    public var action: (sender: AnyObject) -> () = {sender in}
     
     // MARK: -Methods
     required public init(coder aDecoder: NSCoder) {
