@@ -11,7 +11,7 @@ import UIKit
 public class SwipeOptionsButtonItem: UIButton {
     
     // MARK: -Properties
-    private var action: (sender: AnyObject!) -> () = {sender in}
+    public var action: (sender: AnyObject!) -> () = {sender in}
     
     // MARK: -Methods
     required public init(coder aDecoder: NSCoder) {
@@ -20,9 +20,9 @@ public class SwipeOptionsButtonItem: UIButton {
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.blackColor()
         super.setTitleColor(UIColor.whiteColor(), forState: UIControlState.allZeros)
-        self.setTitle("Option", forState: UIControlState.allZeros)
+        self.setTitle("Button", forState: UIControlState.allZeros)
         self.addTarget(self, action: "triggerAction:", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
@@ -30,7 +30,7 @@ public class SwipeOptionsButtonItem: UIButton {
         self.action(sender: sender)
     }
     
-    class func frame(forCell cell: UITableViewCell) -> CGRect {
+    class public func frame(forCell cell: UITableViewCell) -> CGRect {
         let ratio = CGFloat(1.5)
         return CGRectMake(0, 0, cell.frame.height * ratio, cell.frame.height)
     }

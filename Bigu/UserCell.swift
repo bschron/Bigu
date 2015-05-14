@@ -12,8 +12,9 @@ import User
 import RGBColor
 import FakeSeparator
 import UserList
+import SwipeOptionsTableViewCell
 
-internal class UserCell: UITableViewCell {
+internal class UserCell: SwipeOptionsTableViewCell {
 
     // MARK: - Properties
     internal var configured: Bool = false
@@ -25,8 +26,6 @@ internal class UserCell: UITableViewCell {
             self.updateUserInfo()
         }
     }
-    //private var swipeGesture: UISwipeGestureRecognizer!
-    private var userImagePanGesture: UIPanGestureRecognizer!
     private var userImageOriginalPosition: (CGFloat, CGFloat) = (CGFloat(0), CGFloat(0))
     private var userImagePanGestureIsActive: Bool = false
     private var invisibleUserImageViewCover: UIView!
@@ -43,6 +42,15 @@ internal class UserCell: UITableViewCell {
     
     required internal init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        let button = SwipeOptionsButtonItem(frame: SwipeOptionsButtonItem.frame(forCell: self))
+        button.action = { sender in
+            println("detail button pressed")
+        }
+        button.setTitle("cash in", forState: UIControlState.allZeros)
+        button.backgroundColor = RGBColor(r: 33, g: 33, b: 33, alpha: 1)
+        
+        self.insertLeftButton(button)
     }
     
     override internal func awakeFromNib() {
@@ -59,15 +67,11 @@ internal class UserCell: UITableViewCell {
         self.invisibleUserImageViewCover.center = self.userImageView.center
         self.invisibleUserImageViewCover.layer.cornerRadius = self.userImageView.layer.cornerRadius
         self.invisibleUserImageViewCover.backgroundColor = UIColor.blueColor().colorWithAlphaComponent(CGFloat(0))
-        self.userImagePanGesture = UIPanGestureRecognizer(target: self, action: "moveUserImage:")
-        self.userImagePanGesture.minimumNumberOfTouches = 1
-        self.userImagePanGesture.maximumNumberOfTouches = 1
-        self.invisibleUserImageViewCover.addGestureRecognizer(self.userImagePanGesture)
         self.userImageOriginalPosition = (self.userImageView.center.x, self.userImageView.center.y)
         self.insertSubview(self.invisibleUserImageViewCover, aboveSubview: self.userImageView)
         
         // set background color
-        self.backgroundColor = RGBColor.whiteColor()
+        self.contentView.backgroundColor = RGBColor.whiteColor()
         self.separator = FakeSeparator(forView: self)
     }
     

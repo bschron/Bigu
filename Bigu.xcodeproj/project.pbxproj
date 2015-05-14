@@ -585,6 +585,13 @@
 			remoteGlobalIDString = 8651375F1AEADBCF00CB2A63;
 			remoteInfo = RGBColor;
 		};
+		861EDD7D1B04DB49001C7A1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 862FB21B1AFF85470054764E;
+			remoteInfo = SwipeOptionsTableViewCell;
+		};
 		8626E3311AEAED3B003872A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
@@ -3800,6 +3807,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				861EDD7E1B04DB49001C7A1A /* PBXTargetDependency */,
 				86A7DFB81AFF00CB008D8C27 /* PBXTargetDependency */,
 				86A4C3411AFEF2A3002BF05E /* PBXTargetDependency */,
 				861412421AEE4B6C00A1E8E5 /* PBXTargetDependency */,
@@ -5242,6 +5250,11 @@
 			isa = PBXTargetDependency;
 			target = 8651375F1AEADBCF00CB2A63 /* RGBColor */;
 			targetProxy = 861412971AEE4D2E00A1E8E5 /* PBXContainerItemProxy */;
+		};
+		861EDD7E1B04DB49001C7A1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 862FB21B1AFF85470054764E /* SwipeOptionsTableViewCell */;
+			targetProxy = 861EDD7D1B04DB49001C7A1A /* PBXContainerItemProxy */;
 		};
 		8626E3321AEAED3B003872A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -7801,6 +7814,7 @@
 				862FB2361AFF85470054764E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		862FB23A1AFF85470054764E /* Build configuration list for PBXNativeTarget "SwipeOptionsTableViewCellTests" */ = {
 			isa = XCConfigurationList;
@@ -7809,6 +7823,7 @@
 				862FB2381AFF85470054764E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		864AEA371AEACD85009147D9 /* Build configuration list for PBXNativeTarget "User" */ = {
 			isa = XCConfigurationList;
