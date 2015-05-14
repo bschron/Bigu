@@ -21,15 +21,9 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
     private var originalPosition: CGFloat!
     private var startingTouchePosition: CGPoint = CGPoint(x: 0, y: 0)
     private var originalLeftFirstButtonWidth: CGFloat!
-    private var lockedPostion: CGFloat {
-        var result = self.contentView.center.x
-        for cur in self.leftButtonItems {
-            result += cur.frame.width
-        }
-        return result
-    }
+    private var lockedPostion: CGFloat = 0
     private var triggerMinimumPosition: CGFloat {
-        return self.frame.width - 10
+        return self.lockedPostion + self.firstButton!.center.x
     }
     private var firstButton: SwipeOptionsButtonItem? {
         return self.leftButtonItems.first
@@ -47,7 +41,7 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
     
     override public func awakeFromNib() {
         super.awakeFromNib()
-        self.originalPosition = self.contentView.center.x
+        self.originalPosition = 0
         // Initialization code
     }
 
@@ -61,6 +55,15 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
         self.insertSubview(button, belowSubview: self.contentView)
         button.frame = CGRectMake(lockedPostion, 0, button.frame.width, button.frame.height)
         self.leftButtonItems.append(button)
+        self.setLockedPositionValue()
+    }
+    
+    private func setLockedPositionValue() {
+        var result: CGFloat = 0
+        for cur in self.leftButtonItems {
+            result += cur.frame.width
+        }
+        self.lockedPostion = result
     }
 }
 
@@ -76,7 +79,7 @@ extension SwipeOptionsTableViewCell {
         case .Ended:
             self.finishPanning(sender)
         case .Began:
-            self.startingTouchePosition = sender.locationInView(self)
+            self.startingTouchePosition = sender.locationInView(self.contentView)
             self.originalLeftFirstButtonWidth = self.leftButtonItems.first?.frame.width
         default:
             self.proceedPanning(sender)
@@ -84,6 +87,10 @@ extension SwipeOptionsTableViewCell {
     }
     
     private func finishPanning(sender: UIPanGestureRecognizer) {
+        if self.contentView.center.x > self.triggerMinimumPosition {
+            self.state = .Triggered
+        }
+        
         self.startingTouchePosition = CGPoint(x: 0, y: 0)
         switch self.state {
         case .Unlocked:
@@ -99,19 +106,16 @@ extension SwipeOptionsTableViewCell {
     }
     
     private func proceedPanning(sender: UIPanGestureRecognizer) {
-        let toucheTransition = sender.locationInView(self).x - self.startingTouchePosition.x
-        let position = self.originalPosition + toucheTransition
+        let toucheTransition = sender.locationInView(self.contentView).x - self.startingTouchePosition.x
+        let position = self.contentView.center.x + toucheTransition
+        let translation = self.originalPosition + toucheTransition
         
-        let time: NSTimeInterval = NSTimeInterval((position - self.contentView.center.x) * 0.005)
+        self.contentView.center.x = position
         
-        UIView.animateWithDuration(time, delay: 0.0, options: UIViewAnimationOptions.AllowUserInteraction | UIViewAnimationOptions.AllowAnimatedContent, animations: {
-            self.contentView.center.x = position
-        }, completion: nil)
-        
-        if position >= self.triggerMinimumPosition  && self.state != .Triggered {
+        if position >= self.triggerMinimumPosition + self.originalPosition  && self.state != .Triggered {
             self.state = .Triggered
         }
-        else if position >= self.lockedPostion && self.state != .Locked {
+        else if translation >= self.lockedPostion + self.originalPosition && self.state != .Locked {
             self.state = .Locked
             //self.bringSubviewToFront(self.leftButtonItems.first!)
         }
@@ -123,7 +127,7 @@ extension SwipeOptionsTableViewCell {
         switch self.state {
         case .Locked:
             if position > self.lockedPostion {
-                self.setFirstButtonWidth(position, animated: false)
+                self.setFirstButtonWidth(self.contentView.center.x - self.firstButton!.frame.width, animated: false)
             }
             else {
                 self.restoreLeftFirstButton(true)
@@ -186,7 +190,8 @@ extension SwipeOptionsTableViewCell {
     
     private func restoreCell(animated: Bool) {
         let function: () -> () = {
-            self.contentView.center.x = self.originalPosition
+            //self.contentView.center.x = self.originalPosition
+            self.contentView.frame = CGRectMake(self.originalPosition, 0, self.frame.width, self.frame.height)
             self.restoreLeftFirstButton(false)
         }
         
@@ -202,7 +207,7 @@ extension SwipeOptionsTableViewCell {
     
     private func lockCell(animated: Bool) {
         let function: () -> () = {
-            self.contentView.center.x = self.lockedPostion
+            self.contentView.center.x = self.lockedPostion + self.originalPosition
             self.restoreLeftFirstButton(false)
         }
         
