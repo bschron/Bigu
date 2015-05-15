@@ -190,7 +190,16 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
             var duration: NSTimeInterval = 0.002 * Double(self.contentView.frame.origin.x)
             
             if duration >= 0.3 {
-                duration *= 0.4
+                var factor = 1.0
+                
+                if duration > 1 {
+                    factor = -factor
+                }
+                else if duration == 1 {
+                    factor = 1.3
+                }
+                
+                duration *= (factor - duration)
             }
             
             UIView.animateWithDuration(duration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut | .AllowAnimatedContent, animations: {
