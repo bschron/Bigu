@@ -1006,6 +1006,13 @@
 			remoteGlobalIDString = 86A7DF8B1AFEF4B4008D8C27;
 			remoteInfo = ABImportAgent;
 		};
+		86A845C21B057AE20046277E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8651375F1AEADBCF00CB2A63;
+			remoteInfo = RGBColor;
+		};
 		86A92DB11AB863E900B38445 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 86A92D911AB863E900B38445 /* Project object */;
@@ -3159,6 +3166,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				86A845C31B057AE20046277E /* PBXTargetDependency */,
 			);
 			name = SwipeOptionsTableViewCell;
 			productName = SwipeOptionsTableViewCell;
@@ -5552,6 +5560,11 @@
 			isa = PBXTargetDependency;
 			target = 86A7DF8B1AFEF4B4008D8C27 /* ABImportAgent */;
 			targetProxy = 86A7DFB71AFF00CB008D8C27 /* PBXContainerItemProxy */;
+		};
+		86A845C31B057AE20046277E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8651375F1AEADBCF00CB2A63 /* RGBColor */;
+			targetProxy = 86A845C21B057AE20046277E /* PBXContainerItemProxy */;
 		};
 		86A92DB21AB863E900B38445 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

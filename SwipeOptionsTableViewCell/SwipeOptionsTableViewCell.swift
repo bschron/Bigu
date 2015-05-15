@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RGBColor
 
 private enum cellState {
     case Locked
@@ -29,7 +30,7 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
     private var originalLeftFirstButtonWidth: CGFloat!
     private var lockedPostion: CGFloat = 0
     private var shouldTrigger: Bool {
-        return self.contentView.frame.origin.x >= self.lockedPostion + 100
+        return self.contentView.frame.origin.x >= min(self.lockedPostion + 100, self.contentView.frame.width - 100)
     }
     private var firstButton: SwipeOptionsButtonItem? {
         return self.leftButtonItems.first
@@ -37,7 +38,9 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
     private var state: cellState = .Unlocked
     private var secondaryButtonsAreHidden: Bool = false
     private var currentDirection: Direction = .toRight
-    private var shouldFlashConfirmation: Bool = false
+    private var originalBackgroundColor: UIColor!
+    public var leftButtonFeedbackColor: UIColor = UIColor.lightGrayColor()
+    private var shouldRespondToPan: Bool = false
     
     // MARK: -Methods
     public required init(coder aDecoder: NSCoder) {
@@ -68,7 +71,11 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
         self.setLockedPositionValue()
         
         if self.leftButtonItems.count == 1 {
-            self.backgroundColor = self.firstButton!.backgroundColor
+            self.backgroundColor = button.backgroundColor
+            button.didTriggerAction = {
+                self.didTriggerAction()
+            }
+            self.originalBackgroundColor = button.backgroundColor
         }
     }
     
@@ -132,99 +139,12 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
             action()
         }
     }
-}
-
-extension SwipeOptionsTableViewCell {
-    // MARK: -PanActions
-    public func panAction(sender: UIPanGestureRecognizer) {
-        
-        if self.leftButtonItems.count <= 0 {
-            return
-        }
-        
-        switch sender.state {
-        case .Ended:
-            self.finishPanning(sender)
-        case .Began:
-            self.startingTouchePosition = sender.locationInView(self.contentView)
-            self.originalLeftFirstButtonWidth = self.leftButtonItems.first?.frame.width
-        default:
-            self.proceedPanning(sender)
-        }
-    }
-    
-    private func finishPanning(sender: UIPanGestureRecognizer) {
-        if self.shouldTrigger {
-            self.state = .Triggered
-        }
-        else if currentDirection == .toRight {
-            self.state = .Locked
-        }
-        else if currentDirection == .toLeft {
-            self.state = .Unlocked
-        }
-        
-        self.startingTouchePosition = CGPoint(x: 0, y: 0)
-        switch self.state {
-        case .Unlocked:
-            self.restoreCell(true)
-        case .Locked:
-            self.lockCell(true)
-        case .Triggered:
-            self.triggerAction()
-            self.restoreCell(true)
-            self.state = .Unlocked
-        }
-    }
-    
-    private func proceedPanning(sender: UIPanGestureRecognizer) {
-        
-        let toucheTransition = sender.locationInView(self.contentView).x - self.startingTouchePosition.x
-        
-        if toucheTransition >= 0 {
-            currentDirection = .toRight
-        }
-        else {
-            currentDirection = .toLeft
-        }
-        
-        let position = self.contentView.frame.origin.x + toucheTransition
-        
-        if position < 0 {
-            return
-        }
-        
-        
-        self.contentView.frame.origin.x = position
-        
-        if self.shouldTrigger {
-            self.state = .Triggered
-        }
-        else if self.contentView.frame.origin.x >= self.lockedPostion {
-            self.state = .Locked
-        }
-        else {
-            self.state = .Unlocked
-        }
-        
-        if self.state == .Locked || self.state == .Triggered {
-            if self.contentView.frame.origin.x > self.lockedPostion {
-                self.firstButton!.center.x = self.contentView.frame.origin.x / 2
-                self.hideSecondaryLeftButtons(true)
-            }
-        }
-    }
-    
-    private func triggerAction() {
-        self.shouldFlashConfirmation = true
-        self.leftButtonItems.first?.triggerAction(self.panGesture)
-        self.state = .Unlocked
-    }
     
     private func restoreLeftFirstButton(animated: Bool) {
         func action() {
             self.setFirstButtonWidth(self.originalLeftFirstButtonWidth, animated: false)
             self.firstButton!.frame.origin.x = 0
+            self.firstButton!.backgroundColor = self.originalBackgroundColor
         }
         
         var function: () -> () = action
@@ -232,7 +152,7 @@ extension SwipeOptionsTableViewCell {
         if animated {
             UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.AllowAnimatedContent, animations: {
                 function()
-            }, completion: nil)
+                }, completion: nil)
         }
         else {
             function()
@@ -258,28 +178,177 @@ extension SwipeOptionsTableViewCell {
     }
     
     public func restoreCell(animated: Bool) {
-        var completion: () -> () = {}
-        
         let function: () -> () = {
             self.contentView.frame.origin.x = self.originalPosition
             self.restoreLeftFirstButton(false)
             self.revealSecondaryLeftButtons(false)
-            
-            if self.shouldFlashConfirmation {
-                completion = self.firstButton!.flashActionMark(animated: false)!
-                self.shouldFlashConfirmation = false
-            }
+            self.firstButton!.backgroundColor = self.originalBackgroundColor
+            self.backgroundColor = self.firstButton!.backgroundColor
         }
         
         if animated {
-            UIView.animateWithDuration(1, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut | .AllowAnimatedContent, animations: {
+            var duration: NSTimeInterval = 0.002 * Double(self.contentView.frame.origin.x)
+            
+            if duration >= 0.3 {
+                duration *= 0.4
+            }
+            
+            UIView.animateWithDuration(duration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut | .AllowAnimatedContent, animations: {
                 function()
                 }, completion: { result in
-                    completion()
+                    self.bounce(forView: self.contentView, movingToDirection: .toLeft, completion: nil)
             })
         }
         else {
             function()
+        }
+    }
+    
+    private func bounce(forView view: UIView, movingToDirection dir: Direction, completion: ((Bool) -> ())?) {
+        let originalPosition = view.frame.origin.x
+        let dx = view.frame.width / 40
+        let duration: NSTimeInterval = 0.008 * Double(dx)
+        
+        let _bounce: (CGFloat) -> () = { dx in
+            switch dir {
+            case .toRight:
+                view.frame.origin.x -= dx
+            case .toLeft:
+                view.frame.origin.x += dx
+            }
+        }
+        
+        UIView.animateWithDuration(duration, animations: {
+            _bounce(dx)
+            }, completion: { result in
+                UIView.animateWithDuration(duration, animations: {
+                    view.frame.origin.x = originalPosition
+                    }, completion: { result in
+                        UIView.animateWithDuration(duration / 2, animations: {
+                            _bounce(dx / 2)
+                            }, completion: { result in
+                                UIView.animateWithDuration(duration / 2, animations: {
+                                    view.frame.origin.x = originalPosition
+                                    }, completion: completion)
+                        })
+                })
+        })
+    }
+    
+    private func triggerFeedbackBackGroundColor(# feedback: Bool, animated: Bool) {
+        let action: () -> () = {
+            let color = feedback ? self.leftButtonFeedbackColor : self.originalBackgroundColor
+            self.firstButton!.backgroundColor = color
+            self.backgroundColor = color
+        }
+        
+        if animated {
+            UIView.animateWithDuration(0.2, animations: {
+                action()
+            })
+        }
+        else {
+            action()
+        }
+    }
+}
+
+extension SwipeOptionsTableViewCell {
+    // MARK: -PanActions
+    public func panAction(sender: UIPanGestureRecognizer) {
+        
+        if self.leftButtonItems.count <= 0 {
+            return
+        }
+        
+        switch sender.state {
+        case .Ended:
+            self.finishPanning(sender)
+        case .Began:
+            self.startingTouchePosition = sender.locationInView(self.contentView)
+            self.originalLeftFirstButtonWidth = self.leftButtonItems.first?.frame.width
+        default:
+            self.proceedPanning(sender)
+        }
+    }
+    
+    private func finishPanning(sender: UIPanGestureRecognizer) {
+        switch self.currentDirection {
+        case .toLeft:
+            switch self.state {
+            case .Locked:
+                self.state = .Unlocked
+            case .Triggered:
+                self.state = .Locked
+            case .Unlocked:
+                let nop = 0
+            }
+            
+        case .toRight:
+            switch self.state {
+            case .Locked:
+                let nop = 0
+            case .Triggered:
+                let nop = 0
+            case .Unlocked:
+                self.state = .Locked
+            }
+        }
+        
+        self.startingTouchePosition = CGPoint(x: 0, y: 0)
+        switch self.state {
+        case .Unlocked:
+            self.restoreCell(self.shouldRespondToPan)
+        case .Locked:
+            self.lockCell(true)
+        case .Triggered:
+            self.leftButtonItems.first?.triggerAction(self.panGesture)
+        }
+    }
+    
+    private func proceedPanning(sender: UIPanGestureRecognizer) {
+        
+        let toucheTransition = sender.locationInView(self.contentView).x - self.startingTouchePosition.x
+        
+        if toucheTransition >= 0 {
+            currentDirection = .toRight
+        }
+        else {
+            currentDirection = .toLeft
+        }
+        
+        let position = self.contentView.frame.origin.x + toucheTransition
+        
+        if position < 0 {
+            self.shouldRespondToPan = false
+            return
+        }
+        
+        self.shouldRespondToPan = true
+        
+        let previousState = self.state
+        
+        self.contentView.frame.origin.x = position
+        
+        if self.shouldTrigger {
+            self.state = .Triggered
+        }
+        else if self.contentView.frame.origin.x >= self.lockedPostion {
+            self.state = .Locked
+        }
+        else {
+            self.state = .Unlocked
+        }
+        
+        if self.state == .Locked || self.state == .Triggered {
+            if self.contentView.frame.origin.x > self.lockedPostion {
+                self.firstButton!.center.x = self.contentView.frame.origin.x / 2
+                self.hideSecondaryLeftButtons(true)
+            }
+            
+            if previousState != self.state {
+                self.triggerFeedbackBackGroundColor(feedback: self.state == .Triggered, animated: true)
+            }
         }
     }
     
@@ -297,5 +366,10 @@ extension SwipeOptionsTableViewCell {
         else {
             function()
         }
+    }
+    
+    public func didTriggerAction() {
+        self.restoreCell(true)
+        self.state = .Unlocked
     }
 }

@@ -12,7 +12,7 @@ public class SwipeOptionsButtonItem: UIButton {
     
     // MARK: -Properties
     public var action: (sender: AnyObject) -> () = {sender in}
-    public var actionMark: UIImage? = nil
+    internal var didTriggerAction: () -> () = {}
     
     // MARK: -Methods
     required public init(coder aDecoder: NSCoder) {
@@ -29,52 +29,7 @@ public class SwipeOptionsButtonItem: UIButton {
     
     internal func triggerAction(sender: AnyObject!) {
         self.action(sender: sender)
-    }
-    
-    public func flashActionMark(#animated: Bool) -> (() -> ())? {
-        let mark: UIImage!
-        
-        if self.actionMark == nil {
-            mark = UIImage(named: "checkMark")
-        }
-        else {
-            mark = self.actionMark
-        }
-        
-        let imageView = UIImageView(image: mark)
-        imageView.alpha = CGFloat(0)
-        imageView.contentMode = UIViewContentMode.ScaleAspectFill
-        self.addSubview(imageView)
-        imageView.frame = CGRectMake(0, 0, self.frame.width / 3, self.frame.height / 3)
-        imageView.center.x = self.center.x
-        imageView.center.y = self.center.y
-        imageView.tintColor = UIColor.lightGrayColor()
-    
-        let action: () -> () = {
-            imageView.alpha = CGFloat(1)
-            self.titleLabel?.alpha = CGFloat(0)
-        }
-        
-        let completion: () -> () = {
-            imageView.alpha = CGFloat(0)
-            imageView.removeFromSuperview()
-            self.titleLabel?.alpha = CGFloat(1)
-        }
-        
-        if animated {
-            UIView.animateWithDuration(0.5, animations: {
-                action()
-                }, completion: { result in
-                    UIView.animateWithDuration(0.5, animations: {
-                        completion()
-                    })
-            })
-        }
-        else {
-            action()
-        }
-        
-        return completion
+        self.didTriggerAction()
     }
     
     class public func frame(forCell cell: UITableViewCell) -> CGRect {

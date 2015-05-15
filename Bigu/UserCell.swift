@@ -42,15 +42,14 @@ internal class UserCell: SwipeOptionsTableViewCell {
         
         let button = SwipeOptionsButtonItem(frame: SwipeOptionsButtonItem.frame(forCell: self))
         button.action = { sender in
-            button.flashActionMark(animated: true)
             self.debitButtonPressed(sender)
-            self.restoreCell(true)
         }
         button.setTitle("cash in", forState: UIControlState.allZeros)
         //105 170 129
         button.backgroundColor = RGBColor(r: 105, g: 170, b: 129, alpha: 1)
         
         self.insertLeftButton(button)
+        self.leftButtonFeedbackColor = RGBColor(r: 56, g: 138, b: 109, alpha: 1)
     }
     
     override internal func awakeFromNib() {
