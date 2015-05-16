@@ -22,7 +22,8 @@ public class SwipeOptionsButtonItem: UIButton {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.blackColor()
-        super.setTitleColor(UIColor.whiteColor(), forState: UIControlState.allZeros)
+        self.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        self.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Highlighted)
         self.setTitle("Button", forState: UIControlState.allZeros)
         self.addTarget(self, action: "triggerAction:", forControlEvents: UIControlEvents.TouchUpInside)
     }
