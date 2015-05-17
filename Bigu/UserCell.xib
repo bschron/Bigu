@@ -31,17 +31,30 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8j-xF-Ea6" customClass="CounterView" customModule="UsersViewController" customModuleProvider="target">
+                        <rect key="frame" x="76" y="10" width="516" height="9"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                <color key="value" red="0.16078431369999999" green="0.4823529412" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Lgv-E3-8j9" firstAttribute="leading" secondItem="aKF-F6-P5o" secondAttribute="leading" constant="5" id="9KL-Nd-02U"/>
+                    <constraint firstItem="I8j-xF-Ea6" firstAttribute="top" secondItem="aKF-F6-P5o" secondAttribute="topMargin" constant="2" id="AJZ-hF-3r8"/>
                     <constraint firstItem="Bx1-4x-714" firstAttribute="leading" secondItem="Lgv-E3-8j9" secondAttribute="trailing" constant="8" id="Ao0-fM-kG2"/>
                     <constraint firstItem="Bx1-4x-714" firstAttribute="leading" secondItem="WbL-dH-8cl" secondAttribute="leading" id="G0S-K2-cyq"/>
                     <constraint firstAttribute="centerY" secondItem="Lgv-E3-8j9" secondAttribute="centerY" constant="0.25" id="LV7-CA-Dny"/>
+                    <constraint firstItem="Bx1-4x-714" firstAttribute="leading" secondItem="I8j-xF-Ea6" secondAttribute="leading" id="TRC-4i-B5H"/>
                     <constraint firstAttribute="bottom" secondItem="Lgv-E3-8j9" secondAttribute="bottom" constant="8" id="ant-oM-kTn"/>
                     <constraint firstItem="WbL-dH-8cl" firstAttribute="top" secondItem="Bx1-4x-714" secondAttribute="bottom" id="oW5-tc-coa"/>
                     <constraint firstItem="Lgv-E3-8j9" firstAttribute="top" secondItem="aKF-F6-P5o" secondAttribute="top" constant="8" id="ogd-MI-trI"/>
+                    <constraint firstItem="I8j-xF-Ea6" firstAttribute="trailing" secondItem="aKF-F6-P5o" secondAttribute="trailingMargin" id="rh6-a2-hwi"/>
                     <constraint firstItem="Lgv-E3-8j9" firstAttribute="leading" secondItem="aKF-F6-P5o" secondAttribute="leadingMargin" id="tmN-uX-BRS"/>
                     <constraint firstAttribute="centerY" secondItem="Bx1-4x-714" secondAttribute="centerY" constant="0.25" id="trs-Ij-Cdv"/>
+                    <constraint firstItem="Bx1-4x-714" firstAttribute="top" secondItem="I8j-xF-Ea6" secondAttribute="bottom" constant="10" id="u3d-gC-C61"/>
                     <constraint firstItem="Bx1-4x-714" firstAttribute="leading" secondItem="aKF-F6-P5o" secondAttribute="leadingMargin" constant="45" id="yM4-pB-eeY"/>
                 </constraints>
                 <variation key="default">
@@ -53,6 +66,7 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="counterView" destination="I8j-xF-Ea6" id="fHG-hK-7tf"/>
                 <outlet property="fullnameLabel" destination="WbL-dH-8cl" id="QBk-44-m8m"/>
                 <outlet property="nameLabel" destination="Bx1-4x-714" id="ocv-Fg-U2j"/>
                 <outlet property="userImageView" destination="Lgv-E3-8j9" id="SBa-x8-R46"/>

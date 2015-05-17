@@ -39,6 +39,9 @@
 		862FB2341AFF85470054764E /* SwipeOptionsTableViewCell.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 862FB21C1AFF85470054764E /* SwipeOptionsTableViewCell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		862FB23E1AFF85CB0054764E /* SwipeOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862FB23D1AFF85CB0054764E /* SwipeOptionsTableViewCell.swift */; };
 		862FB2401AFF86520054764E /* SwipeOptionsButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862FB23F1AFF86520054764E /* SwipeOptionsButtonItem.swift */; };
+		863046FB1B07CE7E00D9091A /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863046FA1B07CE7E00D9091A /* CounterView.swift */; };
+		863046FD1B07D3A700D9091A /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863046FC1B07D3A700D9091A /* Counter.swift */; };
+		863046FF1B07E4A300D9091A /* PlusCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863046FE1B07E4A300D9091A /* PlusCounter.swift */; };
 		863D5E941ACF7185007D9235 /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D5E931ACF7185007D9235 /* CustomPopUp.swift */; };
 		863D5E961ACF7277007D9235 /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 863D5E951ACF7277007D9235 /* CustomPopUp.xib */; };
 		864AEA231AEACD85009147D9 /* Models.h in Headers */ = {isa = PBXBuildFile; fileRef = 864AEA221AEACD85009147D9 /* Models.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1202,6 +1205,9 @@
 		862FB22F1AFF85470054764E /* SwipeOptionsTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeOptionsTableViewCellTests.swift; sourceTree = "<group>"; };
 		862FB23D1AFF85CB0054764E /* SwipeOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		862FB23F1AFF86520054764E /* SwipeOptionsButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeOptionsButtonItem.swift; sourceTree = "<group>"; };
+		863046FA1B07CE7E00D9091A /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		863046FC1B07D3A700D9091A /* Counter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
+		863046FE1B07E4A300D9091A /* PlusCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlusCounter.swift; sourceTree = "<group>"; };
 		863D5E931ACF7185007D9235 /* CustomPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 		863D5E951ACF7277007D9235 /* CustomPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPopUp.xib; sourceTree = "<group>"; };
 		863D5E981ACF75F8007D9235 /* NewUserPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewUserPopUp.xib; sourceTree = "<group>"; };
@@ -2853,6 +2859,9 @@
 			children = (
 				86F441C91ACEA574006B5246 /* UserCell.xib */,
 				86F441CD1ACEA9DA006B5246 /* UserCell.swift */,
+				863046FA1B07CE7E00D9091A /* CounterView.swift */,
+				863046FC1B07D3A700D9091A /* Counter.swift */,
+				863046FE1B07E4A300D9091A /* PlusCounter.swift */,
 			);
 			name = UserCell;
 			path = ../Bigu;
@@ -4910,9 +4919,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				863046FF1B07E4A300D9091A /* PlusCounter.swift in Sources */,
+				863046FD1B07D3A700D9091A /* Counter.swift in Sources */,
 				86CD075C1AEADE9E006B6CE1 /* NewUserPopUp.swift in Sources */,
 				86CD075A1AEADE7F006B6CE1 /* UsersViewController.swift in Sources */,
 				86CD075E1AEADEA9006B6CE1 /* UserCell.swift in Sources */,
+				863046FB1B07CE7E00D9091A /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

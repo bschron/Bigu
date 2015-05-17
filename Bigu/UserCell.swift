@@ -17,12 +17,9 @@ import SwipeOptionsTableViewCell
 internal class UserCell: SwipeOptionsTableViewCell {
 
     // MARK: - Properties
-    internal var configured: Bool = false
+    internal var configured: Bool {return user != nil}
     internal var user: User! {
         didSet {
-            if user != nil {
-                self.configured = true
-            }
             self.updateUserInfo()
         }
     }
@@ -33,6 +30,7 @@ internal class UserCell: SwipeOptionsTableViewCell {
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var fullnameLabel: UILabel!
     @IBOutlet weak private var userImageView: UIImageView!
+    @IBOutlet weak var counterView: CounterView!
     private var separator: UIView!
     
     // MARK: - Methods
@@ -68,6 +66,7 @@ internal class UserCell: SwipeOptionsTableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.separator.layoutIfNeeded()
+        self.updateCounters()
     }
 
     override internal func setSelected(selected: Bool, animated: Bool) {
@@ -82,12 +81,20 @@ internal class UserCell: SwipeOptionsTableViewCell {
             self.nameLabel.text = user.nickName != "" ? user.nickName : user.name
             self.fullnameLabel.text = user.fullName
             self.userImageView.image = user.userImage
+            self.updateCounters()
+        }
+    }
+    
+    private func updateCounters() {
+        if self.configured {
+            self.counterView.count = self.user.history.numberOfRidesForToday()
         }
     }
     
     // MARK: Actions
     @IBAction private func debitButtonPressed(sender: AnyObject) {
         self.user.charge()
+        self.updateCounters()
     }
     
     // MARK: - Class Methods and Properties

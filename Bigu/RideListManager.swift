@@ -117,6 +117,25 @@ public class RideListManager: DataPersistenceDelegate {
         self.list.insert(ride)
     }
     
+    public func numberOfRidesForToday() -> Int {
+        var result: Int = 0
+        let now = NSDate()
+        let formater = NSDateFormatter()
+        formater.dateFormat = "yyyy-MM-dd"
+        
+        for var i = 0; i < self.list.count; i++ {
+            let cur = self.list.getElementAtIndex(i)!
+            if formater.stringFromDate(now) == formater.stringFromDate(cur.time) {
+                result++
+            }
+            else if cur.timingSinceOcurrence >= 86400/*24h*/ {
+                break
+            }
+        }
+        
+        return result
+    }
+    
     // MARK: -Protocols
     // MARK: DataPersistenceDelegate
     public var object: AnyObject? {
