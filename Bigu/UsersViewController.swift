@@ -109,6 +109,10 @@ public class UsersViewController: UIViewController, UITableViewDataSource, UITab
         let cell = usersTableView.dequeueReusableCellWithIdentifier(UserCell.userCellReuseId, forIndexPath: indexPath) as! UserCell
         cell.user = UserList.sharedUserList.list.getElementAtIndex(indexPath.row)!
         cell.viewController = self
+        let deleteAction:(sender: AnyObject) -> () = { sender in
+            self.tableView(self.usersTableView, commitEditingStyle: UITableViewCellEditingStyle.Delete, forRowAtIndexPath: self.usersTableView.indexPathForCell(cell)!)
+        }
+        cell.deleteAction = deleteAction
         
         return cell
     }
@@ -133,7 +137,7 @@ public class UsersViewController: UIViewController, UITableViewDataSource, UITab
         if tableView === self.usersTableView {
             if editingStyle == .Delete {
                 UserList.sharedUserList.removeUserAtIndex(indexPath.row)
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
             }
         }
     }

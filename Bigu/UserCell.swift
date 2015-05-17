@@ -24,30 +24,24 @@ internal class UserCell: SwipeOptionsTableViewCell {
         }
     }
     internal var viewController: UIViewController!
-    
+    internal var deleteAction: ((sender: AnyObject) -> ())? {
+        didSet {
+            self.deleteButton.action = self.deleteAction != nil ? self.deleteAction! : {sender in}
+        }
+    }
     
     //MARK: Outlets
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var fullnameLabel: UILabel!
     @IBOutlet weak private var userImageView: UIImageView!
-    @IBOutlet weak var counterView: CounterView!
+    @IBOutlet weak private var counterView: CounterView!
     private var separator: UIView!
+    private var deleteButton: SwipeOptionsButtonItem!
     
     // MARK: - Methods
     
     required internal init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        let button = SwipeOptionsButtonItem(frame: SwipeOptionsButtonItem.frame(forCell: self))
-        button.action = { sender in
-            self.debitButtonPressed(sender)
-        }
-        button.setTitle("cash in", forState: UIControlState.allZeros)
-        //105 170 129
-        button.backgroundColor = RGBColor(r: 105, g: 170, b: 129, alpha: 1)
-        
-        self.insertLeftButton(button)
-        self.leftButtonFeedbackColor = RGBColor(r: 56, g: 138, b: 109, alpha: 1)
     }
     
     override internal func awakeFromNib() {
@@ -61,6 +55,23 @@ internal class UserCell: SwipeOptionsTableViewCell {
         // set background color
         self.contentView.backgroundColor = RGBColor.whiteColor()
         self.separator = FakeSeparator(forView: self)
+        
+        // buttons
+        let button = SwipeOptionsButtonItem(frame: SwipeOptionsButtonItem.frame(forCell: self))
+        button.action = { sender in
+            self.debitButtonPressed(sender)
+        }
+        button.setTitle("Cash in", forState: UIControlState.allZeros)
+        //105 170 129
+        button.backgroundColor = RGBColor(r: 105, g: 170, b: 129, alpha: 1)
+        
+        self.insertLeftButton(button)
+        self.leftButtonFeedbackColor = RGBColor(r: 56, g: 138, b: 109, alpha: 1)
+        
+        self.deleteButton = SwipeOptionsButtonItem(frame: SwipeOptionsButtonItem.frame(forCell: self))
+        self.deleteButton.setTitle("Delete", forState: .allZeros)
+        self.deleteButton.backgroundColor = RGBColor(r: 255, g: 58, b: 48, alpha: 1)
+        self.insertRightButton(self.deleteButton)
     }
     
     override func layoutSubviews() {
