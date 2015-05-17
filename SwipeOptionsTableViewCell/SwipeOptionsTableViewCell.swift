@@ -38,14 +38,18 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
     private var shouldLeftTrigger: Bool {
         return self.contentView.frame.origin.x >= min(self.leftLockedPosition + 100, self.contentView.frame.width - 100)
     }
-    private var firstButton: SwipeOptionsButtonItem? {
+    private var leftFirstButton: SwipeOptionsButtonItem? {
         return self.leftButtonItems.first
     }
+    private var rightFirstButton: SwipeOptionsButtonItem? {
+        return self.rightButtonItems.first
+    }
     private var state: cellState = .Unlocked
-    private var leftSecondaryButtonsAreHidden: Bool = false
+    private var secondaryButtonsAreHidden: Bool = false
     private var rightSecondaryButtonsAreHidden: Bool = false
     private var currentDirection: Direction = .NoDirection
-    private var originalBackgroundColor: UIColor!
+    private var leftFirstButtonOriginalBackgroundColor: UIColor!
+    private var rightFirstButtonOriginalBackgroundColor: UIColor!
     public var leftButtonFeedbackColor: UIColor = UIColor.lightGrayColor()
     public var rightButtonFeedbackColor: UIColor = UIColor.lightGrayColor()
     private var shouldRespondToPan: Bool = false
@@ -79,11 +83,10 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
         self.setLockedPositionValue()
         
         if self.leftButtonItems.count == 1 {
-            self.backgroundColor = button.backgroundColor
             button.didTriggerAction = {
                 self.didTriggerAction()
             }
-            self.originalBackgroundColor = button.backgroundColor
+            self.leftFirstButtonOriginalBackgroundColor = button.backgroundColor
         }
         
         self.layoutSubviews()
@@ -99,6 +102,7 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
             button.didTriggerAction = {
                 self.didTriggerAction()
             }
+            self.rightFirstButtonOriginalBackgroundColor = button.backgroundColor
         }
         
         self.layoutSubviews()
@@ -118,20 +122,37 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
         self.rightLockedPosition = -result
     }
     
-    private func hideSecondaryLeftButtons(animated: Bool) {
-        if self.leftSecondaryButtonsAreHidden || self.leftButtonItems.count == 1 {
+    private func hideSecondaryButtons(animated: Bool, direction: Direction) {
+        if self.secondaryButtonsAreHidden {
             return
         }
         
         let action: () -> () = {
-            self.leftHiddenButtonsOriginalFrame = []
-            for cur in self.leftButtonItems {
-                if cur !== self.firstButton! {
-                    self.leftHiddenButtonsOriginalFrame! += [CGRectMake(cur.frame.origin.x, cur.frame.origin.y, cur.frame.width, cur.frame.height)]
-                    cur.frame.origin.x = self.contentView.frame.width
+            var buttons: [SwipeOptionsButtonItem]!
+            var frames: [CGRect] = []
+            
+            if direction == .toRight {
+                buttons = self.leftButtonItems
+            }
+            else if direction == .toLeft {
+                buttons = self.rightButtonItems
+            }
+            
+            for cur in buttons {
+                if cur !== self.leftFirstButton && cur !== self.rightFirstButton {
+                    frames += [CGRectMake(cur.frame.origin.x, cur.frame.origin.y, cur.frame.width, cur.frame.height)]
+                    cur.frame.origin.x += direction == .toRight ? self.frame.width : -self.frame.width
                 }
             }
-            self.leftSecondaryButtonsAreHidden = true
+            
+            if direction == .toRight {
+                self.leftHiddenButtonsOriginalFrame = frames
+            }
+            else if direction == .toLeft {
+                self.rightHiddenButtonsOriginalFrame = frames
+            }
+            
+            self.secondaryButtonsAreHidden = true
         }
         
         if animated {
@@ -144,21 +165,30 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
         }
     }
     
-    private func revealSecondaryLeftButtons(animated: Bool) {
-        if !self.leftSecondaryButtonsAreHidden || self.leftButtonItems.count == 1 {
+    private func revealSecondaryButtons(animated: Bool) {
+        if !self.secondaryButtonsAreHidden || self.leftButtonItems.count == 1 {
             return
         }
-        var i = 0
         
         let action: () -> () = {
-            for cur in self.leftButtonItems {
-                if cur !== self.firstButton! {
-                    cur.frame = self.leftHiddenButtonsOriginalFrame![i]
-                    i++
+            for var j = 0; j < 2; j++ {
+                var i = 0
+                let buttons: [SwipeOptionsButtonItem] = j == 0 ? self.leftButtonItems : self.rightButtonItems
+                let frames: [CGRect]! = j == 0 ? self.leftHiddenButtonsOriginalFrame : self.rightHiddenButtonsOriginalFrame
+                
+                if frames != nil {
+                    for cur in buttons {
+                        if cur !== self.leftFirstButton && cur !== self.rightFirstButton {
+                            cur.frame = frames[i]
+                            i++
+                        }
+                    }
                 }
             }
+            
             self.leftHiddenButtonsOriginalFrame = nil
-            self.leftSecondaryButtonsAreHidden = false
+            self.rightHiddenButtonsOriginalFrame = nil
+            self.secondaryButtonsAreHidden = false
         }
         
         if animated {
@@ -171,11 +201,11 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
         }
     }
     
-    private func restoreLeftFirstButton(animated: Bool) {
+    private func restoreFirstButtons(animated: Bool) {
         func action() {
-            self.setFirstButtonWidth(self.originalLeftFirstButtonWidth, animated: false)
-            self.firstButton!.frame.origin.x = 0
-            self.firstButton!.backgroundColor = self.originalBackgroundColor
+            self.leftFirstButton?.backgroundColor = self.leftFirstButtonOriginalBackgroundColor
+            self.rightFirstButton?.backgroundColor = self.rightFirstButtonOriginalBackgroundColor
+            self.layoutSubviews()
         }
         
         var function: () -> () = action
@@ -193,10 +223,10 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
     private func setFirstButtonWidth(width: CGFloat, animated: Bool) {
         
         let function: () -> () = {
-            self.firstButton!.frame.size.width = width
+            self.leftFirstButton!.frame.size.width = width
         }
         
-        if self.firstButton!.frame.width != width {
+        if self.leftFirstButton!.frame.width != width {
             if animated {
                 function()
             }
@@ -210,11 +240,10 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
     
     public func restoreCell(animated: Bool) {
         let function: () -> () = {
+            self.setBackgroundColor()
             self.contentView.frame.origin.x = self.originalPosition
-            self.restoreLeftFirstButton(false)
-            self.revealSecondaryLeftButtons(false)
-            self.firstButton!.backgroundColor = self.originalBackgroundColor
-            self.backgroundColor = self.firstButton!.backgroundColor
+            self.restoreFirstButtons(false)
+            self.revealSecondaryButtons(false)
         }
         
         if animated {
@@ -280,8 +309,8 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
     
     private func triggerFeedbackBackGroundColor(# feedback: Bool, animated: Bool) {
         let action: () -> () = {
-            let color = feedback ? self.leftButtonFeedbackColor : self.originalBackgroundColor
-            self.firstButton!.backgroundColor = color
+            let color = feedback ? self.leftButtonFeedbackColor : self.leftFirstButtonOriginalBackgroundColor
+            self.leftFirstButton!.backgroundColor = color
             self.backgroundColor = color
         }
         
@@ -415,18 +444,53 @@ extension SwipeOptionsTableViewCell {
             self.state = .RightLocked
         }
         
-        self.interactWithLeftButtons(previousState: previousState)
+        self.setBackgroundColor()
+        
+        self.interactWithButtons(previousState: previousState)
     }
     
-    private func interactWithLeftButtons(# previousState: cellState) {
+    private func setBackgroundColor() {
+        struct wrap {
+            static var lastDirection: Direction = .NoDirection
+        }
+        
+        let dir: Direction!
+        if self.contentView.frame.origin.x < 0 {
+            dir = .toLeft
+        }
+        else {
+            dir = .toRight
+        }
+        
+        if wrap.lastDirection == dir {
+            return
+        }
+        
+        wrap.lastDirection = dir
+        
+        if dir == .toRight {
+            self.backgroundColor = self.leftFirstButton?.backgroundColor
+        }
+        else if dir == .toLeft {
+            self.backgroundColor = self.rightFirstButton?.backgroundColor
+        }
+    }
+    
+    private func interactWithButtons(# previousState: cellState) {
         if self.state == .LeftLocked || self.state == .LeftTriggered {
             if self.contentView.frame.origin.x > self.leftLockedPosition {
-                self.firstButton!.center.x = self.contentView.frame.origin.x / 2
-                self.hideSecondaryLeftButtons(true)
+                self.leftFirstButton?.center.x = self.contentView.frame.origin.x / 2
+                self.hideSecondaryButtons(true, direction: .toRight)
             }
             
             if previousState != self.state {
                 self.triggerFeedbackBackGroundColor(feedback: self.state == .LeftTriggered, animated: true)
+            }
+        }
+        else if self.state == .RightLocked {
+            if self.contentView.frame.origin.x < self.rightLockedPosition {
+                self.rightFirstButton?.center.x = (self.contentView.frame.origin.x + self.contentView.frame.width) + (-self.contentView.frame.origin.x / 2)
+                // stoped here
             }
         }
     }

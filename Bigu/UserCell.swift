@@ -72,6 +72,11 @@ internal class UserCell: SwipeOptionsTableViewCell {
         self.deleteButton.setTitle("Delete", forState: .allZeros)
         self.deleteButton.backgroundColor = RGBColor(r: 255, g: 58, b: 48, alpha: 1)
         self.insertRightButton(self.deleteButton)
+        
+        var b = SwipeOptionsButtonItem(frame: SwipeOptionsButtonItem.frame(forCell: self))
+        self.insertLeftButton(b)
+        b = SwipeOptionsButtonItem(frame: SwipeOptionsButtonItem.frame(forCell: self))
+        self.insertRightButton(b)
     }
     
     override func layoutSubviews() {
