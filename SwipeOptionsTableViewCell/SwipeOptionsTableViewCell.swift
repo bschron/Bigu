@@ -14,6 +14,7 @@ private enum cellState {
     case RightLocked
     case Unlocked
     case LeftTriggered
+    case RightTriggered
 }
 
 enum Direction {
@@ -26,8 +27,7 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
     // MARK: -Properties
     private var leftButtonItems: [SwipeOptionsButtonItem] = []
     private var rightButtonItems: [SwipeOptionsButtonItem] = []
-    private var leftHiddenButtonsOriginalFrame: [CGRect]!
-    private var rightHiddenButtonsOriginalFrame: [CGRect]!
+    private var buttonsOriginalFrame: [CGRect]!
     private var panGesture: UIPanGestureRecognizer!
     private var originalPosition: CGFloat!
     private var startingTouchePosition: CGPoint = CGPoint(x: 0, y: 0)
@@ -38,6 +38,9 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
     private var shouldLeftTrigger: Bool {
         return self.contentView.frame.origin.x >= min(self.leftLockedPosition + 100, self.contentView.frame.width - 100)
     }
+    private var shouldRightTrigger: Bool {
+        return self.contentView.frame.origin.x <= max(self.rightLockedPosition - 100, -self.contentView.frame.width + 100)
+    }
     private var leftFirstButton: SwipeOptionsButtonItem? {
         return self.leftButtonItems.first
     }
@@ -45,8 +48,7 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
         return self.rightButtonItems.first
     }
     private var state: cellState = .Unlocked
-    private var secondaryButtonsAreHidden: Bool = false
-    private var rightSecondaryButtonsAreHidden: Bool = false
+    private var buttonsAreHidden: Bool = false
     private var currentDirection: Direction = .NoDirection
     private var leftFirstButtonOriginalBackgroundColor: UIColor!
     private var rightFirstButtonOriginalBackgroundColor: UIColor!
@@ -122,8 +124,8 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
         self.rightLockedPosition = -result
     }
     
-    private func hideSecondaryButtons(animated: Bool, direction: Direction) {
-        if self.secondaryButtonsAreHidden {
+    private func hideButtons(animated: Bool, direction: Direction) {
+        if self.buttonsAreHidden {
             return
         }
         
@@ -131,28 +133,18 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
             var buttons: [SwipeOptionsButtonItem]!
             var frames: [CGRect] = []
             
-            if direction == .toRight {
-                buttons = self.leftButtonItems
-            }
-            else if direction == .toLeft {
-                buttons = self.rightButtonItems
-            }
+            buttons = self.leftButtonItems + self.rightButtonItems
             
             for cur in buttons {
-                if cur !== self.leftFirstButton && cur !== self.rightFirstButton {
-                    frames += [CGRectMake(cur.frame.origin.x, cur.frame.origin.y, cur.frame.width, cur.frame.height)]
-                    cur.frame.origin.x += direction == .toRight ? self.frame.width : -self.frame.width
+                frames += [CGRectMake(cur.frame.origin.x, cur.frame.origin.y, cur.frame.width, cur.frame.height)]
+                if cur !== (direction == .toRight ? self.leftFirstButton : self.rightFirstButton) {
+                    cur.frame.origin.x = direction == .toRight ? self.contentView.frame.width : -self.contentView.frame.width
                 }
             }
             
-            if direction == .toRight {
-                self.leftHiddenButtonsOriginalFrame = frames
-            }
-            else if direction == .toLeft {
-                self.rightHiddenButtonsOriginalFrame = frames
-            }
+            self.buttonsOriginalFrame = frames
             
-            self.secondaryButtonsAreHidden = true
+            self.buttonsAreHidden = true
         }
         
         if animated {
@@ -165,30 +157,21 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
         }
     }
     
-    private func revealSecondaryButtons(animated: Bool) {
-        if !self.secondaryButtonsAreHidden || self.leftButtonItems.count == 1 {
+    private func restoreButtonsFrames(animated: Bool) {
+        if !self.buttonsAreHidden || (self.rightButtonItems.count + self.leftButtonItems.count) <= 1 {
             return
         }
         
         let action: () -> () = {
-            for var j = 0; j < 2; j++ {
-                var i = 0
-                let buttons: [SwipeOptionsButtonItem] = j == 0 ? self.leftButtonItems : self.rightButtonItems
-                let frames: [CGRect]! = j == 0 ? self.leftHiddenButtonsOriginalFrame : self.rightHiddenButtonsOriginalFrame
-                
-                if frames != nil {
-                    for cur in buttons {
-                        if cur !== self.leftFirstButton && cur !== self.rightFirstButton {
-                            cur.frame = frames[i]
-                            i++
-                        }
-                    }
-                }
+            var i: Int = 0
+            let buttons = self.leftButtonItems + self.rightButtonItems
+            for cur in buttons {
+                cur.frame = self.buttonsOriginalFrame[i]
+                i++
             }
             
-            self.leftHiddenButtonsOriginalFrame = nil
-            self.rightHiddenButtonsOriginalFrame = nil
-            self.secondaryButtonsAreHidden = false
+            self.buttonsOriginalFrame = nil
+            self.buttonsAreHidden = false
         }
         
         if animated {
@@ -242,8 +225,8 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
         let function: () -> () = {
             self.setBackgroundColor()
             self.contentView.frame.origin.x = self.originalPosition
+            self.restoreButtonsFrames(false)
             self.restoreFirstButtons(false)
-            self.revealSecondaryButtons(false)
         }
         
         if animated {
@@ -309,8 +292,18 @@ public class SwipeOptionsTableViewCell: UITableViewCell {
     
     private func triggerFeedbackBackGroundColor(# feedback: Bool, animated: Bool) {
         let action: () -> () = {
-            let color = feedback ? self.leftButtonFeedbackColor : self.leftFirstButtonOriginalBackgroundColor
-            self.leftFirstButton!.backgroundColor = color
+            //let color = feedback ? self.leftButtonFeedbackColor : self.leftFirstButtonOriginalBackgroundColor
+            var color: UIColor!
+            
+            if self.state == cellState.LeftLocked || self.state == cellState.LeftTriggered {
+                color = feedback ? self.leftButtonFeedbackColor : self.leftFirstButtonOriginalBackgroundColor
+                self.leftFirstButton!.backgroundColor = color
+            }
+            else if self.state == cellState.RightLocked || self.state == cellState.RightTriggered {
+                color = feedback ? self.rightButtonFeedbackColor : self.rightFirstButtonOriginalBackgroundColor
+                self.rightFirstButton!.backgroundColor = color
+            }
+            
             self.backgroundColor = color
         }
         
@@ -373,6 +366,8 @@ extension SwipeOptionsTableViewCell {
                 self.state = .RightLocked
             case .RightLocked:
                 let nop = 0
+            case .RightTriggered:
+                let nop = 0
             }
             
         case .toRight:
@@ -384,6 +379,8 @@ extension SwipeOptionsTableViewCell {
             case .Unlocked:
                 self.state = .LeftLocked
             case .RightLocked:
+                self.state = .Unlocked
+            case .RightTriggered:
                 self.state = .Unlocked
             }
             
@@ -400,9 +397,11 @@ extension SwipeOptionsTableViewCell {
         case .LeftLocked:
             self.lockCell(true)
         case .LeftTriggered:
-            self.leftButtonItems.first?.triggerAction(self.panGesture)
+            self.leftFirstButton?.triggerAction(self.panGesture)
         case .RightLocked:
             self.lockCell(true)
+        case .RightTriggered:
+            self.rightFirstButton?.triggerAction(self.panGesture)
         }
     }
     
@@ -432,6 +431,9 @@ extension SwipeOptionsTableViewCell {
         
         if self.shouldLeftTrigger {
             self.state = .LeftTriggered
+        }
+        else if self.shouldRightTrigger {
+            self.state = .RightTriggered
         }
         else if self.contentView.frame.origin.x >= self.leftLockedPosition || (self.state == .Unlocked && self.currentDirection == .toRight)  {
             self.state = .LeftLocked
@@ -480,17 +482,23 @@ extension SwipeOptionsTableViewCell {
         if self.state == .LeftLocked || self.state == .LeftTriggered {
             if self.contentView.frame.origin.x > self.leftLockedPosition {
                 self.leftFirstButton?.center.x = self.contentView.frame.origin.x / 2
-                self.hideSecondaryButtons(true, direction: .toRight)
+                self.hideButtons(true, direction: .toRight)
             }
             
             if previousState != self.state {
                 self.triggerFeedbackBackGroundColor(feedback: self.state == .LeftTriggered, animated: true)
             }
         }
-        else if self.state == .RightLocked {
+        else if self.state == .RightLocked || self.state == .RightTriggered {
             if self.contentView.frame.origin.x < self.rightLockedPosition {
-                self.rightFirstButton?.center.x = (self.contentView.frame.origin.x + self.contentView.frame.width) + (-self.contentView.frame.origin.x / 2)
-                // stoped here
+                let contentViewEnding = self.contentView.frame.origin.x + self.contentView.frame.width
+                let gap = self.contentView.frame.width - contentViewEnding
+                self.rightFirstButton?.center.x = contentViewEnding + gap / 2
+                self.hideButtons(true, direction: .toLeft)
+            }
+            
+            if previousState != self.state {
+                self.triggerFeedbackBackGroundColor(feedback: self.state == .RightTriggered, animated: true)
             }
         }
     }
