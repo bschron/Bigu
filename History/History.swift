@@ -147,6 +147,10 @@ public class History {
         History.saveExtract(extract)
     }
     
+    public func numberOfRidesForToday() -> Int {
+        return self.rideHistory.numberOfRidesForToday()
+    }
+    
     // MARK: -Class Properties and Functions
     class public var singleton: History {
         struct wrap {
