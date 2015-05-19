@@ -137,7 +137,7 @@ public class UsersViewController: UIViewController, UITableViewDataSource, UITab
         if tableView === self.usersTableView {
             if editingStyle == .Delete {
                 UserList.sharedUserList.removeUserAtIndex(indexPath.row)
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
             }
         }
     }
