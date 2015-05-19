@@ -40,6 +40,6 @@ public class FakeSeparator: UIView {
     
     public override func layoutIfNeeded() {
         super.layoutIfNeeded()
-        self.frame = CGRectMake(40, cell.frame.height - 1, cell.frame.width, 1)
+        self.frame = CGRectMake(cell.contentView.frame.width / 8, cell.contentView.frame.height - 1, cell.contentView.frame.width - cell.contentView.frame.width / 8, 1)
     }
 }
