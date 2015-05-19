@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserDetailNickNameIdentifier" rowHeight="50" id="eer-NT-jGQ" customClass="UserDetailNickNameTableViewCell" customModule="Bigu" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserDetailNickNameIdentifier" rowHeight="50" id="eer-NT-jGQ" customClass="UserDetailNickNameTableViewCell" customModule="UserDetailViewController" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eer-NT-jGQ" id="oQR-RD-8V3">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nickname (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0U-TZ-iTK">
-                        <rect key="frame" x="20" y="17" width="572" height="17"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="(optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X0U-TZ-iTK">
+                        <rect key="frame" x="93" y="17" width="499" height="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                         <connections>
@@ -22,14 +23,31 @@
                             <action selector="editingDidEnd:" destination="eer-NT-jGQ" eventType="editingDidEnd" id="v2c-Ro-e4X"/>
                         </connections>
                     </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3n-nT-t8H">
+                        <rect key="frame" x="8" y="14" width="77" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcV-oF-4U9">
+                        <rect key="frame" x="258" y="14" width="84" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="X0U-TZ-iTK" firstAttribute="trailing" secondItem="oQR-RD-8V3" secondAttribute="trailingMargin" id="Kyw-U3-3Hz"/>
-                    <constraint firstItem="X0U-TZ-iTK" firstAttribute="leading" secondItem="oQR-RD-8V3" secondAttribute="leading" constant="20" id="VrJ-E2-AJb"/>
+                    <constraint firstItem="X0U-TZ-iTK" firstAttribute="leading" secondItem="E3n-nT-t8H" secondAttribute="trailing" constant="8" id="WFy-w5-JUM"/>
                     <constraint firstAttribute="centerY" secondItem="X0U-TZ-iTK" secondAttribute="centerY" constant="-0.25" id="ZD6-Cu-Byz"/>
+                    <constraint firstItem="E3n-nT-t8H" firstAttribute="leading" secondItem="oQR-RD-8V3" secondAttribute="leadingMargin" id="aU6-ex-v98"/>
                     <constraint firstItem="X0U-TZ-iTK" firstAttribute="leading" secondItem="oQR-RD-8V3" secondAttribute="leadingMargin" id="dc5-2B-A9w"/>
+                    <constraint firstAttribute="centerY" secondItem="E3n-nT-t8H" secondAttribute="centerY" id="sCX-UK-rMc"/>
                 </constraints>
                 <variation key="default">
+                    <mask key="subviews">
+                        <exclude reference="bcV-oF-4U9"/>
+                    </mask>
                     <mask key="constraints">
                         <exclude reference="dc5-2B-A9w"/>
                     </mask>

@@ -73,6 +73,8 @@ internal class UserCell: SwipeOptionsTableViewCell {
         self.deleteButton.backgroundColor = RGBColor(r: 255, g: 58, b: 48, alpha: 1)
         self.insertRightButton(self.deleteButton)
         self.rightButtonFeedbackColor = RGBColor(r: 220, g: 0, b: 0, alpha: 1)
+        
+        self.counterView.animationDelay = 0.3
     }
     
     override func layoutSubviews() {

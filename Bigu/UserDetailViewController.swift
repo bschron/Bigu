@@ -96,6 +96,13 @@ public class UserDetailViewController: AbstractUserDetailViewController {
                 
                 self.payingCell = newCell
                 
+                newCell.removeFromTableView = {
+                    self.payingCellIsActive = false
+                }
+                newCell.pay = {
+                    self.downcastedUser.pay(payingValue: newCell.getTaxPickerValue())
+                }
+                
                 cell = newCell
             }
         }
@@ -183,12 +190,6 @@ public class UserDetailViewController: AbstractUserDetailViewController {
         else if indexPath.section == 0 && indexPath.row == 0 {
             let image = (cell as! UserDetailMainTableViewCell).payingButtonImage
             (cell as! UserDetailMainTableViewCell).payButton.setImage(image, forState: .allZeros)
-        }
-    }
-    public func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if cell === self.payingCell {
-            let value = (cell as! UserDetailPayingValueTableViewCell).getTaxPickerValue()
-            self.downcastedUser.pay(payingValue: value)
         }
     }
 }

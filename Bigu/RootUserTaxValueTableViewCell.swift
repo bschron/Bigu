@@ -42,6 +42,7 @@ internal class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataS
     internal var sourceTaxValue: Float {
         return Bill.taxValue
     }
+    internal var removeFromTableView: (() -> ())?
     
     // MARK: Outlets
     @IBOutlet weak internal var taxValuePickerView: UIPickerView!
@@ -95,6 +96,16 @@ internal class RootUserTaxValueTableViewCell: UITableViewCell, UIPickerViewDataS
         
         self.taxValuePickerView.selectRow(taxIntValueRow, inComponent: 0, animated: true)
         self.taxValuePickerView.selectRow(taxPointValueRow, inComponent: 1, animated: true)
+    }
+    
+    // MARK: Actions
+    @IBAction internal func commitNewTaxValue(sender: AnyObject) {
+        Bill.taxValue = self.getTaxPickerValue()
+        self.removeFromTableView?()
+    }
+    
+    @IBAction internal func cancel() {
+        self.removeFromTableView?()
     }
     
     // MARK: -Protocols

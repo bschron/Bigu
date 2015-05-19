@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserDetailLastNameIdentifier" rowHeight="50" id="Idt-xr-qgc" customClass="UserDetailLastNameTableViewCell" customModule="Bigu" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserDetailLastNameIdentifier" rowHeight="50" id="Idt-xr-qgc" customClass="UserDetailLastNameTableViewCell" customModule="UserDetailViewController" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Idt-xr-qgc" id="THR-CW-A8P">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Lastname (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XVs-pm-Szo">
-                        <rect key="frame" x="20" y="17" width="572" height="17"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="(optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XVs-pm-Szo">
+                        <rect key="frame" x="99" y="17" width="493" height="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                         <connections>
@@ -22,12 +23,20 @@
                             <action selector="editingDidEnd:" destination="Idt-xr-qgc" eventType="editingDidEnd" id="jMP-hc-ut1"/>
                         </connections>
                     </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwF-pR-C1c">
+                        <rect key="frame" x="8" y="14" width="83" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="XVs-pm-Szo" firstAttribute="leading" secondItem="THR-CW-A8P" secondAttribute="leadingMargin" id="1na-ky-sE9"/>
+                    <constraint firstItem="xwF-pR-C1c" firstAttribute="leading" secondItem="THR-CW-A8P" secondAttribute="leadingMargin" id="BR3-hK-0P4"/>
+                    <constraint firstAttribute="centerY" secondItem="xwF-pR-C1c" secondAttribute="centerY" id="PaV-qn-FQQ"/>
                     <constraint firstAttribute="centerY" secondItem="XVs-pm-Szo" secondAttribute="centerY" constant="-0.25" id="SGF-t4-J6t"/>
                     <constraint firstItem="XVs-pm-Szo" firstAttribute="leading" secondItem="THR-CW-A8P" secondAttribute="leading" constant="16" id="bzn-d9-gQp"/>
-                    <constraint firstItem="XVs-pm-Szo" firstAttribute="leading" secondItem="THR-CW-A8P" secondAttribute="leading" constant="20" id="gbl-qj-pCQ"/>
+                    <constraint firstItem="XVs-pm-Szo" firstAttribute="leading" secondItem="xwF-pR-C1c" secondAttribute="trailing" constant="8" id="flQ-Jc-ido"/>
                     <constraint firstItem="XVs-pm-Szo" firstAttribute="trailing" secondItem="THR-CW-A8P" secondAttribute="trailingMargin" id="utb-7H-zmh"/>
                 </constraints>
                 <variation key="default">

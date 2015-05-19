@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -22,20 +24,66 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaV-y9-Rda">
+                        <rect key="frame" x="266" y="25" width="46" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="GaV-y9-Rda" secondAttribute="height" multiplier="23:15" id="5mM-6j-SEP"/>
+                        </constraints>
+                        <state key="normal" title="Done">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="commitNewTaxValue:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="N3n-dj-qZU"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69g-rQ-Dog">
+                        <rect key="frame" x="8" y="8" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="69g-rQ-Dog" secondAttribute="height" multiplier="1:1" id="0Mi-bx-U1B"/>
+                            <constraint firstAttribute="width" constant="20" id="WWy-ln-wBo"/>
+                            <constraint firstAttribute="height" constant="20" id="aaH-jO-237"/>
+                        </constraints>
+                        <state key="normal" image="cancel">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="cancel" destination="KGk-i7-Jjw" eventType="touchUpInside" id="YJ8-kk-qXh"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="GaV-y9-Rda" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="0Ox-Os-ZDm"/>
+                    <constraint firstItem="69g-rQ-Dog" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-7" id="71J-UJ-7L6"/>
+                    <constraint firstItem="uOO-uX-X3C" firstAttribute="leading" secondItem="69g-rQ-Dog" secondAttribute="leading" id="K9l-Uq-HmC"/>
+                    <constraint firstItem="69g-rQ-Dog" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="RX3-zA-CNh"/>
                     <constraint firstItem="uOO-uX-X3C" firstAttribute="centerY" secondItem="dTA-ae-07Z" secondAttribute="centerY" constant="-0.5" id="Vry-JS-VfR"/>
                     <constraint firstAttribute="trailing" secondItem="dTA-ae-07Z" secondAttribute="trailing" id="cRl-J3-WIb"/>
+                    <constraint firstItem="dTA-ae-07Z" firstAttribute="width" secondItem="69g-rQ-Dog" secondAttribute="height" multiplier="16:1" id="ctl-by-2Am"/>
+                    <constraint firstItem="GaV-y9-Rda" firstAttribute="top" secondItem="dTA-ae-07Z" secondAttribute="bottom" constant="-96" id="kM6-fJ-bdK"/>
+                    <constraint firstItem="69g-rQ-Dog" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="khg-DE-n8t"/>
                     <constraint firstItem="dTA-ae-07Z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="oUR-7g-6Zx"/>
                     <constraint firstAttribute="centerY" secondItem="dTA-ae-07Z" secondAttribute="centerY" constant="-0.5" id="scZ-hq-AVb"/>
                     <constraint firstItem="uOO-uX-X3C" firstAttribute="leading" secondItem="dTA-ae-07Z" secondAttribute="leading" constant="8" id="uZl-jl-269"/>
+                    <constraint firstItem="GaV-y9-Rda" firstAttribute="centerY" secondItem="dTA-ae-07Z" secondAttribute="centerY" id="yAw-Yc-l3i"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="71J-UJ-7L6"/>
+                        <exclude reference="RX3-zA-CNh"/>
+                        <exclude reference="ctl-by-2Am"/>
+                        <exclude reference="kM6-fJ-bdK"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="label" destination="uOO-uX-X3C" id="SCz-tA-S6Q"/>
                 <outlet property="taxValuePickerView" destination="dTA-ae-07Z" id="3pJ-lR-2LH"/>
             </connections>
-            <point key="canvasLocation" x="322" y="144"/>
+            <point key="canvasLocation" x="578" y="346"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="cancel" width="180" height="180"/>
+    </resources>
 </document>

@@ -89,6 +89,9 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(RootUserTaxValueTableViewCell.reuseId, forIndexPath: indexPath) as! RootUserTaxValueTableViewCell
                 
                 self.taxValueCell = newCell
+                newCell.removeFromTableView = {
+                    self.shouldDisplayTaxValueCell = false
+                }
                 
                 cell = newCell
             }
@@ -102,9 +105,6 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
                 self.firstNameCell = newCell
                 
                 cell = newCell
-                
-                let separator = FakeSeparator(forView: cell)
-                separator.center.x = 0
             }
             else if row == 1 {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailLastNameTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailLastNameTableViewCell
@@ -113,9 +113,6 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
                 newCell.userDetailViewController = self
                 
                 cell = newCell
-                
-                let separator = FakeSeparator(forView: cell)
-                separator.center.x = 0
             }
             else if row == 2 {
                 let newCell = tableView.dequeueReusableCellWithIdentifier(UserDetailNickNameTableViewCell.reuseId, forIndexPath: indexPath) as! UserDetailNickNameTableViewCell
@@ -183,14 +180,6 @@ public class RootUserDetailViewController: AbstractUserDetailViewController {
             }
             else if indexPath.row == 1 {
                 self.taxValueCell?.setTaxPickerValue()
-            }
-        }
-    }
-    public func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 && indexPath.row == 1 {
-            let newTaxValue = taxValueCell?.getTaxPickerValue()
-            if let value = newTaxValue {
-                Bill.taxValue = value
             }
         }
     }

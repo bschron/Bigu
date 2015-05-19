@@ -24,6 +24,7 @@ import UIKit
     @IBInspectable internal var spacing: CGFloat = 4.0
     @IBInspectable internal var height: CGFloat = 8.0
     @IBInspectable internal var animated: Bool = true
+    @IBInspectable internal var animationDelay: NSTimeInterval = 0
     
     // MARK: -Methods
     required init(coder aDecoder: NSCoder) {
@@ -60,11 +61,17 @@ import UIKit
             return
         }
         
-        let actions: () -> () = {
-            let counter = self.newCounter(isPlus: self.count >= self.limit && self.counters.count == self.limit - 1)
+        var counter: Counter!
+        
+        let preAction: () -> () = {
+            counter = self.newCounter(isPlus: self.count >= self.limit && self.counters.count == self.limit - 1)
             self.counters += [counter]
             self.addSubview(counter)
-            
+            counter.alpha = 0.0
+        }
+        
+        let actions: () -> () = {
+            counter.alpha = 1
             self.alignCounters()
         }
         
@@ -72,8 +79,10 @@ import UIKit
             self.setCounters()
         }
         
+        preAction()
+        
         if self.animated {
-            UIView.animateWithDuration(0.2, delay: 0.0, options: .AllowAnimatedContent, animations: {
+            UIView.animateWithDuration(0.2, delay: self.animationDelay, options: .AllowAnimatedContent, animations: {
                 actions()
                 }, completion: { result in
                     // for diff > 1
@@ -108,7 +117,7 @@ import UIKit
         }
         
         if animated {
-            UIView.animateWithDuration(0.2, delay: 0.0, options: .AllowAnimatedContent, animations: {
+            UIView.animateWithDuration(0.2, delay: self.animationDelay, options: .AllowAnimatedContent, animations: {
                 actions()
                 }, completion: { reuslt in
                     completion()

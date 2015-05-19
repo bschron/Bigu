@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,8 +13,9 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sgk-a1-vMW" id="jrt-bu-j7r">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opx-XF-4ji">
-                        <rect key="frame" x="20" y="17" width="572" height="17"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Required" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opx-XF-4ji">
+                        <rect key="frame" x="100" y="17" width="492" height="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                         <connections>
@@ -22,11 +24,19 @@
                             <action selector="editingDidEnd:" destination="sgk-a1-vMW" eventType="editingDidEnd" id="oE3-Cq-xK4"/>
                         </connections>
                     </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAs-ER-eBb">
+                        <rect key="frame" x="8" y="14" width="84" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="eAs-ER-eBb" firstAttribute="leading" secondItem="jrt-bu-j7r" secondAttribute="leadingMargin" id="7K6-iy-hSd"/>
                     <constraint firstAttribute="trailing" secondItem="opx-XF-4ji" secondAttribute="trailing" constant="8" id="F8E-q7-DEt"/>
                     <constraint firstAttribute="centerY" secondItem="opx-XF-4ji" secondAttribute="centerY" constant="-0.25" id="ORK-LN-Cup"/>
-                    <constraint firstItem="opx-XF-4ji" firstAttribute="leading" secondItem="jrt-bu-j7r" secondAttribute="leading" constant="20" id="dzC-XI-aAd"/>
+                    <constraint firstItem="opx-XF-4ji" firstAttribute="leading" secondItem="eAs-ER-eBb" secondAttribute="trailing" constant="8" id="Rov-zj-zoh"/>
+                    <constraint firstAttribute="centerY" secondItem="eAs-ER-eBb" secondAttribute="centerY" id="vhF-nk-l4T"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

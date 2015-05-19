@@ -13,11 +13,17 @@ internal class UserDetailPayingValueTableViewCell: RootUserTaxValueTableViewCell
     override internal var sourceTaxValue: Float {
         return 0.0
     }
+    internal var pay: (() -> ())?
     
     // MARK: -Methods
     override internal func awakeFromNib() {
         super.awakeFromNib()
         self.label.text = "Paying Value"
+    }
+    
+    @IBAction func commitPayment(sender: AnyObject) {
+        self.pay?()
+        self.removeFromTableView?()
     }
     
     // MARK: -Class Properties and Methods
